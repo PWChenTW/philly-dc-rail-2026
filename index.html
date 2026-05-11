@@ -1,0 +1,1044 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>美東文化鐵道之旅 · 個人行旅筆記｜Boston → Philadelphia → DC · 2026 Autumn</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Noto+Sans+TC:wght@300;400;500;700&family=Noto+Serif+TC:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1f2e;
+    --ink-soft: #3a4356;
+    --paper: #f6f1e7;
+    --paper-deep: #ece4d2;
+    --brass: #b8893d;
+    --brass-deep: #8a6326;
+    --brick: #8c3c2c;
+    --moss: #4a5d3a;
+    --rule: rgba(26, 31, 46, 0.18);
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: "Noto Sans TC", "Helvetica Neue", system-ui, sans-serif;
+    color: var(--ink);
+    background: var(--paper);
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3, .serif {
+    font-family: "Cormorant Garamond", "Noto Serif TC", "Songti TC", serif;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+  }
+  a { color: var(--brass-deep); text-decoration: none; border-bottom: 1px solid rgba(184,137,61,0.3); }
+  a:hover { color: var(--brick); border-bottom-color: var(--brick); }
+
+  .topbar {
+    border-bottom: 1px solid var(--rule);
+    background: var(--paper);
+    padding: 14px 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
+  .topbar .brand { font-family: "Cormorant Garamond", serif; font-size: 20px; letter-spacing: 0.16em; }
+  .topbar .meta { color: var(--ink-soft); }
+
+  /* Hero */
+  .hero {
+    position: relative;
+    min-height: 78vh;
+    display: flex;
+    align-items: flex-end;
+    overflow: hidden;
+    background: #0d1320;
+  }
+  .hero::before {
+    content: "";
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(180deg, rgba(13,19,32,0.15) 0%, rgba(13,19,32,0.55) 55%, rgba(13,19,32,0.92) 100%),
+      url("https://commons.wikimedia.org/wiki/Special:FilePath/United_States_Capitol_-_west_front.jpg?width=1920");
+    background-size: cover;
+    background-position: center 30%;
+    filter: saturate(0.85) contrast(1.05);
+  }
+  .hero-inner {
+    position: relative;
+    z-index: 2;
+    color: #f6f1e7;
+    padding: 64px 48px;
+    max-width: 1100px;
+  }
+  .hero .kicker {
+    font-size: 12px;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: #d9b67a;
+    margin-bottom: 18px;
+  }
+  .hero h1 {
+    font-size: clamp(34px, 5.8vw, 72px);
+    line-height: 1.05;
+    margin: 0 0 18px;
+    color: #f6f1e7;
+  }
+  .hero h1 .arrow {
+    font-family: "Cormorant Garamond", serif;
+    font-style: italic;
+    color: #d9b67a;
+    padding: 0 10px;
+    font-weight: 400;
+  }
+  .hero p.lede {
+    font-family: "Noto Serif TC", serif;
+    font-size: clamp(16px, 1.6vw, 19px);
+    max-width: 720px;
+    color: rgba(246,241,231,0.86);
+    margin: 0 0 28px;
+  }
+  .hero .ribbon {
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 28px;
+    border-top: 1px solid rgba(217,182,122,0.4);
+    border-bottom: 1px solid rgba(217,182,122,0.4);
+    padding: 14px 0;
+    font-size: 13px;
+    letter-spacing: 0.12em;
+    color: #e6d6b6;
+  }
+  .hero .ribbon span strong { color: #f6f1e7; font-weight: 700; padding-right: 4px; }
+
+  /* Section shell */
+  section { padding: 96px 48px; }
+  .wrap { max-width: 1180px; margin: 0 auto; }
+  .eyebrow {
+    font-size: 11px;
+    letter-spacing: 0.36em;
+    text-transform: uppercase;
+    color: var(--brass-deep);
+    margin-bottom: 14px;
+  }
+  h2.section-title {
+    font-size: clamp(30px, 3.6vw, 46px);
+    margin: 0 0 16px;
+    color: var(--ink);
+  }
+  p.section-lede {
+    font-family: "Noto Serif TC", serif;
+    font-size: 18px;
+    color: var(--ink-soft);
+    max-width: 760px;
+    margin: 0 0 56px;
+  }
+
+  /* Pillars */
+  .pillars {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 28px;
+  }
+  .pillar {
+    border-top: 2px solid var(--brass);
+    padding-top: 22px;
+  }
+  .pillar .num {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 36px;
+    color: var(--brass-deep);
+    line-height: 1;
+    margin-bottom: 14px;
+  }
+  .pillar h3 { font-size: 22px; margin: 0 0 10px; }
+  .pillar p { margin: 0; color: var(--ink-soft); font-size: 15px; }
+
+  /* City spread */
+  .city {
+    background: var(--paper-deep);
+  }
+  .city.alt { background: var(--paper); }
+  .city .grid {
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: 56px;
+    align-items: stretch;
+  }
+  .city.flip .grid { grid-template-columns: 0.95fr 1.05fr; }
+  .city.flip .text { order: 2; }
+  .city.flip .gallery { order: 1; }
+  .city .text h3.city-name {
+    font-size: clamp(40px, 4.6vw, 64px);
+    line-height: 1;
+    margin: 0 0 4px;
+  }
+  .city .text .sub-en {
+    font-family: "Cormorant Garamond", serif;
+    font-style: italic;
+    color: var(--brass-deep);
+    font-size: 22px;
+    margin-bottom: 24px;
+  }
+  .city .text p.intro {
+    font-family: "Noto Serif TC", serif;
+    font-size: 17px;
+    color: var(--ink-soft);
+    margin: 0 0 24px;
+  }
+  .highlight-list { padding: 0; margin: 0 0 24px; list-style: none; }
+  .highlight-list li {
+    padding: 14px 0;
+    border-bottom: 1px dashed var(--rule);
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+  }
+  .highlight-list li:last-child { border-bottom: 0; }
+  .highlight-list .hl-name {
+    font-weight: 600;
+    font-size: 16px;
+    color: var(--ink);
+    flex: 0 0 32%;
+  }
+  .highlight-list .hl-en {
+    font-family: "Cormorant Garamond", serif;
+    font-style: italic;
+    color: var(--brass-deep);
+    font-size: 14px;
+    margin-left: 4px;
+  }
+  .highlight-list .hl-desc {
+    color: var(--ink-soft);
+    font-size: 15px;
+    flex: 1;
+  }
+  .gallery {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 220px 220px;
+    gap: 12px;
+  }
+  .gallery .photo {
+    background-size: cover;
+    background-position: center;
+    border-radius: 2px;
+    box-shadow: 0 12px 28px rgba(26,31,46,0.18);
+    position: relative;
+    overflow: hidden;
+  }
+  .gallery .photo.tall { grid-row: 1 / span 2; }
+  .gallery .photo .caption {
+    position: absolute;
+    left: 0; right: 0; bottom: 0;
+    background: linear-gradient(180deg, transparent 0%, rgba(13,19,32,0.78) 100%);
+    color: #f6f1e7;
+    padding: 22px 14px 12px;
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    font-family: "Cormorant Garamond", serif;
+  }
+
+  /* Train interlude */
+  .train {
+    background: #0d1320;
+    color: #f6f1e7;
+    padding: 0;
+    overflow: hidden;
+  }
+  .train .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    min-height: 540px;
+  }
+  .train .img {
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-image:
+      linear-gradient(90deg, rgba(13,19,32,0) 60%, rgba(13,19,32,0.6) 100%),
+      url("https://commons.wikimedia.org/wiki/Special:FilePath/Northbound%20Amtrak%20Acela%20Express%20approaching%20Readville%20March%202022.jpg?width=1920");
+  }
+  .train .copy { padding: 80px 56px; }
+  .train .copy .eyebrow { color: #d9b67a; }
+  .train h2 {
+    color: #f6f1e7;
+    font-size: clamp(32px, 3.6vw, 46px);
+    margin: 0 0 16px;
+  }
+  .train p {
+    font-family: "Noto Serif TC", serif;
+    color: rgba(246,241,231,0.85);
+    font-size: 17px;
+    max-width: 560px;
+  }
+  .train table.spec {
+    margin-top: 28px;
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 520px;
+    font-size: 14px;
+  }
+  .train table.spec td {
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(217,182,122,0.25);
+    vertical-align: top;
+  }
+  .train table.spec td:first-child {
+    color: #d9b67a;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    font-size: 11px;
+    width: 38%;
+  }
+  .train table.spec td:last-child { color: #f6f1e7; }
+
+  /* Itinerary */
+  .itinerary { background: var(--paper); }
+  .day-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0;
+    border-top: 1px solid var(--rule);
+    border-left: 1px solid var(--rule);
+  }
+  .day {
+    padding: 32px 28px;
+    border-right: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    background: var(--paper);
+  }
+  .day .day-num {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 14px;
+    color: var(--brass-deep);
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  .day h4 {
+    font-family: "Cormorant Garamond", "Noto Serif TC", serif;
+    font-size: 24px;
+    margin: 0 0 4px;
+    font-weight: 600;
+  }
+  .day .city-tag {
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin-bottom: 14px;
+  }
+  .day ul {
+    margin: 0; padding-left: 18px;
+    color: var(--ink-soft);
+    font-size: 15px;
+  }
+  .day ul li { margin-bottom: 6px; }
+  .day .accent {
+    display: inline-block;
+    margin-top: 14px;
+    margin-right: 6px;
+    padding: 4px 10px;
+    background: var(--brass);
+    color: #fff;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+  .day .accent.brick { background: var(--brick); }
+  .day .accent.moss { background: var(--moss); }
+
+  /* Food deep-dive */
+  .food { background: var(--paper-deep); }
+  .food-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+  }
+  .food-col h3 {
+    font-size: 28px;
+    margin: 0 0 6px;
+    border-bottom: 2px solid var(--brass);
+    padding-bottom: 8px;
+  }
+  .food-col .city-en {
+    font-family: "Cormorant Garamond", serif;
+    font-style: italic;
+    color: var(--brass-deep);
+    font-size: 15px;
+    margin-bottom: 18px;
+    display: block;
+  }
+  .food-col .dish {
+    padding: 12px 0;
+    border-bottom: 1px dashed var(--rule);
+  }
+  .food-col .dish:last-child { border-bottom: 0; }
+  .food-col .dish .name {
+    font-weight: 600;
+    color: var(--ink);
+    font-size: 15px;
+    margin-bottom: 2px;
+  }
+  .food-col .dish .name .where {
+    font-family: "Cormorant Garamond", serif;
+    font-style: italic;
+    color: var(--brass-deep);
+    font-weight: 400;
+    font-size: 13px;
+    margin-left: 6px;
+  }
+  .food-col .dish .desc {
+    color: var(--ink-soft);
+    font-size: 14px;
+    line-height: 1.65;
+  }
+  .food-banner {
+    margin: 56px 0 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 12px;
+    height: 200px;
+  }
+  .food-banner .photo {
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    box-shadow: 0 8px 18px rgba(26,31,46,0.15);
+  }
+  .food-banner .photo .caption {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    background: linear-gradient(180deg, transparent, rgba(13,19,32,0.78));
+    color: #f6f1e7;
+    padding: 22px 12px 10px;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 12px;
+    letter-spacing: 0.1em;
+  }
+
+  /* Logistics */
+  .logistics { background: var(--paper); }
+  .log-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 56px;
+  }
+  .log-grid h3 {
+    font-size: 24px;
+    margin: 0 0 14px;
+    border-bottom: 2px solid var(--brass);
+    padding-bottom: 8px;
+    display: inline-block;
+  }
+  .log-grid ul { margin: 0; padding-left: 20px; color: var(--ink-soft); }
+  .log-grid li { margin-bottom: 8px; line-height: 1.8; }
+  .log-grid li strong { color: var(--ink); }
+
+  /* Footer */
+  footer {
+    background: var(--paper);
+    padding: 40px 48px;
+    text-align: center;
+    border-top: 1px solid var(--rule);
+    color: var(--ink-soft);
+    font-size: 13px;
+    letter-spacing: 0.08em;
+  }
+  footer .marque {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 20px;
+    letter-spacing: 0.18em;
+    color: var(--ink);
+    margin-bottom: 8px;
+  }
+
+  /* Responsive */
+  @media (max-width: 900px) {
+    section { padding: 64px 24px; }
+    .topbar { padding: 12px 20px; flex-direction: column; gap: 6px; align-items: flex-start; }
+    .hero-inner { padding: 48px 24px; }
+    .pillars { grid-template-columns: 1fr 1fr; }
+    .city .grid, .city.flip .grid { grid-template-columns: 1fr; gap: 32px; }
+    .city.flip .text { order: 1; }
+    .city.flip .gallery { order: 2; }
+    .gallery { grid-template-rows: 200px 200px; }
+    .train .grid { grid-template-columns: 1fr; min-height: auto; }
+    .train .img { min-height: 320px; }
+    .train .copy { padding: 56px 24px; }
+    .day-grid { grid-template-columns: 1fr; }
+    .food-grid { grid-template-columns: 1fr; }
+    .food-banner { grid-template-columns: 1fr; height: auto; }
+    .food-banner .photo { height: 180px; }
+    .log-grid { grid-template-columns: 1fr; gap: 32px; }
+  }
+  @media (max-width: 520px) {
+    .pillars { grid-template-columns: 1fr; }
+    .gallery { grid-template-columns: 1fr; grid-template-rows: 220px 220px 220px; }
+    .gallery .photo.tall { grid-row: auto; }
+    .highlight-list .hl-name { flex: 0 0 100%; }
+    .highlight-list li { flex-wrap: wrap; }
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="brand">FIELD NOTES · 個人行旅</div>
+  <div class="meta">2026 / 09 / 24 → 10 / 04 · 10 Days · Boston → Philadelphia → Washington D.C.</div>
+</div>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="kicker">Northeast Corridor · 2026 Autumn</div>
+    <h1>Boston<span class="arrow">→</span>Philadelphia<span class="arrow">→</span>Washington D.C.</h1>
+    <p class="lede">為了 9 月 27 日 Boston 婚禮而展開的十日行旅。<br>三座城市、一條 Amtrak 走廊、一條從殖民史穿到憲政、再到大理石博物館的敘事線——以及一張到處停下來吃的美食地圖。</p>
+    <div class="ribbon">
+      <span><strong>10</strong> Days</span>
+      <span><strong>3</strong> Cities</span>
+      <span><strong>1</strong> Wedding</span>
+      <span><strong>1</strong> Acela Express</span>
+      <span><strong>9+</strong> Smithsonian Museums</span>
+    </div>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">行旅主題</div>
+    <h2 class="section-title">為什麽是「Boston → Philly → DC」？</h2>
+    <p class="section-lede">這條路線在地圖上是一條 Amtrak Northeast Corridor 直線，但在歷史上是一條時間軸：從 1620 年清教徒登陸的 Boston，到 1776 年宣告獨立的 Philadelphia，再到 1800 年起承載聯邦政府的 Washington D.C.。婚禮把人帶到了起點，於是順著這條線一路向南，把每座城市當一個章節讀完。</p>
+
+    <div class="pillars">
+      <div class="pillar">
+        <div class="num">01</div>
+        <h3>建國敘事</h3>
+        <p>從 Boston 自由之路、Philadelphia 獨立廳到 D.C. 國家檔案館，按時序走過殖民、獨立、建國、聯邦四個段落。</p>
+      </div>
+      <div class="pillar">
+        <div class="num">02</div>
+        <h3>博物館深度</h3>
+        <p>MFA Boston、Isabella Stewart Gardner、費城藝博、National Gallery、Smithsonian 群——每座城市挑兩到三館，深而不趕。</p>
+      </div>
+      <div class="pillar">
+        <div class="num">03</div>
+        <h3>鐵道情懷</h3>
+        <p>30th Street Station 與 Union Station 兩座 Beaux-Arts 巨構之間，一趟 Acela Express。中間在 New Haven 下車吃 Pepe's 煤窯披薩。</p>
+      </div>
+      <div class="pillar">
+        <div class="num">04</div>
+        <h3>美食地圖</h3>
+        <p>波士頓海鮮、費城起司牛肉、DC 半煙腸——三城三種底色。每天至少一個非吃不可的 anchor，剩下隨機。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="city">
+  <div class="wrap">
+    <div class="grid">
+      <div class="text">
+        <div class="eyebrow">Phase I · Days 1–5</div>
+        <h3 class="city-name">波士頓</h3>
+        <div class="sub-en">Boston, MA — Where the Story Begins</div>
+        <p class="intro">飛機落在 Logan，迎面是新英格蘭九月的乾爽。Boston 是這趟旅行真正的「入口」：婚禮在 9/27（日）舉行，前面三天用來倒時差、走 Freedom Trail 紅磚線、摸 Cambridge 校園、在 North End 跟義裔老闆對話；婚禮過後留一天緩衝，把吃跟逛排滿——再南下。</p>
+        <ul class="highlight-list">
+          <li>
+            <div class="hl-name">自由之路<span class="hl-en">Freedom Trail</span></div>
+            <div class="hl-desc">2.5 英里紅磚線串 16 個革命遺址：Boston Common → 麻州州議會 → Park Street Church → 老南會議廳 → Faneuil Hall → Paul Revere House → Old North Church → Bunker Hill。半天散步剛好。</div>
+          </li>
+          <li>
+            <div class="hl-name">麻州州議會<span class="hl-en">Massachusetts State House</span></div>
+            <div class="hl-desc">Charles Bulfinch 1798 設計，金葉貼面圓頂 1874 年改鍍金；州議事廳免費 self-guided tour，平日早上人少。</div>
+          </li>
+          <li>
+            <div class="hl-name">波士頓公共圖書館<span class="hl-en">Boston Public Library · Bates Hall</span></div>
+            <div class="hl-desc">McKim, Mead & White 1895 文藝復興式建築，Bates Hall 拱頂閱覽室是 Instagram 級空間；Sargent 壁畫廳免費，下午茶在 Courtyard 餐廳。</div>
+          </li>
+          <li>
+            <div class="hl-name">MFA Boston<span class="hl-en">Museum of Fine Arts</span></div>
+            <div class="hl-desc">美國館 + 日本/亞洲館 + 印象派並列三大主軸；Sargent 的 "Daughters of Edward Darley Boit"、Gauguin 的 "Where Do We Come From?" 都在這裡。</div>
+          </li>
+          <li>
+            <div class="hl-name">伊莎貝拉嘉納藝術館<span class="hl-en">Isabella Stewart Gardner Museum</span></div>
+            <div class="hl-desc">1903 年女主人親自佈展的威尼斯式宮殿，1990 年遭竊未追回的空畫框依舊掛在原位；中庭花園是冬日避難所。</div>
+          </li>
+          <li>
+            <div class="hl-name">Cambridge / Harvard / MIT</div>
+            <div class="hl-desc">Harvard Yard 散步 + Sanders Theatre + Widener Library 外觀；MIT 過河看 Frank Gehry 的 Stata Center 與 Eero Saarinen 的 Kresge 教堂。</div>
+          </li>
+          <li>
+            <div class="hl-name">North End 義大利區</div>
+            <div class="hl-desc">Hanover St. 是吃的核心；婚禮日前可以排 Mike's vs Modern Pastry 的 Cannoli 對決，晚餐去 Daily Catch（沒招牌、現點現做）或 Neptune Oyster（生蠔 + 龍蝦堡）。</div>
+          </li>
+        </ul>
+      </div>
+      <div class="gallery">
+        <div class="photo tall" style="background-image:url('https://commons.wikimedia.org/wiki/Special:FilePath/USA%20Boston%20Public%20Library%202%20MA.jpg?width=1024')">
+          <div class="caption">Boston Public Library · Bates Hall</div>
+        </div>
+        <div class="photo" style="background-image:url('https://commons.wikimedia.org/wiki/Special:FilePath/Massachusetts%20State%20House%20Boston%20November%202016.jpg?width=1024')">
+          <div class="caption">Massachusetts State House</div>
+        </div>
+        <div class="photo" style="background-image:url('https://commons.wikimedia.org/wiki/Special:FilePath/Faneuil%20Hall%20Boston%20Massachusetts.JPG?width=1024')">
+          <div class="caption">Faneuil Hall · 1742</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="train">
+  <div class="grid">
+    <div class="img" aria-hidden="true"></div>
+    <div class="copy">
+      <div class="eyebrow">Interlude · Day 6</div>
+      <h2>Northeast Corridor<br><span class="serif" style="font-style:italic;color:#d9b67a;">Boston · New Haven · Philadelphia</span></h2>
+      <p>美國最古老、也最忙的鐵道走廊。從 Boston South Station 出發，沿著羅德島海岸進入康乃狄克——在 New Haven 下車吃一頓 Pepe's 煤窯白蛤披薩、走 Yale Old Campus 半小時，再上回 NE Regional 直奔費城 30th Street Station。一天剛好把「波士頓殖民」與「費城建國」兩段史串起來。</p>
+      <table class="spec">
+        <tr><td>Train 1</td><td>Amtrak NE Regional · BOS South → NHV · 約 2h45m</td></tr>
+        <tr><td>Stopover</td><td>New Haven · 3 小時 · Yale Old Campus + Pepe's Pizzeria</td></tr>
+        <tr><td>Train 2</td><td>Amtrak NE Regional · NHV → PHL 30th Street · 約 3h30m</td></tr>
+        <tr><td>Total</td><td>9h door-to-door（含中停）· 約 USD 130 含商務艙升等</td></tr>
+        <tr><td>Tip</td><td>左側座位看海（Connecticut shoreline）；Café Car 三明治堪堪</td></tr>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="city alt">
+  <div class="wrap">
+    <div class="grid">
+      <div class="text">
+        <div class="eyebrow">Phase II · Days 6–8</div>
+        <h3 class="city-name">費城</h3>
+        <div class="sub-en">Philadelphia, PA — The Cradle of a Nation</div>
+        <p class="intro">紅磚、鑄鐵欄杆、街角壁畫；從 1776 年的獨立廳到今日的 Reading Terminal Market，費城同時握著歷史的厚度與街頭的溫度。把行程切成「建國敘事日」與「藝術 + 街區日」兩條線索：上午看憲法現場，下午選一家 cheesesteak 的陣營（Pat's vs Geno's vs John's Roast Pork）開始辯論。</p>
+        <ul class="highlight-list">
+          <li>
+            <div class="hl-name">獨立國家歷史公園<span class="hl-en">Independence NHP</span></div>
+            <div class="hl-desc">獨立廳、自由鐘、國會議事廳——憲法誕生的三公里半徑，獨立廳需提前一天 recreation.gov 預約 ranger-led tour 時段。</div>
+          </li>
+          <li>
+            <div class="hl-name">Reading Terminal Market</div>
+            <div class="hl-desc">130 年室內市集；Bassetts 冰淇淋（1861 年，全美最老連續經營冰淇淋）、Dienner's 阿米許烤雞、DiNic's 烤豬肉三明治、Beiler's Donuts。週日休市，務必避開。</div>
+          </li>
+          <li>
+            <div class="hl-name">費城藝術博物館<span class="hl-en">Philadelphia Museum of Art</span></div>
+            <div class="hl-desc">Rocky 階梯只是序曲；Cy Twombly 50 Days at Iliam 永久展、Marcel Duchamp 完整館藏（含 "Étant donnés"）、東亞藝術部門以日本茶室原件聞名。</div>
+          </li>
+          <li>
+            <div class="hl-name">Magic Gardens</div>
+            <div class="hl-desc">Isaiah Zagar 半條街的馬賽克迷宮——磁磚、酒瓶、自行車輪，一個藝術家用 30 年覆蓋的城市無意識。週二休館。</div>
+          </li>
+          <li>
+            <div class="hl-name">Mütter Museum</div>
+            <div class="hl-desc">19 世紀醫學標本館（皺縮頭顱、暹羅雙生連體標本、Einstein 大腦切片）；不是給每個人，但給願意凝視身體史的人。</div>
+          </li>
+          <li>
+            <div class="hl-name">Eastern State Penitentiary</div>
+            <div class="hl-desc">廢棄輻射型監獄，Al Capone 牢房保留陳設；秋天另有 "Halloween Nights" 沉浸式劇場（9 月底剛開始，提早線上購票）。</div>
+          </li>
+          <li>
+            <div class="hl-name">Italian Market · 9th Street</div>
+            <div class="hl-desc">全美最古老營業中的戶外市集；Termini Bros vs Isgro 兩家 Cannoli 對打、Di Bruno Bros 起司、Anthony's Italian Coffee House 義式 espresso。</div>
+          </li>
+        </ul>
+      </div>
+      <div class="gallery">
+        <div class="photo tall" style="background-image:url('https://commons.wikimedia.org/wiki/Special:FilePath/Liberty_Bell_2008.jpg?width=1024')">
+          <div class="caption">The Liberty Bell · Independence Mall</div>
+        </div>
+        <div class="photo" style="background-image:url('https://commons.wikimedia.org/wiki/Special:FilePath/Independence_Hall_10.jpg?width=1024')">
+          <div class="caption">Independence Hall · 1776</div>
+        </div>
+        <div class="photo" style="background-image:url('https://commons.wikimedia.org/wiki/Special:FilePath/30th%20Street%20Station%20Philadelphia%20July%202016%20002%20edit.jpg?width=1024')">
+          <div class="caption">30th Street Station · Beaux-Arts</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="train">
+  <div class="grid">
+    <div class="img" aria-hidden="true"></div>
+    <div class="copy">
+      <div class="eyebrow">Interlude · Day 9 Morning</div>
+      <h2>Acela Express<br><span class="serif" style="font-style:italic;color:#d9b67a;">Philadelphia → Washington</span></h2>
+      <p>從 30th Street Station 寬敞的石灰岩大廳出發，車站咖啡 (La Colombe) 喝完，登上 Amtrak 旗艦列車。Acela 在 Maryland 沿著 Chesapeake Bay 灣口高速滑行，大約一小時四十分鐘——你還沒看完一份 New York Times，車就到了華盛頓 Union Station。</p>
+      <table class="spec">
+        <tr><td>Train</td><td>Amtrak Acela Express · Business Class（Train #2151 / 2153）</td></tr>
+        <tr><td>Depart</td><td>Philadelphia 30th Street · 09:36</td></tr>
+        <tr><td>Arrive</td><td>Washington Union · 11:17</td></tr>
+        <tr><td>Run Time</td><td>1 h 41 min · 219 km · 最高時速 240 km/h</td></tr>
+        <tr><td>Onboard</td><td>2 + 1 寬敞座位、Wi-Fi、Café Car、座位插座；行李無限件</td></tr>
+        <tr><td>Tip</td><td>右側 (windows facing east) 看 Susquehanna 河大鐵橋；買票看好 "Acela" vs "NE Regional" 票價差約 USD 60，時間差 25 分鐘</td></tr>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="city flip">
+  <div class="wrap">
+    <div class="grid">
+      <div class="text">
+        <div class="eyebrow">Phase III · Days 9–10</div>
+        <h3 class="city-name">華盛頓 D.C.</h3>
+        <div class="sub-en">Washington, D.C. — The Marble &amp; Memory Capital</div>
+        <p class="intro">如果費城屬於 18 世紀的紅磚，華盛頓就是 19–20 世紀的白色大理石。以 National Mall 為軸線、Smithsonian 為主菜——刻意避開「博物館一日趕場」陷阱：每天只進兩到三館，剩下時間留給 Georgetown 河岸、U Street 爵士酒吧、與 Tidal Basin 黃昏。</p>
+        <ul class="highlight-list">
+          <li>
+            <div class="hl-name">國家航空太空博物館<span class="hl-en">Air & Space Museum</span></div>
+            <div class="hl-desc">Spirit of St. Louis、Apollo 11 指令艙、月球岩石（可摸）、Wright Flyer 1903 原件——人類飛行史的原件全部在你眼前。Mall 本館 2026 年完成全面整修，新展區開放。</div>
+          </li>
+          <li>
+            <div class="hl-name">非裔美國人歷史與文化館<span class="hl-en">NMAAHC</span></div>
+            <div class="hl-desc">Smithsonian 最新且最強的敘事館；建議從地下三層（奴隸船）看到地上四層（嘻哈與當代藝術），預留 4 小時。免費但需網路預約 timed entry pass。</div>
+          </li>
+          <li>
+            <div class="hl-name">林肯紀念堂 + 越戰紀念碑<span class="hl-en">Lincoln Memorial · Vietnam Wall</span></div>
+            <div class="hl-desc">黃昏走 Reflecting Pool；Maya Lin 21 歲贏得越戰碑競圖時的黑色花崗岩牆比想像中安靜得多——一萬五千個名字按死亡日期、不按字母排列。</div>
+          </li>
+          <li>
+            <div class="hl-name">國會圖書館<span class="hl-en">Library of Congress · Jefferson Building</span></div>
+            <div class="hl-desc">Thomas Jefferson Building 主閱覽室是美國最美的室內空間之一；可預約 docent tour 走進閱覽層平台。鎮館展品：Gutenberg 聖經、Jefferson 親筆藏書清單。</div>
+          </li>
+          <li>
+            <div class="hl-name">國家藝術館<span class="hl-en">National Gallery of Art</span></div>
+            <div class="hl-desc">西樓古典（達文西〈吉內芙拉·班奇〉是西半球唯一一張達文西原作）、東樓貝聿銘 1978 年三角幾何（Calder 飛行雕塑、Rothko Room）、Sculpture Garden 冬天有溜冰場。</div>
+          </li>
+          <li>
+            <div class="hl-name">Georgetown · U Street</div>
+            <div class="hl-desc">Georgetown C&amp;O 運河沿岸晚餐 + Cady's Alley；U Street 是 Duke Ellington 出生地，Ben's Chili Bowl 1958 年開到現在 — 半煙腸（half-smoke）配 chili 是 D.C. 國民食物。</div>
+          </li>
+        </ul>
+      </div>
+      <div class="gallery">
+        <div class="photo tall" style="background-image:url('https://commons.wikimedia.org/wiki/Special:FilePath/Lincoln_Memorial_%28Lincoln_contrasty%29.jpg?width=1024')">
+          <div class="caption">Lincoln Memorial</div>
+        </div>
+        <div class="photo" style="background-image:url('https://commons.wikimedia.org/wiki/Special:FilePath/Smithsonian_Building_NR.jpg?width=1024')">
+          <div class="caption">Smithsonian Castle</div>
+        </div>
+        <div class="photo" style="background-image:url('https://commons.wikimedia.org/wiki/Special:FilePath/LOC_Main_Reading_Room_Highsmith.jpg?width=1024')">
+          <div class="caption">Library of Congress · Main Reading Room</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="itinerary">
+  <div class="wrap">
+    <div class="eyebrow">Day-by-day · 從落地到登機</div>
+    <h2 class="section-title">10 天逐日筆記</h2>
+    <p class="section-lede">從 Logan 機場落地當下開始，到 IAD 國際線登機結束。每日節奏刻意「半日深度 + 半日散步 + 一個非吃不可的食物 anchor」，避免博物館過勞。</p>
+
+    <div class="day-grid">
+      <div class="day">
+        <div class="day-num">Day 01 · 9/24 (Thu)</div>
+        <h4>抵達波士頓</h4>
+        <div class="city-tag">Boston · Logan Airport</div>
+        <ul>
+          <li>下午 EVA / Delta 落地 BOS Logan</li>
+          <li>Silver Line 公車（$2.4）或 Uber 進城；旅館建議 Back Bay 或 Beacon Hill</li>
+          <li>傍晚 Boston Common + Public Garden 散步倒時差</li>
+          <li><strong>晚餐：</strong>Saltie Girl（Back Bay 海鮮 + 罐頭吧）— 飛 16 小時就吃輕的</li>
+        </ul>
+        <span class="accent">Arrival</span>
+      </div>
+      <div class="day">
+        <div class="day-num">Day 02 · 9/25 (Fri)</div>
+        <h4>Freedom Trail 全走</h4>
+        <div class="city-tag">Boston · Downtown + North End</div>
+        <ul>
+          <li>09:00 從 Boston Common 出發走完 2.5 mi 紅磚線</li>
+          <li>麻州州議會 self-guided tour、Faneuil Hall + Quincy Market</li>
+          <li><strong>午餐：</strong>Union Oyster House（1826 年，Daniel Webster 老座位還在）</li>
+          <li>下午 Old North Church + Paul Revere House + Bunker Hill</li>
+          <li><strong>晚餐：</strong>Daily Catch（Hanover St. · 義式 squid ink 燉飯，現金 only）</li>
+          <li>飯後 Mike's Pastry vs Modern Pastry 的 Cannoli 對決</li>
+        </ul>
+      </div>
+      <div class="day">
+        <div class="day-num">Day 03 · 9/26 (Sat)</div>
+        <h4>Cambridge + 藝博 + 婚禮前夕</h4>
+        <div class="city-tag">Cambridge · Fenway</div>
+        <ul>
+          <li>上午 Harvard Yard + Widener Library + Sanders Theatre 外觀</li>
+          <li>過河走 MIT：Stata Center (Gehry) + Kresge Chapel (Saarinen)</li>
+          <li><strong>午餐：</strong>Toscanini's 冰淇淋（MIT 旁，Khaleesi & Burnt Caramel 雙球）</li>
+          <li>下午 MFA Boston 三小時：美國館 + 印象派 + 日本館</li>
+          <li>傍晚 Isabella Stewart Gardner（兩館同日票 USD 2 折扣）</li>
+          <li><strong>婚禮預演晚餐</strong>（依新人安排）</li>
+        </ul>
+        <span class="accent moss">Rehearsal</span>
+      </div>
+      <div class="day">
+        <div class="day-num">Day 04 · 9/27 (Sun)</div>
+        <h4>婚禮日</h4>
+        <div class="city-tag">Boston · Wedding Day</div>
+        <ul>
+          <li>上午自由（建議睡飽 + Beacon Hill 巷弄散步、Acorn Street 拍照）</li>
+          <li><strong>下午 / 晚上：婚禮典禮 + 晚宴</strong></li>
+          <li>午餐輕食：Tatte Bakery（Beacon Hill 分店，shakshuka）或 Flour Bakery（Joanne Chang）</li>
+          <li>備用方案：婚禮拖太晚就外帶 Roxy's Grilled Cheese 回旅館</li>
+        </ul>
+        <span class="accent brick">Wedding</span>
+      </div>
+      <div class="day">
+        <div class="day-num">Day 05 · 9/28 (Mon)</div>
+        <h4>波士頓海鮮日</h4>
+        <div class="city-tag">Boston · Seaport + BPL</div>
+        <ul>
+          <li>上午 Boston Public Library Bates Hall + Sargent 壁畫</li>
+          <li><strong>午餐：</strong>Neptune Oyster（北端海鮮 anchor — 開門前 30 分排隊）：龍蝦堡（butter or mayo, 點 cold mayo）+ 半打 Wellfleet 生蠔</li>
+          <li>下午 Seaport 區 ICA 當代藝術館 + Row 34 海鮮（如肚還夠）</li>
+          <li>傍晚 Long Wharf 看 sunset</li>
+          <li><strong>晚餐：</strong>Eventide Fenway（Portland 來的緬因海鮮，brown butter lobster roll 必點）</li>
+        </ul>
+      </div>
+      <div class="day">
+        <div class="day-num">Day 06 · 9/29 (Tue)</div>
+        <h4>BOS → New Haven → Philly</h4>
+        <div class="city-tag">Amtrak NE Regional · Stopover</div>
+        <ul>
+          <li>07:00 South Station 出發 NE Regional 南下</li>
+          <li>09:45 抵 New Haven Union — 寄物 3h</li>
+          <li>Yale Old Campus + Sterling Memorial Library 半小時</li>
+          <li><strong>午餐：</strong>Frank Pepe Pizzeria Napoletana（1925 年，White Clam Pizza 是煤窯披薩 OG）</li>
+          <li>13:30 NE Regional 續往南</li>
+          <li>17:00 抵 30th Street Station — Old City 飯店 check in</li>
+          <li><strong>晚餐：</strong>Zahav（以色列菜、James Beard Best Restaurant 2019 — 至少 60 天前 OpenTable 訂位）</li>
+        </ul>
+        <span class="accent">Rail Day</span>
+      </div>
+      <div class="day">
+        <div class="day-num">Day 07 · 9/30 (Wed)</div>
+        <h4>建國敘事日</h4>
+        <div class="city-tag">Philly · Independence NHP</div>
+        <ul>
+          <li>09:00 獨立廳 ranger-led tour（一週前 recreation.gov 預約）</li>
+          <li>自由鐘 + 國會議事廳 + Benjamin Franklin Court</li>
+          <li><strong>午餐：</strong>Reading Terminal Market 自由探索 — DiNic's 烤豬肉三明治（Anthony Bourdain 認證）+ Bassetts 冰淇淋收尾</li>
+          <li>下午 Mütter Museum（19 世紀醫學奇觀）</li>
+          <li>傍晚 Eastern State Penitentiary（Al Capone 牢房）</li>
+          <li><strong>晚餐：</strong>John's Roast Pork（10th & Snyder · cheesesteak 派系 #3 — 義式麵包 + roast pork w/ broccoli rabe & sharp provolone）</li>
+        </ul>
+      </div>
+      <div class="day">
+        <div class="day-num">Day 08 · 10/1 (Thu)</div>
+        <h4>藝術 + 街區 + Cheesesteak 對決</h4>
+        <div class="city-tag">Philly · Art Museum + Italian Market</div>
+        <ul>
+          <li>09:30 費城藝博館（含東亞展廳；Rocky 階梯選後不選前）</li>
+          <li>Schuylkill 河岸騎 Indego 公共自行車（選配，30 分）</li>
+          <li><strong>午餐 — Cheesesteak 對決：</strong>Pat's vs Geno's（同一個 9th 街路口、24h、深夜版本更道地）</li>
+          <li>下午 Italian Market 9th Street + Magic Gardens</li>
+          <li>傍晚 Fishtown 散步（Frankford Ave 獨立咖啡帶）</li>
+          <li><strong>晚餐：</strong>Suraya（黎巴嫩菜 · Fishtown · mezze + 烤春雞）</li>
+        </ul>
+      </div>
+      <div class="day">
+        <div class="day-num">Day 09 · 10/2 (Fri)</div>
+        <h4>Acela 南下 + DC 入城</h4>
+        <div class="city-tag">PHL → DC · Mall</div>
+        <ul>
+          <li>09:36 Acela Express（Business Class · 訂 left side）</li>
+          <li>11:17 抵 Union Station — 行李寄旅館（建議 Penn Quarter 或 Foggy Bottom）</li>
+          <li><strong>午餐：</strong>Old Ebbitt Grill（1856 年，白宮對面，oyster bar happy hour 半價 3–6pm）</li>
+          <li>下午 Air & Space 博物館（Mall 本館，2026 整修完）</li>
+          <li>傍晚 Lincoln Memorial + Reflecting Pool 黃昏 + Vietnam Wall</li>
+          <li><strong>晚餐：</strong>Le Diplomate（14th St · 法式小酒館 · French onion soup + steak frites）</li>
+        </ul>
+        <span class="accent">Acela Express</span>
+      </div>
+      <div class="day">
+        <div class="day-num">Day 10 · 10/3 (Sat)</div>
+        <h4>NMAAHC + 國會山 + 離境</h4>
+        <div class="city-tag">DC · East Mall · Departure</div>
+        <ul>
+          <li>09:00 NMAAHC 半日（地下三層奴隸船 → 地上嘻哈）</li>
+          <li><strong>午餐：</strong>Ben's Chili Bowl（U Street · half-smoke + chili — Obama, Beyoncé 都來吃過）</li>
+          <li>下午 國會圖書館 Jefferson Building 導覽（限現場排）</li>
+          <li>15:00 旅館取行李 → IAD 國際線（Silver Line + 5A 公車或 Uber 約 USD 65）</li>
+          <li><strong>離境：</strong>ANA NH 1（IAD → NRT → TPE）</li>
+          <li>10/04 (Sun) 抵 TPE</li>
+        </ul>
+        <span class="accent brick">Departure</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="food">
+  <div class="wrap">
+    <div class="eyebrow">Food Map · 三城美食地圖</div>
+    <h2 class="section-title">非吃不可的清單</h2>
+    <p class="section-lede">每座城市挑五個 anchor，剩下隨機。波士頓走海鮮 + 義式、費城吃市集 + 起司牛肉、DC 在歷史餐廳跟新派 fine dining 之間搖擺。預算大致從 USD 10 路邊攤到 USD 200 套餐都有。</p>
+
+    <div class="food-grid">
+      <div class="food-col">
+        <h3>波士頓</h3>
+        <span class="city-en">Boston · Seafood &amp; North End</span>
+
+        <div class="dish">
+          <div class="name">Neptune Oyster<span class="where">@ North End</span></div>
+          <div class="desc">全市最熱門的龍蝦堡 (butter or mayo) + Wellfleet / Island Creek 生蠔。不接受訂位、開門前排起隊。Hot lobster roll 加 drawn butter 是經典；午餐版本比晚餐好。</div>
+        </div>
+        <div class="dish">
+          <div class="name">Daily Catch<span class="where">@ Hanover St.</span></div>
+          <div class="desc">沒招牌的西西里式海鮮，菜端在煎鍋上桌，現金 only。烏賊墨燉飯 + 蒜爆蛤蜊義大利麵；20 個位子；老闆會直接端著鍋從你旁邊飛過。</div>
+        </div>
+        <div class="dish">
+          <div class="name">Mike's vs Modern Pastry<span class="where">@ Hanover St.</span></div>
+          <div class="desc">Cannoli 兩家對決：Mike's 觀光化但量大穩定，Modern 殼當場填內餡更脆。同條街隔三家，都買、邊走邊吃直接比。</div>
+        </div>
+        <div class="dish">
+          <div class="name">Eventide Fenway<span class="where">@ Fenway</span></div>
+          <div class="desc">Portland (Maine) 的姐妹店；招牌 brown butter lobster roll 用蒸過的 steamed bun 而非熱狗包，奶油焦化甜度神奇。Oyster slider $5 可一打。</div>
+        </div>
+        <div class="dish">
+          <div class="name">Union Oyster House<span class="where">@ Faneuil Hall</span></div>
+          <div class="desc">1826 年開到現在，全美最老仍在營業的餐廳。Daniel Webster 的老座位有銅牌；觀光、但 New England Clam Chowder 跟生蠔吧 worth it。</div>
+        </div>
+        <div class="dish">
+          <div class="name">Toscanini's<span class="where">@ Cambridge</span></div>
+          <div class="desc">MIT 旁的傳奇冰淇淋；Burnt Caramel + Khaleesi (蜂蜜薰衣草) + Earl Grey 是黃金三球。NYT 食評說「全美最佳」不是空話。</div>
+        </div>
+      </div>
+
+      <div class="food-col">
+        <h3>費城</h3>
+        <span class="city-en">Philadelphia · Cheesesteak &amp; Italian Market</span>
+
+        <div class="dish">
+          <div class="name">Cheesesteak 三派對決</div>
+          <div class="desc">
+            <strong>Pat's</strong>（1930 年，cheesesteak 發明者，"whiz wit" 配方下單）；
+            <strong>Geno's</strong>（隔個十字路口，霓虹燈閃，更甜更滿）；
+            <strong>John's Roast Pork</strong>（James Beard 得獎、午餐 only、義式麵包真正脆，公認食物本身最好）。
+          </div>
+        </div>
+        <div class="dish">
+          <div class="name">Reading Terminal Market<span class="where">@ Center City</span></div>
+          <div class="desc">130 年市集 anchor：DiNic's 烤豬肉三明治（broccoli rabe + sharp provolone）、Bassetts 1861 年冰淇淋、Beiler's Donuts、Dienner's 阿米許烤雞、Down Home Diner 早餐。週日休。</div>
+        </div>
+        <div class="dish">
+          <div class="name">Zahav<span class="where">@ Society Hill</span></div>
+          <div class="desc">Michael Solomonov 的以色列菜旗艦；Hummus Tehina 是基準款，"Mesibah" 嫩烤羔羊套餐 (USD 90/人) 整桌一起分。60 天前訂位是底線。</div>
+        </div>
+        <div class="dish">
+          <div class="name">Termini Bros / Isgro<span class="where">@ Italian Market</span></div>
+          <div class="desc">Cannoli 第二輪：Termini 殼厚實偏甜、Isgro 餡 ricotta 更清。9th 街順道買 Di Bruno Bros 起司、Fante's 廚具、Anthony's 義式咖啡。</div>
+        </div>
+        <div class="dish">
+          <div class="name">Suraya<span class="where">@ Fishtown</span></div>
+          <div class="desc">黎巴嫩菜 + 全天 brunch + 麵包 / 烘焙；mezze 拼盤起跳，烤春雞 + labneh 主菜。Frankford Ave 獨立咖啡帶逛完正好過來吃晚餐。</div>
+        </div>
+        <div class="dish">
+          <div class="name">Federal Donuts<span class="where">multi-locations</span></div>
+          <div class="desc">Solomonov 副業，韓式炸雞 + 手作甜甜圈反差；hot fresh donut 上桌 60 秒內最神。Center City 跟 Old City 都有店。</div>
+        </div>
+      </div>
+
+      <div class="food-col">
+        <h3>華盛頓 D.C.</h3>
+        <span class="city-en">Washington · Half-Smoke &amp; Power Lunch</span>
+
+        <div class="dish">
+          <div class="name">Ben's Chili Bowl<span class="where">@ U Street</span></div>
+          <div class="desc">1958 年開到今天，Duke Ellington、Obama、Beyoncé 都來吃過。Half-smoke (半牛半豬辣腸) + 自製 chili + mustard + onions 是 D.C. 國民食物，Original Chili Half-Smoke 是定式。</div>
+        </div>
+        <div class="dish">
+          <div class="name">Old Ebbitt Grill<span class="where">@ White House</span></div>
+          <div class="desc">1856 年開幕，白宮對面 70 公尺；oyster bar happy hour（3–6pm 半價）是 D.C. 業內人士的暗語。Crab cake + clam chowder 經典款。</div>
+        </div>
+        <div class="dish">
+          <div class="name">Le Diplomate<span class="where">@ 14th St NW</span></div>
+          <div class="desc">Stephen Starr 的法式小酒館；French onion soup gratinée + steak frites + Peach Mary brunch。週末必訂位，晚上的 vibe 更好。</div>
+        </div>
+        <div class="dish">
+          <div class="name">Rasika<span class="where">@ Penn Quarter</span></div>
+          <div class="desc">Michelin 推薦的 modern Indian；Palak Chaat（炸菠菜葉 + 優格 + 羅望子）是必點 — 連 Obama 都愛。Tasting menu USD 95，划算。</div>
+        </div>
+        <div class="dish">
+          <div class="name">Maydan / Albi<span class="where">@ 14th St / Navy Yard</span></div>
+          <div class="desc">中東炭火新派：Maydan 室內中央火爐烤全羊；Albi（Michelin 一星）走 Levantine fine dining，主廚 Michael Rafidi 2024 James Beard 得主。</div>
+        </div>
+        <div class="dish">
+          <div class="name">A&amp;J 京華<span class="where">@ Rockville (北維)</span></div>
+          <div class="desc">想吃中式：搭 Metro Red Line 到 Rockville 有 A&amp;J 北方麵點（牛肉捲餅、小籠包、酸辣湯）— D.C. 華人社群的食堂。或更近：Bob's Shanghai 66。</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="food-banner">
+      <div class="photo" style="background-image:url('https://commons.wikimedia.org/wiki/Special:FilePath/Lobster%20Roll%20at%20the%20Lobster%20Claw%2C%20Bar%20Harbor.jpg?width=1024')">
+        <div class="caption">Lobster Roll · New England Standard</div>
+      </div>
+      <div class="photo" style="background-image:url('https://commons.wikimedia.org/wiki/Special:FilePath/Philly%20cheesesteak%20sandwich%2C%20Philadelphia%2C%20Pennsylvania%2C%20USA%20-%2020120502.jpg?width=1024')">
+        <div class="caption">Philly Cheesesteak · Whiz Wit</div>
+      </div>
+      <div class="photo" style="background-image:url('https://commons.wikimedia.org/wiki/Special:FilePath/Faneuil%20Hall%20Boston%20Massachusetts.JPG?width=1024')">
+        <div class="caption">Quincy Market · Faneuil Hall</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="logistics">
+  <div class="wrap">
+    <div class="eyebrow">Logistics · 行前備忘</div>
+    <h2 class="section-title">事前預約 / 行政提醒</h2>
+    <p class="section-lede">這條路線 80% 是「走進去就好」，但有 20% 必須提前預約，否則現場排不到。寫在這裡備忘。</p>
+
+    <div class="log-grid">
+      <div>
+        <h3>必預約</h3>
+        <ul>
+          <li><strong>Independence Hall ranger tour</strong> · recreation.gov · 一週前開放，秋天平日有 timed entry</li>
+          <li><strong>NMAAHC timed entry pass</strong> · si.edu · 30 天前開放，週末搶手</li>
+          <li><strong>Library of Congress docent tour</strong> · 現場排 first-come，建議 9:30 到</li>
+          <li><strong>Acela Express</strong> · Amtrak.com · 60 天內票價飛漲，越早越便宜，Business 比 Coach 多 USD 30 但值</li>
+          <li><strong>Zahav (Philly)</strong> · OpenTable · 60 天前訂位是底線，"Mesibah" 套餐另開預訂線</li>
+          <li><strong>Eastern State Penitentiary Halloween Nights</strong> · 9 月底剛開季，早線上購票</li>
+        </ul>
+      </div>
+      <div>
+        <h3>飯店 / 住宿建議</h3>
+        <ul>
+          <li><strong>Boston</strong>：Back Bay 或 Beacon Hill，地鐵 Red / Green Line 都好接（婚禮場地若在 Cambridge / Newton 再調整）</li>
+          <li><strong>Philadelphia</strong>：Old City 或 Rittenhouse，徒步可達獨立廳跟 Reading Terminal</li>
+          <li><strong>Washington D.C.</strong>：Penn Quarter / Foggy Bottom，Mall 跟 Metro 都近；避開 K Street 商業區</li>
+          <li>三城都有 Marriott Bonvoy 和 Hyatt 高級點數選擇；婚禮日 Boston 可能因 BC / BU 球賽價格飆升</li>
+        </ul>
+
+        <h3 style="margin-top:32px;">交通 / 通勤</h3>
+        <ul>
+          <li><strong>Boston Logan</strong>：Silver Line 直入 South Station 免費（地鐵轉乘區段免錢）</li>
+          <li><strong>城際移動</strong>：全程 Amtrak — Boston→New Haven→Philly→DC，加 NEC pass 不太划算，分段買更好</li>
+          <li><strong>D.C. → IAD</strong>：Silver Line 通車後可地鐵到 Wiehle-Reston East 換接駁，但行李多建議 Uber（USD 60–80）</li>
+          <li>城內：Boston 走 + 地鐵；Philly 走 + Indego 自行車；DC 走 + Metro（買 SmarTrip card）</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="marque">FIELD NOTES · 個人行旅</div>
+  <div>2026 Autumn · Boston Wedding + Northeast Corridor · 給自己看的</div>
+  <div style="margin-top:8px;font-size:11px;letter-spacing:0.16em;">圖片來源：Wikimedia Commons (CC BY-SA / Public Domain) · 行程細節依 Amtrak 時刻表 / 飯店空房 / 餐廳訂位實況微調</div>
+</footer>
+
+</body>
+</html>
