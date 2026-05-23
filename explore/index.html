@@ -232,7 +232,7 @@
 
   /* Region card */
   .region {
-    padding: 36px 28px 48px;
+    padding: 0;
     background: var(--paper);
     border-top: 1px solid var(--rule);
     scroll-margin-top: 80px;
@@ -241,60 +241,175 @@
   .region.dimmed { opacity: 0.38; }
   .region-inner { max-width: 1180px; margin: 0 auto; }
 
-  .region-header {
+  /* Region hero — image banner with title overlay */
+  .region-hero {
+    position: relative;
+    height: 340px;
+    background-size: cover;
+    background-position: center 40%;
+    overflow: hidden;
+    background-color: #0d1320;
+    filter: saturate(0.78) contrast(1.05);
+  }
+  .region-hero::before {
+    /* dark gradient + warm tint + left vignette behind title */
+    content: "";
+    position: absolute; inset: 0;
+    background:
+      linear-gradient(180deg, rgba(13,19,32,0.25) 0%, rgba(13,19,32,0.42) 40%, rgba(13,19,32,0.94) 100%),
+      radial-gradient(ellipse 75% 65% at 20% 78%, rgba(13,19,32,0.85) 0%, rgba(13,19,32,0.35) 55%, transparent 90%);
+  }
+  .region-hero::after {
+    /* film grain on hero */
+    content: "";
+    position: absolute; inset: 0;
+    pointer-events: none;
+    opacity: 0.5;
+    mix-blend-mode: multiply;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch' seed='9'/><feColorMatrix values='0 0 0 0 0.1 0 0 0 0 0.08 0 0 0 0 0.05 0 0 0 0.15 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+  }
+  .region-hero-content {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    padding: 24px 36px 32px;
+    color: #f6f1e7;
+    z-index: 2;
+  }
+  .region-hero-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: "Special Elite", "Cormorant Garamond", serif;
+    font-style: italic;
+    font-size: 12px;
+    letter-spacing: 0.16em;
+    color: #d9b67a;
+  }
+  .region-hero-bottom {
     display: grid;
     grid-template-columns: 1fr auto;
-    gap: 24px;
-    align-items: start;
-    padding-bottom: 28px;
-    margin-bottom: 28px;
-    border-bottom: 1px dashed var(--rule);
+    gap: 32px;
+    align-items: end;
   }
-  .region-title h2 {
-    font-size: clamp(28px, 3.2vw, 40px);
+  .region-hero-title h2 {
+    font-family: "Cormorant Garamond", "Noto Serif TC", serif;
+    font-size: clamp(34px, 4.6vw, 60px);
     margin: 0;
     line-height: 1;
-  }
-  .region-title .name-en {
-    font-family: "Cormorant Garamond", serif;
-    font-style: italic;
-    color: var(--brass-deep);
-    font-size: 17px;
-    margin-top: 4px;
-  }
-  .region-title .loc {
-    font-size: 12px;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--ink-fade);
-    margin-top: 8px;
-  }
-  .region-title .summary {
-    font-family: "Noto Serif TC", serif;
-    color: var(--ink-soft);
-    margin: 16px 0 0;
-    max-width: 640px;
-    font-size: 16px;
-  }
-  .region-stars {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-    text-align: right;
-    font-size: 14px;
-  }
-  .star-row { display: flex; align-items: center; gap: 10px; justify-content: flex-end; }
-  .star-row .axis-tag {
-    font-size: 11px;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--ink-fade);
+    color: #f6f1e7;
+    text-shadow: 0 2px 28px rgba(13,19,32,0.55);
     font-weight: 600;
   }
+  .region-hero-title .name-en {
+    font-family: "Cormorant Garamond", serif;
+    font-style: italic;
+    color: #d9b67a;
+    font-size: clamp(15px, 1.5vw, 19px);
+    margin-top: 6px;
+    text-shadow: 0 1px 10px rgba(13,19,32,0.5);
+  }
+  .region-hero-stars {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    text-align: right;
+    font-size: 13px;
+  }
+  .region-hero-stars .star-row {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: flex-end;
+  }
+  .region-hero-stars .axis-tag {
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(217,182,122,0.9);
+    font-weight: 600;
+  }
+  .region-hero-stars .stars { font-size: 15px; letter-spacing: 0.04em; }
+  .region-hero-stars .star-row.nature .stars { color: #c2d2a8; }
+  .region-hero-stars .star-row.history .stars { color: #e9a597; }
+  .region-hero-stars .star-row.food .stars { color: #e8c688; }
+
+  /* Body below hero */
+  .region-body {
+    padding: 36px 36px 56px;
+  }
+  .region-summary-block {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 32px;
+    padding: 0 0 28px;
+    margin-bottom: 28px;
+    border-bottom: 1px dashed var(--rule);
+    align-items: start;
+  }
+  .region-summary-block .loc {
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--ink-fade);
+    padding-top: 6px;
+    line-height: 1.7;
+  }
+  .region-summary-block .summary {
+    font-family: "Noto Serif TC", serif;
+    color: var(--ink-soft);
+    font-size: 16.5px;
+    margin: 0;
+    line-height: 1.8;
+  }
+
+  /* Photo thumbnail strip */
+  .region-photos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    margin: 0 0 36px;
+  }
+  .photo-thumb {
+    position: relative;
+    aspect-ratio: 16/10;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    background-color: var(--paper-deep);
+    box-shadow: 0 4px 14px rgba(26,31,46,0.12);
+    transition: transform 0.3s cubic-bezier(.22,.61,.36,1), box-shadow 0.3s;
+    margin: 0;
+    cursor: zoom-in;
+  }
+  .photo-thumb::before {
+    content: "";
+    position: absolute; inset: 0;
+    background: linear-gradient(180deg, rgba(13,19,32,0) 50%, rgba(13,19,32,0.7) 100%);
+    transition: opacity 0.25s;
+  }
+  .photo-thumb:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 14px 30px rgba(26,31,46,0.22);
+  }
+  .photo-thumb figcaption {
+    position: absolute;
+    left: 0; right: 0; bottom: 0;
+    color: #f6f1e7;
+    font-family: "Cormorant Garamond", "Noto Serif TC", serif;
+    font-style: italic;
+    font-size: 13.5px;
+    padding: 24px 14px 12px;
+    z-index: 2;
+    letter-spacing: 0.04em;
+  }
+
+  /* Star row legacy class for old usages — kept transparent fallback */
+  .star-row {
+    display: flex; align-items: center; gap: 10px;
+  }
   .star-row .stars { font-size: 15px; letter-spacing: 0.04em; }
-  .star-row.nature .stars { color: var(--moss); }
-  .star-row.history .stars { color: var(--brick); }
-  .star-row.food .stars { color: var(--brass-deep); }
 
   /* Axis groups */
   .axis-group {
@@ -404,10 +519,15 @@
     .filter-meta { display: none; }
     .overview { padding: 36px 18px 16px; }
     .section-divider { padding: 36px 18px 16px; }
-    .region { padding: 24px 18px 32px; }
-    .region-header { grid-template-columns: 1fr; gap: 14px; }
-    .region-stars { text-align: left; }
-    .star-row { justify-content: flex-start; }
+    .region { padding: 0; }
+    .region-hero { height: 240px; }
+    .region-hero-content { padding: 18px 20px 22px; }
+    .region-hero-bottom { grid-template-columns: 1fr; gap: 14px; }
+    .region-hero-stars { text-align: left; }
+    .region-hero-stars .star-row { justify-content: flex-start; }
+    .region-body { padding: 24px 18px 36px; }
+    .region-summary-block { grid-template-columns: 1fr; gap: 10px; padding-bottom: 18px; margin-bottom: 22px; }
+    .region-photos { grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 24px; }
     .axis-group .item-grid { grid-template-columns: 1fr; }
     table.compare th, table.compare td { padding: 10px 12px; font-size: 13px; }
     table.compare td.stars { font-size: 14px; }
@@ -1187,26 +1307,123 @@ function renderAxisGroup(axis, label, icon, items) {
   `;
 }
 
+function commonsUrl(filename, width) {
+  width = width || 1200;
+  return 'https://commons.wikimedia.org/wiki/Special:FilePath/' + encodeURIComponent(filename) + '?width=' + width;
+}
+
+const photos = {
+  'hudson-valley': {
+    hero: commonsUrl('Walkway over the Hudson opening day.JPG', 1600),
+    photos: [
+      { url: commonsUrl('Hyde Park - Home of Franklin D. Roosevelt National Historic Site - 20160530090633.jpg'), caption: 'FDR Home · Hyde Park' },
+      { url: commonsUrl('Hudson River West Point Plain.JPG'), caption: 'West Point overlook' },
+      { url: commonsUrl('View of the Old Dutch Church at Sleepy Hollow, New York.jpg'), caption: 'Old Dutch Church · Sleepy Hollow' }
+    ]
+  },
+  'finger-lakes': {
+    hero: commonsUrl('Watkins Glen State Park 03.jpg', 1600),
+    photos: [
+      { url: commonsUrl('Taughannock Falls, Ulysses, NY - 2024.jpg'), caption: 'Taughannock Falls · 215 ft' },
+      { url: commonsUrl('Cornell University - North Campus area.jpg'), caption: 'Cornell · 山頂校園' },
+      { url: commonsUrl('Letchworth State Park in autumn.JPG'), caption: 'Letchworth · 東岸大峽谷' }
+    ]
+  },
+  'niagara': {
+    hero: commonsUrl('Niagara-Falls-Horseshoe-Falls-view.jpg', 1600),
+    photos: [
+      { url: commonsUrl('Maid of the Mist - pot-o-gold.jpg'), caption: 'Maid of the Mist · 藍雨衣' },
+      { url: commonsUrl('Niagara Falls 001.JPG'), caption: 'American Falls · 美側' },
+      { url: commonsUrl('A view of Old Fort Niagara from Canada across the Niagara River.jpg'), caption: 'Old Fort Niagara · 1726' }
+    ]
+  },
+  'adirondacks': {
+    hero: commonsUrl('Lake Placid - Mirror Lake.jpg', 1600),
+    photos: [
+      { url: commonsUrl('Adirondacks Mount Marcy From Mount Haystack.JPG'), caption: 'Mount Marcy · NY 最高峰' },
+      { url: commonsUrl('Whiteface Mountain, New York from Lake Placid 02643.jpg'), caption: 'Whiteface · 1980 冬奧場' },
+      { url: commonsUrl('Boldt Castle Picture 060.jpg'), caption: 'Boldt Castle · 1000 Islands' }
+    ]
+  },
+  'vermont': {
+    hero: commonsUrl('The Chin of Mount Mansfield, 2007.jpg', 1600),
+    photos: [
+      { url: commonsUrl('Mount Mansfield Summit.jpg'), caption: 'Mount Mansfield · 4395 ft' },
+      { url: commonsUrl('Shelburne Museum Round Barn 2019.jpg'), caption: 'Shelburne Museum · 圓穀倉' },
+      { url: commonsUrl('Stowe, Vermont Town Hall.jpg'), caption: 'Stowe Town Hall' }
+    ]
+  },
+  'boston': {
+    hero: commonsUrl('USA Boston Public Library 2 MA.jpg', 1600),
+    photos: [
+      { url: commonsUrl('Massachusetts State House Boston November 2016.jpg'), caption: 'Mass. State House · 1798' },
+      { url: commonsUrl('Faneuil Hall Boston Massachusetts.JPG'), caption: 'Faneuil Hall · 1742' },
+      { url: commonsUrl('Harvard Yard im Sommer.jpg'), caption: 'Harvard Yard · Cambridge' }
+    ]
+  },
+  'philadelphia': {
+    hero: commonsUrl('Independence_Hall_10.jpg', 1600),
+    photos: [
+      { url: commonsUrl('Liberty_Bell_2008.jpg'), caption: 'The Liberty Bell · 1752' },
+      { url: commonsUrl('Reading_Terminal_Market.jpg'), caption: 'Reading Terminal Market' },
+      { url: commonsUrl('Philadelphia Museum of Art, main building.jpg'), caption: 'Phila. Museum of Art' }
+    ]
+  },
+  'dc': {
+    hero: commonsUrl('Lincoln_Memorial_(Lincoln_contrasty).jpg', 1600),
+    photos: [
+      { url: commonsUrl('United_States_Capitol_-_west_front.jpg'), caption: 'U.S. Capitol · west front' },
+      { url: commonsUrl('Smithsonian_Building_NR.jpg'), caption: 'Smithsonian Castle' },
+      { url: commonsUrl('LOC_Main_Reading_Room_Highsmith.jpg'), caption: 'Library of Congress' }
+    ]
+  }
+};
+// Merge photos into data
+data.forEach(r => {
+  const p = photos[r.id];
+  if (p) { r.hero = p.hero; r.photos = p.photos; }
+});
+
 function renderRegion(r) {
+  const phaseTag = r.section === 'city' ? '★ City · 主場' : '★ Region · 候選';
+  const distTag = r.loc.split('·')[0].trim();
   return `
     <section class="region" id="${r.id}" data-region="${r.id}">
       <div class="region-inner">
-        <header class="region-header">
-          <div class="region-title">
-            <h2>${r.name}</h2>
-            <div class="name-en">${r.nameEn}</div>
+        <header class="region-hero" style="background-image:url('${r.hero || ''}')">
+          <div class="region-hero-content">
+            <div class="region-hero-top">
+              <span>${phaseTag}</span>
+              <span>${distTag}</span>
+            </div>
+            <div></div>
+            <div class="region-hero-bottom">
+              <div class="region-hero-title">
+                <h2>${r.name}</h2>
+                <div class="name-en">${r.nameEn}</div>
+              </div>
+              <div class="region-hero-stars">
+                <div class="star-row nature"><span class="axis-tag">🌲 自然</span><span class="stars">${starText(r.stars.nature)}</span></div>
+                <div class="star-row history"><span class="axis-tag">📜 歷史</span><span class="stars">${starText(r.stars.history)}</span></div>
+                <div class="star-row food"><span class="axis-tag">🍴 美食</span><span class="stars">${starText(r.stars.food)}</span></div>
+              </div>
+            </div>
+          </div>
+        </header>
+        <div class="region-body">
+          <div class="region-summary-block">
             <div class="loc">${r.loc}</div>
             <p class="summary">${r.summary}</p>
           </div>
-          <div class="region-stars">
-            <div class="star-row nature"><span class="axis-tag">🌲 自然</span><span class="stars">${starText(r.stars.nature)}</span></div>
-            <div class="star-row history"><span class="axis-tag">📜 歷史</span><span class="stars">${starText(r.stars.history)}</span></div>
-            <div class="star-row food"><span class="axis-tag">🍴 美食</span><span class="stars">${starText(r.stars.food)}</span></div>
-          </div>
-        </header>
-        ${renderAxisGroup('nature', '自然', '🌲', r.items.nature)}
-        ${renderAxisGroup('history', '歷史', '📜', r.items.history)}
-        ${renderAxisGroup('food', '美食', '🍴', r.items.food)}
+          ${r.photos && r.photos.length ? `<div class="region-photos">${r.photos.map(p => `
+            <figure class="photo-thumb" style="background-image:url('${p.url}')">
+              <figcaption>${p.caption}</figcaption>
+            </figure>
+          `).join('')}</div>` : ''}
+          ${renderAxisGroup('nature', '自然', '🌲', r.items.nature)}
+          ${renderAxisGroup('history', '歷史', '📜', r.items.history)}
+          ${renderAxisGroup('food', '美食', '🍴', r.items.food)}
+        </div>
       </div>
     </section>
   `;
