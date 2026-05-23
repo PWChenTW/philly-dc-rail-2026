@@ -1,0 +1,876 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>美東行旅探索 · Field Notes Explorer｜紐約以北 + 三城選項</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Noto+Sans+TC:wght@300;400;500;700&family=Noto+Serif+TC:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1f2e;
+    --ink-soft: #3a4356;
+    --ink-fade: #6a7488;
+    --paper: #f6f1e7;
+    --paper-deep: #ece4d2;
+    --paper-card: #fdfaf2;
+    --brass: #b8893d;
+    --brass-deep: #8a6326;
+    --brick: #8c3c2c;
+    --moss: #4a5d3a;
+    --rule: rgba(26, 31, 46, 0.16);
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; scroll-behavior: smooth; }
+  body {
+    font-family: "Noto Sans TC", "Helvetica Neue", system-ui, sans-serif;
+    color: var(--ink);
+    background: var(--paper);
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3, h4, .serif {
+    font-family: "Cormorant Garamond", "Noto Serif TC", "Songti TC", serif;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+  }
+
+  /* Top bar */
+  .topbar {
+    border-bottom: 1px solid var(--rule);
+    background: var(--paper);
+    padding: 12px 28px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
+  .topbar .brand {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 20px;
+    letter-spacing: 0.16em;
+  }
+  .topbar nav a {
+    color: var(--ink-soft);
+    text-decoration: none;
+    margin-left: 24px;
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    border-bottom: 1px solid transparent;
+  }
+  .topbar nav a:hover { color: var(--brass-deep); border-bottom-color: var(--brass-deep); }
+  .topbar nav a.current { color: var(--brass-deep); border-bottom-color: var(--brass-deep); }
+
+  /* Hero */
+  .hero {
+    padding: 64px 32px 48px;
+    background: linear-gradient(180deg, var(--paper-deep) 0%, var(--paper) 100%);
+    border-bottom: 1px solid var(--rule);
+  }
+  .hero-inner { max-width: 1180px; margin: 0 auto; }
+  .hero .kicker {
+    font-size: 11px;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--brass-deep);
+    margin-bottom: 16px;
+  }
+  .hero h1 {
+    font-size: clamp(34px, 5.5vw, 64px);
+    line-height: 1.05;
+    margin: 0 0 16px;
+  }
+  .hero p.lede {
+    font-family: "Noto Serif TC", serif;
+    font-size: clamp(15px, 1.5vw, 18px);
+    color: var(--ink-soft);
+    max-width: 720px;
+    margin: 0;
+  }
+
+  /* Sticky filter bar */
+  .filter-rail {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: rgba(246,241,231,0.95);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--rule);
+    padding: 14px 28px;
+  }
+  .filter-rail-inner {
+    max-width: 1180px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    flex-wrap: wrap;
+  }
+  .filter-label {
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--ink-fade);
+  }
+  .filter-pills {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .pill {
+    padding: 8px 18px;
+    border: 1px solid var(--rule);
+    background: transparent;
+    color: var(--ink-soft);
+    font-family: inherit;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 999px;
+    transition: all 0.15s;
+    letter-spacing: 0.05em;
+  }
+  .pill:hover { border-color: var(--ink-soft); color: var(--ink); }
+  .pill.active {
+    background: var(--ink);
+    color: var(--paper);
+    border-color: var(--ink);
+  }
+  .pill.nature.active { background: var(--moss); border-color: var(--moss); }
+  .pill.history.active { background: var(--brick); border-color: var(--brick); }
+  .pill.food.active { background: var(--brass); border-color: var(--brass); }
+  .filter-meta {
+    margin-left: auto;
+    font-size: 12px;
+    color: var(--ink-fade);
+    letter-spacing: 0.1em;
+  }
+  #count { color: var(--ink); font-weight: 600; font-size: 14px; }
+
+  /* Overview comparison table */
+  .overview {
+    padding: 56px 28px 24px;
+    background: var(--paper);
+  }
+  .overview-inner { max-width: 1180px; margin: 0 auto; }
+  .overview h2 {
+    font-size: 28px;
+    margin: 0 0 24px;
+  }
+  .overview .eyebrow {
+    font-size: 11px;
+    letter-spacing: 0.36em;
+    text-transform: uppercase;
+    color: var(--brass-deep);
+    margin-bottom: 10px;
+  }
+  table.compare {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--paper-card);
+    border: 1px solid var(--rule);
+  }
+  table.compare th, table.compare td {
+    padding: 14px 18px;
+    text-align: left;
+    border-bottom: 1px solid var(--rule);
+    font-size: 14px;
+  }
+  table.compare th {
+    background: var(--paper-deep);
+    font-family: "Cormorant Garamond", serif;
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--ink);
+  }
+  table.compare tr { cursor: pointer; transition: background 0.15s; }
+  table.compare tr:hover td { background: rgba(184,137,61,0.08); }
+  table.compare td.stars { font-size: 16px; letter-spacing: 0.05em; }
+  table.compare td.stars.nature { color: var(--moss); }
+  table.compare td.stars.history { color: var(--brick); }
+  table.compare td.stars.food { color: var(--brass-deep); }
+  table.compare .region-link {
+    font-weight: 600;
+    color: var(--ink);
+  }
+  table.compare .region-loc {
+    color: var(--ink-fade);
+    font-size: 12px;
+    margin-top: 2px;
+  }
+  body[data-filter="nature"] table.compare td.stars:not(.nature) { opacity: 0.22; }
+  body[data-filter="history"] table.compare td.stars:not(.history) { opacity: 0.22; }
+  body[data-filter="food"] table.compare td.stars:not(.food) { opacity: 0.22; }
+
+  /* Section dividers */
+  .section-divider {
+    padding: 56px 28px 32px;
+    background: var(--paper);
+  }
+  .section-divider-inner { max-width: 1180px; margin: 0 auto; }
+  .section-divider .eyebrow {
+    font-size: 11px;
+    letter-spacing: 0.36em;
+    text-transform: uppercase;
+    color: var(--brass-deep);
+    margin-bottom: 10px;
+  }
+  .section-divider h2 {
+    font-size: clamp(28px, 3.4vw, 40px);
+    margin: 0 0 8px;
+  }
+  .section-divider .desc {
+    color: var(--ink-fade);
+    font-size: 14px;
+    margin: 0;
+  }
+
+  /* Region card */
+  .region {
+    padding: 36px 28px 48px;
+    background: var(--paper);
+    border-top: 1px solid var(--rule);
+    scroll-margin-top: 80px;
+    transition: opacity 0.25s;
+  }
+  .region.dimmed { opacity: 0.38; }
+  .region-inner { max-width: 1180px; margin: 0 auto; }
+
+  .region-header {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 24px;
+    align-items: start;
+    padding-bottom: 28px;
+    margin-bottom: 28px;
+    border-bottom: 1px dashed var(--rule);
+  }
+  .region-title h2 {
+    font-size: clamp(28px, 3.2vw, 40px);
+    margin: 0;
+    line-height: 1;
+  }
+  .region-title .name-en {
+    font-family: "Cormorant Garamond", serif;
+    font-style: italic;
+    color: var(--brass-deep);
+    font-size: 17px;
+    margin-top: 4px;
+  }
+  .region-title .loc {
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--ink-fade);
+    margin-top: 8px;
+  }
+  .region-title .summary {
+    font-family: "Noto Serif TC", serif;
+    color: var(--ink-soft);
+    margin: 16px 0 0;
+    max-width: 640px;
+    font-size: 16px;
+  }
+  .region-stars {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    text-align: right;
+    font-size: 14px;
+  }
+  .star-row { display: flex; align-items: center; gap: 10px; justify-content: flex-end; }
+  .star-row .axis-tag {
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink-fade);
+    font-weight: 600;
+  }
+  .star-row .stars { font-size: 15px; letter-spacing: 0.04em; }
+  .star-row.nature .stars { color: var(--moss); }
+  .star-row.history .stars { color: var(--brick); }
+  .star-row.food .stars { color: var(--brass-deep); }
+
+  /* Axis groups */
+  .axis-group {
+    margin-bottom: 32px;
+  }
+  .axis-group:last-child { margin-bottom: 0; }
+  .axis-group h3 {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 20px;
+    margin: 0 0 16px;
+    padding: 4px 14px;
+    border-radius: 4px;
+    color: white;
+  }
+  .axis-group.nature h3 { background: var(--moss); }
+  .axis-group.history h3 { background: var(--brick); }
+  .axis-group.food h3 { background: var(--brass); }
+  .axis-group .item-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+  .item {
+    background: var(--paper-card);
+    padding: 18px 20px;
+    border-left: 3px solid var(--rule);
+    border-radius: 2px;
+    transition: transform 0.15s, box-shadow 0.15s;
+  }
+  .item:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 18px rgba(26,31,46,0.08);
+  }
+  .axis-group.nature .item { border-left-color: var(--moss); }
+  .axis-group.history .item { border-left-color: var(--brick); }
+  .axis-group.food .item { border-left-color: var(--brass); }
+  .item .item-name {
+    font-weight: 600;
+    color: var(--ink);
+    font-size: 16px;
+    margin-bottom: 4px;
+  }
+  .item .item-name .item-en {
+    font-family: "Cormorant Garamond", serif;
+    font-style: italic;
+    color: var(--brass-deep);
+    font-weight: 400;
+    font-size: 14px;
+    margin-left: 6px;
+  }
+  .item .item-detail {
+    color: var(--ink-soft);
+    font-size: 14px;
+    line-height: 1.7;
+  }
+  .item .item-meta {
+    margin-top: 8px;
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    color: var(--ink-fade);
+    text-transform: uppercase;
+  }
+
+  /* Filter behavior */
+  body[data-filter="nature"] .axis-group.history,
+  body[data-filter="nature"] .axis-group.food,
+  body[data-filter="history"] .axis-group.nature,
+  body[data-filter="history"] .axis-group.food,
+  body[data-filter="food"] .axis-group.nature,
+  body[data-filter="food"] .axis-group.history {
+    display: none;
+  }
+  body[data-filter="nature"] .star-row:not(.nature) { opacity: 0.25; }
+  body[data-filter="history"] .star-row:not(.history) { opacity: 0.25; }
+  body[data-filter="food"] .star-row:not(.food) { opacity: 0.25; }
+
+  /* Empty state when region has no items in filtered axis */
+  .region[data-empty="true"] { opacity: 0.32; }
+
+  /* Footer */
+  footer {
+    background: var(--paper-deep);
+    padding: 40px 28px;
+    text-align: center;
+    border-top: 1px solid var(--rule);
+    color: var(--ink-soft);
+    font-size: 13px;
+    letter-spacing: 0.08em;
+  }
+  footer .marque {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 18px;
+    letter-spacing: 0.18em;
+    color: var(--ink);
+    margin-bottom: 8px;
+  }
+  footer a { color: var(--brass-deep); }
+
+  /* Responsive */
+  @media (max-width: 900px) {
+    .topbar { padding: 10px 18px; flex-wrap: wrap; gap: 6px; }
+    .topbar nav a { margin-left: 0; margin-right: 16px; }
+    .hero { padding: 40px 18px 32px; }
+    .filter-rail { padding: 12px 18px; }
+    .filter-meta { display: none; }
+    .overview { padding: 36px 18px 16px; }
+    .section-divider { padding: 36px 18px 16px; }
+    .region { padding: 24px 18px 32px; }
+    .region-header { grid-template-columns: 1fr; gap: 14px; }
+    .region-stars { text-align: left; }
+    .star-row { justify-content: flex-start; }
+    .axis-group .item-grid { grid-template-columns: 1fr; }
+    table.compare th, table.compare td { padding: 10px 12px; font-size: 13px; }
+    table.compare td.stars { font-size: 14px; }
+  }
+</style>
+</head>
+<body data-filter="all">
+
+<div class="topbar">
+  <div class="brand">FIELD NOTES · 個人行旅</div>
+  <nav>
+    <a href="../">← 婚禮+南線行程</a>
+    <a href="./" class="current">探索 / Explore</a>
+  </nav>
+</div>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="kicker">Explore · Northeast US Options · 2026 Autumn</div>
+    <h1>美東行旅探索筆記</h1>
+    <p class="lede">在 Boston 婚禮（9/27）之外，紐約以北 5 個區域 + 三城（Boston / Philly / DC）各自能玩什麼。按你關心的軸線（自然 / 歷史 / 美食）篩選，再決定要組成怎樣的路線。</p>
+  </div>
+</header>
+
+<div class="filter-rail">
+  <div class="filter-rail-inner">
+    <span class="filter-label">篩選軸線</span>
+    <div class="filter-pills">
+      <button class="pill active" data-axis="all">全部</button>
+      <button class="pill nature" data-axis="nature">🌲 自然</button>
+      <button class="pill history" data-axis="history">📜 歷史</button>
+      <button class="pill food" data-axis="food">🍴 美食</button>
+    </div>
+    <div class="filter-meta">顯示中 · <span id="count">8</span> 個地點 · 點表格列可跳至</div>
+  </div>
+</div>
+
+<section class="overview">
+  <div class="overview-inner">
+    <div class="eyebrow">Overview</div>
+    <h2>三軸對照表</h2>
+    <table class="compare">
+      <thead>
+        <tr>
+          <th>地點</th>
+          <th style="text-align:center;">🌲 自然</th>
+          <th style="text-align:center;">📜 歷史</th>
+          <th style="text-align:center;">🍴 美食</th>
+          <th style="text-align:right;">距 NYC</th>
+        </tr>
+      </thead>
+      <tbody id="compare-body"></tbody>
+    </table>
+  </div>
+</section>
+
+<div class="section-divider">
+  <div class="section-divider-inner">
+    <div class="eyebrow">Part I</div>
+    <h2>紐約以北 — 五個候選區</h2>
+    <p class="desc">飛 NYC 前後可以延伸的選項。挑 1–2 個就會延長到 12–14 天。</p>
+  </div>
+</div>
+
+<main id="northeast-content"></main>
+
+<div class="section-divider">
+  <div class="section-divider-inner">
+    <div class="eyebrow">Part II</div>
+    <h2>美東三城 — 婚禮 + 南線</h2>
+    <p class="desc">已確定的三站。深入看各城在三軸上能挖到什麽。</p>
+  </div>
+</div>
+
+<main id="cities-content"></main>
+
+<footer>
+  <div class="marque">FIELD NOTES · 個人行旅</div>
+  <div>2026 Autumn · Boston Wedding + Northeast Explorer · 給自己看的</div>
+  <div style="margin-top:8px;font-size:11px;letter-spacing:0.16em;">↑ 點上方「婚禮+南線行程」回去看已敲定的 10 天版</div>
+</footer>
+
+<script>
+const data = [
+  // ===== NORTHEAST REGIONS =====
+  {
+    id: 'hudson-valley',
+    name: 'Hudson Valley',
+    nameEn: 'Hudson Valley',
+    loc: 'NYC 北 1.5–3h · 火車 / 開車',
+    summary: '離 NYC 最近、最容易加進行程。歷史最強（FDR + 西點），美食有 CIA 廚藝學校加分。秋色要到 10 月才正式開始。',
+    stars: { nature: 3, history: 4, food: 3 },
+    section: 'northeast',
+    items: {
+      history: [
+        { name: 'West Point 西點軍校', en: 'United States Military Academy', detail: '1802 創立，全美最老軍校。免費 NPS guided tour（必須帶 US ID 安檢）。走進 cadets 校區、Trophy Point 看南北戰爭繳獲大砲、Battle Monument、Old Cadet Chapel。哈德遜河大轉彎處的山頂位置壯觀。週六上午學期間有 cadets 列隊儀式。', meta: '半天 · 需護照' },
+        { name: 'FDR Hyde Park', en: 'Franklin D. Roosevelt Home', detail: '羅斯福終身故居「Springwood」+ 全美第一座總統圖書館（1939）+ Eleanor 自己獨立的「Val-Kill」屋（她對獨立空間的堅持是政治史的一個註腳）+ Top Cottage。NPS 站點。', meta: '4 小時 · USD 12' },
+        { name: 'Sleepy Hollow / Tarrytown', en: 'Headless Horseman 原鄉', detail: 'NYC 北 30 min Metro-North 可達。Washington Irving《無頭騎士》原鄉。Old Dutch Church 墓園、Kykuit（洛克菲勒六代家族莊園，可預約導覽看哈德遜河景花園）、Lyndhurst（哥德復興豪宅）。', meta: '半天到一天' },
+        { name: 'Cold Spring', en: 'Hudson River town', detail: 'Metro-North 火車 90 min 可達的小鎮。鵝卵石老街 + Boscobel（1808 莊園 + 哈德遜河觀景）+ Constitution Marsh 沼澤步道。日歸最容易。', meta: '日歸' }
+      ],
+      nature: [
+        { name: 'Walkway over the Hudson', en: 'Poughkeepsie Pedestrian Bridge', detail: 'Poughkeepsie 廢棄鐵橋改裝，世界最長步行高架橋 1.28 mile，212 ft 高，看哈德遜河全景。免費。', meta: '2 小時 · 免費' },
+        { name: 'Bear Mountain State Park', en: '', detail: 'Perkins Memorial Tower 360° 視野、湖區步道、Bear Mountain Bridge view、trailside zoo。NYC 北 1h。', meta: '半天' },
+        { name: 'Minnewaska / Mohonk Preserve', en: 'Shawangunk Ridge', detail: 'Catskills 山腳，冰河湖 + 砂岩懸崖。Mohonk Mountain House 是 1869 年的維多利亞旅館，可單純去吃午餐。', meta: '半天到一天' },
+        { name: 'Storm King Mountain（純山）', en: '', detail: '不是雕塑園 — 是同名山。5 mile loop hike，Hudson 高地最佳視角之一。3–4 小時。', meta: '半天' }
+      ],
+      food: [
+        { name: 'Culinary Institute of America', en: 'CIA Hyde Park', detail: '美國頂尖廚藝學校，校園裡開 4 家風格不同學生餐廳（American Bounty 美式 / Caterina de\' Medici 義式 / Bocuse 法式 / Ristorante Caterina）。主廚都是頂尖教授帶學生。中午 prix fixe USD 30–45 性價比驚人。', meta: '建議訂位' },
+        { name: 'Hudson 鎮', en: '', detail: '更北 2h。Warren Street 一條街排滿 100+ 古董店 + 獨立餐廳，「布魯克林上州版」。', meta: '半天' },
+        { name: 'Beacon 鎮', en: '', detail: 'Main Street 餐廳密度高。Homespun Foods、Brother\'s Trattoria。NYC 火車直達。', meta: '半天' }
+      ]
+    }
+  },
+  {
+    id: 'finger-lakes',
+    name: 'Finger Lakes',
+    nameEn: 'Finger Lakes',
+    loc: 'NYC 西北 5h · 開車為主',
+    summary: '⭐ 三軸均衡，特別推。11 個冰河切出的窄長湖、瀑布密度全美第一、Cornell 校園、玻璃博物館、婦女史發源地全都在這一塊。',
+    stars: { nature: 5, history: 3, food: 3 },
+    section: 'northeast',
+    items: {
+      nature: [
+        { name: 'Watkins Glen State Park', en: '', detail: '1.5 mile 峽谷步道穿越 19 個瀑布。最神是 Cavern Cascade — 步道直接從一道水簾後面穿過。1930 年代 CCC 蓋的石橋石階。USD 10 停車。開放 5 月中至 11 月初。', meta: '3 小時 · USD 10' },
+        { name: 'Taughannock Falls State Park', en: '', detail: 'Ithaca 北。單瀑高 215 ft，比 Niagara 高 33%。步道 1.5 mile 平緩走到瀑布腳下。', meta: '2 小時 · 免費' },
+        { name: 'Buttermilk Falls + Robert H. Treman', en: '', detail: 'Ithaca 周邊兩座連串小瀑 + 天然游泳池 swimming hole。', meta: '半天' },
+        { name: 'Letchworth State Park', en: '東岸大峽谷', detail: 'Finger Lakes 西 1h。Genesee 河切出 600 ft 深、17 mile 長峽谷，三座主瀑。可坐熱氣球從上空看。14,000 英畝。', meta: '全天' },
+        { name: 'Cornell Botanic Gardens', en: '', detail: 'Ithaca 校園植物園 + 自然保育區，4300 英畝。校園本身就在峽谷上方，到處都是 gorges。', meta: '2–3 小時' }
+      ],
+      history: [
+        { name: 'Seneca Falls', en: 'Women\'s Rights NHP', detail: '1848 年第一屆美國婦女權利大會在這裡開（Elizabeth Cady Stanton 起草 Declaration of Sentiments）。NPS 訪客中心 + Stanton 故居。', meta: '半天 · 免費' },
+        { name: 'Corning Museum of Glass', en: '', detail: 'Seneca Lake 南端。50,000+ 件玻璃文物跨 3500 年，包括古羅馬玻璃、Tiffany 燈、現代雕塑。現場吹製演示（30 min 一場），DIY 工作坊。被旅遊雜誌列為「全美最值得去的博物館」之一。', meta: '3 小時 · USD 22' },
+        { name: 'Sonnenberg Gardens', en: '', detail: 'Canandaigua。1887 維多利亞莊園 + 9 座主題花園（日式、義式、岩石、玫瑰）。', meta: '半天' }
+      ],
+      food: [
+        { name: 'Moosewood Restaurant', en: '', detail: 'Ithaca，1973 開到現在 50 年的素食 OG，影響全美 vegetarian 文化的食譜書系列出版地。lentil soup + tempeh reuben 是經典。', meta: '午晚餐' },
+        { name: 'Ithaca Farmers Market', en: '', detail: '週六/日，Cayuga Lake 旁。當地手作 food + craft，秋季蘋果跟南瓜爆棚。', meta: '週末半天' },
+        { name: 'Doug\'s Fish Fry', en: '', detail: 'Skaneateles。傳奇小鎮炸魚店，每年湖區排隊。', meta: '午餐' },
+        { name: 'Glenwood Pines', en: '', detail: 'Ithaca。經典美式漢堡 + Cornell 學生聖地，看 Cayuga Lake 全景。', meta: '午晚餐' }
+      ]
+    }
+  },
+  {
+    id: 'niagara',
+    name: 'Niagara Falls',
+    nameEn: 'Niagara Falls',
+    loc: 'NY 西邊角 · 加拿大邊境 · 飛 BUF 最近',
+    summary: 'iconic 必看，1.5–2 天搞定。自然 iconic、歷史也有實質內容（1812 戰爭 + 地下鐵路），美食偏弱。建議美加兩側都走。',
+    stars: { nature: 5, history: 3, food: 1 },
+    section: 'northeast',
+    items: {
+      nature: [
+        { name: 'Maid of the Mist 船 · 美側', en: '', detail: '藍色雨衣，開到 Horseshoe Falls 正下方，20 min。', meta: 'USD 28' },
+        { name: 'Cave of the Winds · 美側', en: '', detail: '黃色雨衣 + 紙拖鞋，木棧道走到 Bridal Veil Falls 腳下「Hurricane Deck」。水以時速 70 mph 直接打到你身上，會濕透。', meta: 'USD 21' },
+        { name: 'Goat Island · 美側', en: '', detail: '分隔美洲瀑與馬蹄瀑的小島，散步路徑、Nikola Tesla 雕像（1895 年 Niagara 是全球第一座大型水力發電站）。', meta: '1–2 小時' },
+        { name: 'Niagara Falls State Park · 美側', en: '1885, Olmsted', detail: '全美最老州立公園，Olmsted 設計。瀑布上游森林公園，免費入場。', meta: '半天' },
+        { name: 'Journey Behind the Falls · 加側', en: '', detail: '電梯下到馬蹄瀑後方隧道，從瀑布背後看水。', meta: 'CAD 24' },
+        { name: 'Whirlpool Aero Car · 加側', en: '', detail: '1916 年纜車橫越漩渦 1 km 鋼索，至今原樣運作。', meta: 'CAD 18' },
+        { name: 'Skylon Tower · 加側', en: '', detail: '520 ft 觀景，旋轉餐廳。', meta: 'CAD 19' }
+      ],
+      history: [
+        { name: 'Niagara Falls Underground Railroad Heritage Center', en: '美側', detail: '2018 新館。Niagara 是 19 世紀黑奴逃往加拿大（英帝國 1833 廢奴）的關鍵渡口，這個館講地下鐵路歷史。被評為東北最重要的新博物館之一。', meta: '2 小時 · USD 10' },
+        { name: 'Old Fort Niagara · 美側', en: '1726', detail: '法國原建、英國接手、1812 戰爭中關鍵碉堡，現場有換班儀式。河口位置可同時看 Niagara River + Lake Ontario。', meta: '3 小時 · USD 15' },
+        { name: 'Fort George · 加側', en: '', detail: '1812 戰爭加拿大端對應堡壘，與 Old Fort Niagara 隔河對峙。', meta: '2 小時 · CAD 12' }
+      ],
+      food: [
+        { name: 'Niagara-on-the-Lake', en: '加側 20 min', detail: '維多利亞風老旅館 + Shaw Festival 戲劇節 + 餐廳水準較高的小鎮。比 Niagara Falls 鎮值得待。', meta: '半天' },
+        { name: '兩側鎮上注意', en: '', detail: '老實說兩側鎮上的餐廳都偏遊客陷阱。美側 Niagara Falls NY 城本身蕭條，吃在飯店裡比較安全。', meta: '提醒' }
+      ]
+    }
+  },
+  {
+    id: 'adirondacks',
+    name: 'Adirondacks + 1000 Islands',
+    nameEn: 'Adirondacks &amp; Thousand Islands',
+    loc: 'NYC 北 5–6h · 開車',
+    summary: '純自然導向。9 月底 Adirondacks 高海拔楓紅 prime time，1000 Islands 有鍍金時代愛情遺跡 Boldt Castle。適合真心愛山愛野的人。',
+    stars: { nature: 5, history: 2, food: 1 },
+    section: 'northeast',
+    items: {
+      nature: [
+        { name: 'Adirondacks Park 規模', en: '6 百萬英畝', detail: '比 Yellowstone + Yosemite + Grand Canyon + Glacier 加起來還大。46 座 High Peaks 超過 4000 ft，是 NY 州最野的地方。', meta: '參考' },
+        { name: 'Lake Placid', en: '冬奧之城', detail: '1932 + 1980 冬奧主辦地。Olympic Center（Miracle on Ice 1980 美國贏蘇聯冰球的場館）、跳台滑雪塔（電梯到頂看全景）、Bobsled 滑道（夏季可坐輪式 bobsled）。Mirror Lake 環湖步道在鎮上。', meta: '2 天' },
+        { name: 'Whiteface Mountain', en: '', detail: '5 mile Veterans Memorial Highway 開車到山頂（4867 ft），或 1980 奧運下坡滑雪場。', meta: '半天' },
+        { name: 'Mount Marcy + Algonquin Peak', en: 'High Peaks', detail: 'Marcy 5344 ft (NY 最高) / Algonquin 5114 ft (第二高)。High Peaks 經典攀登，全日 hike，需要登山經驗。', meta: '全日 hike' },
+        { name: 'Cascade Mountain', en: '初級攻頂', detail: '4 mile 來回，2 小時，46 座 High Peaks 裡最容易的，新手選擇。', meta: '半天' }
+      ],
+      history: [
+        { name: 'Great Camps', en: '鍍金時代鄉村奢華別莊', detail: '1880–1920 年代的木石建築莊園。Sagamore Lodge（Vanderbilt 家族，可預約 1.5h 導覽）、Camp Santanoni（Pruyn 家族，徒步 5 mile 進入，無車道，原始保存）。', meta: '半天' },
+        { name: 'John Brown Farm', en: 'North Elba', detail: '廢奴主義者 John Brown 的故居跟墓，1859 年帶兵突襲 Harpers Ferry 的前一年才搬去。內戰前哨。', meta: '2 小時 · 免費' },
+        { name: 'Saranac Lake TB 療法', en: '', detail: '1880 年代「Adirondack 結核療法」中心（Edward Trudeau）。鎮上有 TB 博物館。', meta: '1–2 小時' },
+        { name: 'Boldt Castle · 1000 Islands', en: 'Heart Island', detail: 'George Boldt（紐約 Waldorf-Astoria 飯店老闆）1900 年為妻子 Louise 蓋的萊茵河式城堡。Louise 1904 過世，他停工搬走再也沒回來。1977 年才被修復開放。鍍金時代最有名的「未完成」愛情遺跡。船到島上。', meta: '半天 · USD 12.5' },
+        { name: 'Singer Castle · 1000 Islands', en: 'Dark Island', detail: '1905 年勝家縫紉機 VP 蓋的小城堡，有秘密通道跟地牢。比 Boldt 小但更怪。', meta: '3 小時' },
+        { name: 'Antique Boat Museum', en: 'Clayton', detail: '200+ 木製古董船，全美最大淡水海洋博物館。', meta: '2 小時' }
+      ],
+      food: [
+        { name: '相對弱', en: '', detail: '鄉村美式為主。Lake Placid 鎮上幾家 lodge 餐廳尚可（Generations Tap and Grill、Lake Placid Pub）。', meta: '提醒' }
+      ]
+    }
+  },
+  {
+    id: 'vermont',
+    name: 'Vermont',
+    nameEn: 'Vermont',
+    loc: 'NYC 東北 · 往 Boston 順路',
+    summary: '自然 + 美食兼具。9 月底是東岸楓紅最強的州（高海拔山頂），起司 + 楓糖 + 冰淇淋 + 麵粉 trail 滿州都是。歷史中等但 Shelburne Museum 獨特。',
+    stars: { nature: 4, history: 3, food: 3 },
+    section: 'northeast',
+    items: {
+      nature: [
+        { name: 'Stowe + Mt. Mansfield', en: 'Vermont 最高峰 4395 ft', detail: '纜車 + Toll Road + 健行步道。9 月底 Mansfield 頂部已紅。山下 Stowe 鎮有完整 ski resort + 小酒館。', meta: '1–2 天' },
+        { name: 'Green Mountain National Forest', en: '', detail: '縱貫全州的山脊。Long Trail 是美國最老長距離步道（1910，啟發後來的 Appalachian Trail），272 mile 從麻州一路走到加拿大邊境。', meta: '依段選擇' },
+        { name: 'Quechee Gorge', en: 'Vermont 大峽谷', detail: '165 ft 深，步道 1 mile。路邊就能停車看。', meta: '1 小時' },
+        { name: 'Smugglers\' Notch', en: '', detail: '山口隘道，巨岩夾道。9 月底氣溫驟降後就會封閉。', meta: '半天' },
+        { name: 'Lake Champlain', en: '', detail: 'Burlington 城旁，第六大美國淡水湖。渡輪可橫渡到紐約 / Adirondacks 端。', meta: '半天' }
+      ],
+      history: [
+        { name: 'Shelburne Museum', en: '', detail: '39 棟從全 Vermont 移建來的歷史建築（穀倉、燈塔、教堂、火車站、覆蓋橋）+ 1906 蒸汽船 Ticonderoga 整艘搬到陸地上。45 英畝、3–4 小時。獨一無二。', meta: '半天 · USD 28' },
+        { name: 'Bennington Battle Monument', en: '', detail: '306 ft 高（1891）。美國革命關鍵戰役紀念碑，可上頂看三州交界（NY/MA/VT）。Robert Frost 墓也在 Bennington 老教堂墓園。', meta: '2 小時' },
+        { name: 'Calvin Coolidge State Historic Site', en: 'Plymouth Notch', detail: '唯一一位由父親（公證人）在農舍主持就職的總統，凌晨 2 點摸黑宣誓的房間原樣保留。整個小村落是時間膠囊。', meta: '2 小時' },
+        { name: 'Shelburne Farms', en: '', detail: '1880 年代農業改革家族莊園，現為非營利環教中心 + 開放農場。可走可吃可住（lodge）。', meta: '半天' }
+      ],
+      food: [
+        { name: 'Vermont Cheese Trail', en: '', detail: '40+ 手作起司農場，自駕 self-guided map，各家風格從 cheddar 到 raw milk 都有。Jasper Hill 是世界冠軍起司廠。', meta: '2–3 天' },
+        { name: 'Cabot Creamery', en: '', detail: '合作社模式起司廠，免費 factory tour + 試吃。', meta: '1 小時' },
+        { name: '楓糖農場', en: 'Sugar shacks', detail: 'Morse Farm（Montpelier 旁）、Sugarbush Farm。雖然採收季是 3 月，但農場全年開放展示煮糖 + sample。', meta: '1 小時' },
+        { name: 'Ben & Jerry\'s Factory Tour', en: 'Waterbury', detail: '30 min 導覽 + 試吃，USD 5。Flavor Graveyard 在外面（退役口味的墓園，有墓碑）。', meta: '1 小時 · USD 5' },
+        { name: 'King Arthur Baking Center', en: 'Norwich', detail: '美國最老麵粉商，現場 bakery + 教室。週末有 baking class。', meta: '2 小時' }
+      ]
+    }
+  },
+  // ===== CITIES =====
+  {
+    id: 'boston',
+    name: '波士頓',
+    nameEn: 'Boston · Wedding 主場',
+    loc: '婚禮 9/27 主場 · Logan Airport',
+    summary: '殖民史 + 革命史核心。Freedom Trail 紅磚線 2.5 mile 串 16 個革命遺址。海鮮 + 義式（North End）+ Cambridge 校園 + JFK 圖書館，吃跟走都很好。',
+    stars: { nature: 2, history: 5, food: 4 },
+    section: 'city',
+    items: {
+      history: [
+        { name: 'Freedom Trail 自由之路', en: '', detail: '2.5 英里紅磚線串 16 個革命遺址：Boston Common → 麻州州議會 → Park Street Church → 老南會議廳 → Faneuil Hall → Paul Revere House → Old North Church → Bunker Hill。半天散步剛好。', meta: '半天 · 免費' },
+        { name: 'Massachusetts State House', en: '', detail: 'Charles Bulfinch 1798 設計，金葉貼面圓頂 1874 年改鍍金。州議事廳免費 self-guided tour，平日早上人少。', meta: '1 小時 · 免費' },
+        { name: 'Old North Church', en: '', detail: '1775 年 Paul Revere "one if by land, two if by sea" 燈塔教堂。', meta: '1 小時' },
+        { name: 'JFK Presidential Library & Museum', en: '', detail: 'Dorchester（地鐵紅線可到）。貝聿銘設計建築 + 完整 JFK 任期文獻 + 古巴飛彈危機決策室還原 + Jacqueline 任內白宮裝飾再現。', meta: '半天 · USD 14' },
+        { name: 'Boston Tea Party Ships & Museum', en: '', detail: '1773 茶葉黨真實船複製 + 互動劇場（你會被叫上去倒茶下海）。', meta: '1.5 小時 · USD 35' },
+        { name: 'MFA Boston + Isabella Stewart Gardner', en: 'art angle', detail: 'MFA：美國館 + 日本/亞洲館 + 印象派並列三大主軸。Gardner：1903 年女主人親自佈展的威尼斯式宮殿，1990 年遭竊未追回的空畫框依舊掛在原位。', meta: '半天' }
+      ],
+      nature: [
+        { name: 'Boston Common + Public Garden', en: '', detail: '全美最老公園（1634）。天鵝船 swan boats。', meta: '1 小時 · 免費' },
+        { name: 'Arnold Arboretum', en: '哈佛附屬', detail: 'Jamaica Plain，281 英畝樹木園，世界級 collection。秋色 10 月中起。', meta: '半天 · 免費' },
+        { name: 'Boston Harbor Islands', en: '', detail: '渡輪 30 min 到 Spectacle Island / Georges Island（1800 年 Fort Warren 內戰時關南軍戰俘）。', meta: '半天' },
+        { name: 'Walden Pond', en: 'Concord', detail: '車程 30 min。Henry David Thoreau 1845–47 隱居寫《湖濱散記》的湖。可繞湖一圈 + 看小木屋複製。', meta: '半天' }
+      ],
+      food: [
+        { name: 'Neptune Oyster', en: 'North End', detail: '全市最熱門的龍蝦堡 (butter or mayo) + Wellfleet / Island Creek 生蠔。不接受訂位、開門前排起隊。Hot lobster roll 加 drawn butter 是經典；午餐版本比晚餐好。', meta: '排隊午餐' },
+        { name: 'Daily Catch', en: 'Hanover St.', detail: '沒招牌的西西里式海鮮，菜端在煎鍋上桌，現金 only。烏賊墨燉飯 + 蒜爆蛤蜊義大利麵；20 個位子；老闆會直接端著鍋從你旁邊飛過。', meta: '現金 only' },
+        { name: 'Mike\'s vs Modern Pastry', en: 'Cannoli 對決', detail: 'Hanover St. 同條街隔三家。Mike\'s 觀光化但量大穩定，Modern 殼當場填內餡更脆。都買、邊走邊吃直接比。', meta: '甜點' },
+        { name: 'Eventide Fenway', en: '緬因海鮮', detail: 'Portland 來的姐妹店；招牌 brown butter lobster roll 用蒸過的 steamed bun 而非熱狗包，奶油焦化甜度神奇。Oyster slider $5 可一打。', meta: '午晚餐' },
+        { name: 'Union Oyster House', en: '1826', detail: '全美最老仍在營業的餐廳。Daniel Webster 的老座位有銅牌；觀光、但 New England Clam Chowder 跟生蠔吧 worth it。', meta: '午晚餐' },
+        { name: 'Toscanini\'s', en: 'Cambridge MIT', detail: '冰淇淋傳奇。Burnt Caramel + Khaleesi (蜂蜜薰衣草) + Earl Grey 是黃金三球。NYT 食評說「全美最佳」不是空話。', meta: '甜點' },
+        { name: 'Chinatown', en: '', detail: 'Hei La Moon 港式飲茶、Q Restaurant 重慶火鍋、Gourmet Dumpling House 小籠包。', meta: '中式選項' }
+      ]
+    }
+  },
+  {
+    id: 'philadelphia',
+    name: '費城',
+    nameEn: 'Philadelphia · Phase II',
+    loc: 'Boston → PHL · Amtrak 5h+ / Acela',
+    summary: '建國史命脈（獨立廳 + 自由鐘 + 制憲國父）。美食以 cheesesteak 三派 + Reading Terminal + Italian Market 為主。自然弱，但 Longwood Gardens 是 day trip 級景點。',
+    stars: { nature: 2, history: 5, food: 4 },
+    section: 'city',
+    items: {
+      history: [
+        { name: 'Independence Hall', en: '1753, 制憲現場', detail: '1776 Declaration of Independence 簽署、1787 Constitution 起草同地點。Ranger-led 強制導覽，必須先在 recreation.gov 一週前訂 timed entry。會帶進 Assembly Room，Washington 主持制憲會議的椅子原件還在，椅背刻太陽（Franklin 在會議結束時說「我終於知道這是日出而非日落」的典故）。', meta: '需預約 · 免費' },
+        { name: 'Liberty Bell', en: '1752', detail: '第一次敲就裂。原本掛 Independence Hall 鐘塔，現在玻璃亭內。', meta: '10 分鐘 · 免費' },
+        { name: 'Congress Hall', en: '1787–1800', detail: '費城當首都那 13 年，國會就在這棟。Washington 第二次就職、John Adams 就職都在這房間。', meta: '30 分鐘 · 免費' },
+        { name: 'Museum of the American Revolution', en: '2017 新館', detail: 'Washington 戰時帳篷原件（1778–83 命令部，輪展），互動劇場敘事。被評為全美最佳新博物館之一。', meta: '2 小時 · USD 24' },
+        { name: 'National Constitution Center', en: '', detail: 'Independence Mall 北端。Signers\' Hall 有 42 位制憲簽署人真人大小銅像散落，可走在他們之間。', meta: '2 小時 · USD 14.5' },
+        { name: 'Carpenters\' Hall', en: '1774 第一屆大陸會議地點', detail: '私人協會仍擁有並運作。', meta: '30 分鐘 · 免費' },
+        { name: 'Christ Church + Burial Ground', en: '', detail: 'Franklin 墓有「丟一便士求好運」的傳統。', meta: '1 小時' },
+        { name: 'Elfreth\'s Alley', en: '1703', detail: '全美最古老連續使用住宅街，32 棟老屋，鵝卵石路。', meta: '30 分鐘' },
+        { name: 'Valley Forge NHP', en: '西 45 min', detail: '1777–78 Washington 過冬地，3500 英畝。5 mile 自駕環道穿過士兵營房遺址、Washington 司令部、von Steuben 訓練場。', meta: '半天 · 免費' },
+        { name: 'Brandywine Battlefield', en: '西南 40 min', detail: '1777 年 9 月 11 日英軍擊敗 Washington 的戰場，逼出 Valley Forge 的寒冬。', meta: '半天' }
+      ],
+      nature: [
+        { name: 'Longwood Gardens', en: 'Brandywine Valley 西 45 min', detail: 'Pierre du Pont 1907 莊園，1077 英畝，11,000+ 植物。主噴泉花園 30 分鐘一場音樂 + 燈光 + 噴水編舞秀。4 英畝 conservatory 溫室。', meta: '半天 · USD 30' },
+        { name: 'Wissahickon Valley Park', en: '城內！', detail: '城內 7 mile 峽谷，Forbidden Drive 是 gravel 老路只給行人/單車/馬騎沒車。Devil\'s Pool 天然泳潭、19 世紀覆蓋橋。', meta: '半天 · 免費' },
+        { name: 'Bartram\'s Garden', en: '1728', detail: '北美最古老植物園，45 英畝 Schuylkill 河岸，免費，超安靜。John Bartram 是「King George III 的北美皇家植物學家」。', meta: '2 小時 · 免費' },
+        { name: 'Schuylkill River Trail', en: '', detail: '27 mile 平坦 paved trail 從 Center City 一路到 Valley Forge。Indego 公共自行車租了騎。', meta: '半天' }
+      ],
+      food: [
+        { name: 'Cheesesteak 三派對決', en: '', detail: 'Pat\'s（1930，cheesesteak 發明者，"whiz wit" 配方下單）/ Geno\'s（隔個十字路口，霓虹燈閃，更甜更滿）/ John\'s Roast Pork（James Beard 得獎、午餐 only、義式麵包真正脆，公認食物本身最好）。', meta: '午餐' },
+        { name: 'Reading Terminal Market', en: '', detail: '130 年市集：DiNic\'s 烤豬肉三明治（Anthony Bourdain 認證）、Bassetts 1861 年冰淇淋、Beiler\'s Donuts、Dienner\'s 阿米許烤雞。週日休市。', meta: '午餐 · 週日休' },
+        { name: 'Zahav', en: 'Society Hill', detail: 'Michael Solomonov 的以色列菜旗艦；Hummus Tehina 是基準款，"Mesibah" 嫩烤羔羊套餐 (USD 90/人) 整桌一起分。60 天前訂位是底線。', meta: '晚餐 · 須訂位' },
+        { name: 'Termini Bros / Isgro', en: 'Italian Market', detail: 'Cannoli 第二輪：Termini 殼厚實偏甜、Isgro 餡 ricotta 更清。9th 街順道買 Di Bruno Bros 起司、Anthony\'s 義式咖啡。', meta: '甜點' },
+        { name: 'South Philly Barbacoa', en: '', detail: 'Oaxacan 家族手工 lamb barbacoa，只賣早上 6am–3pm，週六排隊到對街。', meta: '早午餐' },
+        { name: 'Suraya', en: 'Fishtown', detail: '黎巴嫩菜 + 全天 brunch + 麵包 / 烘焙。mezze 拼盤起跳，烤春雞 + labneh 主菜。', meta: '午晚餐' },
+        { name: 'Federal Donuts', en: '', detail: 'Solomonov 副業，韓式炸雞 + 手作甜甜圈反差；hot fresh donut 上桌 60 秒內最神。', meta: '輕食' },
+        { name: 'Honey\'s Sit \'n Eat', en: '', detail: 'Jewish-Southern 早午餐 — latkes + grits + matzo ball soup 同盤。', meta: '早午餐' }
+      ]
+    }
+  },
+  {
+    id: 'dc',
+    name: '華盛頓 D.C.',
+    nameEn: 'Washington, D.C. · Phase III',
+    loc: 'PHL → DC · Acela 1h41m',
+    summary: '聯邦政府 + Smithsonian 群免費。國際社區帶來強大的越南菜 + 衣索比亞菜 + 川菜，比想像中多元。自然 day trips（Shenandoah / Great Falls）也很好。',
+    stars: { nature: 3, history: 5, food: 4 },
+    section: 'city',
+    items: {
+      history: [
+        { name: 'National Mall 紀念碑群', en: '', detail: 'Lincoln Memorial（1922，1963 MLK "I Have a Dream" 演講台階）/ Vietnam Wall（Maya Lin 1982 設計）/ Korean War（19 座不鏽鋼士兵）/ WWII / MLK Jr.（30 ft 花崗岩劈山而出）/ FDR / Washington Monument（555 ft，免費電梯需訂 timed ticket）/ Jefferson Memorial。全免費 24h。', meta: '全天 · 免費' },
+        { name: 'National Archives', en: '', detail: 'Declaration / Constitution / Bill of Rights 三件原件並排放在 Rotunda，加 1297 年的 Magna Carta 副本。免費，旺季建議訂 timed entry。', meta: '2 小時 · 免費' },
+        { name: 'American History Museum', en: 'Smithsonian', detail: '1814 Fort McHenry 原星條旗（30x42 ft，啟發國歌）；Julia Child 整套廚房原件搬進館內復原；Dorothy 的紅寶石鞋；歷代第一夫人就職禮服。', meta: '3 小時 · 免費' },
+        { name: 'Ford\'s Theatre + Petersen House', en: '林肯遇刺現場', detail: '劇院包廂（4/14/1865 槍響位置）保留國旗布幔擺設。對街 Petersen House 是他被抬過去的小寓所，死亡臥房原樣保留。合票免費但需 recreation.gov timed entry。', meta: '2 小時 · 免費' },
+        { name: 'NMAAHC', en: '非裔美國人歷史與文化館', detail: 'Smithsonian 最新且最強的敘事館。建議從地下三層（奴隸船）看到地上四層（嘻哈與當代藝術），預留 4 小時。免費但需網路預約 timed entry pass。', meta: '半天 · 免費' },
+        { name: 'Library of Congress', en: 'Jefferson Building', detail: '主閱覽室是美國最美的室內空間之一。可預約 docent tour 走進閱覽層平台。鎮館展品：Gutenberg 聖經、Jefferson 親筆藏書清單。', meta: '2 小時 · 免費' },
+        { name: 'Mount Vernon', en: '南 25 min', detail: 'Washington 莊園。主屋導覽（Washington 家具原件）、George + Martha 墓園、奴隸住所 + 1983 加建的紀念碑。鐵匠舖、菜園、養蜂、織布。', meta: '半天 · USD 28' },
+        { name: 'Arlington National Cemetery', en: 'VA 側', detail: '40 萬座墓，624 英畝。無名戰士墓換班儀式 4–9 月每 30 min 一次。Kennedy 家族墓 + 永恆之火。Arlington House 是 Robert E. Lee 內戰前的家，1864 聯邦軍開始在他家後院埋陣亡者。', meta: '3 小時 · 免費' },
+        { name: 'Antietam Battlefield', en: '西北 1.5h', detail: '1862/9/17，美國史上單日傷亡最多戰役（22,717 人）。8.5 mile 自駕環道。Burnside Bridge、Bloody Lane、Dunker Church。比 Gettysburg 安靜很多。', meta: '半天' },
+        { name: 'Gettysburg', en: '北 1h40m', detail: '1863/7/1–3。林肯後來來這裡發 Gettysburg Address。展館 + 戰場 + 紀念碑群。', meta: '全天' }
+      ],
+      nature: [
+        { name: 'Great Falls of the Potomac', en: '西北 25 min', detail: 'Potomac 河在 1 mile 內降 76 ft，Class V+ 急流。VA 側 Great Falls Park（3 觀景台 + Patowmack Canal 1785 Washington 主持的運河工程遺址）；MD 側 C&O Canal NHP（Olmsted Island 觀景台最靠近瀑布、Billy Goat Trail 4.7 mile 攀岩步道）。', meta: '半天' },
+        { name: 'Shenandoah National Park', en: '西 1.5h', detail: 'Skyline Drive 105 mile 山脊路，75 個觀景台。Old Rag Mountain 9 mile loop 含攀岩 scramble。9 月底高海拔楓紅起步，10 月中 peak。', meta: '全天' },
+        { name: 'C&O Canal Towpath', en: '', detail: 'Georgetown 起點，184 mile 一路到 Maryland 的 Cumberland。平坦碎石路，租 bike 騎一段。', meta: '依段選擇' },
+        { name: 'Theodore Roosevelt Island', en: '', detail: 'Potomac 河中央 91 英畝森林島，只能徒步入島，野生鳥多，TR 紀念雕像 + 名言碑。市內 15 min 就到「叢林」。', meta: '1–2 小時 · 免費' },
+        { name: 'Rock Creek Park', en: '', detail: 'DC 市內 2754 英畝。planetarium、Pierce Mill（1820 磨坊原件運作）。', meta: '半天' },
+        { name: 'Tidal Basin', en: '', detail: '2 mile loop 圍湖，Jefferson + FDR + MLK 三紀念碑都在圍邊。9 月看湖面、3–4 月櫻花。', meta: '2 小時 · 免費' }
+      ],
+      food: [
+        { name: 'Ben\'s Chili Bowl', en: 'U Street', detail: '1958 年開到今天，Duke Ellington、Obama、Beyoncé 都來吃過。Half-smoke (半牛半豬辣腸) + 自製 chili + mustard + onions 是 D.C. 國民食物。', meta: '午餐' },
+        { name: 'Old Ebbitt Grill', en: 'White House 對面', detail: '1856 年開幕，白宮對面 70 公尺；oyster bar happy hour（3–6pm 半價）是 D.C. 業內人士的暗語。Crab cake + clam chowder 經典款。', meta: '午晚餐' },
+        { name: 'Le Diplomate', en: '14th St NW', detail: 'Stephen Starr 的法式小酒館；French onion soup gratinée + steak frites + Peach Mary brunch。週末必訂位。', meta: '須訂位' },
+        { name: 'Rasika', en: 'Penn Quarter', detail: 'Michelin 推薦的 modern Indian；Palak Chaat（炸菠菜葉 + 優格 + 羅望子）是必點 — 連 Obama 都愛。Tasting menu USD 95。', meta: '晚餐 · 須訂位' },
+        { name: 'Maydan / Albi', en: '中東炭火新派', detail: 'Maydan 室內中央火爐烤全羊；Albi（Michelin 一星）走 Levantine fine dining，主廚 Michael Rafidi 2024 James Beard 得主。', meta: '晚餐' },
+        { name: 'Eden Center', en: '北維 Falls Church 25 min', detail: '全美第二大越南社區，整個 mall 都是越南店。phở / banh mi / chè 滿街。Phở Xe Lửa、Huong Viet 是門面店。', meta: '午餐' },
+        { name: '9th Street NW · Little Ethiopia', en: '', detail: 'DC 有美國最大衣索比亞社群（80 年代難民潮）。Dukem / Etete 是經典，用 injera 發酵海綿狀大薄餅夾各種燉肉。', meta: '晚餐' },
+        { name: 'The Wharf', en: '2017 重建', detail: '海鮮市集 + 餐廳區。Maine Avenue Fish Market 1805 年至今全美最老連續經營露天魚市，現買現吃。', meta: '半天' },
+        { name: 'Eastern Market', en: 'Capitol Hill 週末', detail: '1873 市集。Market Lunch 的 crab cake 跟 blueberry buckwheat pancake 早起排。', meta: '週末早餐' },
+        { name: 'Tail Up Goat', en: 'Adams Morgan', detail: 'Mediterranean。Washington Post 連年「最佳餐廳」，Lamb Ribs + sourdough bread programme。', meta: '晚餐' },
+        { name: 'Bob\'s Shanghai 66 + A&J 京華', en: 'Rockville Metro Red Line', detail: 'DC 華人聖地。Bob\'s 生煎包 + 小籠包；A&J 北方麵點 + 牛肉捲餅 + 酸辣湯。', meta: '中式選項' },
+        { name: 'Founding Farmers', en: '', detail: '農場合作社直送，平價 farm-to-table，brunch waffles 是招牌。3 家分店都好。', meta: '早午餐' }
+      ]
+    }
+  }
+];
+
+function starText(n) {
+  return '★'.repeat(n) + '☆'.repeat(5 - n);
+}
+
+function renderItem(item) {
+  const en = item.en ? `<span class="item-en">${item.en}</span>` : '';
+  const meta = item.meta ? `<div class="item-meta">${item.meta}</div>` : '';
+  return `
+    <div class="item">
+      <div class="item-name">${item.name}${en}</div>
+      <div class="item-detail">${item.detail}</div>
+      ${meta}
+    </div>
+  `;
+}
+
+function renderAxisGroup(axis, label, icon, items) {
+  if (!items || items.length === 0) return '';
+  return `
+    <div class="axis-group ${axis}" data-axis="${axis}">
+      <h3>${icon} ${label} <span style="font-size:13px;opacity:0.7;font-family:'Noto Sans TC';font-weight:400;">· ${items.length}</span></h3>
+      <div class="item-grid">
+        ${items.map(renderItem).join('')}
+      </div>
+    </div>
+  `;
+}
+
+function renderRegion(r) {
+  return `
+    <section class="region" id="${r.id}" data-region="${r.id}">
+      <div class="region-inner">
+        <header class="region-header">
+          <div class="region-title">
+            <h2>${r.name}</h2>
+            <div class="name-en">${r.nameEn}</div>
+            <div class="loc">${r.loc}</div>
+            <p class="summary">${r.summary}</p>
+          </div>
+          <div class="region-stars">
+            <div class="star-row nature"><span class="axis-tag">🌲 自然</span><span class="stars">${starText(r.stars.nature)}</span></div>
+            <div class="star-row history"><span class="axis-tag">📜 歷史</span><span class="stars">${starText(r.stars.history)}</span></div>
+            <div class="star-row food"><span class="axis-tag">🍴 美食</span><span class="stars">${starText(r.stars.food)}</span></div>
+          </div>
+        </header>
+        ${renderAxisGroup('nature', '自然', '🌲', r.items.nature)}
+        ${renderAxisGroup('history', '歷史', '📜', r.items.history)}
+        ${renderAxisGroup('food', '美食', '🍴', r.items.food)}
+      </div>
+    </section>
+  `;
+}
+
+// Inject regions
+document.getElementById('northeast-content').innerHTML =
+  data.filter(d => d.section === 'northeast').map(renderRegion).join('');
+document.getElementById('cities-content').innerHTML =
+  data.filter(d => d.section === 'city').map(renderRegion).join('');
+
+// Inject overview table
+document.getElementById('compare-body').innerHTML = data.map(r => `
+  <tr data-region="${r.id}">
+    <td>
+      <div class="region-link">${r.name}</div>
+      <div class="region-loc">${r.loc}</div>
+    </td>
+    <td class="stars nature" style="text-align:center;">${starText(r.stars.nature)}</td>
+    <td class="stars history" style="text-align:center;">${starText(r.stars.history)}</td>
+    <td class="stars food" style="text-align:center;">${starText(r.stars.food)}</td>
+    <td style="text-align:right;color:var(--ink-fade);font-size:12px;">${r.loc.split('·')[0].trim()}</td>
+  </tr>
+`).join('');
+
+// Filter behavior
+const pills = document.querySelectorAll('.pill');
+const countEl = document.getElementById('count');
+function updateCount() {
+  const filter = document.body.dataset.filter;
+  let visibleRegions = 0;
+  document.querySelectorAll('.region').forEach(reg => {
+    const id = reg.dataset.region;
+    const r = data.find(d => d.id === id);
+    if (!r) return;
+    let hasItems = true;
+    if (filter !== 'all') {
+      hasItems = (r.items[filter] || []).length > 0;
+    }
+    reg.dataset.empty = hasItems ? 'false' : 'true';
+    if (hasItems) visibleRegions++;
+  });
+  countEl.textContent = visibleRegions;
+}
+pills.forEach(p => {
+  p.addEventListener('click', () => {
+    pills.forEach(x => x.classList.remove('active'));
+    p.classList.add('active');
+    document.body.dataset.filter = p.dataset.axis;
+    updateCount();
+  });
+});
+
+// Table row click → scroll to region
+document.querySelectorAll('#compare-body tr').forEach(tr => {
+  tr.addEventListener('click', () => {
+    const id = tr.dataset.region;
+    document.getElementById(id).scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+});
+
+updateCount();
+</script>
+
+</body>
+</html>
