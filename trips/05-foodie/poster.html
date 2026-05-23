@@ -1,0 +1,1940 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>EATING EAST · A Bill of Fare for the Northeast · Trip 05 Foodie · 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Limelight&family=Big+Shoulders+Display:wght@500;700;900&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=Special+Elite&family=Noto+Serif+TC:wght@500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #f0e5c8;
+    --paper-warm: #ead9b4;
+    --paper-deep: #d4c39a;
+    --ink: #1b1c24;
+    --ink-deep: #0a0c12;
+    --mustard: #d8a13a;
+    --mustard-deep: #b07e1d;
+    --terracotta: #b94b32;
+    --terracotta-deep: #8c361f;
+    --teal: #285e64;
+    --teal-deep: #16383d;
+    --sage: #7a8a5b;
+    --cream: #f6ecd0;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: "Crimson Pro", "Noto Serif TC", Georgia, serif;
+    color: var(--ink-deep);
+    background: var(--paper);
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+  body::before {
+    content: ""; position: fixed; inset: 0;
+    pointer-events: none; z-index: 5000;
+    opacity: 0.42; mix-blend-mode: multiply;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.92' numOctaves='2' stitchTiles='stitch' seed='5'/><feColorMatrix values='0 0 0 0 0.13 0 0 0 0 0.11 0 0 0 0 0.07 0 0 0 0.22 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+  }
+  body::after {
+    content: ""; position: fixed; inset: 0;
+    pointer-events: none; z-index: 4999;
+    opacity: 0.06;
+    background-image: radial-gradient(circle, var(--ink) 0.7px, transparent 1.2px);
+    background-size: 7px 7px;
+  }
+
+  .display, h1, h2 {
+    font-family: "Limelight", "Noto Serif TC", serif;
+    font-weight: 400;
+    letter-spacing: 0.01em;
+  }
+  .display-cjk {
+    font-family: "Noto Serif TC", serif;
+    font-weight: 900;
+    letter-spacing: 0.04em;
+  }
+  .stencil {
+    font-family: "Big Shoulders Display", "Noto Sans TC", sans-serif;
+    font-weight: 900;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+  .typewriter {
+    font-family: "Special Elite", "Courier New", monospace;
+    letter-spacing: 0.02em;
+  }
+
+  .masthead {
+    background: var(--ink-deep);
+    color: var(--paper);
+    padding: 10px 28px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 6px double var(--mustard);
+    font-family: "Special Elite", monospace;
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    position: relative;
+    z-index: 10;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .masthead .left, .masthead .right { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+  .masthead a { color: var(--mustard); text-decoration: none; border-bottom: 1px dotted var(--mustard); }
+  .masthead a:hover { color: var(--paper); border-color: var(--paper); }
+  .masthead a.current { color: var(--cream); border-bottom-color: var(--cream); }
+  .masthead .ornament { color: var(--mustard); }
+
+  /* COVER */
+  .cover {
+    position: relative;
+    min-height: 100vh;
+    background: var(--ink-deep);
+    color: var(--cream);
+    padding: 80px 40px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  .cover .sunburst {
+    position: absolute;
+    width: 1400px; height: 1400px;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0.16;
+    animation: slow-spin 240s linear infinite;
+  }
+  @keyframes slow-spin { to { transform: translate(-50%, -50%) rotate(360deg); } }
+  .cover .frame {
+    position: relative;
+    z-index: 2;
+    border: 2px solid var(--mustard);
+    padding: 48px 60px;
+    max-width: 960px;
+    width: 100%;
+  }
+  .cover .frame::before, .cover .frame::after {
+    content: ""; position: absolute;
+    width: 30px; height: 30px;
+    border: 2px solid var(--mustard);
+  }
+  .cover .frame::before { top: -10px; left: -10px; border-right: 0; border-bottom: 0; }
+  .cover .frame::after { bottom: -10px; right: -10px; border-left: 0; border-top: 0; }
+  .cover .route-num {
+    font-family: "Special Elite", monospace;
+    color: var(--mustard);
+    font-size: 13px;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    margin-bottom: 28px;
+  }
+  .cover h1.title {
+    font-family: "Limelight", serif;
+    font-size: clamp(58px, 11vw, 148px);
+    line-height: 0.88;
+    margin: 0 0 16px;
+    color: var(--mustard);
+    text-shadow:
+      4px 4px 0 var(--terracotta),
+      -1px -1px 0 var(--cream);
+  }
+  .cover .subtitle-cjk {
+    font-family: "Noto Serif TC", serif;
+    font-weight: 700;
+    font-size: clamp(22px, 3vw, 36px);
+    color: var(--cream);
+    letter-spacing: 0.3em;
+    margin: 0 0 28px;
+    padding: 0 0 24px;
+    border-bottom: 1px solid rgba(216,161,58,0.5);
+  }
+  .cover .lede {
+    font-family: "Crimson Pro", serif;
+    font-style: italic;
+    font-size: clamp(15px, 1.5vw, 18px);
+    color: rgba(246,236,208,0.86);
+    max-width: 640px;
+    margin: 0 auto 40px;
+    line-height: 1.7;
+  }
+  .cover .train-graphic {
+    width: 100%;
+    max-width: 720px;
+    margin: 0 auto 40px;
+    color: var(--mustard);
+    display: block;
+  }
+  .cover .stamps {
+    display: flex;
+    gap: 18px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 16px;
+  }
+  .cover .stamp {
+    border: 1.5px solid var(--mustard);
+    color: var(--mustard);
+    padding: 8px 18px;
+    font-family: "Big Shoulders Display", sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    font-size: 13px;
+    text-transform: uppercase;
+    border-radius: 2px;
+    background: rgba(216,161,58,0.08);
+  }
+  .cover .stamp strong {
+    font-family: "Limelight", serif;
+    font-weight: 400;
+    font-size: 22px;
+    margin-right: 4px;
+    color: var(--cream);
+  }
+  .cover .alt-link {
+    display: inline-block;
+    margin-top: 28px;
+    padding: 6px 16px;
+    color: var(--cream);
+    border: 1px dotted var(--cream);
+    font-family: "Special Elite", monospace;
+    font-size: 11px;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+  .cover .alt-link:hover { color: var(--mustard); border-color: var(--mustard); }
+
+  /* Route map */
+  .route-strip {
+    background: var(--paper-warm);
+    padding: 60px 32px;
+    border-top: 1px solid rgba(27,28,36,0.2);
+    border-bottom: 6px double var(--ink);
+    position: relative;
+  }
+  .route-strip-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .route-strip .label {
+    font-family: "Special Elite", monospace;
+    font-size: 12px;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--terracotta-deep);
+    margin-bottom: 32px;
+    text-align: center;
+  }
+  .route-svg {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  /* CITY POSTER */
+  .city-poster {
+    position: relative;
+    padding: 0;
+    overflow: hidden;
+  }
+  .city-poster .city-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    align-items: stretch;
+    min-height: 92vh;
+  }
+  .city-poster.flip .city-grid { grid-template-columns: 0.9fr 1.1fr; }
+  .city-poster.flip .image-col { order: 2; }
+  .city-poster.flip .text-col { order: 1; }
+
+  .city-poster .image-col {
+    position: relative;
+    overflow: hidden;
+    min-height: 480px;
+  }
+  .city-poster .image-col .photo {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+  }
+  .city-poster.nyc .image-col .photo { filter: url(#dt-terracotta); }
+  .city-poster.boston .image-col .photo { filter: url(#dt-teal); }
+  .city-poster.philly .image-col .photo { filter: url(#dt-mustard); }
+  .city-poster.dc .image-col .photo { filter: url(#dt-teal); }
+  .city-poster .image-col::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 2;
+    opacity: 0.18;
+    background-image: radial-gradient(circle, var(--ink-deep) 0.8px, transparent 1.4px);
+    background-size: 6px 6px;
+    mix-blend-mode: multiply;
+  }
+
+  .city-poster .image-col .ornament {
+    position: absolute;
+    z-index: 3;
+    pointer-events: none;
+  }
+  .city-poster .image-col .corner-tag {
+    position: absolute;
+    top: 24px; left: 24px;
+    background: var(--ink-deep);
+    color: var(--paper);
+    padding: 6px 14px;
+    font-family: "Special Elite", monospace;
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    z-index: 4;
+  }
+
+  .city-poster .text-col {
+    padding: 80px 56px;
+    background: var(--paper);
+    position: relative;
+  }
+  .city-poster.nyc .text-col { background: var(--paper-warm); }
+  .city-poster.boston .text-col { background: var(--paper); }
+  .city-poster.philly .text-col { background: var(--paper-warm); }
+  .city-poster.dc .text-col { background: var(--paper); }
+
+  .city-poster .text-col .phase {
+    font-family: "Special Elite", monospace;
+    font-size: 11px;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--mustard-deep);
+    margin-bottom: 12px;
+  }
+  .city-poster .text-col h2.cjk {
+    font-family: "Noto Serif TC", serif;
+    font-weight: 900;
+    font-size: clamp(64px, 8vw, 120px);
+    line-height: 0.9;
+    margin: 0;
+    color: var(--ink-deep);
+    letter-spacing: 0.04em;
+  }
+  .city-poster.nyc .text-col h2.cjk { color: var(--terracotta-deep); }
+  .city-poster.boston .text-col h2.cjk { color: var(--teal-deep); }
+  .city-poster.philly .text-col h2.cjk { color: var(--mustard-deep); }
+  .city-poster.dc .text-col h2.cjk { color: var(--teal-deep); }
+
+  .city-poster .text-col .en-title {
+    font-family: "Limelight", serif;
+    font-size: clamp(28px, 3.8vw, 52px);
+    color: var(--ink-deep);
+    line-height: 1;
+    margin: 8px 0 4px;
+    text-shadow: 3px 3px 0 var(--mustard);
+  }
+  .city-poster.nyc .text-col .en-title { text-shadow: 3px 3px 0 var(--terracotta); color: var(--terracotta-deep); }
+  .city-poster.boston .text-col .en-title { text-shadow: 3px 3px 0 var(--teal); color: var(--teal-deep); }
+  .city-poster.philly .text-col .en-title { text-shadow: 3px 3px 0 var(--mustard); color: var(--ink-deep); }
+  .city-poster.dc .text-col .en-title { text-shadow: 3px 3px 0 var(--teal); color: var(--teal-deep); }
+
+  .city-poster .text-col .tagline {
+    font-family: "Big Shoulders Display", sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--ink);
+    margin: 14px 0 20px;
+    padding: 8px 0;
+    border-top: 1px solid var(--ink-deep);
+    border-bottom: 1px solid var(--ink-deep);
+  }
+  .city-poster .text-col .intro {
+    font-family: "Crimson Pro", "Noto Serif TC", serif;
+    font-size: 16px;
+    color: var(--ink);
+    margin: 0 0 28px;
+    line-height: 1.75;
+  }
+  .city-poster .text-col .intro::first-line {
+    font-variant: small-caps;
+    letter-spacing: 0.08em;
+  }
+
+  .fare-table {
+    width: 100%;
+    border-collapse: collapse;
+    border-top: 3px solid var(--ink-deep);
+    border-bottom: 3px solid var(--ink-deep);
+    margin: 0 0 28px;
+  }
+  .fare-table .fare-head {
+    background: var(--ink-deep);
+    color: var(--mustard);
+  }
+  .fare-table .fare-head td {
+    padding: 8px 12px;
+    font-family: "Big Shoulders Display", sans-serif;
+    font-size: 13px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+  .fare-table tbody tr td {
+    padding: 14px 12px;
+    vertical-align: top;
+    border-bottom: 1px dashed rgba(27,28,36,0.3);
+    font-family: "Crimson Pro", "Noto Serif TC", serif;
+    font-size: 14.5px;
+  }
+  .fare-table tbody tr:last-child td { border-bottom: 0; }
+  .fare-table .item-num {
+    font-family: "Special Elite", monospace;
+    color: var(--terracotta-deep);
+    width: 38px;
+    font-size: 13px;
+  }
+  .fare-table .item-name { font-weight: 600; color: var(--ink-deep); width: 30%; }
+  .fare-table .item-name .item-en {
+    display: block;
+    font-family: "Big Shoulders Display", sans-serif;
+    font-weight: 500;
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--mustard-deep);
+    margin-top: 2px;
+  }
+  .fare-table .item-desc {
+    color: var(--ink);
+    line-height: 1.6;
+  }
+
+  /* Train interludes */
+  .timetable-strip {
+    background: var(--ink-deep);
+    color: var(--cream);
+    padding: 0;
+    border-top: 4px solid var(--mustard);
+    border-bottom: 4px solid var(--mustard);
+    position: relative;
+    overflow: hidden;
+  }
+  .timetable-strip::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(90deg, transparent 0, transparent 38px, rgba(216,161,58,0.04) 38px, rgba(216,161,58,0.04) 40px);
+    pointer-events: none;
+  }
+  .timetable-strip .ts-inner {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 60px 40px;
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 56px;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+  }
+  .timetable-strip .ts-text .label {
+    font-family: "Special Elite", monospace;
+    font-size: 12px;
+    letter-spacing: 0.32em;
+    color: var(--mustard);
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+  .timetable-strip .ts-text h2 {
+    font-family: "Limelight", serif;
+    font-size: clamp(36px, 5vw, 72px);
+    line-height: 1;
+    margin: 0 0 8px;
+    color: var(--cream);
+    text-shadow: 3px 3px 0 var(--terracotta-deep);
+  }
+  .timetable-strip .ts-text .sub {
+    font-family: "Big Shoulders Display", sans-serif;
+    font-weight: 700;
+    color: var(--mustard);
+    font-size: 18px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 22px;
+  }
+  .timetable-strip .ts-text p {
+    font-family: "Crimson Pro", serif;
+    font-style: italic;
+    color: rgba(246,236,208,0.85);
+    max-width: 500px;
+    margin: 0;
+    font-size: 16px;
+  }
+  .ts-table {
+    width: 100%;
+    border: 2px solid var(--mustard);
+    background: rgba(216,161,58,0.04);
+    border-collapse: collapse;
+  }
+  .ts-table td {
+    padding: 14px 18px;
+    border-bottom: 1px dashed rgba(216,161,58,0.4);
+    vertical-align: top;
+  }
+  .ts-table tr:last-child td { border-bottom: 0; }
+  .ts-table td:first-child {
+    font-family: "Special Elite", monospace;
+    color: var(--mustard);
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    width: 30%;
+  }
+  .ts-table td:last-child {
+    font-family: "Crimson Pro", serif;
+    color: var(--cream);
+    font-size: 14.5px;
+  }
+
+  .train-silhouette {
+    width: 100%;
+    color: var(--mustard);
+    opacity: 0.95;
+    margin-bottom: 14px;
+  }
+
+  /* 12-day timetable section */
+  .schedule {
+    background: var(--paper-warm);
+    padding: 80px 40px;
+    border-top: 6px double var(--ink);
+  }
+  .schedule-inner { max-width: 1200px; margin: 0 auto; }
+  .schedule .header-block {
+    text-align: center;
+    margin-bottom: 48px;
+  }
+  .schedule .header-block .stencil {
+    color: var(--terracotta-deep);
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .schedule h2 {
+    font-family: "Limelight", serif;
+    font-size: clamp(40px, 5.5vw, 80px);
+    margin: 0;
+    color: var(--ink-deep);
+    text-shadow: 4px 4px 0 var(--mustard);
+  }
+  .schedule .header-block .cjk {
+    font-family: "Noto Serif TC", serif;
+    font-weight: 700;
+    color: var(--ink-deep);
+    font-size: 22px;
+    letter-spacing: 0.4em;
+    margin-top: 8px;
+  }
+  .schedule-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    border: 3px solid var(--ink-deep);
+    background: var(--ink-deep);
+  }
+  .ticket-card {
+    background: var(--paper);
+    padding: 28px 26px;
+    position: relative;
+    border-right: 1px solid var(--ink-deep);
+    border-bottom: 1px solid var(--ink-deep);
+  }
+  .ticket-card .stub-num {
+    font-family: "Limelight", serif;
+    font-size: 42px;
+    color: var(--terracotta);
+    line-height: 1;
+    margin: 0 0 4px;
+  }
+  .ticket-card .stub-date {
+    font-family: "Special Elite", monospace;
+    font-size: 11px;
+    color: var(--ink);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+    padding-bottom: 10px;
+    border-bottom: 1px dashed var(--ink);
+  }
+  .ticket-card h4 {
+    font-family: "Noto Serif TC", serif;
+    font-weight: 700;
+    font-size: 18px;
+    margin: 0 0 4px;
+    color: var(--ink-deep);
+  }
+  .ticket-card .ticket-route {
+    font-family: "Big Shoulders Display", sans-serif;
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--terracotta-deep);
+    margin-bottom: 10px;
+  }
+  .ticket-card .meal-line {
+    font-family: "Special Elite", monospace;
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    color: var(--mustard-deep);
+    margin-bottom: 12px;
+    padding: 6px 8px;
+    background: rgba(216,161,58,0.08);
+    border-left: 2px solid var(--mustard);
+  }
+  .ticket-card ul {
+    margin: 0; padding-left: 18px;
+    font-family: "Crimson Pro", "Noto Serif TC", serif;
+    color: var(--ink);
+    font-size: 14px;
+    line-height: 1.7;
+  }
+  .ticket-card ul li { margin-bottom: 4px; }
+  .ticket-card .ticket-stamp {
+    position: absolute;
+    bottom: 16px; right: 18px;
+    border: 1.5px solid var(--terracotta);
+    color: var(--terracotta);
+    padding: 4px 10px;
+    font-family: "Big Shoulders Display", sans-serif;
+    font-weight: 700;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    transform: rotate(-6deg);
+    background: rgba(185,75,50,0.05);
+  }
+  .ticket-card .ticket-stamp.mustard { border-color: var(--mustard-deep); color: var(--mustard-deep); background: rgba(216,161,58,0.08); }
+  .ticket-card .ticket-stamp.teal { border-color: var(--teal); color: var(--teal); background: rgba(40,94,100,0.08); }
+
+  /* Dining Car (DOMINANT) — 4 columns */
+  .dining-car {
+    background: var(--ink-deep);
+    color: var(--cream);
+    padding: 96px 40px;
+    position: relative;
+    overflow: hidden;
+  }
+  .dining-car::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+      radial-gradient(ellipse at top, rgba(216,161,58,0.14) 0%, transparent 60%);
+    pointer-events: none;
+  }
+  .dining-inner { max-width: 1400px; margin: 0 auto; position: relative; z-index: 2; }
+  .dining-car .header-block { text-align: center; margin-bottom: 56px; }
+  .dining-car .stencil { color: var(--mustard); }
+  .dining-car h2 {
+    font-family: "Limelight", serif;
+    font-size: clamp(46px, 6.5vw, 96px);
+    margin: 0;
+    color: var(--mustard);
+    text-shadow: 4px 4px 0 var(--terracotta-deep);
+  }
+  .dining-car .header-block .cjk {
+    font-family: "Noto Serif TC", serif;
+    font-weight: 700;
+    color: var(--cream);
+    font-size: 22px;
+    letter-spacing: 0.4em;
+    margin-top: 8px;
+  }
+  .dining-car .header-block .sub {
+    font-family: "Crimson Pro", serif;
+    font-style: italic;
+    color: rgba(246,236,208,0.8);
+    font-size: 16px;
+    max-width: 720px;
+    margin: 20px auto 0;
+  }
+  .menu-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 36px;
+  }
+  .menu-col h3 {
+    font-family: "Limelight", serif;
+    font-size: 32px;
+    color: var(--mustard);
+    margin: 0 0 4px;
+    text-shadow: 2px 2px 0 var(--terracotta-deep);
+  }
+  .menu-col h3 .cjk {
+    display: block;
+    font-family: "Noto Serif TC", serif;
+    font-weight: 700;
+    font-size: 20px;
+    color: var(--cream);
+    margin-top: 4px;
+    text-shadow: none;
+    letter-spacing: 0.16em;
+  }
+  .menu-col .menu-tagline {
+    font-family: "Big Shoulders Display", sans-serif;
+    font-weight: 700;
+    font-size: 10.5px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--cream);
+    opacity: 0.75;
+    margin: 14px 0 22px;
+    padding: 8px 0;
+    border-top: 1px solid var(--mustard);
+    border-bottom: 1px solid var(--mustard);
+  }
+  .dish-line {
+    padding: 12px 0;
+    border-bottom: 1px dotted rgba(216,161,58,0.3);
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 10px;
+    align-items: baseline;
+  }
+  .dish-line:last-child { border-bottom: 0; }
+  .dish-line .dish-name {
+    font-family: "Noto Serif TC", serif;
+    font-weight: 700;
+    color: var(--cream);
+    font-size: 14.5px;
+  }
+  .dish-line .dish-where {
+    font-family: "Big Shoulders Display", sans-serif;
+    font-weight: 500;
+    color: var(--mustard);
+    font-size: 10px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    text-align: right;
+    white-space: nowrap;
+  }
+  .dish-desc {
+    grid-column: 1 / -1;
+    font-family: "Crimson Pro", serif;
+    font-style: italic;
+    color: rgba(246,236,208,0.78);
+    font-size: 13px;
+    line-height: 1.6;
+    margin-top: 4px;
+  }
+
+  /* Logistics */
+  .logistics-block {
+    background: var(--paper-warm);
+    padding: 64px 40px;
+    border-top: 6px double var(--ink-deep);
+  }
+  .logistics-inner { max-width: 1180px; margin: 0 auto; }
+  .logistics-block .header-block { text-align: center; margin-bottom: 40px; }
+  .logistics-block .stencil { color: var(--mustard-deep); font-size: 13px; }
+  .logistics-block h2 {
+    font-family: "Limelight", serif;
+    font-size: clamp(34px, 4.5vw, 60px);
+    margin: 8px 0 0;
+    color: var(--ink-deep);
+  }
+  .log-cols {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 56px;
+  }
+  .log-cols h3 {
+    font-family: "Big Shoulders Display", sans-serif;
+    font-weight: 900;
+    color: var(--ink-deep);
+    font-size: 20px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    border-bottom: 3px solid var(--terracotta);
+    padding-bottom: 10px;
+    margin: 0 0 18px;
+  }
+  .log-cols ul {
+    margin: 0; padding-left: 0; list-style: none;
+    font-family: "Crimson Pro", "Noto Serif TC", serif;
+    color: var(--ink);
+  }
+  .log-cols li {
+    padding: 10px 0 10px 24px;
+    border-bottom: 1px dotted rgba(27,28,36,0.3);
+    position: relative;
+    font-size: 14.5px;
+  }
+  .log-cols li:before {
+    content: "★";
+    position: absolute;
+    left: 0; top: 12px;
+    color: var(--terracotta);
+    font-size: 11px;
+  }
+  .log-cols li strong { color: var(--ink-deep); }
+
+  /* Printer footer */
+  .printer {
+    background: var(--ink-deep);
+    color: var(--paper);
+    padding: 48px 40px;
+    text-align: center;
+    border-top: 6px double var(--mustard);
+  }
+  .printer .device {
+    font-family: "Limelight", serif;
+    font-size: 28px;
+    color: var(--mustard);
+    letter-spacing: 0.2em;
+    margin-bottom: 14px;
+  }
+  .printer .meta {
+    font-family: "Special Elite", monospace;
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    opacity: 0.8;
+  }
+  .printer .links { margin-top: 12px; }
+  .printer .links a { color: var(--mustard); border-bottom: 1px dotted; text-decoration: none; margin: 0 8px; }
+
+  @media (max-width: 1100px) {
+    .menu-grid { grid-template-columns: repeat(2, 1fr); gap: 32px; }
+    .schedule-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 900px) {
+    .masthead { flex-wrap: wrap; gap: 6px; padding: 10px 18px; font-size: 11px; }
+    .cover { padding: 56px 18px; min-height: auto; }
+    .cover .frame { padding: 36px 24px; }
+    .cover .sunburst { width: 900px; height: 900px; opacity: 0.12; }
+    .city-poster .city-grid, .city-poster.flip .city-grid {
+      grid-template-columns: 1fr;
+    }
+    .city-poster .image-col { min-height: 320px; }
+    .city-poster.flip .image-col { order: 1; }
+    .city-poster.flip .text-col { order: 2; }
+    .city-poster .text-col { padding: 48px 24px; }
+    .city-poster .text-col h2.cjk { font-size: clamp(56px, 14vw, 96px); }
+    .timetable-strip .ts-inner { grid-template-columns: 1fr; gap: 32px; padding: 48px 24px; }
+    .schedule { padding: 56px 18px; }
+    .schedule-grid { grid-template-columns: 1fr; }
+    .dining-car { padding: 56px 18px; }
+    .menu-grid { grid-template-columns: 1fr; gap: 32px; }
+    .logistics-block { padding: 48px 18px; }
+    .log-cols { grid-template-columns: 1fr; gap: 32px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- SVG duotone filter defs (offscreen) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <filter id="dt-teal" color-interpolation-filters="sRGB">
+      <feColorMatrix type="matrix" values="
+        0.299 0.587 0.114 0 0
+        0.299 0.587 0.114 0 0
+        0.299 0.587 0.114 0 0
+        0     0     0     1 0"/>
+      <feComponentTransfer>
+        <feFuncR tableValues="0.087 0.965"/>
+        <feFuncG tableValues="0.220 0.927"/>
+        <feFuncB tableValues="0.245 0.816"/>
+      </feComponentTransfer>
+    </filter>
+    <filter id="dt-terracotta" color-interpolation-filters="sRGB">
+      <feColorMatrix type="matrix" values="
+        0.299 0.587 0.114 0 0
+        0.299 0.587 0.114 0 0
+        0.299 0.587 0.114 0 0
+        0     0     0     1 0"/>
+      <feComponentTransfer>
+        <feFuncR tableValues="0.36 0.965"/>
+        <feFuncG tableValues="0.13 0.927"/>
+        <feFuncB tableValues="0.07 0.816"/>
+      </feComponentTransfer>
+    </filter>
+    <filter id="dt-mustard" color-interpolation-filters="sRGB">
+      <feColorMatrix type="matrix" values="
+        0.299 0.587 0.114 0 0
+        0.299 0.587 0.114 0 0
+        0.299 0.587 0.114 0 0
+        0     0     0     1 0"/>
+      <feComponentTransfer>
+        <feFuncR tableValues="0.05 0.92"/>
+        <feFuncG tableValues="0.06 0.71"/>
+        <feFuncB tableValues="0.07 0.27"/>
+      </feComponentTransfer>
+    </filter>
+  </defs>
+</svg>
+
+<div class="masthead">
+  <div class="left">
+    <span>★ ★ ★</span>
+    <span>BILL OF FARE · NORTHEAST PICTORIAL · VOL. V · 2026</span>
+  </div>
+  <div class="right">
+    <a href="../">← 5 主題</a>
+    <span class="ornament">·</span>
+    <a href="../01-classic/poster.html">01</a>
+    <a href="../02-history/poster.html">02</a>
+    <a href="../03-foliage/poster.html">03</a>
+    <a href="../04-niagara-finger/poster.html">04</a>
+    <a href="../05-foodie/poster.html" class="current">05 Foodie</a>
+    <span class="ornament">·</span>
+    <a href="./index.html">精修版</a>
+    <span class="ornament">·</span>
+    <a href="../../">Home</a>
+  </div>
+</div>
+
+<!-- ==================== COVER ==================== -->
+<section class="cover">
+  <svg class="sunburst" viewBox="-100 -100 200 200" aria-hidden="true">
+    <g fill="#d8a13a">
+      <polygon points="0,-95 2.5,-22 -2.5,-22"/>
+      <polygon points="0,-95 2.5,-22 -2.5,-22" transform="rotate(10)"/>
+      <polygon points="0,-95 2.5,-22 -2.5,-22" transform="rotate(20)"/>
+      <polygon points="0,-95 2.5,-22 -2.5,-22" transform="rotate(30)"/>
+      <polygon points="0,-95 2.5,-22 -2.5,-22" transform="rotate(40)"/>
+      <polygon points="0,-95 2.5,-22 -2.5,-22" transform="rotate(50)"/>
+      <polygon points="0,-95 2.5,-22 -2.5,-22" transform="rotate(60)"/>
+      <polygon points="0,-95 2.5,-22 -2.5,-22" transform="rotate(70)"/>
+      <polygon points="0,-95 2.5,-22 -2.5,-22" transform="rotate(80)"/>
+      <polygon points="0,-95 2.5,-22 -2.5,-22" transform="rotate(90)"/>
+      <polygon points="0,-95 2.5,-22 -2.5,-22" transform="rotate(100)"/>
+      <polygon points="0,-95 2.5,-22 -2.5,-22" transform="rotate(110)"/>
+      <polygon points="0,-95 2.5,-22 -2.5,-22" transform="rotate(120)"/>
+      <polygon points="0,-95 2.5,-22 -2.5,-22" transform="rotate(130)"/>
+      <polygon points="0,-95 2.5,-22 -2.5,-22" transform="rotate(140)"/>
+      <polygon points="0,-95 2.5,-22 -2.5,-22" transform="rotate(150)"/>
+      <polygon points="0,-95 2.5,-22 -2.5,-22" transform="rotate(160)"/>
+      <polygon points="0,-95 2.5,-22 -2.5,-22" transform="rotate(170)"/>
+      <polygon points="0,-95 2.5,-22 -2.5,-22" transform="rotate(180)"/>
+      <polygon points="0,-95 2.5,-22 -2.5,-22" transform="rotate(190)"/>
+      <polygon points="0,-95 2.5,-22 -2.5,-22" transform="rotate(200)"/>
+      <polygon points="0,-95 2.5,-22 -2.5,-22" transform="rotate(210)"/>
+      <polygon points="0,-95 2.5,-22 -2.5,-22" transform="rotate(220)"/>
+      <polygon points="0,-95 2.5,-22 -2.5,-22" transform="rotate(230)"/>
+      <polygon points="0,-95 2.5,-22 -2.5,-22" transform="rotate(240)"/>
+      <polygon points="0,-95 2.5,-22 -2.5,-22" transform="rotate(250)"/>
+      <polygon points="0,-95 2.5,-22 -2.5,-22" transform="rotate(260)"/>
+      <polygon points="0,-95 2.5,-22 -2.5,-22" transform="rotate(270)"/>
+      <polygon points="0,-95 2.5,-22 -2.5,-22" transform="rotate(280)"/>
+      <polygon points="0,-95 2.5,-22 -2.5,-22" transform="rotate(290)"/>
+      <polygon points="0,-95 2.5,-22 -2.5,-22" transform="rotate(300)"/>
+      <polygon points="0,-95 2.5,-22 -2.5,-22" transform="rotate(310)"/>
+      <polygon points="0,-95 2.5,-22 -2.5,-22" transform="rotate(320)"/>
+      <polygon points="0,-95 2.5,-22 -2.5,-22" transform="rotate(330)"/>
+      <polygon points="0,-95 2.5,-22 -2.5,-22" transform="rotate(340)"/>
+      <polygon points="0,-95 2.5,-22 -2.5,-22" transform="rotate(350)"/>
+      <circle r="14" fill="#d8a13a"/>
+      <circle r="8" fill="#1b1c24"/>
+    </g>
+  </svg>
+
+  <div class="frame">
+    <div class="route-num">★ Route No. 5 · Form 1804 · Dining Car Edition · 2026 ★</div>
+    <h1 class="title">EATING EAST</h1>
+    <div class="subtitle-cjk">美 食 重 點 · 十 二 日</div>
+    <!-- Plate-and-fork graphic instead of just a train -->
+    <svg class="train-graphic" viewBox="0 0 600 110" aria-hidden="true">
+      <g fill="currentColor">
+        <!-- Plate 1 — NYC slice -->
+        <circle cx="80" cy="55" r="36" fill="none" stroke="currentColor" stroke-width="2"/>
+        <circle cx="80" cy="55" r="28" fill="none" stroke="currentColor" stroke-width="1" opacity="0.5"/>
+        <polygon points="58,40 102,40 80,72" fill="currentColor"/>
+        <text x="80" y="105" text-anchor="middle" font-family="Special Elite" font-size="9" fill="#d8a13a">NYC</text>
+        <!-- Connector -->
+        <line x1="116" y1="55" x2="186" y2="55" stroke="currentColor" stroke-width="2" stroke-dasharray="3 3"/>
+        <!-- Plate 2 — BOS lobster -->
+        <circle cx="220" cy="55" r="36" fill="none" stroke="currentColor" stroke-width="2"/>
+        <circle cx="220" cy="55" r="28" fill="none" stroke="currentColor" stroke-width="1" opacity="0.5"/>
+        <rect x="202" y="48" width="36" height="14" rx="7" fill="currentColor"/>
+        <circle cx="210" cy="46" r="3" fill="currentColor"/>
+        <circle cx="230" cy="46" r="3" fill="currentColor"/>
+        <text x="220" y="105" text-anchor="middle" font-family="Special Elite" font-size="9" fill="#d8a13a">BOS</text>
+        <line x1="256" y1="55" x2="326" y2="55" stroke="currentColor" stroke-width="2" stroke-dasharray="3 3"/>
+        <!-- Plate 3 — PHL cheesesteak -->
+        <circle cx="360" cy="55" r="36" fill="none" stroke="currentColor" stroke-width="2"/>
+        <circle cx="360" cy="55" r="28" fill="none" stroke="currentColor" stroke-width="1" opacity="0.5"/>
+        <rect x="338" y="48" width="44" height="14" rx="3" fill="currentColor"/>
+        <rect x="340" y="45" width="40" height="4" fill="currentColor" opacity="0.6"/>
+        <text x="360" y="105" text-anchor="middle" font-family="Special Elite" font-size="9" fill="#d8a13a">PHL</text>
+        <line x1="396" y1="55" x2="466" y2="55" stroke="currentColor" stroke-width="2" stroke-dasharray="3 3"/>
+        <!-- Cup 4 — DC pho bowl -->
+        <circle cx="500" cy="55" r="36" fill="none" stroke="currentColor" stroke-width="2"/>
+        <path d="M 478 50 Q 500 78 522 50 L 522 56 Q 500 84 478 56 Z" fill="currentColor"/>
+        <line x1="500" y1="42" x2="500" y2="34" stroke="currentColor" stroke-width="1" opacity="0.6"/>
+        <line x1="494" y1="40" x2="494" y2="32" stroke="currentColor" stroke-width="1" opacity="0.6"/>
+        <line x1="506" y1="40" x2="506" y2="32" stroke="currentColor" stroke-width="1" opacity="0.6"/>
+        <text x="500" y="105" text-anchor="middle" font-family="Special Elite" font-size="9" fill="#d8a13a">DC</text>
+        <!-- Tracks bottom -->
+        <line x1="0" y1="98" x2="600" y2="98" stroke="currentColor" stroke-width="1" opacity="0.3"/>
+      </g>
+    </svg>
+
+    <p class="lede">為 9 月 27 日 Boston 婚禮而展開的 12 日行旅，但走的是另一條軸線——以食物為主敘事，景點為次。Joe's Pizza、Russ &amp; Daughters、Neptune Oyster、Pat's 與 Geno's、Eden Center、Ben's Chili Bowl——一張覆蓋兩世紀、四城三十多家店的吃飯地圖。</p>
+    <div class="stamps">
+      <div class="stamp"><strong>12</strong> DAYS</div>
+      <div class="stamp"><strong>4</strong> CITIES</div>
+      <div class="stamp"><strong>1</strong> WEDDING</div>
+      <div class="stamp"><strong>2</strong> ACELA</div>
+      <div class="stamp"><strong>30+</strong> RESTAURANTS</div>
+    </div>
+    <a class="alt-link" href="./index.html">另一風格 · 精修版 →</a>
+  </div>
+</section>
+
+<!-- ==================== ROUTE MAP ==================== -->
+<section class="route-strip">
+  <div class="route-strip-inner">
+    <div class="label">★ Route Map · 四 城 餐 桌 全 圖 ★</div>
+    <svg class="route-svg" viewBox="0 0 1200 220" preserveAspectRatio="xMidYMid meet">
+      <!-- Double rail -->
+      <line x1="60" y1="120" x2="1140" y2="120" stroke="#1b1c24" stroke-width="3"/>
+      <line x1="60" y1="130" x2="1140" y2="130" stroke="#1b1c24" stroke-width="1.5"/>
+      <!-- Ties -->
+      <g stroke="#1b1c24" stroke-width="1">
+        <line x1="80" y1="116" x2="80" y2="134"/>
+        <line x1="120" y1="116" x2="120" y2="134"/>
+        <line x1="160" y1="116" x2="160" y2="134"/>
+        <line x1="200" y1="116" x2="200" y2="134"/>
+        <line x1="240" y1="116" x2="240" y2="134"/>
+        <line x1="320" y1="116" x2="320" y2="134"/>
+        <line x1="360" y1="116" x2="360" y2="134"/>
+        <line x1="400" y1="116" x2="400" y2="134"/>
+        <line x1="440" y1="116" x2="440" y2="134"/>
+        <line x1="520" y1="116" x2="520" y2="134"/>
+        <line x1="560" y1="116" x2="560" y2="134"/>
+        <line x1="640" y1="116" x2="640" y2="134"/>
+        <line x1="680" y1="116" x2="680" y2="134"/>
+        <line x1="760" y1="116" x2="760" y2="134"/>
+        <line x1="800" y1="116" x2="800" y2="134"/>
+        <line x1="880" y1="116" x2="880" y2="134"/>
+        <line x1="920" y1="116" x2="920" y2="134"/>
+        <line x1="1000" y1="116" x2="1000" y2="134"/>
+        <line x1="1040" y1="116" x2="1040" y2="134"/>
+        <line x1="1080" y1="116" x2="1080" y2="134"/>
+      </g>
+
+      <!-- NYC station — plate iconography -->
+      <g>
+        <text x="160" y="58" text-anchor="middle" font-family="Limelight" font-size="22" fill="#1b1c24">NEW YORK</text>
+        <text x="160" y="78" text-anchor="middle" font-family="Special Elite" font-size="10" fill="#b07e1d" letter-spacing="2">D1—D3</text>
+        <!-- Plate (slice) -->
+        <circle cx="160" cy="125" r="20" fill="#b94b32" stroke="#1b1c24" stroke-width="2"/>
+        <polygon points="148,118 172,118 160,138" fill="#f0e5c8"/>
+        <text x="160" y="175" text-anchor="middle" font-family="Special Elite" font-size="11" fill="#1b1c24">PENN STA.</text>
+        <text x="160" y="190" text-anchor="middle" font-family="Crimson Pro" font-style="italic" font-size="11" fill="#8c361f">Pizza · Pastrami · Bagels</text>
+      </g>
+
+      <!-- BOS station — lobster -->
+      <g>
+        <text x="480" y="58" text-anchor="middle" font-family="Limelight" font-size="22" fill="#1b1c24">BOSTON</text>
+        <text x="480" y="78" text-anchor="middle" font-family="Special Elite" font-size="10" fill="#b07e1d" letter-spacing="2">D4—D7 · ♥ 婚禮</text>
+        <circle cx="480" cy="125" r="20" fill="#285e64" stroke="#1b1c24" stroke-width="2"/>
+        <ellipse cx="480" cy="125" rx="10" ry="5" fill="#f0e5c8"/>
+        <line x1="475" y1="118" x2="475" y2="113" stroke="#f0e5c8" stroke-width="1.5"/>
+        <line x1="485" y1="118" x2="485" y2="113" stroke="#f0e5c8" stroke-width="1.5"/>
+        <text x="480" y="175" text-anchor="middle" font-family="Special Elite" font-size="11" fill="#1b1c24">SOUTH STA.</text>
+        <text x="480" y="190" text-anchor="middle" font-family="Crimson Pro" font-style="italic" font-size="11" fill="#16383d">Lobster · Cannoli</text>
+      </g>
+
+      <!-- PHL station — cheesesteak -->
+      <g>
+        <text x="800" y="58" text-anchor="middle" font-family="Limelight" font-size="22" fill="#1b1c24">PHILADELPHIA</text>
+        <text x="800" y="78" text-anchor="middle" font-family="Special Elite" font-size="10" fill="#b07e1d" letter-spacing="2">D8—D9</text>
+        <circle cx="800" cy="125" r="20" fill="#d8a13a" stroke="#1b1c24" stroke-width="2"/>
+        <rect x="788" y="120" width="24" height="8" rx="2" fill="#1b1c24"/>
+        <rect x="790" y="118" width="20" height="3" fill="#f0e5c8"/>
+        <text x="800" y="175" text-anchor="middle" font-family="Special Elite" font-size="11" fill="#1b1c24">30TH ST.</text>
+        <text x="800" y="190" text-anchor="middle" font-family="Crimson Pro" font-style="italic" font-size="11" fill="#b07e1d">Cheesesteak · Reading</text>
+      </g>
+
+      <!-- DC station — pho bowl -->
+      <g>
+        <text x="1080" y="58" text-anchor="middle" font-family="Limelight" font-size="22" fill="#1b1c24">WASHINGTON</text>
+        <text x="1080" y="78" text-anchor="middle" font-family="Special Elite" font-size="10" fill="#b07e1d" letter-spacing="2">D10—D11</text>
+        <circle cx="1080" cy="125" r="20" fill="#285e64" stroke="#1b1c24" stroke-width="2"/>
+        <path d="M 1066 122 Q 1080 142 1094 122 L 1094 126 Q 1080 146 1066 126 Z" fill="#f0e5c8"/>
+        <line x1="1080" y1="115" x2="1080" y2="108" stroke="#f0e5c8" stroke-width="1.2"/>
+        <line x1="1075" y1="113" x2="1075" y2="106" stroke="#f0e5c8" stroke-width="1.2"/>
+        <line x1="1085" y1="113" x2="1085" y2="106" stroke="#f0e5c8" stroke-width="1.2"/>
+        <text x="1080" y="175" text-anchor="middle" font-family="Special Elite" font-size="11" fill="#1b1c24">UNION STA.</text>
+        <text x="1080" y="190" text-anchor="middle" font-family="Crimson Pro" font-style="italic" font-size="11" fill="#16383d">Phở · Injera · Half-Smoke</text>
+      </g>
+
+      <!-- Section labels in between -->
+      <text x="320" y="115" text-anchor="middle" font-family="Special Elite" font-size="10" fill="#8c361f" letter-spacing="2">ACELA · 4 h</text>
+      <text x="640" y="115" text-anchor="middle" font-family="Special Elite" font-size="10" fill="#8c361f" letter-spacing="2">NE REGIONAL · 7 h</text>
+      <text x="940" y="115" text-anchor="middle" font-family="Special Elite" font-size="10" fill="#8c361f" letter-spacing="2">ACELA · 1 h 41</text>
+    </svg>
+  </div>
+</section>
+
+<!-- ==================== NYC ==================== -->
+<section class="city-poster nyc">
+  <div class="city-grid">
+    <div class="image-col">
+      <div class="corner-tag">★ Phase I · Days 1—3</div>
+      <div class="photo" style="background-image:url('https://commons.wikimedia.org/wiki/Special:FilePath/Manhattan%20at%20Dusk%20by%20slonecker.jpg?width=1280')"></div>
+      <svg class="ornament" style="bottom:30px; right:30px; width:120px; height:120px;" viewBox="0 0 120 120" aria-hidden="true">
+        <g fill="#f6ecd0" opacity="0.9">
+          <!-- Slice of pizza icon -->
+          <polygon points="60,15 25,95 95,95" fill="none" stroke="#f6ecd0" stroke-width="2"/>
+          <circle cx="48" cy="65" r="4"/>
+          <circle cx="70" cy="58" r="4"/>
+          <circle cx="60" cy="80" r="4"/>
+          <text x="60" y="110" text-anchor="middle" font-family="Special Elite" font-size="10">NYC</text>
+        </g>
+      </svg>
+    </div>
+    <div class="text-col">
+      <div class="phase">★ Phase I · Days 1—3</div>
+      <h2 class="cjk">紐約</h2>
+      <div class="en-title">NEW YORK CITY</div>
+      <div class="tagline">The Immigrant Food Capital · Pizza · Pastrami · Soup Dumplings</div>
+      <p class="intro">從 JFK 落地直接進城。三天紐約：第一晚 West Village 的 Joe's Pizza 配時差，第二天 Lower East Side 一路吃猶太熟食 + 小籠包，第三天選邊站——Flushing 中式食物大爆發 vs Brooklyn 披薩朝聖。Manhattan 不是這趟的主菜，而是用來把所有族裔的食物軸線一次補齊。</p>
+
+      <table class="fare-table">
+        <thead>
+          <tr class="fare-head"><td colspan="3">★ Bill of Fare · 必嚐清單 ★</td></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="item-num">01</td>
+            <td class="item-name">Joe's Pizza<span class="item-en">Carmine St · 1975</span></td>
+            <td class="item-desc">Greenwich Village 元祖紐約切片。Spider-Man 2 拍片現場。USD 4 一片，邊走邊吃 — 落地當晚的儀式。</td>
+          </tr>
+          <tr>
+            <td class="item-num">02</td>
+            <td class="item-name">Russ &amp; Daughters<span class="item-en">Lower East Side · 1914</span></td>
+            <td class="item-desc">紐約猶太「appetizing」store 活化石。煙燻鮭魚（Gaspe Nova）+ 奶油起司 + everything bagel，店內現切薄如紙片。</td>
+          </tr>
+          <tr>
+            <td class="item-num">03</td>
+            <td class="item-name">Katz's Delicatessen<span class="item-en">Houston St · 1888</span></td>
+            <td class="item-desc">Hand-cut pastrami on rye + 黃芥末 + 酸黃瓜——紐約熟食的根本。"When Harry Met Sally" 拍片現場有牌。</td>
+          </tr>
+          <tr>
+            <td class="item-num">04</td>
+            <td class="item-name">Joe's Shanghai<span class="item-en">小籠包元祖</span></td>
+            <td class="item-desc">紐約第一家紅遍主流的小籠包店（1995）。蟹粉小籠 + 上海排骨年糕。Chinatown / Flushing 兩店皆可。</td>
+          </tr>
+          <tr>
+            <td class="item-num">05</td>
+            <td class="item-name">Xi'an Famous Foods<span class="item-en">Flushing 起家</span></td>
+            <td class="item-desc">2005 由 Bourdain / Chang 力推紅起來。手撕寬麵 + 孜然羊肉烤餅 + 涼皮——重油重香重椒，麻字當頭。</td>
+          </tr>
+          <tr>
+            <td class="item-num">06</td>
+            <td class="item-name">Brooklyn 披薩三家<span class="item-en">Lucali / Di Fara / L&amp;B</span></td>
+            <td class="item-desc">Lucali（Carroll Gardens 木窯，現金 only，無菜單）/ Di Fara（Midwood，Dom 親手 60 年）/ L&amp;B Spumoni Gardens（Sicilian square pie）。</td>
+          </tr>
+          <tr>
+            <td class="item-num">07</td>
+            <td class="item-name">Chinatown 港式飲茶<span class="item-en">Mott / Bayard</span></td>
+            <td class="item-desc">Jing Fong（推車式飲茶）或 Dim Sum Go Go 點單式。週末 10am–11am 黃金時段。</td>
+          </tr>
+          <tr>
+            <td class="item-num">08</td>
+            <td class="item-name">Doughnut Plant<span class="item-en">LES 散步收尾</span></td>
+            <td class="item-desc">Lower East Side 起家高端甜甜圈，square Tres Leches、Crème Brûlée 都是顛覆性款式。</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== ACELA INTERLUDE 1 ==================== -->
+<section class="timetable-strip">
+  <div class="ts-inner">
+    <div class="ts-text">
+      <svg class="train-silhouette" viewBox="0 0 320 56" aria-hidden="true">
+        <g fill="currentColor">
+          <path d="M 10 38 L 10 26 Q 10 18 30 16 L 280 16 Q 305 16 315 30 L 315 38 Z"/>
+          <rect x="40" y="22" width="40" height="8" fill="#1b1c24"/>
+          <rect x="90" y="22" width="40" height="8" fill="#1b1c24"/>
+          <rect x="140" y="22" width="40" height="8" fill="#1b1c24"/>
+          <rect x="190" y="22" width="40" height="8" fill="#1b1c24"/>
+          <rect x="240" y="22" width="40" height="8" fill="#1b1c24"/>
+          <circle cx="40" cy="44" r="4"/>
+          <circle cx="80" cy="44" r="4"/>
+          <circle cx="160" cy="44" r="4"/>
+          <circle cx="240" cy="44" r="4"/>
+          <circle cx="285" cy="44" r="4"/>
+          <line x1="0" y1="51" x2="320" y2="51" stroke="currentColor" stroke-width="1"/>
+          <line x1="0" y1="20" x2="20" y2="20" stroke="currentColor" stroke-width="1" opacity="0.5"/>
+          <line x1="0" y1="30" x2="30" y2="30" stroke="currentColor" stroke-width="1" opacity="0.4"/>
+        </g>
+      </svg>
+      <div class="label">★ Interlude · Day 4 Morning ★</div>
+      <h2>Acela Express</h2>
+      <div class="sub">New York → Boston · 4 hr</div>
+      <p>把三天紐約的胃口背上 Acela，從 Penn Station 早上九點半出發，沿 Long Island Sound 海岸線一路東北上行，經 New Haven、Providence，下午一點半落地 Boston South Station——剛好趕得上 Beacon Hill 散步、晚上 Saltie Girl 海鮮 + 罐頭吧。</p>
+    </div>
+    <table class="ts-table">
+      <tr><td>Train No. 2150</td><td>Amtrak Acela Express · Business Class</td></tr>
+      <tr><td>Depart</td><td>New York Penn · 09:30</td></tr>
+      <tr><td>Arrive</td><td>Boston South · 13:30</td></tr>
+      <tr><td>Run Time</td><td>4 hr · 372 km</td></tr>
+      <tr><td>Onboard</td><td>2+1 寬敞座位、Wi-Fi、Café Car、座位插座</td></tr>
+      <tr><td>Tip</td><td>右側看 Long Island Sound 與海岸線</td></tr>
+    </table>
+  </div>
+</section>
+
+<!-- ==================== BOSTON ==================== -->
+<section class="city-poster boston flip">
+  <div class="city-grid">
+    <div class="text-col">
+      <div class="phase">★ Phase II · Days 4—7 · ♥ Wedding</div>
+      <h2 class="cjk">波士頓</h2>
+      <div class="en-title">BOSTON, MASS.</div>
+      <div class="tagline">North End · Seafood · Cambridge Ice Cream</div>
+      <p class="intro">波士頓不是 cliché 的「歷史城市」，而是「義裔 + 海港 + 大學城」三條食物軸線。Saturday 下午到，留 Beacon Hill 散步給時差。Sunday 是婚禮主場，吃自由。Monday 全力 North End 食物 crawl，Tuesday 過河走 Cambridge 校園吃 Toscanini's + Mei Mei + Flour Bakery——然後南下。</p>
+
+      <table class="fare-table">
+        <thead>
+          <tr class="fare-head"><td colspan="3">★ Bill of Fare · 必嚐清單 ★</td></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="item-num">01</td>
+            <td class="item-name">Neptune Oyster<span class="item-en">North End</span></td>
+            <td class="item-desc">全市最熱門的龍蝦堡 (butter or mayo) + Wellfleet 生蠔。不接受訂位、開門前排起隊。Hot lobster roll 加 drawn butter 是經典。</td>
+          </tr>
+          <tr>
+            <td class="item-num">02</td>
+            <td class="item-name">Daily Catch<span class="item-en">Hanover St.</span></td>
+            <td class="item-desc">沒招牌的西西里式海鮮，菜端在煎鍋上桌，現金 only。烏賊墨燉飯 + 蒜爆蛤蜊；20 個位子。</td>
+          </tr>
+          <tr>
+            <td class="item-num">03</td>
+            <td class="item-name">Mike's vs Modern Pastry<span class="item-en">Cannoli 對決</span></td>
+            <td class="item-desc">Hanover St. 同條街隔三家。都買、邊走邊吃直接比 — 觀光客的標準科學實驗。</td>
+          </tr>
+          <tr>
+            <td class="item-num">04</td>
+            <td class="item-name">Eventide Fenway<span class="item-en">緬因海鮮</span></td>
+            <td class="item-desc">Portland 來的姐妹店；招牌 brown butter lobster roll 用蒸過 steamed bun，奶油焦化甜度神奇。</td>
+          </tr>
+          <tr>
+            <td class="item-num">05</td>
+            <td class="item-name">Saltie Girl<span class="item-en">Back Bay</span></td>
+            <td class="item-desc">9/26 抵達當晚輕食 anchor。Conservas 罐頭吧 + lobster roll；吧台座位最舒服。</td>
+          </tr>
+          <tr>
+            <td class="item-num">06</td>
+            <td class="item-name">Toscanini's<span class="item-en">Cambridge MIT</span></td>
+            <td class="item-desc">冰淇淋傳奇。Burnt Caramel + Khaleesi + Earl Grey 黃金三球。NYT 食評說「全美最佳」。</td>
+          </tr>
+          <tr>
+            <td class="item-num">07</td>
+            <td class="item-name">Mei Mei<span class="item-en">中式新派</span></td>
+            <td class="item-desc">Cambridge 出身新派中式。Double Awesome 韭菜蛋餅夾煎蛋三明治是招牌，James Beard 入圍。</td>
+          </tr>
+          <tr>
+            <td class="item-num">08</td>
+            <td class="item-name">Flour Bakery<span class="item-en">Joanne Chang · 多間</span></td>
+            <td class="item-desc">Sticky Sticky Buns（NYT 名單）、egg sandwich、tomato soup 配 grilled cheese。早餐或下午茶。</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="image-col">
+      <div class="corner-tag">★ Phase II · Days 4—7</div>
+      <div class="photo" style="background-image:url('https://commons.wikimedia.org/wiki/Special:FilePath/Faneuil%20Hall%20Boston%20Massachusetts.JPG?width=1280')"></div>
+      <svg class="ornament" style="top:30px; right:30px; width:140px; height:80px;" viewBox="0 0 140 80" aria-hidden="true">
+        <g fill="#f6ecd0" opacity="0.9">
+          <!-- Lobster claws -->
+          <ellipse cx="70" cy="40" rx="36" ry="14" fill="none" stroke="#f6ecd0" stroke-width="2"/>
+          <circle cx="56" cy="40" r="6"/>
+          <circle cx="84" cy="40" r="6"/>
+          <line x1="60" y1="34" x2="50" y2="22" stroke="#f6ecd0" stroke-width="2"/>
+          <line x1="80" y1="34" x2="90" y2="22" stroke="#f6ecd0" stroke-width="2"/>
+          <text x="70" y="72" text-anchor="middle" font-family="Special Elite" font-size="10">BOS</text>
+        </g>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== NE REGIONAL INTERLUDE ==================== -->
+<section class="timetable-strip">
+  <div class="ts-inner">
+    <div class="ts-text">
+      <svg class="train-silhouette" viewBox="0 0 320 56" aria-hidden="true">
+        <g fill="currentColor">
+          <rect x="10" y="20" width="100" height="22" rx="2"/>
+          <polygon points="110,20 122,30 110,42"/>
+          <rect x="10" y="28" width="100" height="2" fill="#1b1c24"/>
+          <circle cx="30" cy="46" r="5"/>
+          <circle cx="55" cy="46" r="5"/>
+          <circle cx="85" cy="46" r="5"/>
+          <rect x="135" y="24" width="70" height="18" rx="2"/>
+          <circle cx="150" cy="46" r="4"/>
+          <circle cx="190" cy="46" r="4"/>
+          <rect x="215" y="24" width="70" height="18" rx="2"/>
+          <circle cx="230" cy="46" r="4"/>
+          <circle cx="270" cy="46" r="4"/>
+          <line x1="0" y1="51" x2="320" y2="51" stroke="currentColor" stroke-width="1"/>
+        </g>
+      </svg>
+      <div class="label">★ Interlude · Day 8 ★</div>
+      <h2>NE Regional</h2>
+      <div class="sub">Boston · New York · Philadelphia</div>
+      <p>9/30 早上從 South Station 上 Amtrak 南下，沿 Connecticut shoreline 一路經過 New Haven、紐約 Penn（不下車）、Newark，到下午抵 Philadelphia 30th Street Station——直接 check-in Old City，傍晚 Reading Terminal 收完攤前繞一圈試水。</p>
+    </div>
+    <table class="ts-table">
+      <tr><td>Train No. 95</td><td>Amtrak NE Regional · BOS → PHL</td></tr>
+      <tr><td>Depart</td><td>Boston South · 09:15</td></tr>
+      <tr><td>Arrive</td><td>Philadelphia 30th St. · 16:30</td></tr>
+      <tr><td>Run Time</td><td>約 7 h 15 m · 一趟到底</td></tr>
+      <tr><td>替代</td><td>Acela #2153 約 5.5 h，貴 USD 80</td></tr>
+      <tr><td>Tip</td><td>早上 Tatte 外帶上車，Café Car 平均</td></tr>
+    </table>
+  </div>
+</section>
+
+<!-- ==================== PHILADELPHIA ==================== -->
+<section class="city-poster philly">
+  <div class="city-grid">
+    <div class="image-col">
+      <div class="corner-tag">★ Phase III · Days 8—9</div>
+      <div class="photo" style="background-image:url('https://commons.wikimedia.org/wiki/Special:FilePath/Reading_Terminal_Market.jpg?width=1280')"></div>
+      <svg class="ornament" style="bottom:30px; right:30px; width:140px; height:80px;" viewBox="0 0 140 80" aria-hidden="true">
+        <g fill="#1b1c24" opacity="0.85">
+          <!-- Cheesesteak sandwich -->
+          <ellipse cx="70" cy="40" rx="48" ry="10" fill="#1b1c24"/>
+          <rect x="22" y="36" width="96" height="8" fill="#1b1c24"/>
+          <ellipse cx="70" cy="36" rx="44" ry="6" fill="#f6ecd0"/>
+          <text x="70" y="72" text-anchor="middle" font-family="Special Elite" font-size="10" fill="#1b1c24">PHL</text>
+        </g>
+      </svg>
+    </div>
+    <div class="text-col">
+      <div class="phase">★ Phase III · Days 8—9</div>
+      <h2 class="cjk">費城</h2>
+      <div class="en-title">PHILADELPHIA, PA.</div>
+      <div class="tagline">Cheesesteak Trials · Reading Terminal · Italian Market</div>
+      <p class="intro">費城這站只給一整天，但密度滿到爆。早上獨立廳跟自由鐘是 polite 致敬（30 分鐘），主菜是「Cheesesteak 三派對決」+ Reading Terminal Market + Italian Market 9th Street + Termini vs Isgro Cannoli 第二輪。一天走完，胃口需要排程，但這是全程食物密度最高的一站。</p>
+
+      <table class="fare-table">
+        <thead>
+          <tr class="fare-head"><td colspan="3">★ Bill of Fare · 必嚐清單 ★</td></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="item-num">01</td>
+            <td class="item-name">Pat's King of Steaks<span class="item-en">1930 · 派系 #1</span></td>
+            <td class="item-desc">Cheesesteak 發明者。下單術語：「Whiz wit」= American cheese with onions。霓虹燈 24h。</td>
+          </tr>
+          <tr>
+            <td class="item-num">02</td>
+            <td class="item-name">Geno's Steaks<span class="item-en">隔街 · 派系 #2</span></td>
+            <td class="item-desc">霓虹燈最猛、招牌最閃，醬汁更甜更滿，肉切得更碎；常被認為觀光化但量足。</td>
+          </tr>
+          <tr>
+            <td class="item-num">03</td>
+            <td class="item-name">John's Roast Pork<span class="item-en">派系 #3 · 食物最好</span></td>
+            <td class="item-desc">James Beard 得獎、午餐 only 11am-3pm。招牌其實是 roast pork w/ broccoli rabe &amp; sharp provolone。</td>
+          </tr>
+          <tr>
+            <td class="item-num">04</td>
+            <td class="item-name">Reading Terminal Market<span class="item-en">130 年市集</span></td>
+            <td class="item-desc">DiNic's 烤豬肉三明治（Bourdain 認證）、Bassetts 1861 冰淇淋、Beiler's Donuts、Dienner's 阿米許烤雞。週日休。</td>
+          </tr>
+          <tr>
+            <td class="item-num">05</td>
+            <td class="item-name">Termini Bros vs Isgro<span class="item-en">Italian Market Cannoli</span></td>
+            <td class="item-desc">Cannoli 第二輪。Termini 殼厚實偏甜、Isgro 餡 ricotta 更清。9th 街順道買 Di Bruno 起司。</td>
+          </tr>
+          <tr>
+            <td class="item-num">06</td>
+            <td class="item-name">Zahav<span class="item-en">Society Hill</span></td>
+            <td class="item-desc">Solomonov 以色列菜旗艦。Hummus Tehina + Mesibah 嫩烤羔羊套餐。60 天前訂位是底線。</td>
+          </tr>
+          <tr>
+            <td class="item-num">07</td>
+            <td class="item-name">South Philly Barbacoa<span class="item-en">9th &amp; Carpenter</span></td>
+            <td class="item-desc">Oaxacan 家族手工 lamb barbacoa，只賣早上 6am–3pm，週六排隊到對街。</td>
+          </tr>
+          <tr>
+            <td class="item-num">08</td>
+            <td class="item-name">Federal Donuts<span class="item-en">multi-loc.</span></td>
+            <td class="item-desc">Solomonov 副業，韓式炸雞 + 手作甜甜圈反差；hot fresh donut 上桌 60 秒內最神。</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== ACELA INTERLUDE 2 ==================== -->
+<section class="timetable-strip">
+  <div class="ts-inner">
+    <div class="ts-text">
+      <svg class="train-silhouette" viewBox="0 0 320 56" aria-hidden="true">
+        <g fill="currentColor">
+          <path d="M 10 38 L 10 26 Q 10 18 30 16 L 280 16 Q 305 16 315 30 L 315 38 Z"/>
+          <rect x="40" y="22" width="40" height="8" fill="#1b1c24"/>
+          <rect x="90" y="22" width="40" height="8" fill="#1b1c24"/>
+          <rect x="140" y="22" width="40" height="8" fill="#1b1c24"/>
+          <rect x="190" y="22" width="40" height="8" fill="#1b1c24"/>
+          <rect x="240" y="22" width="40" height="8" fill="#1b1c24"/>
+          <circle cx="40" cy="44" r="4"/>
+          <circle cx="80" cy="44" r="4"/>
+          <circle cx="160" cy="44" r="4"/>
+          <circle cx="240" cy="44" r="4"/>
+          <circle cx="285" cy="44" r="4"/>
+          <line x1="0" y1="51" x2="320" y2="51" stroke="currentColor" stroke-width="1"/>
+          <line x1="0" y1="20" x2="20" y2="20" stroke="currentColor" stroke-width="1" opacity="0.5"/>
+          <line x1="0" y1="30" x2="30" y2="30" stroke="currentColor" stroke-width="1" opacity="0.4"/>
+        </g>
+      </svg>
+      <div class="label">★ Interlude · Day 10 Morning ★</div>
+      <h2>Acela Express</h2>
+      <div class="sub">Philadelphia → Washington · 1 h 41 m</div>
+      <p>從 30th Street Station 寬敞的石灰岩大廳出發，車站咖啡（La Colombe）喝完，登上 Amtrak 旗艦列車。Acela 在 Maryland 沿著 Chesapeake Bay 灣口高速滑行——直奔 Union Station，午餐已經在 Old Ebbitt Grill 的 oyster bar 預備好。</p>
+    </div>
+    <table class="ts-table">
+      <tr><td>Train No. 2151</td><td>Amtrak Acela Express · Business Class</td></tr>
+      <tr><td>Depart</td><td>Philadelphia 30th St. · 09:36</td></tr>
+      <tr><td>Arrive</td><td>Washington Union · 11:17</td></tr>
+      <tr><td>Run Time</td><td>1 h 41 m · 219 km · max 240 km/h</td></tr>
+      <tr><td>Onboard</td><td>2+1 寬敞座位、Wi-Fi、Café Car、座位插座</td></tr>
+      <tr><td>Tip</td><td>右側看 Susquehanna 河大鐵橋</td></tr>
+    </table>
+  </div>
+</section>
+
+<!-- ==================== WASHINGTON D.C. ==================== -->
+<section class="city-poster dc flip">
+  <div class="city-grid">
+    <div class="text-col">
+      <div class="phase">★ Phase IV · Days 10—11</div>
+      <h2 class="cjk">華盛頓</h2>
+      <div class="en-title">WASHINGTON, D.C.</div>
+      <div class="tagline">International Capitol · Vietnam · Ethiopia · 1856 Oyster Bar</div>
+      <p class="intro">DC 的食物地圖其實是世界地圖。9/11 後一波又一波的難民跟外交圈帶來：Falls Church 北維的 Eden Center（全美第二大越南社區）、9th St NW 的 Little Ethiopia（全美最大衣索比亞社群）、再加上 Rockville Metro 線終點的中式食堂。把這些跟 1856 年的 Old Ebbitt、1958 年的 Ben's Chili Bowl、跟 Le Diplomate 的法式小酒館放一起，就是兩天可以吃多深。</p>
+
+      <table class="fare-table">
+        <thead>
+          <tr class="fare-head"><td colspan="3">★ Bill of Fare · 必嚐清單 ★</td></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="item-num">01</td>
+            <td class="item-name">Old Ebbitt Grill<span class="item-en">White House · 1856</span></td>
+            <td class="item-desc">白宮對面 70 公尺。Oyster bar happy hour 3–6pm 半價是 D.C. 業內人士的暗語。Crab cake + clam chowder。</td>
+          </tr>
+          <tr>
+            <td class="item-num">02</td>
+            <td class="item-name">Le Diplomate<span class="item-en">14th St NW</span></td>
+            <td class="item-desc">Stephen Starr 的法式小酒館；French onion soup gratinée + steak frites + Peach Mary brunch。週末必訂位。</td>
+          </tr>
+          <tr>
+            <td class="item-num">03</td>
+            <td class="item-name">Eden Center<span class="item-en">Falls Church · 25 min</span></td>
+            <td class="item-desc">全美第二大越南社區。Phở Xe Lửa 是門面店，phở bò + bánh mì + chè 滿街。週六早上去最熱鬧。</td>
+          </tr>
+          <tr>
+            <td class="item-num">04</td>
+            <td class="item-name">9th St NW · Little Ethiopia<span class="item-en">Dukem / Etete</span></td>
+            <td class="item-desc">DC 有美國最大衣索比亞社群（80 年代難民潮）。Injera 發酵海綿狀大薄餅夾各種燉肉，一桌人共享。</td>
+          </tr>
+          <tr>
+            <td class="item-num">05</td>
+            <td class="item-name">Ben's Chili Bowl<span class="item-en">U Street · 1958</span></td>
+            <td class="item-desc">Duke Ellington、Obama、Beyoncé 都來吃過。Half-smoke + 自製 chili + mustard + onions 是 D.C. 國民食物。</td>
+          </tr>
+          <tr>
+            <td class="item-num">06</td>
+            <td class="item-name">Eastern Market<span class="item-en">Capitol Hill 週末</span></td>
+            <td class="item-desc">1873 市集。Market Lunch 的 crab cake 跟 blueberry buckwheat pancake 早起排。</td>
+          </tr>
+          <tr>
+            <td class="item-num">07</td>
+            <td class="item-name">Rasika<span class="item-en">Penn Quarter</span></td>
+            <td class="item-desc">Michelin 推薦 modern Indian；Palak Chaat（炸菠菜葉 + 優格 + 羅望子）— 連 Obama 都愛。</td>
+          </tr>
+          <tr>
+            <td class="item-num">08</td>
+            <td class="item-name">Bob's Shanghai / A&amp;J<span class="item-en">Rockville Red Line</span></td>
+            <td class="item-desc">DC 華人聖地。Bob's 生煎包 + 小籠包；A&amp;J 北方麵點 + 牛肉捲餅 + 酸辣湯。</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="image-col">
+      <div class="corner-tag">★ Phase IV · Days 10—11</div>
+      <div class="photo" style="background-image:url('https://commons.wikimedia.org/wiki/Special:FilePath/Eden%20Center.jpg?width=1280')"></div>
+      <svg class="ornament" style="top:30px; left:30px; width:140px; height:100px;" viewBox="0 0 140 100" aria-hidden="true">
+        <g fill="#f6ecd0" opacity="0.9">
+          <!-- Pho bowl -->
+          <path d="M 30 50 Q 70 90 110 50 L 110 56 Q 70 96 30 56 Z" stroke="#f6ecd0" stroke-width="2" fill="none"/>
+          <ellipse cx="70" cy="48" rx="42" ry="6" fill="#f6ecd0"/>
+          <line x1="70" y1="40" x2="70" y2="20" stroke="#f6ecd0" stroke-width="2"/>
+          <line x1="60" y1="38" x2="60" y2="18" stroke="#f6ecd0" stroke-width="1.5" opacity="0.7"/>
+          <line x1="80" y1="38" x2="80" y2="18" stroke="#f6ecd0" stroke-width="1.5" opacity="0.7"/>
+          <text x="70" y="90" text-anchor="middle" font-family="Special Elite" font-size="10">DC</text>
+        </g>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== 12-DAY TIMETABLE ==================== -->
+<section class="schedule">
+  <div class="schedule-inner">
+    <div class="header-block">
+      <div class="stencil">★ Form 1804-A · Time-Table ★</div>
+      <h2>TWELVE-DAY SCHEDULE</h2>
+      <div class="cjk">十 二 日 行 程 表</div>
+    </div>
+    <div class="schedule-grid">
+      <div class="ticket-card">
+        <div class="stub-num">01</div>
+        <div class="stub-date">9 / 23 (Wed)</div>
+        <h4>TPE → JFK · 接風</h4>
+        <div class="ticket-route">FLIGHT · WEST VILLAGE</div>
+        <div class="meal-line">▸ DINNER · Joe's Pizza, Carmine St</div>
+        <ul>
+          <li>傍晚抵 JFK、AirTrain + LIRR 進城</li>
+          <li>旅館：West Village / LES</li>
+          <li>Greenwich Village 元祖紐約切片 USD 4</li>
+        </ul>
+        <div class="ticket-stamp teal">Arrival</div>
+      </div>
+      <div class="ticket-card">
+        <div class="stub-num">02</div>
+        <div class="stub-date">9 / 24 (Thu)</div>
+        <h4>LES 猶太熟食日</h4>
+        <div class="ticket-route">NYC · LES + CHINATOWN</div>
+        <div class="meal-line">▸ LUNCH · Katz's Pastrami<br>▸ DINNER · Joe's Shanghai 小籠</div>
+        <ul>
+          <li>10:00 Chinatown 港式飲茶</li>
+          <li>11:30 Russ &amp; Daughters bagel</li>
+          <li>下午 Tenement Museum 看移民史</li>
+        </ul>
+      </div>
+      <div class="ticket-card">
+        <div class="stub-num">03</div>
+        <div class="stub-date">9 / 25 (Fri)</div>
+        <h4>Flushing OR Brooklyn 披薩</h4>
+        <div class="ticket-route">NYC · QUEENS / BROOKLYN</div>
+        <div class="meal-line">▸ Xi'an Famous + Joe's Shanghai · 或<br>▸ Lucali + Di Fara + L&amp;B Spumoni</div>
+        <ul>
+          <li>選邊：Flushing 中式 / Brooklyn 披薩</li>
+          <li>傍晚 Brooklyn Bridge + Dumbo</li>
+          <li>Time Out Market 補一片 Juliana's</li>
+        </ul>
+      </div>
+      <div class="ticket-card">
+        <div class="stub-num">04</div>
+        <div class="stub-date">9 / 26 (Sat)</div>
+        <h4>Acela 上來 · BOS 抵達</h4>
+        <div class="ticket-route">NYC → BOS · ACELA 4 h</div>
+        <div class="meal-line">▸ DINNER · Saltie Girl (Back Bay)</div>
+        <ul>
+          <li>09:30 Penn Sta. Acela #2150</li>
+          <li>13:30 Boston South · check-in</li>
+          <li>下午 Beacon Hill + Acorn Street</li>
+        </ul>
+        <div class="ticket-stamp mustard">Acela</div>
+      </div>
+      <div class="ticket-card">
+        <div class="stub-num">05</div>
+        <div class="stub-date">9 / 27 (Sun)</div>
+        <h4>婚禮日</h4>
+        <div class="ticket-route">BOSTON · WEDDING DAY</div>
+        <div class="meal-line">▸ LUNCH · Tatte / Flour Bakery 輕食<br>▸ EVENING · Wedding Banquet</div>
+        <ul>
+          <li>上午自由（Public Garden 散步）</li>
+          <li><strong>下午/晚上：婚禮典禮 + 晚宴</strong></li>
+          <li>備用：Mike's / Modern Cannoli 收尾</li>
+        </ul>
+        <div class="ticket-stamp">Wedding</div>
+      </div>
+      <div class="ticket-card">
+        <div class="stub-num">06</div>
+        <div class="stub-date">9 / 28 (Mon)</div>
+        <h4>North End 食物 crawl</h4>
+        <div class="ticket-route">BOSTON · NORTH END</div>
+        <div class="meal-line">▸ LUNCH · Daily Catch 烏賊墨<br>▸ TEA · Mike's vs Modern Cannoli<br>▸ DINNER · Neptune Oyster</div>
+        <ul>
+          <li>Hanover St. 散步</li>
+          <li>Paul Revere House + Old North 順道</li>
+          <li>Union Oyster (1826) 喝一杯</li>
+        </ul>
+      </div>
+      <div class="ticket-card">
+        <div class="stub-num">07</div>
+        <div class="stub-date">9 / 29 (Tue)</div>
+        <h4>Cambridge 過河日</h4>
+        <div class="ticket-route">CAMBRIDGE / FENWAY</div>
+        <div class="meal-line">▸ LUNCH · Flour Bakery<br>▸ TEA · Toscanini's 黃金三球<br>▸ DINNER · Mei Mei or Eventide</div>
+        <ul>
+          <li>Harvard Yard + Widener Library</li>
+          <li>MIT Stata Center + Kresge Chapel</li>
+        </ul>
+      </div>
+      <div class="ticket-card">
+        <div class="stub-num">08</div>
+        <div class="stub-date">9 / 30 (Wed)</div>
+        <h4>BOS → PHL · Amtrak</h4>
+        <div class="ticket-route">AMTRAK NE REGIONAL · 7 h</div>
+        <div class="meal-line">▸ DINNER · Zahav (須訂位)</div>
+        <ul>
+          <li>09:15 South Sta. NE Regional #95</li>
+          <li>16:30 30th St. · Old City check-in</li>
+          <li>傍晚 Reading Terminal 試水</li>
+        </ul>
+        <div class="ticket-stamp mustard">Rail Day</div>
+      </div>
+      <div class="ticket-card">
+        <div class="stub-num">09</div>
+        <div class="stub-date">10 / 1 (Thu)</div>
+        <h4>Cheesesteak 三派對決</h4>
+        <div class="ticket-route">PHILLY · INDEPENDENCE + 9TH ST</div>
+        <div class="meal-line">▸ LUNCH #1 · John's Roast Pork<br>▸ LUNCH #2 · Pat's vs Geno's<br>▸ TEA · Reading Terminal · DiNic's<br>▸ DINNER · Termini/Isgro + Suraya</div>
+        <ul>
+          <li>09:30 獨立廳 + 自由鐘 半小時致敬</li>
+          <li>Italian Market 9th St crawl</li>
+        </ul>
+      </div>
+      <div class="ticket-card">
+        <div class="stub-num">10</div>
+        <div class="stub-date">10 / 2 (Fri)</div>
+        <h4>Acela 南下 · DC 入城</h4>
+        <div class="ticket-route">PHL → DC · ACELA 1 h 41</div>
+        <div class="meal-line">▸ LUNCH · Old Ebbitt Grill (1856)<br>▸ DINNER · Le Diplomate</div>
+        <ul>
+          <li>09:36 Acela Express</li>
+          <li>11:17 Union Sta. · 旅館寄行李</li>
+          <li>下午 Lincoln Memorial + Vietnam Wall</li>
+        </ul>
+        <div class="ticket-stamp mustard">Acela</div>
+      </div>
+      <div class="ticket-card">
+        <div class="stub-num">11</div>
+        <div class="stub-date">10 / 3 (Sat)</div>
+        <h4>DC 國際社區噴發 → IAD</h4>
+        <div class="ticket-route">DC · INTERNATIONAL DAY</div>
+        <div class="meal-line">▸ BREAKFAST · Eden Ctr Phở Xe Lửa<br>▸ BRUNCH · Eastern Market<br>▸ TEA · Ben's Chili Bowl<br>▸ DINNER · 9th St Ethiopia</div>
+        <ul>
+          <li>08:30 Eden Center 越南早餐</li>
+          <li>下午 NMAAHC 半館 + Tidal Basin</li>
+          <li>21:00 → IAD · ANA NH 1</li>
+        </ul>
+        <div class="ticket-stamp">Departure</div>
+      </div>
+      <div class="ticket-card">
+        <div class="stub-num">12</div>
+        <div class="stub-date">10 / 4 (Sun)</div>
+        <h4>抵 TPE</h4>
+        <div class="ticket-route">IN TRANSIT → TAIPEI</div>
+        <div class="meal-line">▸ ON BOARD · ANA NRT meal</div>
+        <ul>
+          <li>NH 1 NRT 轉機 → TPE</li>
+          <li>傍晚抵桃園</li>
+          <li>30+ 餐廳記憶開始發酵</li>
+        </ul>
+        <div class="ticket-stamp teal">Arrive TPE</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== DINING CAR · DOMINANT ==================== -->
+<section class="dining-car">
+  <div class="dining-inner">
+    <div class="header-block">
+      <div class="stencil">★ Dining Car · Bill of Fare · 主餐 ★</div>
+      <h2>WHERE TO EAT</h2>
+      <div class="cjk">非 吃 不 可 的 完 整 清 單</div>
+      <p class="sub">本頁是這條行程的主菜——四城 × 8–9 家 anchor 餐廳，30+ 家累計。從 USD 4 紐約切片到 USD 200 Zahav Mesibah 套餐，覆蓋兩世紀的吃飯地圖。每一家都有「為什麼今天非它不可」的理由。</p>
+    </div>
+    <div class="menu-grid">
+
+      <!-- NYC -->
+      <div class="menu-col">
+        <h3>NEW YORK<span class="cjk">紐約</span></h3>
+        <div class="menu-tagline">Pizza · Pastrami · Bagels · Dumplings</div>
+
+        <div class="dish-line">
+          <div class="dish-name">Joe's Pizza</div>
+          <div class="dish-where">Carmine · 1975</div>
+          <div class="dish-desc">Greenwich Village 元祖紐約切片。Spider-Man 2 拍片現場。USD 4 一片，邊走邊吃 — 落地當晚的儀式。</div>
+        </div>
+        <div class="dish-line">
+          <div class="dish-name">Russ &amp; Daughters</div>
+          <div class="dish-where">LES · 1914</div>
+          <div class="dish-desc">紐約猶太「appetizing」store 活化石。煙燻鮭魚 + 奶油起司 + everything bagel，店內現切薄如紙片。隔壁 Cafe 可坐下吃 brunch。</div>
+        </div>
+        <div class="dish-line">
+          <div class="dish-name">Katz's Delicatessen</div>
+          <div class="dish-where">Houston · 1888</div>
+          <div class="dish-desc">Hand-cut pastrami on rye + 黃芥末 + 酸黃瓜——紐約熟食的根本。"When Harry Met Sally" 拍片現場有牌。</div>
+        </div>
+        <div class="dish-line">
+          <div class="dish-name">Joe's Shanghai</div>
+          <div class="dish-where">小籠包元祖</div>
+          <div class="dish-desc">1995 紐約第一家紅遍主流的小籠包店。蟹粉小籠 + 上海排骨年糕。Chinatown Pell St 本店場面陽春但味道對。</div>
+        </div>
+        <div class="dish-line">
+          <div class="dish-name">Xi'an Famous Foods</div>
+          <div class="dish-where">Flushing 起家</div>
+          <div class="dish-desc">2005 由 Bourdain / Chang 力推紅起來。手撕寬麵 + 孜然羊肉烤餅 + 涼皮——重油重香重椒。</div>
+        </div>
+        <div class="dish-line">
+          <div class="dish-name">Lucali</div>
+          <div class="dish-where">Carroll Gardens</div>
+          <div class="dish-desc">Brooklyn 木窯磚爐 pizza，現金 only、無菜單、Mark Iacono 親手做。BYOB。Beyoncé 來過。</div>
+        </div>
+        <div class="dish-line">
+          <div class="dish-name">Di Fara Pizza</div>
+          <div class="dish-where">Midwood</div>
+          <div class="dish-desc">Dom DeMarco 1965 開店親手做了 60 年（直到 2022 過世，現由兒子接手）。Classic round + Sicilian square。</div>
+        </div>
+        <div class="dish-line">
+          <div class="dish-name">Chinatown 港式飲茶</div>
+          <div class="dish-where">Mott / Bayard</div>
+          <div class="dish-desc">Jing Fong（推車式飲茶）或 Dim Sum Go Go 點單式。週末 10am–11am 是黃金時段。</div>
+        </div>
+        <div class="dish-line">
+          <div class="dish-name">Doughnut Plant</div>
+          <div class="dish-where">multi-loc.</div>
+          <div class="dish-desc">Lower East Side 起家高端甜甜圈，square Tres Leches、Crème Brûlée 都是顛覆性款式。</div>
+        </div>
+      </div>
+
+      <!-- BOSTON -->
+      <div class="menu-col">
+        <h3>BOSTON<span class="cjk">波士頓</span></h3>
+        <div class="menu-tagline">Seafood · North End · Cambridge Ice Cream</div>
+
+        <div class="dish-line">
+          <div class="dish-name">Neptune Oyster</div>
+          <div class="dish-where">North End</div>
+          <div class="dish-desc">全市最熱門的龍蝦堡 (butter or mayo) + Wellfleet 生蠔。不接受訂位、開門前排隊。Hot lobster roll 加 drawn butter 是經典。</div>
+        </div>
+        <div class="dish-line">
+          <div class="dish-name">Daily Catch</div>
+          <div class="dish-where">Hanover St.</div>
+          <div class="dish-desc">沒招牌的西西里式海鮮，菜端在煎鍋上桌，現金 only。烏賊墨燉飯 + 蒜爆蛤蜊；20 個位子。</div>
+        </div>
+        <div class="dish-line">
+          <div class="dish-name">Mike's vs Modern Pastry</div>
+          <div class="dish-where">Cannoli 對決</div>
+          <div class="dish-desc">Hanover St. 同條街隔三家。Mike's 觀光化但量大穩定，Modern 殼當場填餡更脆。都買、邊走邊吃直接比。</div>
+        </div>
+        <div class="dish-line">
+          <div class="dish-name">Eventide Fenway</div>
+          <div class="dish-where">緬因海鮮</div>
+          <div class="dish-desc">Portland 來的姐妹店；招牌 brown butter lobster roll 用蒸過 steamed bun，奶油焦化甜度神奇。Oyster slider $5。</div>
+        </div>
+        <div class="dish-line">
+          <div class="dish-name">Saltie Girl</div>
+          <div class="dish-where">Back Bay · 罐頭吧</div>
+          <div class="dish-desc">9/26 抵達當晚的輕食 anchor。Conservas 罐頭吧 + lobster roll。吧台座位最舒服，不接受訂位。</div>
+        </div>
+        <div class="dish-line">
+          <div class="dish-name">Union Oyster House</div>
+          <div class="dish-where">Faneuil · 1826</div>
+          <div class="dish-desc">全美最老仍在營業的餐廳。Daniel Webster 的老座位有銅牌；New England Clam Chowder + 生蠔吧。</div>
+        </div>
+        <div class="dish-line">
+          <div class="dish-name">Toscanini's</div>
+          <div class="dish-where">Cambridge MIT</div>
+          <div class="dish-desc">冰淇淋傳奇。Burnt Caramel + Khaleesi + Earl Grey 黃金三球。NYT 食評說「全美最佳」。</div>
+        </div>
+        <div class="dish-line">
+          <div class="dish-name">Mei Mei</div>
+          <div class="dish-where">中式新派</div>
+          <div class="dish-desc">Cambridge 出身新派中式。Double Awesome 韭菜蛋餅夾煎蛋三明治是招牌，James Beard 入圍。</div>
+        </div>
+        <div class="dish-line">
+          <div class="dish-name">Flour Bakery</div>
+          <div class="dish-where">Joanne Chang · 多間</div>
+          <div class="dish-desc">Sticky Sticky Buns（NYT 名單）、egg sandwich、tomato soup 配 grilled cheese。早餐或下午茶。</div>
+        </div>
+      </div>
+
+      <!-- PHILADELPHIA -->
+      <div class="menu-col">
+        <h3>PHILLY<span class="cjk">費城</span></h3>
+        <div class="menu-tagline">Cheesesteak · Reading Terminal · Cannoli</div>
+
+        <div class="dish-line">
+          <div class="dish-name">Pat's King of Steaks</div>
+          <div class="dish-where">1930 · 派系 #1</div>
+          <div class="dish-desc">Cheesesteak 發明者。下單術語：「Whiz wit」= American cheese with onions。霓虹燈 24h，半夜更道地。</div>
+        </div>
+        <div class="dish-line">
+          <div class="dish-name">Geno's Steaks</div>
+          <div class="dish-where">隔街 · 派系 #2</div>
+          <div class="dish-desc">霓虹燈最猛、招牌最閃，醬汁更甜更滿，肉切得更碎；常被認為觀光化但量足。半夜跟 Pat's 同框拍照是儀式。</div>
+        </div>
+        <div class="dish-line">
+          <div class="dish-name">John's Roast Pork</div>
+          <div class="dish-where">10th &amp; Snyder</div>
+          <div class="dish-desc">James Beard 得獎、午餐 only 11am-3pm。招牌其實是 roast pork w/ broccoli rabe &amp; sharp provolone，cheesesteak 是 sleeper hit。</div>
+        </div>
+        <div class="dish-line">
+          <div class="dish-name">Reading Terminal</div>
+          <div class="dish-where">130 年市集</div>
+          <div class="dish-desc">DiNic's 烤豬肉三明治（Bourdain 認證）、Bassetts 1861 冰淇淋、Beiler's Donuts、Dienner's 阿米許烤雞。週日休。</div>
+        </div>
+        <div class="dish-line">
+          <div class="dish-name">Termini Bros vs Isgro</div>
+          <div class="dish-where">Italian Market</div>
+          <div class="dish-desc">Cannoli 第二輪。Termini 殼厚實偏甜、Isgro 餡 ricotta 更清。9th 街順道買 Di Bruno 起司、Anthony's espresso。</div>
+        </div>
+        <div class="dish-line">
+          <div class="dish-name">Zahav</div>
+          <div class="dish-where">Society Hill</div>
+          <div class="dish-desc">Solomonov 以色列菜旗艦。Hummus Tehina + Mesibah 嫩烤羔羊套餐 (USD 90/人)。60 天前訂位是底線。</div>
+        </div>
+        <div class="dish-line">
+          <div class="dish-name">South Philly Barbacoa</div>
+          <div class="dish-where">9th &amp; Carpenter</div>
+          <div class="dish-desc">Oaxacan 家族手工 lamb barbacoa，只賣早上 6am–3pm，週六排隊到對街。Cristina Martínez 的故事跟店本身一樣值得。</div>
+        </div>
+        <div class="dish-line">
+          <div class="dish-name">Suraya</div>
+          <div class="dish-where">Fishtown</div>
+          <div class="dish-desc">黎巴嫩菜 + 全天 brunch + 麵包 / 烘焙。mezze 拼盤起跳，烤春雞 + labneh 主菜。</div>
+        </div>
+        <div class="dish-line">
+          <div class="dish-name">Federal Donuts</div>
+          <div class="dish-where">multi-loc.</div>
+          <div class="dish-desc">Solomonov 副業，韓式炸雞 + 手作甜甜圈反差；hot fresh donut 上桌 60 秒內最神。</div>
+        </div>
+      </div>
+
+      <!-- WASHINGTON -->
+      <div class="menu-col">
+        <h3>WASHINGTON<span class="cjk">華盛頓</span></h3>
+        <div class="menu-tagline">Half-Smoke · International · Power Lunch</div>
+
+        <div class="dish-line">
+          <div class="dish-name">Old Ebbitt Grill</div>
+          <div class="dish-where">White House · 1856</div>
+          <div class="dish-desc">白宮對面 70 公尺。Oyster bar happy hour 3–6pm 半價是 D.C. 業內人士的暗語。Crab cake + clam chowder 經典款。</div>
+        </div>
+        <div class="dish-line">
+          <div class="dish-name">Le Diplomate</div>
+          <div class="dish-where">14th St NW</div>
+          <div class="dish-desc">Stephen Starr 的法式小酒館；French onion soup gratinée + steak frites + Peach Mary brunch。週末必訂位。</div>
+        </div>
+        <div class="dish-line">
+          <div class="dish-name">Eden Center · Phở Xe Lửa</div>
+          <div class="dish-where">Falls Church 25 min</div>
+          <div class="dish-desc">全美第二大越南社區。Phở Xe Lửa 是門面店，phở bò + bánh mì + chè 滿街。週六早上去最熱鬧。</div>
+        </div>
+        <div class="dish-line">
+          <div class="dish-name">Dukem · Etete</div>
+          <div class="dish-where">9th St · Little Ethiopia</div>
+          <div class="dish-desc">DC 有美國最大衣索比亞社群（80 年代難民潮）。Injera 發酵海綿狀大薄餅夾各種燉肉，一桌人共享。</div>
+        </div>
+        <div class="dish-line">
+          <div class="dish-name">Ben's Chili Bowl</div>
+          <div class="dish-where">U Street · 1958</div>
+          <div class="dish-desc">Duke Ellington、Obama、Beyoncé 都來吃過。Half-smoke + 自製 chili + mustard + onions 是 D.C. 國民食物。</div>
+        </div>
+        <div class="dish-line">
+          <div class="dish-name">Eastern Market</div>
+          <div class="dish-where">Capitol Hill 週末</div>
+          <div class="dish-desc">1873 市集。Market Lunch 的 crab cake 跟 blueberry buckwheat pancake 早起排。週六外面還有 farmers + flea。</div>
+        </div>
+        <div class="dish-line">
+          <div class="dish-name">Rasika</div>
+          <div class="dish-where">Penn Quarter</div>
+          <div class="dish-desc">Michelin 推薦的 modern Indian；Palak Chaat（炸菠菜葉 + 優格 + 羅望子）— 連 Obama 都愛。Tasting menu USD 95。</div>
+        </div>
+        <div class="dish-line">
+          <div class="dish-name">Maydan · Albi</div>
+          <div class="dish-where">中東炭火新派</div>
+          <div class="dish-desc">Maydan 室內中央火爐烤全羊；Albi（Michelin 一星）走 Levantine fine dining，主廚 Michael Rafidi 2024 James Beard 得主。</div>
+        </div>
+        <div class="dish-line">
+          <div class="dish-name">Bob's Shanghai / A&amp;J</div>
+          <div class="dish-where">Rockville Red Line</div>
+          <div class="dish-desc">DC 華人聖地。Bob's 生煎包 + 小籠包；A&amp;J 北方麵點 + 牛肉捲餅 + 酸辣湯。Metro Red Line 35 min 到。</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ==================== LOGISTICS ==================== -->
+<section class="logistics-block">
+  <div class="logistics-inner">
+    <div class="header-block">
+      <div class="stencil">★ Issued by the Department of Itinerary ★</div>
+      <h2>Reservations Required</h2>
+    </div>
+    <div class="log-cols">
+      <div>
+        <h3>★ Must Reserve · 必預約</h3>
+        <ul>
+          <li><strong>Zahav (Philly)</strong> · OpenTable · 60 天前訂位是底線，"Mesibah" 套餐另開預訂線</li>
+          <li><strong>Acela NYC → BOS</strong> · Amtrak.com · Saturday 9:30am 班次熱門</li>
+          <li><strong>Acela PHL → DC</strong> · 同上，Business 比 Coach 多 USD 30 但值</li>
+          <li><strong>Maydan / Albi (DC)</strong> · Resy · 30 天前訂位</li>
+          <li><strong>Le Diplomate brunch (DC)</strong> · OpenTable · 週末必訂</li>
+          <li><strong>Reading Terminal</strong> · 週日休市；建議週四傍晚 + 週五兩次去</li>
+          <li><strong>South Philly Barbacoa</strong> · 只賣 6am–3pm 週四到週日；週六早上是 peak</li>
+          <li><strong>Eden Center</strong> · 多數小店現金或小額卡；週六早上 phở 最熱鬧</li>
+        </ul>
+      </div>
+      <div>
+        <h3>★ No Reservations · 要排隊</h3>
+        <ul>
+          <li><strong>Neptune Oyster (BOS)</strong>：午餐開門 11am 前 30 分排隊，下午 5pm 二輪</li>
+          <li><strong>Pat's / Geno's (PHL)</strong>：24h，平日午餐 1pm 後好點</li>
+          <li><strong>Joe's Pizza (NYC)</strong>：永遠人多但流動快，3 分鐘排隊</li>
+          <li><strong>Russ &amp; Daughters Cafe</strong>：brunch 一定排，外帶店 Bowery 95 較快</li>
+          <li><strong>Katz's Delicatessen</strong>：拿一張票，最後交回，不交收 USD 50</li>
+          <li><strong>Lucali (Brooklyn)</strong>：下午 5pm 開門前在外面寫名字，週六晚等 2hr+</li>
+          <li><strong>Di Fara (Brooklyn)</strong>：建議週二週三避開週末，2 hr 排隊正常</li>
+          <li><strong>Daily Catch (BOS)</strong>：20 個位子，現金 only，建議 5pm 開門即去</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== FOOTER ==================== -->
+<footer class="printer">
+  <div class="device">★ FIELD NOTES · TRIP 05 FOODIE ★</div>
+  <div class="meta">Printed for personal use only · 2026 Autumn · NYC → BOS → PHL → DC · 12 Days · 30+ Restaurants</div>
+  <div class="links">
+    <a href="../">5 主題行程</a> · <a href="./index.html">精修版</a> · <a href="../../">原版 Home</a>
+  </div>
+  <div class="meta" style="margin-top:14px;opacity:0.55;">Images: Wikimedia Commons (CC BY-SA / Public Domain) · Set in Limelight, Big Shoulders Display, Crimson Pro &amp; Special Elite</div>
+</footer>
+
+</body>
+</html>

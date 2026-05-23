@@ -1,0 +1,1218 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Niagara + Finger Lakes Loop · 精修版 · Field Notes｜西紐約自然奇觀 13 天 · 2026 Autumn</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Noto+Sans+TC:wght@300;400;500;700&family=Noto+Serif+TC:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1f2e;
+    --ink-soft: #3a4356;
+    --paper: #f6f1e7;
+    --paper-deep: #ece4d2;
+    --brass: #b8893d;
+    --brass-deep: #8a6326;
+    --brick: #8c3c2c;
+    --moss: #4a5d3a;
+    --rule: rgba(26, 31, 46, 0.18);
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: "Noto Sans TC", "Helvetica Neue", system-ui, sans-serif;
+    color: var(--ink);
+    background: var(--paper);
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+    position: relative;
+  }
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1000;
+    opacity: 0.55;
+    mix-blend-mode: multiply;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch' seed='3'/><feColorMatrix values='0 0 0 0 0.1 0 0 0 0 0.08 0 0 0 0 0.05 0 0 0 0.18 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+    background-size: 220px 220px;
+  }
+  .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.9s cubic-bezier(.22,.61,.36,1), transform 0.9s cubic-bezier(.22,.61,.36,1); }
+  .reveal.in { opacity: 1; transform: translateY(0); }
+  .reveal[data-delay="1"] { transition-delay: 0.08s; }
+  .reveal[data-delay="2"] { transition-delay: 0.16s; }
+  .reveal[data-delay="3"] { transition-delay: 0.24s; }
+  .reveal[data-delay="4"] { transition-delay: 0.32s; }
+  .reveal[data-delay="5"] { transition-delay: 0.40s; }
+  .reveal[data-delay="6"] { transition-delay: 0.48s; }
+  @media (prefers-reduced-motion: reduce) {
+    .reveal { opacity: 1; transform: none; transition: none; }
+  }
+  h1, h2, h3, .serif {
+    font-family: "Cormorant Garamond", "Noto Serif TC", "Songti TC", serif;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+  }
+  a { color: var(--brass-deep); text-decoration: none; border-bottom: 1px solid rgba(184,137,61,0.3); }
+  a:hover { color: var(--brick); border-bottom-color: var(--brick); }
+
+  .topbar {
+    border-bottom: 1px solid var(--rule);
+    background: var(--paper);
+    padding: 14px 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .topbar .brand { font-family: "Cormorant Garamond", serif; font-size: 20px; letter-spacing: 0.16em; }
+  .topbar .nav { display: flex; flex-wrap: wrap; gap: 6px 14px; color: var(--ink-soft); align-items: center; }
+  .topbar .nav a { color: var(--brass-deep); border-bottom: 1px solid currentColor; }
+  .topbar .nav a.current { color: var(--brick); font-weight: 700; border-bottom-color: var(--brick); }
+  .topbar .nav .sep { opacity: 0.4; }
+
+  /* Hero */
+  .hero {
+    position: relative;
+    min-height: 78vh;
+    display: flex;
+    align-items: flex-end;
+    overflow: hidden;
+    background: #0d1320;
+  }
+  .hero::before {
+    content: "";
+    position: absolute; inset: 0;
+    background-image:
+      radial-gradient(ellipse 80% 60% at 20% 70%, rgba(13,19,32,0.78) 0%, rgba(13,19,32,0.35) 50%, rgba(13,19,32,0) 80%),
+      linear-gradient(180deg, rgba(13,19,32,0.45) 0%, rgba(13,19,32,0.65) 55%, rgba(13,19,32,0.94) 100%),
+      url("https://commons.wikimedia.org/wiki/Special:FilePath/Niagara-Falls-Horseshoe-Falls-view.jpg?width=1920");
+    background-size: cover;
+    background-position: center 40%;
+    filter: saturate(0.65) brightness(0.7) contrast(1.08);
+    will-change: transform;
+  }
+  body.scrolled .hero::before { transform: translate3d(0, var(--parallax, 0px), 0); }
+  .hero-inner {
+    position: relative;
+    z-index: 2;
+    color: #f6f1e7;
+    padding: 64px 48px;
+    max-width: 1100px;
+  }
+  .hero .kicker {
+    font-size: 12px;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: #d9b67a;
+    margin-bottom: 18px;
+  }
+  .hero h1 {
+    font-size: clamp(34px, 5.8vw, 72px);
+    line-height: 1.05;
+    margin: 0 0 22px;
+    color: #f6f1e7;
+    text-shadow: 0 2px 30px rgba(13,19,32,0.5), 0 1px 2px rgba(13,19,32,0.4);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px 14px;
+  }
+  .hero h1 .arrow {
+    display: inline-flex;
+    align-items: center;
+    color: #d9b67a;
+    opacity: 0.9;
+  }
+  .hero h1 .arrow svg { width: clamp(34px, 4vw, 56px); height: auto; }
+  .hero p.lede {
+    font-family: "Noto Serif TC", serif;
+    font-size: clamp(16px, 1.6vw, 19px);
+    max-width: 720px;
+    color: rgba(246,241,231,0.9);
+    margin: 0 0 28px;
+    text-shadow: 0 1px 18px rgba(13,19,32,0.5);
+  }
+  .hero .ribbon {
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 28px;
+    border-top: 1px solid rgba(217,182,122,0.4);
+    border-bottom: 1px solid rgba(217,182,122,0.4);
+    padding: 14px 0;
+    font-size: 13px;
+    letter-spacing: 0.12em;
+    color: #e6d6b6;
+  }
+  .hero .ribbon span strong { color: #f6f1e7; font-weight: 700; padding-right: 4px; }
+  .hero .style-toggle {
+    display: inline-block;
+    margin-top: 22px;
+    font-size: 12px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: #d9b67a;
+    border: 1px solid #d9b67a;
+    padding: 8px 18px;
+    background: rgba(217,182,122,0.08);
+  }
+  .hero .style-toggle:hover { background: rgba(217,182,122,0.18); color: #f6f1e7; border-color: #f6f1e7; }
+
+  /* Section shell */
+  section { padding: 96px 48px; }
+  .wrap { max-width: 1180px; margin: 0 auto; }
+  .eyebrow {
+    font-size: 11px;
+    letter-spacing: 0.36em;
+    text-transform: uppercase;
+    color: var(--brass-deep);
+    margin-bottom: 14px;
+  }
+  h2.section-title {
+    font-size: clamp(30px, 3.6vw, 46px);
+    margin: 0 0 16px;
+    color: var(--ink);
+  }
+  p.section-lede {
+    font-family: "Noto Serif TC", serif;
+    font-size: 18px;
+    color: var(--ink-soft);
+    max-width: 760px;
+    margin: 0 0 56px;
+  }
+
+  /* Pillars */
+  .pillars {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 28px;
+  }
+  .pillar {
+    border-top: 2px solid var(--brass);
+    padding-top: 22px;
+  }
+  .pillar .num {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 36px;
+    color: var(--brass-deep);
+    line-height: 1;
+    margin-bottom: 14px;
+  }
+  .pillar h3 { font-size: 22px; margin: 0 0 10px; }
+  .pillar p { margin: 0; color: var(--ink-soft); font-size: 15px; }
+
+  /* City spread */
+  .city { background: var(--paper-deep); }
+  .city.alt { background: var(--paper); }
+  .city .grid {
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: 56px;
+    align-items: stretch;
+  }
+  .city.flip .grid { grid-template-columns: 0.95fr 1.05fr; }
+  .city.flip .text { order: 2; }
+  .city.flip .gallery { order: 1; }
+  .city .text h3.city-name {
+    font-size: clamp(40px, 4.6vw, 64px);
+    line-height: 1;
+    margin: 0 0 4px;
+  }
+  .city .text .sub-en {
+    font-family: "Cormorant Garamond", serif;
+    font-style: italic;
+    color: var(--brass-deep);
+    font-size: 22px;
+    margin-bottom: 24px;
+  }
+  .city .text p.intro {
+    font-family: "Noto Serif TC", serif;
+    font-size: 17px;
+    color: var(--ink-soft);
+    margin: 0 0 24px;
+  }
+  .highlight-list { padding: 0; margin: 0 0 24px; list-style: none; }
+  .highlight-list li {
+    padding: 14px 0;
+    border-bottom: 1px dashed var(--rule);
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+  }
+  .highlight-list li:last-child { border-bottom: 0; }
+  .highlight-list .hl-name {
+    font-weight: 600;
+    font-size: 16px;
+    color: var(--ink);
+    flex: 0 0 32%;
+  }
+  .highlight-list .hl-en {
+    font-family: "Cormorant Garamond", serif;
+    font-style: italic;
+    color: var(--brass-deep);
+    font-size: 14px;
+    margin-left: 4px;
+  }
+  .highlight-list .hl-desc {
+    color: var(--ink-soft);
+    font-size: 15px;
+    flex: 1;
+  }
+  .gallery {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 220px 220px;
+    gap: 12px;
+  }
+  .gallery .photo {
+    background-size: cover;
+    background-position: center;
+    border-radius: 2px;
+    box-shadow: 0 12px 28px rgba(26,31,46,0.18);
+    position: relative;
+    overflow: hidden;
+  }
+  .gallery .photo.tall { grid-row: 1 / span 2; }
+  .gallery .photo .caption {
+    position: absolute;
+    left: 0; right: 0; bottom: 0;
+    background: linear-gradient(180deg, transparent 0%, rgba(13,19,32,0.78) 100%);
+    color: #f6f1e7;
+    padding: 22px 14px 12px;
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    font-family: "Cormorant Garamond", serif;
+  }
+
+  /* Train / flight interlude */
+  .train {
+    background: #0d1320;
+    color: #f6f1e7;
+    padding: 0;
+    overflow: hidden;
+  }
+  .train .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    min-height: 540px;
+  }
+  .train .img {
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+  }
+  .train.flight-leg .img {
+    background-image:
+      linear-gradient(90deg, rgba(13,19,32,0) 60%, rgba(13,19,32,0.6) 100%),
+      url("https://commons.wikimedia.org/wiki/Special:FilePath/Buffalo%20Niagara%20International%20Airport.jpg?width=1920");
+  }
+  .train.acela-leg .img {
+    background-image:
+      linear-gradient(90deg, rgba(13,19,32,0) 60%, rgba(13,19,32,0.6) 100%),
+      url("https://commons.wikimedia.org/wiki/Special:FilePath/Northbound%20Amtrak%20Acela%20Express%20approaching%20Readville%20March%202022.jpg?width=1920");
+  }
+  .train .copy { padding: 80px 56px; }
+  .train .copy .eyebrow { color: #d9b67a; }
+  .train h2 {
+    color: #f6f1e7;
+    font-size: clamp(32px, 3.6vw, 46px);
+    margin: 0 0 16px;
+  }
+  .train p {
+    font-family: "Noto Serif TC", serif;
+    color: rgba(246,241,231,0.85);
+    font-size: 17px;
+    max-width: 560px;
+  }
+  .train table.spec {
+    margin-top: 28px;
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 520px;
+    font-size: 14px;
+  }
+  .train table.spec td {
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(217,182,122,0.25);
+    vertical-align: top;
+  }
+  .train table.spec td:first-child {
+    color: #d9b67a;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    font-size: 11px;
+    width: 38%;
+  }
+  .train table.spec td:last-child { color: #f6f1e7; }
+
+  /* Itinerary */
+  .itinerary { background: var(--paper); }
+  .day-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0;
+    border-top: 1px solid var(--rule);
+    border-left: 1px solid var(--rule);
+  }
+  .day {
+    padding: 32px 28px;
+    border-right: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    background: var(--paper);
+  }
+  .day .day-num {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 14px;
+    color: var(--brass-deep);
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  .day h4 {
+    font-family: "Cormorant Garamond", "Noto Serif TC", serif;
+    font-size: 24px;
+    margin: 0 0 4px;
+    font-weight: 600;
+  }
+  .day .city-tag {
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin-bottom: 14px;
+  }
+  .day ul {
+    margin: 0; padding-left: 18px;
+    color: var(--ink-soft);
+    font-size: 15px;
+  }
+  .day ul li { margin-bottom: 6px; }
+  .day .accent {
+    display: inline-block;
+    margin-top: 14px;
+    margin-right: 6px;
+    padding: 4px 10px;
+    background: var(--brass);
+    color: #fff;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+  .day .accent.brick { background: var(--brick); }
+  .day .accent.moss { background: var(--moss); }
+
+  /* Logistics */
+  .logistics { background: var(--paper); }
+  .log-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 56px;
+  }
+  .log-grid h3 {
+    font-size: 24px;
+    margin: 0 0 14px;
+    border-bottom: 2px solid var(--brass);
+    padding-bottom: 8px;
+    display: inline-block;
+  }
+  .log-grid ul { margin: 0; padding-left: 20px; color: var(--ink-soft); }
+  .log-grid li { margin-bottom: 8px; line-height: 1.8; }
+  .log-grid li strong { color: var(--ink); }
+
+  /* Footer */
+  footer {
+    background: var(--paper);
+    padding: 40px 48px;
+    text-align: center;
+    border-top: 1px solid var(--rule);
+    color: var(--ink-soft);
+    font-size: 13px;
+    letter-spacing: 0.08em;
+  }
+  footer .marque {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 20px;
+    letter-spacing: 0.18em;
+    color: var(--ink);
+    margin-bottom: 8px;
+  }
+
+  @media (max-width: 900px) {
+    section { padding: 64px 24px; }
+    .topbar { padding: 12px 20px; flex-direction: column; gap: 6px; align-items: flex-start; }
+    .hero-inner { padding: 48px 24px; }
+    .pillars { grid-template-columns: 1fr 1fr; }
+    .city .grid, .city.flip .grid { grid-template-columns: 1fr; gap: 32px; }
+    .city.flip .text { order: 1; }
+    .city.flip .gallery { order: 2; }
+    .gallery { grid-template-rows: 200px 200px; }
+    .train .grid { grid-template-columns: 1fr; min-height: auto; }
+    .train .img { min-height: 320px; }
+    .train .copy { padding: 56px 24px; }
+    .day-grid { grid-template-columns: 1fr; }
+    .log-grid { grid-template-columns: 1fr; gap: 32px; }
+  }
+  @media (max-width: 520px) {
+    .pillars { grid-template-columns: 1fr; }
+    .gallery { grid-template-columns: 1fr; grid-template-rows: 220px 220px 220px; }
+    .gallery .photo.tall { grid-row: auto; }
+    .highlight-list .hl-name { flex: 0 0 100%; }
+    .highlight-list li { flex-wrap: wrap; }
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="brand">FIELD NOTES · 個人行旅</div>
+  <div class="nav">
+    <a href="../">← 五主題行程</a>
+    <span class="sep">·</span>
+    <a href="../01-classic/">01 經典</a>
+    <a href="../02-history/">02 建國</a>
+    <a href="../03-foliage/">03 楓紅</a>
+    <a href="./" class="current">04 西紐約</a>
+    <a href="../05-foodie/">05 美食</a>
+    <span class="sep">·</span>
+    <a href="../../">Home</a>
+  </div>
+</div>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="kicker">Trip 04 · Western New York · 2026 Autumn</div>
+    <h1>
+      <span>Niagara</span>
+      <span class="arrow" aria-hidden="true">
+        <svg viewBox="0 0 64 18" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="0" y1="6" x2="46" y2="6"/>
+          <line x1="0" y1="12" x2="46" y2="12"/>
+          <line x1="6" y1="3.5" x2="6" y2="14.5" opacity="0.6"/>
+          <line x1="14" y1="3.5" x2="14" y2="14.5" opacity="0.6"/>
+          <line x1="22" y1="3.5" x2="22" y2="14.5" opacity="0.6"/>
+          <line x1="30" y1="3.5" x2="30" y2="14.5" opacity="0.6"/>
+          <line x1="38" y1="3.5" x2="38" y2="14.5" opacity="0.6"/>
+          <path d="M44 1.5 L62 9 L44 16.5"/>
+        </svg>
+      </span>
+      <span>Finger Lakes</span>
+      <span class="arrow" aria-hidden="true">
+        <svg viewBox="0 0 64 18" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="0" y1="6" x2="46" y2="6"/>
+          <line x1="0" y1="12" x2="46" y2="12"/>
+          <line x1="6" y1="3.5" x2="6" y2="14.5" opacity="0.6"/>
+          <line x1="14" y1="3.5" x2="14" y2="14.5" opacity="0.6"/>
+          <line x1="22" y1="3.5" x2="22" y2="14.5" opacity="0.6"/>
+          <line x1="30" y1="3.5" x2="30" y2="14.5" opacity="0.6"/>
+          <line x1="38" y1="3.5" x2="38" y2="14.5" opacity="0.6"/>
+          <path d="M44 1.5 L62 9 L44 16.5"/>
+        </svg>
+      </span>
+      <span>Boston</span>
+    </h1>
+    <p class="lede">為了 9 月 27 日 Boston 婚禮而展開的十三日行旅，前半段繞道西紐約看自然奇觀：四天泡在 Niagara 兩側與 Finger Lakes 群瀑布、Cornell 校園、Corning 玻璃博物館、Seneca Falls 婦女史現場，再飛東岸接古典 BOS → PHL → DC 路線。</p>
+    <div class="ribbon">
+      <span><strong>13</strong> Days</span>
+      <span><strong>6</strong> Stops</span>
+      <span><strong>2</strong> Border-side Falls</span>
+      <span><strong>19</strong> Watkins Glen Waterfalls</span>
+      <span><strong>1</strong> Wedding</span>
+    </div>
+    <a class="style-toggle" href="./poster.html">另一風格 · 海報版 →</a>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">行旅主題</div>
+    <h2 class="section-title">為什麼繞道西紐約？</h2>
+    <p class="section-lede">大多數 BOS 婚禮的台灣行程會直奔東岸三大城。但 9 月底其實是西紐約最舒服的季節：Niagara 瀑布水量穩、秋老虎讓溪谷不冷不熱、Finger Lakes 葡萄收成 + 校園剛開學。把前五天投入這條「水 → 峽谷 → 校園 → 玻璃博物館」的線，等於把全美最古老的州立公園、19 世紀地下鐵路渡口、與 1848 婦女權利大會發源地一次走完——婚禮週六傍晚從 Syracuse 飛 BOS，星期天早上倒時差完還有時間整理西裝。</p>
+
+    <div class="pillars">
+      <div class="pillar">
+        <div class="num">01</div>
+        <h3>兩側瀑布</h3>
+        <p>美側走 Cave of the Winds 黃雨衣到瀑布腳下；加側 Journey Behind the Falls 從馬蹄瀑後方看水。一次玩兩個視角才完整。</p>
+      </div>
+      <div class="pillar">
+        <div class="num">02</div>
+        <h3>峽谷密度</h3>
+        <p>Watkins Glen 1.5 mile 步道串 19 個瀑布；Taughannock 單瀑 215 ft 比 Niagara 還高 33%。Finger Lakes 是全美瀑布密度第一名區。</p>
+      </div>
+      <div class="pillar">
+        <div class="num">03</div>
+        <h3>校園 + 博物館</h3>
+        <p>Cornell 山頂校園、Cornell Botanic Gardens、Corning Museum of Glass（50,000+ 件跨 3500 年的玻璃文物）、Seneca Falls 婦女權利 NHP。</p>
+      </div>
+      <div class="pillar">
+        <div class="num">04</div>
+        <h3>婚禮安全</h3>
+        <p>9/26 週六傍晚從 Syracuse 飛 BOS，星期六晚上就在波士頓飯店落地，星期天早上整裝、傍晚出席婚禮——多預留一晚緩衝。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== NYC STOPOVER ==================== -->
+<section class="city">
+  <div class="wrap">
+    <div class="grid">
+      <div class="text">
+        <div class="eyebrow">Phase 0 · Days 1–2</div>
+        <h3 class="city-name">紐約過境</h3>
+        <div class="sub-en">New York City — Bridge Day Before the West</div>
+        <p class="intro">這條路線從 JFK 落地、隔天從 LaGuardia 起飛——中間夾一個 24 小時的 Manhattan 半日。不貪心、不安排美術館。挑一個高處看天際線、一段 Brooklyn Bridge 走過去、一頓 Joe's Pizza 或 Russ &amp; Daughters，把時差倒一半，然後上機飛西邊。LGA → BUF 約 1 小時直飛，比拖 8 小時自駕舒服很多。</p>
+        <ul class="highlight-list">
+          <li>
+            <div class="hl-name">Top of the Rock<span class="hl-en">Rockefeller Center</span></div>
+            <div class="hl-desc">比 Empire State 看得更好——因為它正好把 Empire State 包進構圖。建議日落前 90 分鐘上去，看完天黑再下來，藍黃時段一次到手。線上預約 timed entry 比現場省 30%。</div>
+          </li>
+          <li>
+            <div class="hl-name">Brooklyn Bridge 散步<span class="hl-en">DUMBO → City Hall</span></div>
+            <div class="hl-desc">建議從 Brooklyn 側 DUMBO 走向 Manhattan——拍照角度好、迎著城市天際線。橋面 1.1 mile，慢慢走 45 分鐘；下橋接 Chinatown 吃晚餐。</div>
+          </li>
+          <li>
+            <div class="hl-name">Grand Central Terminal<span class="hl-en">1913 · Beaux-Arts</span></div>
+            <div class="hl-desc">中央大廳的 Whispering Gallery（拱門對角悄悄話傳遞）、Oyster Bar（地下層 1913 年至今）、Apple Store 俯瞰大廳。中轉時間殺手必去。</div>
+          </li>
+          <li>
+            <div class="hl-name">Russ &amp; Daughters<span class="hl-en">Lower East Side · 1914</span></div>
+            <div class="hl-desc">百年「appetizing store」（猶太裔燻魚 + 貝果 + 奶油起司專賣店）。Open-faced 燻鮭魚貝果是基本款；隔壁 café 可坐下吃。早班飛機前的最後一頓紐約。</div>
+          </li>
+          <li>
+            <div class="hl-name">Joe's Pizza<span class="hl-en">West Village · 1975</span></div>
+            <div class="hl-desc">紐約 Slice 經典——薄脆、油亮、單片 USD 3.5 站著吃。Bleecker St. 本店或 Carmine St. 分店都行。落地當晚的標準急救。</div>
+          </li>
+          <li>
+            <div class="hl-name">LGA → BUF · 飛西<span class="hl-en">1h direct</span></div>
+            <div class="hl-desc">JetBlue / Delta / American 都有班次。LGA 新航站樓 2022 開放，候機環境終於不像第三世界了。建議買下午班次，午餐在 Manhattan 吃完出發。</div>
+          </li>
+        </ul>
+      </div>
+      <div class="gallery">
+        <div class="photo tall" style="background-image:url('https://commons.wikimedia.org/wiki/Special:FilePath/Empire%20State%20Building%20from%20the%20Top%20of%20the%20Rock.jpg?width=1024')">
+          <div class="caption">View from Top of the Rock</div>
+        </div>
+        <div class="photo" style="background-image:url('https://commons.wikimedia.org/wiki/Special:FilePath/Brooklyn%20Bridge%20Manhattan.jpg?width=1024')">
+          <div class="caption">Brooklyn Bridge · 1883</div>
+        </div>
+        <div class="photo" style="background-image:url('https://commons.wikimedia.org/wiki/Special:FilePath/Lower%20Manhattan%20Skyline.jpg?width=1024')">
+          <div class="caption">Lower Manhattan Skyline</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== FLIGHT 1 INTERLUDE ==================== -->
+<section class="train flight-leg">
+  <div class="grid">
+    <div class="img" aria-hidden="true"></div>
+    <div class="copy">
+      <div class="eyebrow">Interlude · Day 2 Afternoon</div>
+      <h2>Flight: LGA → BUF<br><span class="serif" style="font-style:italic;color:#d9b67a;">LaGuardia → Buffalo Niagara Intl.</span></h2>
+      <p>把 8 小時 I-90 西行收進一小時短程航班。下午從 LaGuardia 起飛，看見 Hudson 河往北延伸進 Catskills 山，飛過 Finger Lakes 群湖正上空（左側座位），降落在 Buffalo Niagara——這座二戰後人口從 58 萬萎縮到 28 萬的「Rust Belt 縮影城市」。從機場到 Niagara Falls 美側只要 30 分鐘車程。</p>
+      <table class="spec">
+        <tr><td>Flight</td><td>JetBlue B6 1219 / Delta DL 5734 / American AA 4520（每日多班）</td></tr>
+        <tr><td>Depart</td><td>LGA Terminal B · 約 14:30</td></tr>
+        <tr><td>Arrive</td><td>BUF Buffalo Niagara · 約 15:55 · 飛行 1 h 25 m</td></tr>
+        <tr><td>Ground</td><td>BUF → Niagara Falls NY 約 30 min · Uber/Lyft USD 35–45 · 或租車（推薦，後面要用）</td></tr>
+        <tr><td>租車</td><td>BUF 機場有 Hertz / Enterprise 全套；建議租 SUV 接下來 4 天會開到 Finger Lakes 內陸無大眾運輸</td></tr>
+        <tr><td>Tip</td><td>飛機左側位看 Finger Lakes；座位升等比 NYC → BUF Amtrak（10 h）划算太多</td></tr>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== NIAGARA ==================== -->
+<section class="city alt">
+  <div class="wrap">
+    <div class="grid">
+      <div class="text">
+        <div class="eyebrow">Phase I · Days 3–4</div>
+        <h3 class="city-name">Niagara Falls</h3>
+        <div class="sub-en">Niagara Falls — The Border Spectacle, Both Sides</div>
+        <p class="intro">瀑布本身分三段：American Falls、Bridal Veil、Horseshoe（馬蹄瀑），合計每秒 280 萬升水從 Erie 湖落向 Ontario 湖。美側可以走到瀑布腳下、加側可以從遠處看到全景——所以兩側都得走。1885 年 Olmsted 把美側設計成全美最老的州立公園；加側 Queen Victoria Park 1888 跟進。記得帶護照（過 Rainbow Bridge 需要證件）、買防水手機袋、別穿不能濕的鞋。</p>
+        <ul class="highlight-list">
+          <li>
+            <div class="hl-name">Cave of the Winds<span class="hl-en">Bridal Veil Falls · 美側</span></div>
+            <div class="hl-desc">黃色雨衣 + 紙拖鞋，木棧道走到 Bridal Veil Falls 腳下「Hurricane Deck」——水以時速 70 mph 直接打到你身上會濕透。整套裝備 USD 21 含入場、是這趟最 hands-on 的體驗。每年 12 月到 4 月木棧道拆除過冬。</div>
+          </li>
+          <li>
+            <div class="hl-name">Maid of the Mist<span class="hl-en">遊船 · 美側</span></div>
+            <div class="hl-desc">藍色雨衣，開到 Horseshoe Falls 正下方 20 分鐘。1846 年首航，是全美最老仍在營運的觀光船。美側出發 USD 28；加側叫 Niagara City Cruises 同概念紅雨衣。</div>
+          </li>
+          <li>
+            <div class="hl-name">Goat Island + Tesla<span class="hl-en">Olmsted 1885</span></div>
+            <div class="hl-desc">分隔美洲瀑與馬蹄瀑的小島，散步路徑包括 Three Sisters Islands 跳石。Nikola Tesla 雕像紀念 1895 年 Niagara 成為全球第一座大型水力發電站。整個島是 Olmsted 同時期設計 Central Park 之後的另一案。</div>
+          </li>
+          <li>
+            <div class="hl-name">Underground Railroad Heritage Center<span class="hl-en">2018 新館 · 美側</span></div>
+            <div class="hl-desc">Niagara 是 19 世紀黑奴逃往加拿大（英帝國 1833 廢奴）的關鍵渡口，這個館講地下鐵路歷史。被評為東北最重要的新博物館之一。展館建在 1863 年 Custom House 原址。USD 10、2 小時。</div>
+          </li>
+          <li>
+            <div class="hl-name">Journey Behind the Falls<span class="hl-en">加側</span></div>
+            <div class="hl-desc">電梯下到馬蹄瀑後方隧道，從瀑布背後看水（兩個觀景孔 + 戶外平台）。CAD 24。冬天會結冰封閉部分，秋天剛好。過 Rainbow Bridge 需要護照。</div>
+          </li>
+          <li>
+            <div class="hl-name">Skylon Tower<span class="hl-en">520 ft · 加側</span></div>
+            <div class="hl-desc">1965 落成的觀景塔，旋轉餐廳 (Revolving Dining Room) 一小時轉一圈正好吃完一餐。CAD 19 入場、餐廳 fine dining 套餐 CAD 80 起。日落時段最值——同時看美側美洲瀑與加側馬蹄瀑全景。</div>
+          </li>
+          <li>
+            <div class="hl-name">Whirlpool Aero Car<span class="hl-en">1916 · 加側</span></div>
+            <div class="hl-desc">百年纜車橫越 Niagara River 漩渦 1 km 鋼索，跨美加邊界又繞回加拿大同一側。1916 年原樣運作、由西班牙工程師 Leonardo Torres Quevedo 設計。CAD 18。10 月底季節結束。</div>
+          </li>
+        </ul>
+      </div>
+      <div class="gallery">
+        <div class="photo tall" style="background-image:url('https://commons.wikimedia.org/wiki/Special:FilePath/Niagara-Falls-Horseshoe-Falls-view.jpg?width=1024')">
+          <div class="caption">Horseshoe Falls · 加側</div>
+        </div>
+        <div class="photo" style="background-image:url('https://commons.wikimedia.org/wiki/Special:FilePath/Maid%20of%20the%20Mist%20-%20pot-o-gold.jpg?width=1024')">
+          <div class="caption">Maid of the Mist · 藍雨衣</div>
+        </div>
+        <div class="photo" style="background-image:url('https://commons.wikimedia.org/wiki/Special:FilePath/Cave%20of%20the%20Winds%20Niagara%20Falls.jpg?width=1024')">
+          <div class="caption">Cave of the Winds · 黃雨衣</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== FINGER LAKES ==================== -->
+<section class="city">
+  <div class="wrap">
+    <div class="grid">
+      <div class="text">
+        <div class="eyebrow">Phase II · Days 5–6</div>
+        <h3 class="city-name">Finger Lakes</h3>
+        <div class="sub-en">Finger Lakes — Eleven Glacial Lakes &amp; Nineteen Waterfalls</div>
+        <p class="intro">11 個被冰河切出的窄長湖、瀑布密度全美第一、Cornell 校園的 gorges 縱橫穿過、Corning 玻璃博物館橫跨 3500 年、Seneca Falls 是美國婦女權利運動的發源地——這一塊 100 mile 半徑放著的內容比有些國家公園還密。從 Niagara 開過來大約 3 小時（I-90 一路東行），住 Watkins Glen 或 Ithaca 都好。9 月底葡萄收成季，沿湖小鎮酒莊 tasting room 都開著。</p>
+        <ul class="highlight-list">
+          <li>
+            <div class="hl-name">Watkins Glen Gorge<span class="hl-en">19 falls · 1.5 mile</span></div>
+            <div class="hl-desc">最神是 Cavern Cascade——步道直接從一道水簾後面穿過。1930 年代 CCC（Civilian Conservation Corps）蓋的石橋石階仍在使用。USD 10 停車。Glen Creek 從 Seneca Lake 後方降 400 ft 直入湖面。建議下午光線斜進來時拍照。</div>
+          </li>
+          <li>
+            <div class="hl-name">Taughannock Falls<span class="hl-en">215 ft 單瀑</span></div>
+            <div class="hl-desc">Ithaca 北 10 min。單瀑高 215 ft，比 Niagara Falls 高 33%（Niagara 168 ft，但寬得多）。Gorge Trail 1.5 mile 平緩走到瀑布腳下，回程走 Rim Trail 看俯瞰角度。免費停車。秋天樹色把岩壁烘出橙紅。</div>
+          </li>
+          <li>
+            <div class="hl-name">Cornell University<span class="hl-en">Ithaca · 校園 + Botanic Gardens</span></div>
+            <div class="hl-desc">校園本身就建在峽谷（Cascadilla / Fall Creek）上方，到處都是 gorges。McGraw Tower 整點鐘琴（chimemaster 現場敲）、A.D. White Library 哈利波特感、Cornell Botanic Gardens 4300 英畝植物園 + 自然保育區。Cornell 1865 創校，是 Ivy League 裡最大、最開放（女生與少數族裔 1870 年就收）。</div>
+          </li>
+          <li>
+            <div class="hl-name">Corning Museum of Glass<span class="hl-en">Seneca Lake 南端</span></div>
+            <div class="hl-desc">50,000+ 件玻璃文物跨 3500 年，包括古羅馬玻璃、Tiffany 燈、現代雕塑。現場吹製演示（30 min 一場），DIY 工作坊可以自己做玻璃球帶走。被旅遊雜誌列為「全美最值得去的博物館」之一。USD 22、3 小時。</div>
+          </li>
+          <li>
+            <div class="hl-name">Seneca Falls<span class="hl-en">Women's Rights NHP</span></div>
+            <div class="hl-desc">1848 年第一屆美國婦女權利大會在這裡開——Elizabeth Cady Stanton 起草《Declaration of Sentiments》以《獨立宣言》結構主張女性投票權。NPS 訪客中心 + Wesleyan Methodist Chapel（大會原會場）+ Stanton 故居都可走。免費入場。被認為是電影《風雲人物》Bedford Falls 鎮的原型。</div>
+          </li>
+          <li>
+            <div class="hl-name">Letchworth State Park<span class="hl-en">東岸大峽谷</span></div>
+            <div class="hl-desc">Finger Lakes 西 1 h。Genesee 河切出 600 ft 深、17 mile 長峽谷，三座主瀑。可坐熱氣球從上空看（USD 295/人）。14,000 英畝。如果排得進去是 bonus，但 Watkins + Taughannock 已經夠多瀑布了。</div>
+          </li>
+          <li>
+            <div class="hl-name">Moosewood Restaurant<span class="hl-en">Ithaca · 1973</span></div>
+            <div class="hl-desc">50 年素食 OG，影響全美 vegetarian 文化的食譜書系列（《Moosewood Cookbook》Mollie Katzen）出版地。lentil soup + tempeh reuben 是經典。位於 Dewitt Mall 老學校改建。</div>
+          </li>
+        </ul>
+      </div>
+      <div class="gallery">
+        <div class="photo tall" style="background-image:url('https://commons.wikimedia.org/wiki/Special:FilePath/Watkins%20Glen%20State%20Park%2003.jpg?width=1024')">
+          <div class="caption">Watkins Glen · Gorge Trail</div>
+        </div>
+        <div class="photo" style="background-image:url('https://commons.wikimedia.org/wiki/Special:FilePath/Taughannock%20Falls%2C%20Ulysses%2C%20NY%20-%202024.jpg?width=1024')">
+          <div class="caption">Taughannock Falls · 215 ft</div>
+        </div>
+        <div class="photo" style="background-image:url('https://commons.wikimedia.org/wiki/Special:FilePath/Cornell%20University%20-%20North%20Campus%20area.jpg?width=1024')">
+          <div class="caption">Cornell · 山頂校園</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== FLIGHT 2 INTERLUDE: SYR → BOS ==================== -->
+<section class="train flight-leg">
+  <div class="grid">
+    <div class="img" aria-hidden="true"></div>
+    <div class="copy">
+      <div class="eyebrow">Interlude · Day 6 Afternoon</div>
+      <h2>Flight: SYR → BOS<br><span class="serif" style="font-style:italic;color:#d9b67a;">Syracuse Hancock Intl. → Boston Logan</span></h2>
+      <p>Finger Lakes 結束後，最近的中型機場是 Syracuse Hancock——從 Ithaca / Watkins Glen 開車 1 小時 15 分。下午起飛 1 小時直達 BOS Logan，傍晚就能在波士頓飯店落地，星期六晚上整理、星期天早上倒時差、傍晚出席婚禮，全程留兩個安全緩衝。如果想省機票錢，BUF → BOS 直飛也行（直接從 Niagara 結束飛、跳過 Finger Lakes 的 Cornell 那塊）。</p>
+      <table class="spec">
+        <tr><td>Flight</td><td>JetBlue B6 1422 / American AA 4892 / Delta DL 4528（每日 3–4 班）</td></tr>
+        <tr><td>Depart</td><td>SYR Syracuse Hancock · 約 17:00</td></tr>
+        <tr><td>Arrive</td><td>BOS Logan · 約 18:30 · 飛行 1 h 25 m</td></tr>
+        <tr><td>Ground</td><td>Ithaca → SYR 約 1 h 15 m 自駕、Watkins Glen → SYR 約 1 h 30 m</td></tr>
+        <tr><td>還車</td><td>SYR 機場 Hertz / Enterprise 同集中還車區，提早 30 min 到達緩衝</td></tr>
+        <tr><td>Plan B</td><td>怕飛機誤點：BUF → BOS 直飛同價位、班次更多；只是要犧牲 Finger Lakes 最後半天的 Ithaca / Cornell</td></tr>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== BOSTON ==================== -->
+<section class="city alt">
+  <div class="wrap">
+    <div class="grid">
+      <div class="text">
+        <div class="eyebrow">Phase III · Days 7–9</div>
+        <h3 class="city-name">波士頓</h3>
+        <div class="sub-en">Boston, MA — The Wedding &amp; Recovery</div>
+        <p class="intro">飛機已經在 9/26 晚到 Logan，9/27 婚禮日整天留在波士頓。婚禮後兩天用來吃 + 走 Freedom Trail + JFK 圖書館——比 Trip 01 經典版的波士頓段壓縮了一天（因為前面已經花在西紐約）。重點集中在 North End 食物與自由之路，藝術館（MFA/Gardner）只能挑一。</p>
+        <ul class="highlight-list">
+          <li>
+            <div class="hl-name">婚禮日<span class="hl-en">9/27 Sun · Wedding</span></div>
+            <div class="hl-desc">上午自由（建議睡飽 + Beacon Hill 巷弄散步、Acorn Street 拍照、Public Garden 天鵝船）；午餐 Tatte Bakery 或 Flour Bakery 輕食；下午 / 晚上：婚禮典禮 + 晚宴。</div>
+          </li>
+          <li>
+            <div class="hl-name">自由之路<span class="hl-en">Freedom Trail · 2.5 mile</span></div>
+            <div class="hl-desc">紅磚線串 16 個革命遺址：Boston Common → 麻州州議會 → Park Street Church → 老南會議廳 → Faneuil Hall → Paul Revere House → Old North Church → Bunker Hill。半天散步剛好。</div>
+          </li>
+          <li>
+            <div class="hl-name">JFK Presidential Library<span class="hl-en">Dorchester · 貝聿銘設計</span></div>
+            <div class="hl-desc">完整 JFK 任期文獻 + 古巴飛彈危機決策室還原 + Jacqueline 任內白宮裝飾再現。建築坐落在波士頓港邊，景觀本身就值得。地鐵紅線 JFK/UMass 站接 free shuttle。USD 14、半天。</div>
+          </li>
+          <li>
+            <div class="hl-name">North End 義大利區<span class="hl-en">Little Italy</span></div>
+            <div class="hl-desc">Hanover St. 是吃的核心：Mike's vs Modern Pastry Cannoli 對決（一條街相隔三家、邊走邊比）、Daily Catch 西西里式海鮮現金 only、Neptune Oyster 龍蝦堡（butter or mayo, 排隊）。</div>
+          </li>
+          <li>
+            <div class="hl-name">MFA Boston<span class="hl-en">Museum of Fine Arts</span></div>
+            <div class="hl-desc">美國館 + 日本/亞洲館 + 印象派並列三大主軸；Sargent "Daughters of Edward Darley Boit"、Gauguin "Where Do We Come From?" 都在這。如果時間夠也可加 Isabella Stewart Gardner 同日票折扣。</div>
+          </li>
+          <li>
+            <div class="hl-name">Cambridge / Harvard<span class="hl-en">過河走</span></div>
+            <div class="hl-desc">Harvard Yard 散步 + Widener Library + Sanders Theatre 外觀；MIT 過河看 Frank Gehry 的 Stata Center 與 Eero Saarinen 的 Kresge 教堂。Toscanini's 冰淇淋必吃（Burnt Caramel + Khaleesi）。</div>
+          </li>
+        </ul>
+      </div>
+      <div class="gallery">
+        <div class="photo tall" style="background-image:url('https://commons.wikimedia.org/wiki/Special:FilePath/USA%20Boston%20Public%20Library%202%20MA.jpg?width=1024')">
+          <div class="caption">Boston Public Library · Bates Hall</div>
+        </div>
+        <div class="photo" style="background-image:url('https://commons.wikimedia.org/wiki/Special:FilePath/Faneuil%20Hall%20Boston%20Massachusetts.JPG?width=1024')">
+          <div class="caption">Faneuil Hall · 1742</div>
+        </div>
+        <div class="photo" style="background-image:url('https://commons.wikimedia.org/wiki/Special:FilePath/Harvard%20Yard%20im%20Sommer.jpg?width=1024')">
+          <div class="caption">Harvard Yard · Cambridge</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== ACELA INTERLUDE ==================== -->
+<section class="train acela-leg">
+  <div class="grid">
+    <div class="img" aria-hidden="true"></div>
+    <div class="copy">
+      <div class="eyebrow">Interlude · Day 10</div>
+      <h2>Amtrak NE Regional<br><span class="serif" style="font-style:italic;color:#d9b67a;">Boston → New Haven (opt.) → Philadelphia</span></h2>
+      <p>結束波士頓段、上 Amtrak NE Regional 南下費城。沿羅德島海岸、康乃狄克 shoreline 一路滑進費城 30th Street Station。如果時間有彈性，可以在 New Haven 下車 3 小時、走 Yale Old Campus + 吃 Frank Pepe Pizzeria 1925 年煤窯白蛤披薩——再續車南下。費城段比 Trip 01 經典版壓縮了一天，因為前面 Niagara + Finger Lakes 佔掉預算。</p>
+      <table class="spec">
+        <tr><td>Train</td><td>Amtrak NE Regional · BOS South → PHL 30th · 全程約 5 h 30 m 直達</td></tr>
+        <tr><td>Option</td><td>New Haven 中停 3 h · Yale Old Campus + Pepe's Pizzeria → 換下班 NE Regional 續往南，加 2 h door-to-door</td></tr>
+        <tr><td>Fare</td><td>USD 90–120（Coach）/ USD 130–160（Business） · 60 天前訂便宜</td></tr>
+        <tr><td>Tip</td><td>左側座位看 Connecticut shoreline；Café Car 三明治堪堪、建議自帶</td></tr>
+        <tr><td>替代</td><td>怕來不及：直接 BOS → DC Acela 6 h 跳過費城，或在費城只停 1 晚</td></tr>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== PHILLY ==================== -->
+<section class="city flip">
+  <div class="wrap">
+    <div class="grid">
+      <div class="text">
+        <div class="eyebrow">Phase IV · Day 11</div>
+        <h3 class="city-name">費城</h3>
+        <div class="sub-en">Philadelphia, PA — Cradle of a Nation, Compressed</div>
+        <p class="intro">前面已經用掉太多天在西紐約，費城只能擠出一整天。挑「建國敘事 + 美食兩條街」最濃縮版：上午獨立廳 + 自由鐘，午餐 Reading Terminal Market 解決一日五餐，下午 Magic Gardens 看 Isaiah Zagar 的馬賽克迷宮、傍晚 Italian Market 9th Street 散步，晚餐 cheesesteak 三派挑一家收尾。隔天早上 Acela 南下 DC。</p>
+        <ul class="highlight-list">
+          <li>
+            <div class="hl-name">獨立國家歷史公園<span class="hl-en">Independence NHP</span></div>
+            <div class="hl-desc">獨立廳、自由鐘、國會議事廳——憲法誕生的三公里半徑。獨立廳需提前一週 recreation.gov 預約 ranger-led tour。會帶進 Assembly Room，Washington 主持制憲會議的椅子原件還在。</div>
+          </li>
+          <li>
+            <div class="hl-name">Reading Terminal Market<span class="hl-en">130 年市集</span></div>
+            <div class="hl-desc">DiNic's 烤豬肉三明治（Anthony Bourdain 認證）、Bassetts 1861 年冰淇淋、Beiler's Donuts、Dienner's 阿米許烤雞、Down Home Diner 早餐。週日休市，務必避開。</div>
+          </li>
+          <li>
+            <div class="hl-name">Magic Gardens<span class="hl-en">Isaiah Zagar</span></div>
+            <div class="hl-desc">半條街的馬賽克迷宮——磁磚、酒瓶、自行車輪，一個藝術家用 30 年覆蓋的城市無意識。週二休館。從 Reading Terminal 走過去 15 分鐘。</div>
+          </li>
+          <li>
+            <div class="hl-name">Italian Market<span class="hl-en">9th Street · 1880s</span></div>
+            <div class="hl-desc">全美最古老營業中的戶外市集；Termini Bros vs Isgro 兩家 Cannoli 對打、Di Bruno Bros 起司、Anthony's Italian Coffee House 義式 espresso。</div>
+          </li>
+          <li>
+            <div class="hl-name">Cheesesteak 對決<span class="hl-en">Pat's / Geno's / John's</span></div>
+            <div class="hl-desc">Pat's（1930 年發明者，"whiz wit" 配方下單）/ Geno's（隔個十字路口，霓虹燈閃更甜更滿）/ John's Roast Pork（James Beard 得獎、午餐 only、義式麵包真正脆，公認食物本身最好）。</div>
+          </li>
+          <li>
+            <div class="hl-name">30th Street Station<span class="hl-en">Beaux-Arts 1933</span></div>
+            <div class="hl-desc">早上 Acela 出發前先在大廳石灰岩柱間喝杯 La Colombe 咖啡。月台層挑高 95 ft，是全美最大 Beaux-Arts 火車站之一。</div>
+          </li>
+        </ul>
+      </div>
+      <div class="gallery">
+        <div class="photo tall" style="background-image:url('https://commons.wikimedia.org/wiki/Special:FilePath/Liberty_Bell_2008.jpg?width=1024')">
+          <div class="caption">The Liberty Bell</div>
+        </div>
+        <div class="photo" style="background-image:url('https://commons.wikimedia.org/wiki/Special:FilePath/Independence_Hall_10.jpg?width=1024')">
+          <div class="caption">Independence Hall · 1776</div>
+        </div>
+        <div class="photo" style="background-image:url('https://commons.wikimedia.org/wiki/Special:FilePath/Reading_Terminal_Market.jpg?width=1024')">
+          <div class="caption">Reading Terminal Market</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== DC ==================== -->
+<section class="city">
+  <div class="wrap">
+    <div class="grid">
+      <div class="text">
+        <div class="eyebrow">Phase V · Days 12–13</div>
+        <h3 class="city-name">華盛頓 D.C.</h3>
+        <div class="sub-en">Washington, D.C. — The Marble Finale</div>
+        <p class="intro">壓軸兩天。如果費城屬於 18 世紀的紅磚，華盛頓就是 19–20 世紀的白色大理石。以 National Mall 為軸線、Smithsonian 為主菜，每天只進兩到三館。10/3 傍晚從 IAD 國際線起飛、10/4 抵 TPE。</p>
+        <ul class="highlight-list">
+          <li>
+            <div class="hl-name">林肯 + 越戰碑<span class="hl-en">Lincoln · Vietnam Wall</span></div>
+            <div class="hl-desc">黃昏走 Reflecting Pool；Maya Lin 21 歲贏得越戰碑競圖時的黑色花崗岩牆比想像中安靜得多——15,000 個名字按死亡日期、不按字母排列。</div>
+          </li>
+          <li>
+            <div class="hl-name">National Mall 紀念碑群<span class="hl-en">All free, 24h</span></div>
+            <div class="hl-desc">Lincoln / Vietnam Wall / Korean War（19 座不鏽鋼士兵）/ WWII / MLK Jr.（30 ft 花崗岩劈山而出）/ FDR / Washington Monument（555 ft，免費電梯需訂 timed ticket）/ Jefferson Memorial。</div>
+          </li>
+          <li>
+            <div class="hl-name">NMAAHC<span class="hl-en">非裔美國人歷史館</span></div>
+            <div class="hl-desc">Smithsonian 最新且最強的敘事館；建議從地下三層（奴隸船）看到地上四層（嘻哈與當代藝術），預留 4 小時。免費但需網路預約 timed entry pass、30 天前開放。跟前面 Niagara 地下鐵路 Heritage Center 形成完整敘事弧。</div>
+          </li>
+          <li>
+            <div class="hl-name">國會圖書館<span class="hl-en">Library of Congress · Jefferson</span></div>
+            <div class="hl-desc">Jefferson Building 主閱覽室是美國最美的室內空間之一；可預約 docent tour 走進閱覽層平台。鎮館展品：Gutenberg 聖經、Jefferson 親筆藏書清單。</div>
+          </li>
+          <li>
+            <div class="hl-name">航空太空博物館<span class="hl-en">Air &amp; Space · Mall</span></div>
+            <div class="hl-desc">Spirit of St. Louis、Apollo 11 指令艙、月球岩石（可摸）、Wright Flyer 1903 原件。Mall 本館 2026 年完成全面整修，新展區開放。免費 timed entry。</div>
+          </li>
+          <li>
+            <div class="hl-name">Georgetown · U Street<span class="hl-en">街區之夜</span></div>
+            <div class="hl-desc">Georgetown C&amp;O 運河沿岸晚餐 + Cady's Alley 散步；U Street 是 Duke Ellington 出生地，Ben's Chili Bowl 1958 開到現在——半煙腸 (half-smoke) 配 chili 是 D.C. 國民食物。</div>
+          </li>
+        </ul>
+      </div>
+      <div class="gallery">
+        <div class="photo tall" style="background-image:url('https://commons.wikimedia.org/wiki/Special:FilePath/Lincoln_Memorial_%28Lincoln_contrasty%29.jpg?width=1024')">
+          <div class="caption">Lincoln Memorial</div>
+        </div>
+        <div class="photo" style="background-image:url('https://commons.wikimedia.org/wiki/Special:FilePath/Smithsonian_Building_NR.jpg?width=1024')">
+          <div class="caption">Smithsonian Castle</div>
+        </div>
+        <div class="photo" style="background-image:url('https://commons.wikimedia.org/wiki/Special:FilePath/LOC_Main_Reading_Room_Highsmith.jpg?width=1024')">
+          <div class="caption">Library of Congress</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== 13-DAY ITINERARY ==================== -->
+<section class="itinerary">
+  <div class="wrap">
+    <div class="eyebrow">Day-by-day · 從 JFK 到 IAD</div>
+    <h2 class="section-title">13 天逐日筆記</h2>
+    <p class="section-lede">前 6 天是西紐約自然奇觀（NYC 過境 → Niagara → Finger Lakes → 飛 BOS），後 7 天是經典東岸（Boston → Philly → DC）。婚禮日 9/27 安全落在波士頓中央。</p>
+
+    <div class="day-grid">
+      <div class="day">
+        <div class="day-num">Day 01 · 9/21 (Mon)</div>
+        <h4>TPE → JFK · 抵紐約</h4>
+        <div class="city-tag">NYC · Arrival</div>
+        <ul>
+          <li>EVA / ANA / Delta 直飛 JFK，約 14:00–16:00 落地</li>
+          <li>AirTrain + LIRR / E Line 進 Manhattan（USD 11）</li>
+          <li>旅館建議 Midtown 或 Lower East Side（隔天好接 LGA）</li>
+          <li>傍晚 Top of the Rock 看天際線 + Times Square</li>
+          <li><strong>晚餐：</strong>Joe's Pizza（West Village · 站著吃，飛 16h 救命）</li>
+        </ul>
+        <span class="accent">Arrival</span>
+      </div>
+      <div class="day">
+        <div class="day-num">Day 02 · 9/22 (Tue)</div>
+        <h4>NYC 半日 · 飛 LGA → BUF</h4>
+        <div class="city-tag">NYC → Buffalo</div>
+        <ul>
+          <li>09:00 Grand Central Terminal + Whispering Gallery</li>
+          <li><strong>早餐：</strong>Russ &amp; Daughters（百年燻魚 + 貝果）</li>
+          <li>Brooklyn Bridge 步行（DUMBO → City Hall · 45 min）</li>
+          <li>14:30 LGA Terminal B 起飛 → 15:55 抵 BUF（飛 1h25m）</li>
+          <li>BUF 機場租車（建議 SUV）· Niagara Falls NY 飯店 check in</li>
+          <li><strong>晚餐：</strong>飯店內或 Casa Larga Vineyards 簡餐（鎮上選擇有限）</li>
+        </ul>
+        <span class="accent moss">Flight</span>
+      </div>
+      <div class="day">
+        <div class="day-num">Day 03 · 9/23 (Wed)</div>
+        <h4>Niagara 美側全日</h4>
+        <div class="city-tag">Niagara Falls · USA Side</div>
+        <ul>
+          <li>09:00 Niagara Falls State Park（全美最老州立公園，1885 Olmsted）</li>
+          <li>Cave of the Winds（黃雨衣 + 紙拖鞋 + Hurricane Deck）</li>
+          <li><strong>午餐：</strong>Top of the Falls Restaurant（公園內，俯瞰美洲瀑）</li>
+          <li>Maid of the Mist 遊船（藍雨衣 · 開到馬蹄瀑底）</li>
+          <li>Goat Island + Nikola Tesla 雕像 + Three Sisters 跳石</li>
+          <li>傍晚 Underground Railroad Heritage Center（2018 新館）</li>
+          <li><strong>晚餐：</strong>Old Falls Street 鎮上 fish fry 餐館</li>
+        </ul>
+        <span class="accent brick">USA Falls</span>
+      </div>
+      <div class="day">
+        <div class="day-num">Day 04 · 9/24 (Thu)</div>
+        <h4>Niagara 加側全日</h4>
+        <div class="city-tag">Niagara Falls · Canada Side</div>
+        <ul>
+          <li>過 Rainbow Bridge（護照）· 加幣現金或信用卡帶好</li>
+          <li>Journey Behind the Falls（電梯下到馬蹄瀑後方隧道）</li>
+          <li>Whirlpool Aero Car（1916 百年纜車橫越漩渦）</li>
+          <li><strong>午餐：</strong>Niagara-on-the-Lake 老鎮（餐廳水準比 Falls 鎮高）</li>
+          <li>下午 Skylon Tower 觀景 + 旋轉餐廳 sunset</li>
+          <li>晚上 Horseshoe Falls illumination（夜燈秀 19:30 起）</li>
+          <li><strong>晚餐：</strong>Skylon Tower Revolving Dining Room (CAD 80/人)</li>
+        </ul>
+        <span class="accent brick">Canada Falls</span>
+      </div>
+      <div class="day">
+        <div class="day-num">Day 05 · 9/25 (Fri)</div>
+        <h4>Niagara → Finger Lakes · Watkins Glen</h4>
+        <div class="city-tag">Drive 3h · I-90 East</div>
+        <ul>
+          <li>09:00 Niagara checkout · 上 I-90 東行（約 3 小時）</li>
+          <li>中停 Letchworth State Park 觀景台快拍（時間允許）</li>
+          <li>13:00 抵 Watkins Glen · 飯店 check in</li>
+          <li>下午 Watkins Glen Gorge Trail（1.5 mile / 19 falls，含 Cavern Cascade 穿水簾）</li>
+          <li>傍晚 Seneca Lake 湖邊散步 + 酒莊試飲（Hermann J. Wiemer Riesling）</li>
+          <li><strong>晚餐：</strong>Stonecat Café（Hector，湖邊新派美式 farm-to-table）</li>
+        </ul>
+        <span class="accent">Drive Day</span>
+      </div>
+      <div class="day">
+        <div class="day-num">Day 06 · 9/26 (Sat)</div>
+        <h4>Ithaca + Cornell · 飛 SYR → BOS</h4>
+        <div class="city-tag">Finger Lakes → Boston</div>
+        <ul>
+          <li>09:00 Taughannock Falls 早班步道（215 ft 單瀑）</li>
+          <li>Cornell University 校園散步 + Cornell Botanic Gardens</li>
+          <li><strong>午餐：</strong>Moosewood Restaurant（1973 素食 OG）</li>
+          <li>14:30 開車前往 SYR Syracuse Hancock（1h15m）</li>
+          <li>17:00 起飛 → 18:30 抵 BOS Logan</li>
+          <li>Silver Line 進城 · Back Bay / Beacon Hill 飯店 check in</li>
+          <li><strong>晚餐：</strong>Tatte Bakery 或 Saltie Girl 輕食（早睡為婚禮充電）</li>
+        </ul>
+        <span class="accent moss">Flight to BOS</span>
+      </div>
+      <div class="day">
+        <div class="day-num">Day 07 · 9/27 (Sun)</div>
+        <h4>婚禮日</h4>
+        <div class="city-tag">Boston · Wedding Day</div>
+        <ul>
+          <li>上午自由：Beacon Hill 巷弄散步、Acorn Street 拍照</li>
+          <li>Public Garden 天鵝船 + Boston Common 散步</li>
+          <li><strong>午餐輕食：</strong>Tatte Bakery（Beacon Hill 分店，shakshuka）或 Flour Bakery</li>
+          <li><strong>下午 / 晚上：婚禮典禮 + 晚宴</strong></li>
+          <li>備用方案：婚禮拖太晚就外帶 Roxy's Grilled Cheese 回旅館</li>
+        </ul>
+        <span class="accent brick">Wedding</span>
+      </div>
+      <div class="day">
+        <div class="day-num">Day 08 · 9/28 (Mon)</div>
+        <h4>BOS 緩衝 + North End 食物</h4>
+        <div class="city-tag">Boston · Recovery</div>
+        <ul>
+          <li>上午 Boston Public Library Bates Hall + Sargent 壁畫</li>
+          <li><strong>午餐：</strong>Neptune Oyster（北端海鮮 anchor，開門前 30 min 排隊）：龍蝦堡 cold mayo + 半打 Wellfleet 生蠔</li>
+          <li>下午 North End 散步 + Mike's vs Modern Pastry Cannoli 對決</li>
+          <li>傍晚 Long Wharf 看 sunset</li>
+          <li><strong>晚餐：</strong>Daily Catch（Hanover St. · 現金 only · 烏賊墨燉飯）</li>
+        </ul>
+      </div>
+      <div class="day">
+        <div class="day-num">Day 09 · 9/29 (Tue)</div>
+        <h4>Freedom Trail + JFK 圖書館</h4>
+        <div class="city-tag">Boston · History</div>
+        <ul>
+          <li>09:00 從 Boston Common 出發走完 Freedom Trail 紅磚線</li>
+          <li>麻州州議會 self-guided tour + Faneuil Hall + Quincy Market</li>
+          <li><strong>午餐：</strong>Union Oyster House（1826 年，Daniel Webster 老座位還在）</li>
+          <li>下午地鐵紅線 → JFK/UMass 站接 free shuttle → JFK 圖書館（貝聿銘建築 + 古巴飛彈危機決策室還原）</li>
+          <li><strong>晚餐：</strong>Eventide Fenway（brown butter lobster roll）</li>
+        </ul>
+      </div>
+      <div class="day">
+        <div class="day-num">Day 10 · 9/30 (Wed)</div>
+        <h4>BOS → PHL Amtrak</h4>
+        <div class="city-tag">NE Regional · 5.5 h</div>
+        <ul>
+          <li>07:00 South Station 出發 NE Regional 南下</li>
+          <li>選配：New Haven 中停 3h（Yale Old Campus + Frank Pepe Pizzeria 1925 White Clam Pizza）</li>
+          <li>17:00 抵 30th Street Station · Old City 飯店 check in</li>
+          <li>傍晚 Independence Mall 黃昏散步、自由鐘外牆夜景</li>
+          <li><strong>晚餐：</strong>Zahav（以色列菜，須 60 天前 OpenTable 訂位）或 Suraya（Fishtown）</li>
+        </ul>
+        <span class="accent">Rail Day</span>
+      </div>
+      <div class="day">
+        <div class="day-num">Day 11 · 10/1 (Thu)</div>
+        <h4>建國敘事 + Reading Terminal + Magic Gardens</h4>
+        <div class="city-tag">Philly · One Full Day</div>
+        <ul>
+          <li>09:00 獨立廳 ranger-led tour（一週前 recreation.gov 預約）</li>
+          <li>自由鐘 + 國會議事廳 + Benjamin Franklin Court</li>
+          <li><strong>午餐：</strong>Reading Terminal Market — DiNic's 烤豬肉三明治 + Bassetts 冰淇淋</li>
+          <li>下午 Magic Gardens（Isaiah Zagar 馬賽克迷宮）</li>
+          <li>傍晚 Italian Market 9th Street + Di Bruno Bros</li>
+          <li><strong>晚餐：</strong>John's Roast Pork（cheesesteak 派系 #3，午餐 only 不適、改 Pat's vs Geno's 24h 對決）</li>
+        </ul>
+      </div>
+      <div class="day">
+        <div class="day-num">Day 12 · 10/2 (Fri)</div>
+        <h4>Acela 南下 + DC 入城 + Mall 黃昏</h4>
+        <div class="city-tag">PHL → DC · Acela</div>
+        <ul>
+          <li>09:36 Acela Express（Business Class · 訂 right side 看 Susquehanna 大橋）</li>
+          <li>11:17 抵 Union Station · Penn Quarter 或 Foggy Bottom 飯店</li>
+          <li><strong>午餐：</strong>Old Ebbitt Grill（1856 年，白宮對面 70 m，oyster bar happy hour 3–6pm 半價）</li>
+          <li>下午 Air &amp; Space 博物館（Mall 本館，2026 整修完）</li>
+          <li>傍晚 Lincoln Memorial + Reflecting Pool 黃昏 + Vietnam Wall</li>
+          <li><strong>晚餐：</strong>Le Diplomate（14th St · 法式小酒館 · steak frites）</li>
+        </ul>
+        <span class="accent">Acela Express</span>
+      </div>
+      <div class="day">
+        <div class="day-num">Day 13 · 10/3 (Sat)</div>
+        <h4>NMAAHC + LOC + 離境</h4>
+        <div class="city-tag">DC · East Mall · Departure</div>
+        <ul>
+          <li>09:00 NMAAHC 半日（地下三層奴隸船 → 地上嘻哈，呼應 Niagara 地下鐵路 Heritage Center 的敘事弧）</li>
+          <li><strong>午餐：</strong>Ben's Chili Bowl（U Street · half-smoke + chili — Obama、Beyoncé 都來吃過）</li>
+          <li>下午 國會圖書館 Jefferson Building 導覽（現場排，建議 14:00 前到）</li>
+          <li>15:00 旅館取行李 → IAD 國際線（Silver Line + 5A 公車或 Uber USD 65）</li>
+          <li><strong>離境：</strong>ANA NH 1（IAD → NRT → TPE）</li>
+          <li>10/04 (Sun) 抵 TPE</li>
+        </ul>
+        <span class="accent brick">Departure</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== LOGISTICS ==================== -->
+<section class="logistics">
+  <div class="wrap">
+    <div class="eyebrow">Logistics · 行前備忘</div>
+    <h2 class="section-title">事前預約 / 行政提醒</h2>
+    <p class="section-lede">這條路線比經典 BOS-PHL-DC 多了「飛內陸 + 租車 + 過加拿大邊境」三個變數。預先處理好，現場才能輕鬆走。</p>
+
+    <div class="log-grid">
+      <div>
+        <h3>必預約 / 必備</h3>
+        <ul>
+          <li><strong>加拿大邊境護照</strong> · 過 Rainbow Bridge 入加需護照；ESTA 無效，免簽 6 個月內可入</li>
+          <li><strong>租車</strong> · BUF 機場取車、SYR 機場還車異地還車費約 USD 80–120，60 天前訂便宜</li>
+          <li><strong>LGA → BUF / SYR → BOS</strong> · 兩段短程航班，60 天前訂價差大</li>
+          <li><strong>Maid of the Mist + Cave of the Winds</strong> · 美側 USD 49 套票線上預約，當日省排隊 30 min</li>
+          <li><strong>Skylon Revolving Dining Room</strong> · 加側，OpenTable 14 天前訂位（窗邊位）</li>
+          <li><strong>Independence Hall ranger tour</strong> · recreation.gov 一週前開放</li>
+          <li><strong>NMAAHC timed entry pass</strong> · si.edu 30 天前開放</li>
+          <li><strong>Zahav (Philly)</strong> · OpenTable 60 天前訂位是底線</li>
+        </ul>
+      </div>
+      <div>
+        <h3>飯店 / 交通 / 西紐約細節</h3>
+        <ul>
+          <li><strong>NYC 1 晚</strong>：Midtown / LES 都可，週二早上 LGA 起飛預留 2h 通勤</li>
+          <li><strong>Niagara Falls NY</strong>：Sheraton Niagara Falls / Giacomo Hotel；美側鎮蕭條，吃在飯店或 Niagara-on-the-Lake</li>
+          <li><strong>Watkins Glen / Ithaca</strong>：Watkins Glen Harbor Hotel（湖邊）或 Ithaca Statler Hotel（Cornell 校園內）</li>
+          <li><strong>Boston</strong>：Back Bay 或 Beacon Hill，地鐵 Red / Green Line 都好接（婚禮場地若在 Cambridge / Newton 再調整）</li>
+          <li><strong>Philadelphia</strong>：Old City 徒步可達獨立廳</li>
+          <li><strong>D.C.</strong>：Penn Quarter / Foggy Bottom，Mall + Metro 都近</li>
+          <li><strong>西紐約自駕</strong>：I-90 為主，Niagara → Watkins Glen 3h、Watkins Glen → Ithaca 30 min、Ithaca → SYR 1h15m</li>
+          <li><strong>BUF / SYR 機場停車</strong>：租車異地還省事；自帶車則 USD 12/天</li>
+          <li><strong>9/25 後續飛安全網</strong>：若 SYR → BOS 航班取消，BUF → BOS 直飛同價位、班次更多——犧牲 Ithaca 半天最容易</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="marque">FIELD NOTES · TRIP 04 · 西紐約自然奇觀</div>
+  <div>2026 Autumn · Niagara + Finger Lakes Loop · 13 天 · 給自己看的</div>
+  <div style="margin-top:8px;font-size:11px;letter-spacing:0.16em;">圖片來源：Wikimedia Commons (CC BY-SA / Public Domain) · 行程細節依航班 / 飯店空房 / 邊境政策實況微調</div>
+  <div style="margin-top:14px;"><a href="./poster.html" style="margin:0 10px;">海報版 →</a> · <a href="../" style="margin:0 10px;">回 5 主題行程</a> · <a href="../../" style="margin:0 10px;">Home</a></div>
+</footer>
+
+<script>
+  (function () {
+    const selectors = [
+      { sel: '.pillar', stagger: true },
+      { sel: '.gallery .photo', stagger: true },
+      { sel: '.day', stagger: true },
+      { sel: '.log-grid > div', stagger: true },
+      { sel: '.train .copy', stagger: false },
+      { sel: '.section-title' },
+      { sel: 'p.section-lede' },
+      { sel: '.city .text .highlight-list li' },
+      { sel: '.train table.spec tr' },
+    ];
+    selectors.forEach(({ sel, stagger }) => {
+      const els = document.querySelectorAll(sel);
+      els.forEach((el, i) => {
+        el.classList.add('reveal');
+        if (stagger) el.dataset.delay = Math.min(i % 6, 5);
+      });
+    });
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('in');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+    let ticking = false;
+    document.body.classList.add('scrolled');
+    window.addEventListener('scroll', () => {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          const y = Math.min(window.scrollY * 0.28, 220);
+          document.body.style.setProperty('--parallax', y + 'px');
+          ticking = false;
+        });
+        ticking = true;
+      }
+    }, { passive: true });
+  })();
+</script>
+
+</body>
+</html>

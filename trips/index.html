@@ -1,0 +1,724 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>5 條主題行程 · Field Notes｜For 2026 Boston Wedding · Northeast US</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Noto+Sans+TC:wght@300;400;500;700&family=Noto+Serif+TC:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1f2e;
+    --ink-soft: #3a4356;
+    --paper: #f6f1e7;
+    --paper-deep: #ece4d2;
+    --brass: #b8893d;
+    --brass-deep: #8a6326;
+    --brick: #8c3c2c;
+    --moss: #4a5d3a;
+    --rule: rgba(26, 31, 46, 0.18);
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: "Noto Sans TC", "Helvetica Neue", system-ui, sans-serif;
+    color: var(--ink);
+    background: var(--paper);
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+    position: relative;
+  }
+  /* Paper grain texture overlay — fixed, multiplies onto everything below */
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1000;
+    opacity: 0.55;
+    mix-blend-mode: multiply;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch' seed='3'/><feColorMatrix values='0 0 0 0 0.1 0 0 0 0 0.08 0 0 0 0 0.05 0 0 0 0.18 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+    background-size: 220px 220px;
+  }
+  /* Scroll-reveal */
+  .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.9s cubic-bezier(.22,.61,.36,1), transform 0.9s cubic-bezier(.22,.61,.36,1); }
+  .reveal.in { opacity: 1; transform: translateY(0); }
+  .reveal[data-delay="1"] { transition-delay: 0.08s; }
+  .reveal[data-delay="2"] { transition-delay: 0.16s; }
+  .reveal[data-delay="3"] { transition-delay: 0.24s; }
+  .reveal[data-delay="4"] { transition-delay: 0.32s; }
+  .reveal[data-delay="5"] { transition-delay: 0.40s; }
+  @media (prefers-reduced-motion: reduce) {
+    .reveal { opacity: 1; transform: none; transition: none; }
+  }
+  h1, h2, h3, .serif {
+    font-family: "Cormorant Garamond", "Noto Serif TC", "Songti TC", serif;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+  }
+  a { color: var(--brass-deep); text-decoration: none; border-bottom: 1px solid rgba(184,137,61,0.3); }
+  a:hover { color: var(--brick); border-bottom-color: var(--brick); }
+
+  .topbar {
+    border-bottom: 1px solid var(--rule);
+    background: var(--paper);
+    padding: 14px 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
+  .topbar .brand { font-family: "Cormorant Garamond", serif; font-size: 20px; letter-spacing: 0.16em; }
+  .topbar .meta { color: var(--ink-soft); }
+  .topbar .meta a { color: var(--brass-deep); text-decoration: none; border-bottom: 1px solid currentColor; margin-left: 6px; }
+
+  /* Hero */
+  .hero {
+    position: relative;
+    min-height: 56vh;
+    display: flex;
+    align-items: flex-end;
+    overflow: hidden;
+    background: #0d1320;
+  }
+  .hero::before {
+    content: "";
+    position: absolute; inset: 0;
+    background-image:
+      radial-gradient(ellipse 80% 60% at 25% 70%, rgba(13,19,32,0.78) 0%, rgba(13,19,32,0.35) 50%, rgba(13,19,32,0) 80%),
+      linear-gradient(180deg, rgba(13,19,32,0.45) 0%, rgba(13,19,32,0.65) 55%, rgba(13,19,32,0.94) 100%),
+      url("https://commons.wikimedia.org/wiki/Special:FilePath/Northbound%20Amtrak%20Acela%20Express%20approaching%20Readville%20March%202022.jpg?width=1920");
+    background-size: cover;
+    background-position: center 40%;
+    filter: saturate(0.55) brightness(0.7) contrast(1.08);
+  }
+  .hero-inner {
+    position: relative;
+    z-index: 2;
+    color: #f6f1e7;
+    padding: 64px 48px;
+    max-width: 1100px;
+  }
+  .hero .kicker {
+    font-size: 12px;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: #d9b67a;
+    margin-bottom: 18px;
+  }
+  .hero h1 {
+    font-size: clamp(34px, 5.4vw, 64px);
+    line-height: 1.05;
+    margin: 0 0 22px;
+    color: #f6f1e7;
+    text-shadow: 0 2px 30px rgba(13,19,32,0.5), 0 1px 2px rgba(13,19,32,0.4);
+  }
+  .hero p.lede {
+    font-family: "Noto Serif TC", serif;
+    font-size: clamp(16px, 1.6vw, 19px);
+    max-width: 760px;
+    color: rgba(246,241,231,0.9);
+    margin: 0 0 28px;
+    text-shadow: 0 1px 18px rgba(13,19,32,0.5);
+  }
+  .hero .ribbon {
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 28px;
+    border-top: 1px solid rgba(217,182,122,0.4);
+    border-bottom: 1px solid rgba(217,182,122,0.4);
+    padding: 14px 0;
+    font-size: 13px;
+    letter-spacing: 0.12em;
+    color: #e6d6b6;
+  }
+  .hero .ribbon span strong { color: #f6f1e7; font-weight: 700; padding-right: 4px; }
+
+  /* Trip cards section */
+  section.trips-section { padding: 96px 48px; }
+  .wrap { max-width: 1180px; margin: 0 auto; }
+  .eyebrow {
+    font-size: 11px;
+    letter-spacing: 0.36em;
+    text-transform: uppercase;
+    color: var(--brass-deep);
+    margin-bottom: 14px;
+  }
+  h2.section-title {
+    font-size: clamp(30px, 3.6vw, 46px);
+    margin: 0 0 16px;
+    color: var(--ink);
+  }
+  p.section-lede {
+    font-family: "Noto Serif TC", serif;
+    font-size: 18px;
+    color: var(--ink-soft);
+    max-width: 760px;
+    margin: 0 0 56px;
+  }
+
+  /* Trip grid */
+  .trip-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 36px;
+  }
+  .trip-card {
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    border-top: 3px solid var(--brass);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    transition: transform 0.4s cubic-bezier(.22,.61,.36,1), box-shadow 0.4s cubic-bezier(.22,.61,.36,1);
+    box-shadow: 0 4px 14px rgba(26,31,46,0.08);
+    position: relative;
+  }
+  .trip-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 18px 42px rgba(26,31,46,0.18);
+  }
+  .trip-card .card-head {
+    display: flex;
+    align-items: stretch;
+    gap: 0;
+    padding: 22px 26px 0 26px;
+  }
+  .trip-card .trip-num {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 64px;
+    line-height: 1;
+    color: var(--brass-deep);
+    flex: 0 0 auto;
+    padding-right: 22px;
+    border-right: 1px solid var(--rule);
+    margin-right: 22px;
+    align-self: flex-start;
+  }
+  .trip-card .head-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .trip-card .days-badge {
+    display: inline-block;
+    align-self: flex-start;
+    background: var(--ink);
+    color: var(--paper);
+    font-size: 11px;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    margin-bottom: 8px;
+  }
+  .trip-card h3.title {
+    font-size: clamp(24px, 2.4vw, 30px);
+    line-height: 1.1;
+    margin: 0 0 4px;
+    color: var(--ink);
+  }
+  .trip-card .title-en {
+    font-family: "Cormorant Garamond", serif;
+    font-style: italic;
+    color: var(--brass-deep);
+    font-size: 16px;
+  }
+  .trip-card .hero-img {
+    margin-top: 20px;
+    width: 100%;
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    filter: saturate(0.85) contrast(1.04);
+    position: relative;
+  }
+  .trip-card .hero-img::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(13,19,32,0) 60%, rgba(13,19,32,0.35) 100%);
+    pointer-events: none;
+  }
+  .trip-card .body {
+    padding: 24px 26px 28px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+  .trip-card .route {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px 10px;
+    font-family: "Cormorant Garamond", "Noto Serif TC", serif;
+    font-size: 17px;
+    color: var(--ink-soft);
+    margin-bottom: 18px;
+    padding-bottom: 16px;
+    border-bottom: 1px dashed var(--rule);
+  }
+  .trip-card .route .city { color: var(--ink); font-weight: 600; }
+  .trip-card .route .arrow {
+    display: inline-flex;
+    align-items: center;
+    color: var(--brass);
+    opacity: 0.9;
+  }
+  .trip-card .route .arrow svg { width: 30px; height: auto; }
+  .trip-card ul.highlights {
+    margin: 0 0 22px;
+    padding: 0;
+    list-style: none;
+    flex: 1;
+  }
+  .trip-card ul.highlights li {
+    padding: 8px 0 8px 18px;
+    position: relative;
+    color: var(--ink-soft);
+    font-size: 14.5px;
+    line-height: 1.6;
+    border-bottom: 1px dashed var(--rule);
+  }
+  .trip-card ul.highlights li:last-child { border-bottom: 0; }
+  .trip-card ul.highlights li::before {
+    content: "";
+    position: absolute;
+    left: 0; top: 17px;
+    width: 8px; height: 1px;
+    background: var(--brass);
+  }
+  .trip-card .ctas {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .trip-card .cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 9px 16px;
+    font-size: 13px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    font-family: "Noto Sans TC", sans-serif;
+    font-weight: 500;
+    border: 1px solid var(--brass);
+    color: var(--brass-deep);
+    background: transparent;
+    text-decoration: none;
+    transition: background 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+  }
+  .trip-card .cta:hover {
+    background: var(--brass);
+    color: #fff;
+    border-color: var(--brass);
+  }
+  .trip-card .cta.primary {
+    background: var(--ink);
+    border-color: var(--ink);
+    color: var(--paper);
+  }
+  .trip-card .cta.primary:hover {
+    background: var(--brick);
+    border-color: var(--brick);
+    color: #fff;
+  }
+
+  /* Footer */
+  footer {
+    background: var(--paper);
+    padding: 40px 48px;
+    text-align: center;
+    border-top: 1px solid var(--rule);
+    color: var(--ink-soft);
+    font-size: 13px;
+    letter-spacing: 0.08em;
+  }
+  footer .marque {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 20px;
+    letter-spacing: 0.18em;
+    color: var(--ink);
+    margin-bottom: 8px;
+  }
+  footer a { color: var(--brass-deep); }
+
+  /* Responsive */
+  @media (max-width: 900px) {
+    section.trips-section { padding: 64px 24px; }
+    .topbar { padding: 12px 20px; flex-direction: column; gap: 6px; align-items: flex-start; }
+    .hero-inner { padding: 48px 24px; }
+    .trip-grid { grid-template-columns: 1fr; gap: 28px; }
+    .trip-card .card-head { padding: 20px 22px 0 22px; }
+    .trip-card .trip-num { font-size: 48px; padding-right: 16px; margin-right: 16px; }
+    .trip-card .body { padding: 20px 22px 24px; }
+  }
+  @media (max-width: 520px) {
+    .trip-card .hero-img { height: 180px; }
+    .trip-card .ctas { flex-direction: column; align-items: stretch; }
+    .trip-card .cta { justify-content: center; }
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="brand">FIELD NOTES · 個人行旅</div>
+  <div class="meta">5 主題行程 · Trips Hub · <a href="../">原版</a> · <a href="../refined/">精修版</a> · <a href="../poster/">海報版</a> · <a href="../explore/">探索</a></div>
+</div>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="kicker">Five Themed Itineraries · For 2026 Boston Wedding</div>
+    <h1>5 條主題行程<br><span class="serif" style="font-style:italic;color:#d9b67a;font-size:0.6em;">Five Routes Through the Northeast</span></h1>
+    <p class="lede">五條行程都以 9/27 (Sun) Boston 婚禮為錨點，但用不同的方式抵達與離開。經典直達、建國史時序、楓紅追逐、自然奇觀、美食重點——同一個婚禮，五種敘事路線。每條都有精修版（細讀）與海報版（速覽）兩種視覺風格。</p>
+    <div class="ribbon">
+      <span><strong>5</strong> Trips</span>
+      <span><strong>10–14</strong> Days Each</span>
+      <span><strong>2</strong> Styles per Trip</span>
+      <span><strong>1</strong> Wedding · 9/27 Sun</span>
+    </div>
+  </div>
+</header>
+
+<section class="trips-section">
+  <div class="wrap">
+    <div class="eyebrow">Pick your route</div>
+    <h2 class="section-title">五條敘事路線</h2>
+    <p class="section-lede">每條行程的天數、停靠站、敘事主軸都不同。點 <strong>精修版</strong> 進入 Field Notes 編輯風格的逐日深度筆記；點 <strong>海報版</strong> 進入 1930s WPA 鐵路海報風格的視覺速覽。</p>
+
+    <div class="trip-grid">
+
+      <!-- Trip 01 -->
+      <article class="trip-card">
+        <div class="card-head">
+          <div class="trip-num">01</div>
+          <div class="head-right">
+            <span class="days-badge">10 Days</span>
+            <h3 class="title">經典直達</h3>
+            <div class="title-en">Classic Corridor</div>
+          </div>
+        </div>
+        <div class="hero-img" style="background-image:url('https://commons.wikimedia.org/wiki/Special:FilePath/USA%20Boston%20Public%20Library%202%20MA.jpg?width=1200')"></div>
+        <div class="body">
+          <div class="route">
+            <span class="city">BOS</span>
+            <span class="arrow" aria-hidden="true">
+              <svg viewBox="0 0 64 18" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="0" y1="6" x2="46" y2="6"/><line x1="0" y1="12" x2="46" y2="12"/>
+                <line x1="6" y1="3.5" x2="6" y2="14.5" opacity="0.6"/><line x1="14" y1="3.5" x2="14" y2="14.5" opacity="0.6"/>
+                <line x1="22" y1="3.5" x2="22" y2="14.5" opacity="0.6"/><line x1="30" y1="3.5" x2="30" y2="14.5" opacity="0.6"/>
+                <line x1="38" y1="3.5" x2="38" y2="14.5" opacity="0.6"/><path d="M44 1.5 L62 9 L44 16.5"/>
+              </svg>
+            </span>
+            <span class="city">PHL</span>
+            <span class="arrow" aria-hidden="true">
+              <svg viewBox="0 0 64 18" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="0" y1="6" x2="46" y2="6"/><line x1="0" y1="12" x2="46" y2="12"/>
+                <line x1="6" y1="3.5" x2="6" y2="14.5" opacity="0.6"/><line x1="14" y1="3.5" x2="14" y2="14.5" opacity="0.6"/>
+                <line x1="22" y1="3.5" x2="22" y2="14.5" opacity="0.6"/><line x1="30" y1="3.5" x2="30" y2="14.5" opacity="0.6"/>
+                <line x1="38" y1="3.5" x2="38" y2="14.5" opacity="0.6"/><path d="M44 1.5 L62 9 L44 16.5"/>
+              </svg>
+            </span>
+            <span class="city">DC</span>
+          </div>
+          <ul class="highlights">
+            <li>婚禮主場 + 北端海鮮 + Boston Common 倒時差</li>
+            <li>Acela Express 直達 · New Haven Pepe's 中停</li>
+            <li>婚禮 + 南線 Smithsonian 完整版的安穩走法</li>
+          </ul>
+          <div class="ctas">
+            <a class="cta primary" href="./01-classic/index.html">精修版 →</a>
+            <a class="cta" href="./01-classic/poster.html">海報版 →</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Trip 02 -->
+      <article class="trip-card">
+        <div class="card-head">
+          <div class="trip-num">02</div>
+          <div class="head-right">
+            <span class="days-badge">13 Days</span>
+            <h3 class="title">建國史深度</h3>
+            <div class="title-en">Founding History</div>
+          </div>
+        </div>
+        <div class="hero-img" style="background-image:url('https://commons.wikimedia.org/wiki/Special:FilePath/Independence_Hall_10.jpg?width=1200')"></div>
+        <div class="body">
+          <div class="route">
+            <span class="city">NYC</span>
+            <span class="arrow" aria-hidden="true">
+              <svg viewBox="0 0 64 18" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="0" y1="6" x2="46" y2="6"/><line x1="0" y1="12" x2="46" y2="12"/>
+                <line x1="6" y1="3.5" x2="6" y2="14.5" opacity="0.6"/><line x1="14" y1="3.5" x2="14" y2="14.5" opacity="0.6"/>
+                <line x1="22" y1="3.5" x2="22" y2="14.5" opacity="0.6"/><line x1="30" y1="3.5" x2="30" y2="14.5" opacity="0.6"/>
+                <line x1="38" y1="3.5" x2="38" y2="14.5" opacity="0.6"/><path d="M44 1.5 L62 9 L44 16.5"/>
+              </svg>
+            </span>
+            <span class="city">Hudson</span>
+            <span class="arrow" aria-hidden="true">
+              <svg viewBox="0 0 64 18" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="0" y1="6" x2="46" y2="6"/><line x1="0" y1="12" x2="46" y2="12"/>
+                <line x1="6" y1="3.5" x2="6" y2="14.5" opacity="0.6"/><line x1="14" y1="3.5" x2="14" y2="14.5" opacity="0.6"/>
+                <line x1="22" y1="3.5" x2="22" y2="14.5" opacity="0.6"/><line x1="30" y1="3.5" x2="30" y2="14.5" opacity="0.6"/>
+                <line x1="38" y1="3.5" x2="38" y2="14.5" opacity="0.6"/><path d="M44 1.5 L62 9 L44 16.5"/>
+              </svg>
+            </span>
+            <span class="city">BOS</span>
+            <span class="arrow" aria-hidden="true">
+              <svg viewBox="0 0 64 18" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="0" y1="6" x2="46" y2="6"/><line x1="0" y1="12" x2="46" y2="12"/>
+                <line x1="6" y1="3.5" x2="6" y2="14.5" opacity="0.6"/><line x1="14" y1="3.5" x2="14" y2="14.5" opacity="0.6"/>
+                <line x1="22" y1="3.5" x2="22" y2="14.5" opacity="0.6"/><line x1="30" y1="3.5" x2="30" y2="14.5" opacity="0.6"/>
+                <line x1="38" y1="3.5" x2="38" y2="14.5" opacity="0.6"/><path d="M44 1.5 L62 9 L44 16.5"/>
+              </svg>
+            </span>
+            <span class="city">PHL</span>
+            <span class="arrow" aria-hidden="true">
+              <svg viewBox="0 0 64 18" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="0" y1="6" x2="46" y2="6"/><line x1="0" y1="12" x2="46" y2="12"/>
+                <line x1="6" y1="3.5" x2="6" y2="14.5" opacity="0.6"/><line x1="14" y1="3.5" x2="14" y2="14.5" opacity="0.6"/>
+                <line x1="22" y1="3.5" x2="22" y2="14.5" opacity="0.6"/><line x1="30" y1="3.5" x2="30" y2="14.5" opacity="0.6"/>
+                <line x1="38" y1="3.5" x2="38" y2="14.5" opacity="0.6"/><path d="M44 1.5 L62 9 L44 16.5"/>
+              </svg>
+            </span>
+            <span class="city">DC</span>
+          </div>
+          <ul class="highlights">
+            <li>殖民 → 革命 → 制憲 → 內戰 時序敘事</li>
+            <li>FDR Home + West Point + Valley Forge 加碼</li>
+            <li>Mount Vernon + Antietam 戰場 day trip</li>
+          </ul>
+          <div class="ctas">
+            <a class="cta primary" href="./02-history/index.html">精修版 →</a>
+            <a class="cta" href="./02-history/poster.html">海報版 →</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Trip 03 -->
+      <article class="trip-card">
+        <div class="card-head">
+          <div class="trip-num">03</div>
+          <div class="head-right">
+            <span class="days-badge">14 Days</span>
+            <h3 class="title">楓紅追逐</h3>
+            <div class="title-en">Foliage Chaser</div>
+          </div>
+        </div>
+        <div class="hero-img" style="background-image:url('https://commons.wikimedia.org/wiki/Special:FilePath/The%20Chin%20of%20Mount%20Mansfield%2C%202007.jpg?width=1200')"></div>
+        <div class="body">
+          <div class="route">
+            <span class="city">NYC</span>
+            <span class="arrow" aria-hidden="true">
+              <svg viewBox="0 0 64 18" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="0" y1="6" x2="46" y2="6"/><line x1="0" y1="12" x2="46" y2="12"/>
+                <line x1="6" y1="3.5" x2="6" y2="14.5" opacity="0.6"/><line x1="14" y1="3.5" x2="14" y2="14.5" opacity="0.6"/>
+                <line x1="22" y1="3.5" x2="22" y2="14.5" opacity="0.6"/><line x1="30" y1="3.5" x2="30" y2="14.5" opacity="0.6"/>
+                <line x1="38" y1="3.5" x2="38" y2="14.5" opacity="0.6"/><path d="M44 1.5 L62 9 L44 16.5"/>
+              </svg>
+            </span>
+            <span class="city">Adirondacks</span>
+            <span class="arrow" aria-hidden="true">
+              <svg viewBox="0 0 64 18" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="0" y1="6" x2="46" y2="6"/><line x1="0" y1="12" x2="46" y2="12"/>
+                <line x1="6" y1="3.5" x2="6" y2="14.5" opacity="0.6"/><line x1="14" y1="3.5" x2="14" y2="14.5" opacity="0.6"/>
+                <line x1="22" y1="3.5" x2="22" y2="14.5" opacity="0.6"/><line x1="30" y1="3.5" x2="30" y2="14.5" opacity="0.6"/>
+                <line x1="38" y1="3.5" x2="38" y2="14.5" opacity="0.6"/><path d="M44 1.5 L62 9 L44 16.5"/>
+              </svg>
+            </span>
+            <span class="city">Vermont</span>
+            <span class="arrow" aria-hidden="true">
+              <svg viewBox="0 0 64 18" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="0" y1="6" x2="46" y2="6"/><line x1="0" y1="12" x2="46" y2="12"/>
+                <line x1="6" y1="3.5" x2="6" y2="14.5" opacity="0.6"/><line x1="14" y1="3.5" x2="14" y2="14.5" opacity="0.6"/>
+                <line x1="22" y1="3.5" x2="22" y2="14.5" opacity="0.6"/><line x1="30" y1="3.5" x2="30" y2="14.5" opacity="0.6"/>
+                <line x1="38" y1="3.5" x2="38" y2="14.5" opacity="0.6"/><path d="M44 1.5 L62 9 L44 16.5"/>
+              </svg>
+            </span>
+            <span class="city">BOS</span>
+            <span class="arrow" aria-hidden="true">
+              <svg viewBox="0 0 64 18" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="0" y1="6" x2="46" y2="6"/><line x1="0" y1="12" x2="46" y2="12"/>
+                <line x1="6" y1="3.5" x2="6" y2="14.5" opacity="0.6"/><line x1="14" y1="3.5" x2="14" y2="14.5" opacity="0.6"/>
+                <line x1="22" y1="3.5" x2="22" y2="14.5" opacity="0.6"/><line x1="30" y1="3.5" x2="30" y2="14.5" opacity="0.6"/>
+                <line x1="38" y1="3.5" x2="38" y2="14.5" opacity="0.6"/><path d="M44 1.5 L62 9 L44 16.5"/>
+              </svg>
+            </span>
+            <span class="city">DC</span>
+          </div>
+          <ul class="highlights">
+            <li>9 月底東岸楓紅 prime · Lake Placid + Whiteface</li>
+            <li>Stowe + Mt Mansfield + Shelburne Museum</li>
+            <li>Shenandoah Skyline Drive day trip from DC</li>
+          </ul>
+          <div class="ctas">
+            <a class="cta primary" href="./03-foliage/index.html">精修版 →</a>
+            <a class="cta" href="./03-foliage/poster.html">海報版 →</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Trip 04 -->
+      <article class="trip-card">
+        <div class="card-head">
+          <div class="trip-num">04</div>
+          <div class="head-right">
+            <span class="days-badge">13 Days</span>
+            <h3 class="title">自然奇觀</h3>
+            <div class="title-en">Niagara + Finger Lakes</div>
+          </div>
+        </div>
+        <div class="hero-img" style="background-image:url('https://commons.wikimedia.org/wiki/Special:FilePath/Niagara-Falls-Horseshoe-Falls-view.jpg?width=1200')"></div>
+        <div class="body">
+          <div class="route">
+            <span class="city">NYC</span>
+            <span class="arrow" aria-hidden="true">
+              <svg viewBox="0 0 64 18" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="0" y1="6" x2="46" y2="6"/><line x1="0" y1="12" x2="46" y2="12"/>
+                <line x1="6" y1="3.5" x2="6" y2="14.5" opacity="0.6"/><line x1="14" y1="3.5" x2="14" y2="14.5" opacity="0.6"/>
+                <line x1="22" y1="3.5" x2="22" y2="14.5" opacity="0.6"/><line x1="30" y1="3.5" x2="30" y2="14.5" opacity="0.6"/>
+                <line x1="38" y1="3.5" x2="38" y2="14.5" opacity="0.6"/><path d="M44 1.5 L62 9 L44 16.5"/>
+              </svg>
+            </span>
+            <span class="city">Niagara</span>
+            <span class="arrow" aria-hidden="true">
+              <svg viewBox="0 0 64 18" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="0" y1="6" x2="46" y2="6"/><line x1="0" y1="12" x2="46" y2="12"/>
+                <line x1="6" y1="3.5" x2="6" y2="14.5" opacity="0.6"/><line x1="14" y1="3.5" x2="14" y2="14.5" opacity="0.6"/>
+                <line x1="22" y1="3.5" x2="22" y2="14.5" opacity="0.6"/><line x1="30" y1="3.5" x2="30" y2="14.5" opacity="0.6"/>
+                <line x1="38" y1="3.5" x2="38" y2="14.5" opacity="0.6"/><path d="M44 1.5 L62 9 L44 16.5"/>
+              </svg>
+            </span>
+            <span class="city">Finger Lakes</span>
+            <span class="arrow" aria-hidden="true">
+              <svg viewBox="0 0 64 18" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="0" y1="6" x2="46" y2="6"/><line x1="0" y1="12" x2="46" y2="12"/>
+                <line x1="6" y1="3.5" x2="6" y2="14.5" opacity="0.6"/><line x1="14" y1="3.5" x2="14" y2="14.5" opacity="0.6"/>
+                <line x1="22" y1="3.5" x2="22" y2="14.5" opacity="0.6"/><line x1="30" y1="3.5" x2="30" y2="14.5" opacity="0.6"/>
+                <line x1="38" y1="3.5" x2="38" y2="14.5" opacity="0.6"/><path d="M44 1.5 L62 9 L44 16.5"/>
+              </svg>
+            </span>
+            <span class="city">BOS</span>
+            <span class="arrow" aria-hidden="true">
+              <svg viewBox="0 0 64 18" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="0" y1="6" x2="46" y2="6"/><line x1="0" y1="12" x2="46" y2="12"/>
+                <line x1="6" y1="3.5" x2="6" y2="14.5" opacity="0.6"/><line x1="14" y1="3.5" x2="14" y2="14.5" opacity="0.6"/>
+                <line x1="22" y1="3.5" x2="22" y2="14.5" opacity="0.6"/><line x1="30" y1="3.5" x2="30" y2="14.5" opacity="0.6"/>
+                <line x1="38" y1="3.5" x2="38" y2="14.5" opacity="0.6"/><path d="M44 1.5 L62 9 L44 16.5"/>
+              </svg>
+            </span>
+            <span class="city">DC</span>
+          </div>
+          <ul class="highlights">
+            <li>Niagara 美加兩側都走 · Maid of the Mist + Horseshoe</li>
+            <li>Watkins Glen 19 道瀑布峽谷 + Taughannock</li>
+            <li>Underground Railroad Heritage Center 歷史</li>
+          </ul>
+          <div class="ctas">
+            <a class="cta primary" href="./04-niagara-finger/index.html">精修版 →</a>
+            <a class="cta" href="./04-niagara-finger/poster.html">海報版 →</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Trip 05 -->
+      <article class="trip-card">
+        <div class="card-head">
+          <div class="trip-num">05</div>
+          <div class="head-right">
+            <span class="days-badge">12 Days</span>
+            <h3 class="title">美食重點</h3>
+            <div class="title-en">Foodie's Northeast</div>
+          </div>
+        </div>
+        <div class="hero-img" style="background-image:url('https://commons.wikimedia.org/wiki/Special:FilePath/Reading_Terminal_Market.jpg?width=1200')"></div>
+        <div class="body">
+          <div class="route">
+            <span class="city">NYC</span>
+            <span class="arrow" aria-hidden="true">
+              <svg viewBox="0 0 64 18" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="0" y1="6" x2="46" y2="6"/><line x1="0" y1="12" x2="46" y2="12"/>
+                <line x1="6" y1="3.5" x2="6" y2="14.5" opacity="0.6"/><line x1="14" y1="3.5" x2="14" y2="14.5" opacity="0.6"/>
+                <line x1="22" y1="3.5" x2="22" y2="14.5" opacity="0.6"/><line x1="30" y1="3.5" x2="30" y2="14.5" opacity="0.6"/>
+                <line x1="38" y1="3.5" x2="38" y2="14.5" opacity="0.6"/><path d="M44 1.5 L62 9 L44 16.5"/>
+              </svg>
+            </span>
+            <span class="city">BOS</span>
+            <span class="arrow" aria-hidden="true">
+              <svg viewBox="0 0 64 18" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="0" y1="6" x2="46" y2="6"/><line x1="0" y1="12" x2="46" y2="12"/>
+                <line x1="6" y1="3.5" x2="6" y2="14.5" opacity="0.6"/><line x1="14" y1="3.5" x2="14" y2="14.5" opacity="0.6"/>
+                <line x1="22" y1="3.5" x2="22" y2="14.5" opacity="0.6"/><line x1="30" y1="3.5" x2="30" y2="14.5" opacity="0.6"/>
+                <line x1="38" y1="3.5" x2="38" y2="14.5" opacity="0.6"/><path d="M44 1.5 L62 9 L44 16.5"/>
+              </svg>
+            </span>
+            <span class="city">PHL</span>
+            <span class="arrow" aria-hidden="true">
+              <svg viewBox="0 0 64 18" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="0" y1="6" x2="46" y2="6"/><line x1="0" y1="12" x2="46" y2="12"/>
+                <line x1="6" y1="3.5" x2="6" y2="14.5" opacity="0.6"/><line x1="14" y1="3.5" x2="14" y2="14.5" opacity="0.6"/>
+                <line x1="22" y1="3.5" x2="22" y2="14.5" opacity="0.6"/><line x1="30" y1="3.5" x2="30" y2="14.5" opacity="0.6"/>
+                <line x1="38" y1="3.5" x2="38" y2="14.5" opacity="0.6"/><path d="M44 1.5 L62 9 L44 16.5"/>
+              </svg>
+            </span>
+            <span class="city">DC</span>
+          </div>
+          <ul class="highlights">
+            <li>NYC Chinatown 港點 + Brooklyn 三家披薩巡禮</li>
+            <li>North End Cannoli 對決 + Neptune Oyster 龍蝦堡</li>
+            <li>Cheesesteak 三派對決 + DC 越南 / 衣索比亞</li>
+          </ul>
+          <div class="ctas">
+            <a class="cta primary" href="./05-foodie/index.html">精修版 →</a>
+            <a class="cta" href="./05-foodie/poster.html">海報版 →</a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="marque">FIELD NOTES · 個人行旅</div>
+  <div>2026 Autumn · 5 Routes Through the Northeast · 給自己看的</div>
+  <div style="margin-top:8px;font-size:11px;letter-spacing:0.16em;">
+    <a href="../">← 回首頁</a> · <a href="../refined/">精修版</a> · <a href="../poster/">海報版</a> · <a href="../explore/">探索</a>
+  </div>
+  <div style="margin-top:14px;font-size:11px;letter-spacing:0.16em;opacity:0.7;">圖片來源：Wikimedia Commons (CC BY-SA / Public Domain)</div>
+</footer>
+
+<script>
+  (function () {
+    const selectors = [
+      { sel: '.trip-card', stagger: true },
+      { sel: '.section-title' },
+      { sel: 'p.section-lede' }
+    ];
+    selectors.forEach(({ sel, stagger }) => {
+      const els = document.querySelectorAll(sel);
+      els.forEach((el, i) => {
+        el.classList.add('reveal');
+        if (stagger) el.dataset.delay = Math.min(i % 6, 5);
+      });
+    });
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('in');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+  })();
+</script>
+
+</body>
+</html>

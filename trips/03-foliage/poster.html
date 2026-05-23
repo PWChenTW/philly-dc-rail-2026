@@ -1,0 +1,1977 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>FOLIAGE CHASER · 楓紅追逐 14 天 · A Pictorial Rail Bulletin · 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Limelight&family=Big+Shoulders+Display:wght@500;700;900&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=Special+Elite&family=Noto+Serif+TC:wght@500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #f0e5c8;
+    --paper-warm: #ead9b4;
+    --paper-deep: #d4c39a;
+    --ink: #1b1c24;
+    --ink-deep: #0a0c12;
+    --mustard: #d8a13a;
+    --mustard-deep: #b07e1d;
+    --terracotta: #b94b32;
+    --terracotta-deep: #8c361f;
+    --teal: #285e64;
+    --teal-deep: #16383d;
+    --sage: #7a8a5b;
+    --cream: #f6ecd0;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: "Crimson Pro", "Noto Serif TC", Georgia, serif;
+    color: var(--ink-deep);
+    background: var(--paper);
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+  body::before {
+    content: ""; position: fixed; inset: 0;
+    pointer-events: none; z-index: 5000;
+    opacity: 0.42; mix-blend-mode: multiply;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.92' numOctaves='2' stitchTiles='stitch' seed='5'/><feColorMatrix values='0 0 0 0 0.13 0 0 0 0 0.11 0 0 0 0 0.07 0 0 0 0.22 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+  }
+  body::after {
+    content: ""; position: fixed; inset: 0;
+    pointer-events: none; z-index: 4999;
+    opacity: 0.06;
+    background-image: radial-gradient(circle, var(--ink) 0.7px, transparent 1.2px);
+    background-size: 7px 7px;
+  }
+
+  .display, h1, h2 {
+    font-family: "Limelight", "Noto Serif TC", serif;
+    font-weight: 400;
+    letter-spacing: 0.01em;
+  }
+  .display-cjk {
+    font-family: "Noto Serif TC", serif;
+    font-weight: 900;
+    letter-spacing: 0.04em;
+  }
+  .stencil {
+    font-family: "Big Shoulders Display", "Noto Sans TC", sans-serif;
+    font-weight: 900;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+  .typewriter {
+    font-family: "Special Elite", "Courier New", monospace;
+    letter-spacing: 0.02em;
+  }
+
+  .masthead {
+    background: var(--ink-deep);
+    color: var(--paper);
+    padding: 10px 28px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 6px double var(--mustard);
+    font-family: "Special Elite", monospace;
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    position: relative;
+    z-index: 10;
+  }
+  .masthead .left, .masthead .right { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+  .masthead a { color: var(--mustard); text-decoration: none; border-bottom: 1px dotted var(--mustard); }
+  .masthead a:hover { color: var(--paper); border-color: var(--paper); }
+  .masthead a.current { color: var(--terracotta); border-color: var(--terracotta); font-weight: 700; }
+  .masthead .ornament { color: var(--mustard); }
+
+  .cover {
+    position: relative;
+    min-height: 100vh;
+    background: var(--ink-deep);
+    color: var(--cream);
+    padding: 80px 40px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  .cover::before {
+    content: ""; position: absolute; inset: 0;
+    background-image:
+      radial-gradient(ellipse 80% 70% at 50% 50%, rgba(10,12,18,0.25) 0%, rgba(10,12,18,0.6) 50%, rgba(10,12,18,0.95) 100%),
+      url("https://commons.wikimedia.org/wiki/Special:FilePath/2017-09-11%2011%2004%2016%20Red%20Maple%20displaying%20early%20autumn%20foliage%20along%20the%20Maple%20Ridge%20Trail%20at%20about%203%2C020%20feet%20above%20sea%20level%20on%20the%20western%20slopes%20of%20Mount%20Mansfield%20within%20Mount%20Mansfield%20State%20Forest%20in%20Stowe%2C%20Lamoille%20County%2C%20Vermont.jpg?width=1920");
+    background-size: cover;
+    background-position: center;
+    filter: saturate(0.9) brightness(0.65) contrast(1.1) hue-rotate(-5deg);
+    opacity: 0.55;
+  }
+  .cover .sunburst {
+    position: absolute;
+    width: 1400px; height: 1400px;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0.14;
+    animation: slow-spin 240s linear infinite;
+  }
+  @keyframes slow-spin { to { transform: translate(-50%, -50%) rotate(360deg); } }
+  .cover .frame {
+    position: relative;
+    z-index: 2;
+    border: 2px solid var(--mustard);
+    padding: 48px 60px;
+    max-width: 960px;
+    width: 100%;
+    background: rgba(10,12,18,0.55);
+    backdrop-filter: blur(2px);
+  }
+  .cover .frame::before, .cover .frame::after {
+    content: ""; position: absolute;
+    width: 30px; height: 30px;
+    border: 2px solid var(--mustard);
+  }
+  .cover .frame::before { top: -10px; left: -10px; border-right: 0; border-bottom: 0; }
+  .cover .frame::after { bottom: -10px; right: -10px; border-left: 0; border-top: 0; }
+  .cover .route-num {
+    font-family: "Special Elite", monospace;
+    color: var(--mustard);
+    font-size: 13px;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    margin-bottom: 28px;
+  }
+  .cover h1.title {
+    font-family: "Limelight", serif;
+    font-size: clamp(46px, 9vw, 124px);
+    line-height: 0.9;
+    margin: 0 0 16px;
+    color: var(--mustard);
+    text-shadow:
+      4px 4px 0 var(--terracotta),
+      -1px -1px 0 var(--cream);
+  }
+  .cover .subtitle-cjk {
+    font-family: "Noto Serif TC", serif;
+    font-weight: 700;
+    font-size: clamp(22px, 3vw, 36px);
+    color: var(--cream);
+    letter-spacing: 0.3em;
+    margin: 0 0 28px;
+    padding: 0 0 24px;
+    border-bottom: 1px solid rgba(216,161,58,0.5);
+  }
+  .cover .lede {
+    font-family: "Crimson Pro", serif;
+    font-style: italic;
+    font-size: clamp(15px, 1.5vw, 18px);
+    color: rgba(246,236,208,0.92);
+    max-width: 660px;
+    margin: 0 auto 40px;
+    line-height: 1.7;
+  }
+  .cover .train-graphic {
+    width: 100%;
+    max-width: 720px;
+    margin: 0 auto 40px;
+    color: var(--mustard);
+    display: block;
+  }
+  .cover .stamps {
+    display: flex;
+    gap: 14px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 16px;
+  }
+  .cover .stamp {
+    border: 1.5px solid var(--mustard);
+    color: var(--mustard);
+    padding: 8px 16px;
+    font-family: "Big Shoulders Display", sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    font-size: 13px;
+    text-transform: uppercase;
+    border-radius: 2px;
+    background: rgba(216,161,58,0.08);
+  }
+  .cover .stamp strong {
+    font-family: "Limelight", serif;
+    font-weight: 400;
+    font-size: 22px;
+    margin-right: 4px;
+    color: var(--cream);
+  }
+  .cover .sibling-link {
+    margin-top: 26px;
+    font-family: "Special Elite", monospace;
+    font-size: 11px;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--mustard);
+  }
+  .cover .sibling-link a { color: var(--cream); border-bottom: 1px dotted var(--cream); text-decoration: none; }
+
+  .route-strip {
+    background: var(--paper-warm);
+    padding: 60px 32px;
+    border-top: 1px solid rgba(27,28,36,0.2);
+    border-bottom: 6px double var(--ink);
+    position: relative;
+  }
+  .route-strip-inner {
+    max-width: 1240px;
+    margin: 0 auto;
+  }
+  .route-strip .label {
+    font-family: "Special Elite", monospace;
+    font-size: 12px;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--terracotta-deep);
+    margin-bottom: 32px;
+    text-align: center;
+  }
+  .route-svg {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .city-poster {
+    position: relative;
+    padding: 0;
+    overflow: hidden;
+  }
+  .city-poster .city-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    align-items: stretch;
+    min-height: 92vh;
+  }
+  .city-poster.flip .city-grid { grid-template-columns: 0.9fr 1.1fr; }
+  .city-poster.flip .image-col { order: 2; }
+  .city-poster.flip .text-col { order: 1; }
+
+  .city-poster .image-col {
+    position: relative;
+    overflow: hidden;
+    min-height: 480px;
+  }
+  .city-poster .image-col .photo {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+  }
+  .city-poster.adirondacks .image-col .photo { filter: url(#dt-terracotta); }
+  .city-poster.vermont .image-col .photo { filter: url(#dt-mustard); }
+  .city-poster.boston .image-col .photo { filter: url(#dt-teal); }
+  .city-poster.philly .image-col .photo { filter: url(#dt-terracotta); }
+  .city-poster.dc .image-col .photo { filter: url(#dt-mustard); }
+  .city-poster .image-col::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 2;
+    opacity: 0.18;
+    background-image: radial-gradient(circle, var(--ink-deep) 0.8px, transparent 1.4px);
+    background-size: 6px 6px;
+    mix-blend-mode: multiply;
+  }
+
+  .city-poster .image-col .ornament {
+    position: absolute;
+    z-index: 3;
+    pointer-events: none;
+  }
+  .city-poster .image-col .corner-tag {
+    position: absolute;
+    top: 24px; left: 24px;
+    background: var(--ink-deep);
+    color: var(--paper);
+    padding: 6px 14px;
+    font-family: "Special Elite", monospace;
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    z-index: 4;
+  }
+
+  .city-poster .text-col {
+    padding: 80px 56px;
+    background: var(--paper);
+    position: relative;
+  }
+  .city-poster.adirondacks .text-col { background: var(--paper); }
+  .city-poster.vermont .text-col { background: var(--paper-warm); }
+  .city-poster.boston .text-col { background: var(--paper); }
+  .city-poster.philly .text-col { background: var(--paper-warm); }
+  .city-poster.dc .text-col { background: var(--paper); }
+
+  .city-poster .text-col .phase {
+    font-family: "Special Elite", monospace;
+    font-size: 11px;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--mustard-deep);
+    margin-bottom: 12px;
+  }
+  .city-poster .text-col h2.cjk {
+    font-family: "Noto Serif TC", serif;
+    font-weight: 900;
+    font-size: clamp(58px, 7.5vw, 110px);
+    line-height: 0.9;
+    margin: 0;
+    color: var(--ink-deep);
+    letter-spacing: 0.04em;
+  }
+  .city-poster.adirondacks .text-col h2.cjk { color: var(--terracotta-deep); }
+  .city-poster.vermont .text-col h2.cjk { color: var(--mustard-deep); }
+  .city-poster.boston .text-col h2.cjk { color: var(--teal-deep); }
+  .city-poster.philly .text-col h2.cjk { color: var(--terracotta-deep); }
+  .city-poster.dc .text-col h2.cjk { color: var(--mustard-deep); }
+
+  .city-poster .text-col .en-title {
+    font-family: "Limelight", serif;
+    font-size: clamp(26px, 3.6vw, 50px);
+    color: var(--ink-deep);
+    line-height: 1;
+    margin: 8px 0 4px;
+    text-shadow: 3px 3px 0 var(--mustard);
+  }
+  .city-poster.adirondacks .text-col .en-title { text-shadow: 3px 3px 0 var(--terracotta); color: var(--terracotta-deep); }
+  .city-poster.vermont .text-col .en-title { text-shadow: 3px 3px 0 var(--mustard); color: var(--ink-deep); }
+  .city-poster.boston .text-col .en-title { text-shadow: 3px 3px 0 var(--teal); color: var(--teal-deep); }
+  .city-poster.philly .text-col .en-title { text-shadow: 3px 3px 0 var(--terracotta); color: var(--terracotta-deep); }
+  .city-poster.dc .text-col .en-title { text-shadow: 3px 3px 0 var(--mustard); color: var(--ink-deep); }
+
+  .city-poster .text-col .tagline {
+    font-family: "Big Shoulders Display", sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--ink);
+    margin: 14px 0 20px;
+    padding: 8px 0;
+    border-top: 1px solid var(--ink-deep);
+    border-bottom: 1px solid var(--ink-deep);
+  }
+  .city-poster .text-col .intro {
+    font-family: "Crimson Pro", "Noto Serif TC", serif;
+    font-size: 16px;
+    color: var(--ink);
+    margin: 0 0 28px;
+    line-height: 1.75;
+  }
+  .city-poster .text-col .intro::first-line {
+    font-variant: small-caps;
+    letter-spacing: 0.08em;
+  }
+
+  .fare-table {
+    width: 100%;
+    border-collapse: collapse;
+    border-top: 3px solid var(--ink-deep);
+    border-bottom: 3px solid var(--ink-deep);
+    margin: 0 0 28px;
+  }
+  .fare-table .fare-head {
+    background: var(--ink-deep);
+    color: var(--mustard);
+  }
+  .fare-table .fare-head td {
+    padding: 8px 12px;
+    font-family: "Big Shoulders Display", sans-serif;
+    font-size: 13px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+  .fare-table tbody tr td {
+    padding: 14px 12px;
+    vertical-align: top;
+    border-bottom: 1px dashed rgba(27,28,36,0.3);
+    font-family: "Crimson Pro", "Noto Serif TC", serif;
+    font-size: 14.5px;
+  }
+  .fare-table tbody tr:last-child td { border-bottom: 0; }
+  .fare-table .item-num {
+    font-family: "Special Elite", monospace;
+    color: var(--terracotta-deep);
+    width: 38px;
+    font-size: 13px;
+  }
+  .fare-table .item-name { font-weight: 600; color: var(--ink-deep); width: 30%; }
+  .fare-table .item-name .item-en {
+    display: block;
+    font-family: "Big Shoulders Display", sans-serif;
+    font-weight: 500;
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--mustard-deep);
+    margin-top: 2px;
+  }
+  .fare-table .item-desc {
+    color: var(--ink);
+    line-height: 1.6;
+  }
+
+  .timetable-strip {
+    background: var(--ink-deep);
+    color: var(--cream);
+    padding: 0;
+    border-top: 4px solid var(--mustard);
+    border-bottom: 4px solid var(--mustard);
+    position: relative;
+    overflow: hidden;
+  }
+  .timetable-strip::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(90deg, transparent 0, transparent 38px, rgba(216,161,58,0.04) 38px, rgba(216,161,58,0.04) 40px);
+    pointer-events: none;
+  }
+  .timetable-strip .ts-inner {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 60px 40px;
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 56px;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+  }
+  .timetable-strip .ts-text .label {
+    font-family: "Special Elite", monospace;
+    font-size: 12px;
+    letter-spacing: 0.32em;
+    color: var(--mustard);
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+  .timetable-strip .ts-text h2 {
+    font-family: "Limelight", serif;
+    font-size: clamp(36px, 5vw, 72px);
+    line-height: 1;
+    margin: 0 0 8px;
+    color: var(--cream);
+    text-shadow: 3px 3px 0 var(--terracotta-deep);
+  }
+  .timetable-strip .ts-text .sub {
+    font-family: "Big Shoulders Display", sans-serif;
+    font-weight: 700;
+    color: var(--mustard);
+    font-size: 18px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 22px;
+  }
+  .timetable-strip .ts-text p {
+    font-family: "Crimson Pro", serif;
+    font-style: italic;
+    color: rgba(246,236,208,0.85);
+    max-width: 540px;
+    margin: 0;
+    font-size: 16px;
+  }
+  .ts-table {
+    width: 100%;
+    border: 2px solid var(--mustard);
+    background: rgba(216,161,58,0.04);
+    border-collapse: collapse;
+  }
+  .ts-table td {
+    padding: 14px 18px;
+    border-bottom: 1px dashed rgba(216,161,58,0.4);
+    vertical-align: top;
+  }
+  .ts-table tr:last-child td { border-bottom: 0; }
+  .ts-table td:first-child {
+    font-family: "Special Elite", monospace;
+    color: var(--mustard);
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    width: 30%;
+  }
+  .ts-table td:last-child {
+    font-family: "Crimson Pro", serif;
+    color: var(--cream);
+    font-size: 14.5px;
+  }
+
+  .train-silhouette {
+    width: 100%;
+    color: var(--mustard);
+    opacity: 0.95;
+    margin-bottom: 14px;
+  }
+
+  .schedule {
+    background: var(--paper-warm);
+    padding: 80px 40px;
+    border-top: 6px double var(--ink);
+  }
+  .schedule-inner { max-width: 1280px; margin: 0 auto; }
+  .schedule .header-block {
+    text-align: center;
+    margin-bottom: 48px;
+  }
+  .schedule .header-block .stencil {
+    color: var(--terracotta-deep);
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .schedule h2 {
+    font-family: "Limelight", serif;
+    font-size: clamp(40px, 5.5vw, 80px);
+    margin: 0;
+    color: var(--ink-deep);
+    text-shadow: 4px 4px 0 var(--mustard);
+  }
+  .schedule .header-block .cjk {
+    font-family: "Noto Serif TC", serif;
+    font-weight: 700;
+    color: var(--ink-deep);
+    font-size: 22px;
+    letter-spacing: 0.4em;
+    margin-top: 8px;
+  }
+  .schedule-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0;
+    border: 3px solid var(--ink-deep);
+    background: var(--ink-deep);
+  }
+  .ticket-card {
+    background: var(--paper);
+    padding: 28px 26px;
+    position: relative;
+    border-right: 1px solid var(--ink-deep);
+    border-bottom: 1px solid var(--ink-deep);
+  }
+  .ticket-card .stub-num {
+    font-family: "Limelight", serif;
+    font-size: 42px;
+    color: var(--terracotta);
+    line-height: 1;
+    margin: 0 0 4px;
+  }
+  .ticket-card .stub-date {
+    font-family: "Special Elite", monospace;
+    font-size: 11px;
+    color: var(--ink);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+    padding-bottom: 10px;
+    border-bottom: 1px dashed var(--ink);
+  }
+  .ticket-card h4 {
+    font-family: "Noto Serif TC", serif;
+    font-weight: 700;
+    font-size: 18px;
+    margin: 0 0 4px;
+    color: var(--ink-deep);
+  }
+  .ticket-card .ticket-route {
+    font-family: "Big Shoulders Display", sans-serif;
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--terracotta-deep);
+    margin-bottom: 14px;
+  }
+  .ticket-card ul {
+    margin: 0; padding-left: 18px;
+    font-family: "Crimson Pro", "Noto Serif TC", serif;
+    color: var(--ink);
+    font-size: 14px;
+    line-height: 1.7;
+  }
+  .ticket-card ul li { margin-bottom: 4px; }
+  .ticket-card .ticket-stamp {
+    position: absolute;
+    bottom: 16px; right: 18px;
+    border: 1.5px solid var(--terracotta);
+    color: var(--terracotta);
+    padding: 4px 10px;
+    font-family: "Big Shoulders Display", sans-serif;
+    font-weight: 700;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    transform: rotate(-6deg);
+    background: rgba(185,75,50,0.05);
+  }
+  .ticket-card .ticket-stamp.mustard { border-color: var(--mustard-deep); color: var(--mustard-deep); background: rgba(216,161,58,0.08); }
+  .ticket-card .ticket-stamp.teal { border-color: var(--teal); color: var(--teal); background: rgba(40,94,100,0.08); }
+  .ticket-card .ticket-stamp.sage { border-color: var(--sage); color: var(--sage); background: rgba(122,138,91,0.08); }
+
+  .dining-car {
+    background: var(--ink-deep);
+    color: var(--cream);
+    padding: 80px 40px;
+    position: relative;
+    overflow: hidden;
+  }
+  .dining-car::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+      radial-gradient(ellipse at top, rgba(216,161,58,0.12) 0%, transparent 60%);
+    pointer-events: none;
+  }
+  .dining-inner { max-width: 1180px; margin: 0 auto; position: relative; z-index: 2; }
+  .dining-car .header-block { text-align: center; margin-bottom: 56px; }
+  .dining-car .stencil { color: var(--mustard); }
+  .dining-car h2 {
+    font-family: "Limelight", serif;
+    font-size: clamp(40px, 5.5vw, 80px);
+    margin: 0;
+    color: var(--mustard);
+    text-shadow: 4px 4px 0 var(--terracotta-deep);
+  }
+  .dining-car .header-block .cjk {
+    font-family: "Noto Serif TC", serif;
+    font-weight: 700;
+    color: var(--cream);
+    font-size: 22px;
+    letter-spacing: 0.4em;
+    margin-top: 8px;
+  }
+  .menu-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+  }
+  .menu-col h3 {
+    font-family: "Limelight", serif;
+    font-size: 32px;
+    color: var(--mustard);
+    margin: 0 0 4px;
+    text-shadow: 2px 2px 0 var(--terracotta-deep);
+  }
+  .menu-col h3 .cjk {
+    display: block;
+    font-family: "Noto Serif TC", serif;
+    font-weight: 700;
+    font-size: 22px;
+    color: var(--cream);
+    margin-top: 4px;
+    text-shadow: none;
+    letter-spacing: 0.16em;
+  }
+  .menu-col .menu-tagline {
+    font-family: "Big Shoulders Display", sans-serif;
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--cream);
+    opacity: 0.7;
+    margin: 14px 0 22px;
+    padding: 8px 0;
+    border-top: 1px solid var(--mustard);
+    border-bottom: 1px solid var(--mustard);
+  }
+  .dish-line {
+    padding: 12px 0;
+    border-bottom: 1px dotted rgba(216,161,58,0.3);
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 12px;
+    align-items: baseline;
+  }
+  .dish-line:last-child { border-bottom: 0; }
+  .dish-line .dish-name {
+    font-family: "Noto Serif TC", serif;
+    font-weight: 700;
+    color: var(--cream);
+    font-size: 15px;
+  }
+  .dish-line .dish-where {
+    font-family: "Big Shoulders Display", sans-serif;
+    font-weight: 500;
+    color: var(--mustard);
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    text-align: right;
+    white-space: nowrap;
+  }
+  .dish-desc {
+    grid-column: 1 / -1;
+    font-family: "Crimson Pro", serif;
+    font-style: italic;
+    color: rgba(246,236,208,0.78);
+    font-size: 13.5px;
+    line-height: 1.6;
+    margin-top: 4px;
+  }
+
+  .logistics-block {
+    background: var(--paper-warm);
+    padding: 64px 40px;
+    border-top: 6px double var(--ink-deep);
+  }
+  .logistics-inner { max-width: 1180px; margin: 0 auto; }
+  .logistics-block .header-block { text-align: center; margin-bottom: 40px; }
+  .logistics-block .stencil { color: var(--mustard-deep); font-size: 13px; }
+  .logistics-block h2 {
+    font-family: "Limelight", serif;
+    font-size: clamp(34px, 4.5vw, 60px);
+    margin: 8px 0 0;
+    color: var(--ink-deep);
+  }
+  .log-cols {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 56px;
+  }
+  .log-cols h3 {
+    font-family: "Big Shoulders Display", sans-serif;
+    font-weight: 900;
+    color: var(--ink-deep);
+    font-size: 20px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    border-bottom: 3px solid var(--terracotta);
+    padding-bottom: 10px;
+    margin: 0 0 18px;
+  }
+  .log-cols ul {
+    margin: 0; padding-left: 0; list-style: none;
+    font-family: "Crimson Pro", "Noto Serif TC", serif;
+    color: var(--ink);
+  }
+  .log-cols li {
+    padding: 10px 0 10px 24px;
+    border-bottom: 1px dotted rgba(27,28,36,0.3);
+    position: relative;
+    font-size: 14.5px;
+  }
+  .log-cols li:before {
+    content: "★";
+    position: absolute;
+    left: 0; top: 12px;
+    color: var(--terracotta);
+    font-size: 11px;
+  }
+  .log-cols li strong { color: var(--ink-deep); }
+
+  .printer {
+    background: var(--ink-deep);
+    color: var(--paper);
+    padding: 48px 40px;
+    text-align: center;
+    border-top: 6px double var(--mustard);
+  }
+  .printer .device {
+    font-family: "Limelight", serif;
+    font-size: 28px;
+    color: var(--mustard);
+    letter-spacing: 0.2em;
+    margin-bottom: 14px;
+  }
+  .printer .meta {
+    font-family: "Special Elite", monospace;
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    opacity: 0.8;
+  }
+  .printer .links { margin-top: 12px; }
+  .printer .links a { color: var(--mustard); border-bottom: 1px dotted; text-decoration: none; margin: 0 8px; }
+
+  @media (max-width: 900px) {
+    .masthead { flex-wrap: wrap; gap: 6px; padding: 10px 18px; font-size: 11px; }
+    .cover { padding: 56px 18px; min-height: auto; }
+    .cover .frame { padding: 36px 24px; }
+    .cover .sunburst { width: 900px; height: 900px; opacity: 0.10; }
+    .city-poster .city-grid, .city-poster.flip .city-grid {
+      grid-template-columns: 1fr;
+    }
+    .city-poster .image-col { min-height: 320px; }
+    .city-poster.flip .image-col { order: 1; }
+    .city-poster.flip .text-col { order: 2; }
+    .city-poster .text-col { padding: 48px 24px; }
+    .city-poster .text-col h2.cjk { font-size: clamp(56px, 14vw, 96px); }
+    .timetable-strip .ts-inner { grid-template-columns: 1fr; gap: 32px; padding: 48px 24px; }
+    .schedule { padding: 56px 18px; }
+    .schedule-grid { grid-template-columns: 1fr; }
+    .dining-car { padding: 56px 18px; }
+    .menu-grid { grid-template-columns: 1fr; gap: 32px; }
+    .logistics-block { padding: 48px 18px; }
+    .log-cols { grid-template-columns: 1fr; gap: 32px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- SVG duotone filter defs (offscreen) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <filter id="dt-teal" color-interpolation-filters="sRGB">
+      <feColorMatrix type="matrix" values="
+        0.299 0.587 0.114 0 0
+        0.299 0.587 0.114 0 0
+        0.299 0.587 0.114 0 0
+        0     0     0     1 0"/>
+      <feComponentTransfer>
+        <feFuncR tableValues="0.087 0.965"/>
+        <feFuncG tableValues="0.220 0.927"/>
+        <feFuncB tableValues="0.245 0.816"/>
+      </feComponentTransfer>
+    </filter>
+    <filter id="dt-terracotta" color-interpolation-filters="sRGB">
+      <feColorMatrix type="matrix" values="
+        0.299 0.587 0.114 0 0
+        0.299 0.587 0.114 0 0
+        0.299 0.587 0.114 0 0
+        0     0     0     1 0"/>
+      <feComponentTransfer>
+        <feFuncR tableValues="0.36 0.965"/>
+        <feFuncG tableValues="0.13 0.927"/>
+        <feFuncB tableValues="0.07 0.816"/>
+      </feComponentTransfer>
+    </filter>
+    <filter id="dt-mustard" color-interpolation-filters="sRGB">
+      <feColorMatrix type="matrix" values="
+        0.299 0.587 0.114 0 0
+        0.299 0.587 0.114 0 0
+        0.299 0.587 0.114 0 0
+        0     0     0     1 0"/>
+      <feComponentTransfer>
+        <feFuncR tableValues="0.05 0.92"/>
+        <feFuncG tableValues="0.06 0.71"/>
+        <feFuncB tableValues="0.07 0.27"/>
+      </feComponentTransfer>
+    </filter>
+  </defs>
+</svg>
+
+<div class="masthead">
+  <div class="left">
+    <span>★ ★ ★</span>
+    <span>FOLIAGE CHASER · A PICTORIAL BULLETIN · ROUTE NO. 3 · 2026</span>
+  </div>
+  <div class="right">
+    <a href="../">5 主題</a>
+    <span class="ornament">·</span>
+    <a href="../01-classic/">01</a>
+    <a href="../02-history/">02</a>
+    <a href="./" class="current">03 楓紅</a>
+    <a href="../04-niagara-finger/">04</a>
+    <a href="../05-foodie/">05</a>
+    <span class="ornament">·</span>
+    <a href="./">精修版</a>
+    <span class="ornament">·</span>
+    <a href="../../">原版</a>
+  </div>
+</div>
+
+<!-- ==================== COVER ==================== -->
+<section class="cover">
+  <!-- Sunburst ornament -->
+  <svg class="sunburst" viewBox="-100 -100 200 200" aria-hidden="true">
+    <g fill="#d8a13a">
+      <polygon points="0,-95 2.5,-22 -2.5,-22"/>
+      <polygon points="0,-95 2.5,-22 -2.5,-22" transform="rotate(10)"/>
+      <polygon points="0,-95 2.5,-22 -2.5,-22" transform="rotate(20)"/>
+      <polygon points="0,-95 2.5,-22 -2.5,-22" transform="rotate(30)"/>
+      <polygon points="0,-95 2.5,-22 -2.5,-22" transform="rotate(40)"/>
+      <polygon points="0,-95 2.5,-22 -2.5,-22" transform="rotate(50)"/>
+      <polygon points="0,-95 2.5,-22 -2.5,-22" transform="rotate(60)"/>
+      <polygon points="0,-95 2.5,-22 -2.5,-22" transform="rotate(70)"/>
+      <polygon points="0,-95 2.5,-22 -2.5,-22" transform="rotate(80)"/>
+      <polygon points="0,-95 2.5,-22 -2.5,-22" transform="rotate(90)"/>
+      <polygon points="0,-95 2.5,-22 -2.5,-22" transform="rotate(100)"/>
+      <polygon points="0,-95 2.5,-22 -2.5,-22" transform="rotate(110)"/>
+      <polygon points="0,-95 2.5,-22 -2.5,-22" transform="rotate(120)"/>
+      <polygon points="0,-95 2.5,-22 -2.5,-22" transform="rotate(130)"/>
+      <polygon points="0,-95 2.5,-22 -2.5,-22" transform="rotate(140)"/>
+      <polygon points="0,-95 2.5,-22 -2.5,-22" transform="rotate(150)"/>
+      <polygon points="0,-95 2.5,-22 -2.5,-22" transform="rotate(160)"/>
+      <polygon points="0,-95 2.5,-22 -2.5,-22" transform="rotate(170)"/>
+      <polygon points="0,-95 2.5,-22 -2.5,-22" transform="rotate(180)"/>
+      <polygon points="0,-95 2.5,-22 -2.5,-22" transform="rotate(190)"/>
+      <polygon points="0,-95 2.5,-22 -2.5,-22" transform="rotate(200)"/>
+      <polygon points="0,-95 2.5,-22 -2.5,-22" transform="rotate(210)"/>
+      <polygon points="0,-95 2.5,-22 -2.5,-22" transform="rotate(220)"/>
+      <polygon points="0,-95 2.5,-22 -2.5,-22" transform="rotate(230)"/>
+      <polygon points="0,-95 2.5,-22 -2.5,-22" transform="rotate(240)"/>
+      <polygon points="0,-95 2.5,-22 -2.5,-22" transform="rotate(250)"/>
+      <polygon points="0,-95 2.5,-22 -2.5,-22" transform="rotate(260)"/>
+      <polygon points="0,-95 2.5,-22 -2.5,-22" transform="rotate(270)"/>
+      <polygon points="0,-95 2.5,-22 -2.5,-22" transform="rotate(280)"/>
+      <polygon points="0,-95 2.5,-22 -2.5,-22" transform="rotate(290)"/>
+      <polygon points="0,-95 2.5,-22 -2.5,-22" transform="rotate(300)"/>
+      <polygon points="0,-95 2.5,-22 -2.5,-22" transform="rotate(310)"/>
+      <polygon points="0,-95 2.5,-22 -2.5,-22" transform="rotate(320)"/>
+      <polygon points="0,-95 2.5,-22 -2.5,-22" transform="rotate(330)"/>
+      <polygon points="0,-95 2.5,-22 -2.5,-22" transform="rotate(340)"/>
+      <polygon points="0,-95 2.5,-22 -2.5,-22" transform="rotate(350)"/>
+      <circle r="14" fill="#d8a13a"/>
+      <circle r="8" fill="#1b1c24"/>
+    </g>
+  </svg>
+
+  <div class="frame">
+    <div class="route-num">★ Route No. 3 · Form 1809 · Issued 2026 ★</div>
+    <h1 class="title">FOLIAGE CHASER</h1>
+    <div class="subtitle-cjk">楓 紅 追 逐 · 14 天</div>
+    <!-- Train silhouette -->
+    <svg class="train-graphic" viewBox="0 0 600 90" aria-hidden="true">
+      <g fill="currentColor">
+        <rect x="20" y="32" width="180" height="42" rx="4"/>
+        <rect x="10" y="18" width="60" height="20" rx="3"/>
+        <polygon points="200,32 220,52 200,74"/>
+        <rect x="22" y="24" width="40" height="10" fill="#0a0c12"/>
+        <rect x="20" y="48" width="180" height="3" fill="#0a0c12"/>
+        <rect x="20" y="56" width="180" height="2" fill="#0a0c12" opacity="0.5"/>
+        <circle cx="50" cy="80" r="9"/>
+        <circle cx="50" cy="80" r="4" fill="#0a0c12"/>
+        <circle cx="100" cy="80" r="9"/>
+        <circle cx="100" cy="80" r="4" fill="#0a0c12"/>
+        <circle cx="150" cy="80" r="9"/>
+        <circle cx="150" cy="80" r="4" fill="#0a0c12"/>
+        <circle cx="190" cy="80" r="9"/>
+        <circle cx="190" cy="80" r="4" fill="#0a0c12"/>
+        <rect x="160" y="14" width="14" height="22" rx="1"/>
+        <rect x="156" y="10" width="22" height="6" rx="1"/>
+        <rect x="240" y="38" width="130" height="36" rx="3"/>
+        <rect x="248" y="44" width="20" height="14" fill="#0a0c12"/>
+        <rect x="272" y="44" width="20" height="14" fill="#0a0c12"/>
+        <rect x="296" y="44" width="20" height="14" fill="#0a0c12"/>
+        <rect x="320" y="44" width="20" height="14" fill="#0a0c12"/>
+        <rect x="344" y="44" width="20" height="14" fill="#0a0c12"/>
+        <circle cx="260" cy="80" r="7"/>
+        <circle cx="260" cy="80" r="3" fill="#0a0c12"/>
+        <circle cx="350" cy="80" r="7"/>
+        <circle cx="350" cy="80" r="3" fill="#0a0c12"/>
+        <rect x="380" y="38" width="130" height="36" rx="3"/>
+        <rect x="388" y="44" width="20" height="14" fill="#0a0c12"/>
+        <rect x="412" y="44" width="20" height="14" fill="#0a0c12"/>
+        <rect x="436" y="44" width="20" height="14" fill="#0a0c12"/>
+        <rect x="460" y="44" width="20" height="14" fill="#0a0c12"/>
+        <rect x="484" y="44" width="20" height="14" fill="#0a0c12"/>
+        <circle cx="400" cy="80" r="7"/>
+        <circle cx="400" cy="80" r="3" fill="#0a0c12"/>
+        <circle cx="490" cy="80" r="7"/>
+        <circle cx="490" cy="80" r="3" fill="#0a0c12"/>
+        <line x1="0" y1="88" x2="600" y2="88" stroke="currentColor" stroke-width="1.5"/>
+        <line x1="0" y1="86" x2="600" y2="86" stroke="currentColor" stroke-width="0.5" opacity="0.6"/>
+      </g>
+    </svg>
+
+    <p class="lede">為 9 月 27 日 Boston 婚禮設計的 14 天楓紅追逐：前半段租車從 Hudson Valley 經 Adirondacks 高峰 + 1000 Islands + Vermont Green Mountains 高海拔追 prime time 楓紅，後半段 Amtrak 鐵道南下 PHL + DC，以 Shenandoah Skyline Drive 105 mile 山脊路收尾。</p>
+    <div class="stamps">
+      <div class="stamp"><strong>14</strong> DAYS</div>
+      <div class="stamp"><strong>3</strong> 山系</div>
+      <div class="stamp"><strong>3</strong> CITIES</div>
+      <div class="stamp"><strong>1</strong> WEDDING</div>
+      <div class="stamp"><strong>1</strong> FERRY</div>
+      <div class="stamp"><strong>2</strong> AMTRAK</div>
+    </div>
+    <div class="sibling-link">★ 另一風格：<a href="./">精修版 · Field Notes Editorial →</a></div>
+  </div>
+</section>
+
+<!-- ==================== ROUTE MAP ==================== -->
+<section class="route-strip">
+  <div class="route-strip-inner">
+    <div class="label">★ Route Map · 北 線 環 + 南 線 走 廊 ★</div>
+    <svg class="route-svg" viewBox="0 0 1280 320" preserveAspectRatio="xMidYMid meet">
+      <!-- Northern Loop (top arc) -->
+      <path d="M 100 230 Q 180 100 320 90 Q 480 80 560 60 Q 700 50 840 90 Q 920 120 940 180 Q 950 220 880 230" fill="none" stroke="#1b1c24" stroke-width="2.5" stroke-dasharray="6,4"/>
+      <text x="520" y="40" text-anchor="middle" font-family="Special Elite" font-size="12" fill="#b07e1d" letter-spacing="4">★ NORTHERN LOOP · RENTAL CAR · DAYS 1—7 ★</text>
+
+      <!-- Southern Corridor (bottom line) -->
+      <line x1="880" y1="230" x2="1180" y2="230" stroke="#1b1c24" stroke-width="3"/>
+      <line x1="880" y1="240" x2="1180" y2="240" stroke="#1b1c24" stroke-width="1.5"/>
+      <g stroke="#1b1c24" stroke-width="1">
+        <line x1="900" y1="226" x2="900" y2="244"/>
+        <line x1="940" y1="226" x2="940" y2="244"/>
+        <line x1="980" y1="226" x2="980" y2="244"/>
+        <line x1="1020" y1="226" x2="1020" y2="244"/>
+        <line x1="1060" y1="226" x2="1060" y2="244"/>
+        <line x1="1100" y1="226" x2="1100" y2="244"/>
+        <line x1="1140" y1="226" x2="1140" y2="244"/>
+      </g>
+      <text x="1030" y="290" text-anchor="middle" font-family="Special Elite" font-size="12" fill="#b07e1d" letter-spacing="4">★ SOUTHERN CORRIDOR · AMTRAK · DAYS 10—14 ★</text>
+
+      <!-- Stations on the loop -->
+      <!-- NYC / JFK -->
+      <g>
+        <circle cx="100" cy="230" r="9" fill="#1b1c24"/>
+        <circle cx="100" cy="230" r="3" fill="#f0e5c8"/>
+        <text x="100" y="220" text-anchor="middle" font-family="Big Shoulders Display" font-weight="700" font-size="12" fill="#1b1c24" letter-spacing="2">NYC / JFK</text>
+        <text x="100" y="262" text-anchor="middle" font-family="Special Elite" font-size="9" fill="#1b1c24">D1—D2</text>
+      </g>
+      <!-- Hudson Valley -->
+      <g>
+        <circle cx="200" cy="170" r="7" fill="#7a8a5b" stroke="#1b1c24" stroke-width="2"/>
+        <text x="200" y="160" text-anchor="middle" font-family="Big Shoulders Display" font-weight="700" font-size="11" fill="#1b1c24" letter-spacing="2">HUDSON VALLEY</text>
+        <text x="200" y="195" text-anchor="middle" font-family="Special Elite" font-size="9" fill="#1b1c24">D2 NIGHT</text>
+      </g>
+      <!-- Lake Placid (Adirondacks) -->
+      <g>
+        <circle cx="340" cy="90" r="13" fill="#b94b32" stroke="#1b1c24" stroke-width="2"/>
+        <circle cx="340" cy="90" r="5" fill="#f0e5c8"/>
+        <text x="340" y="50" text-anchor="middle" font-family="Limelight" font-size="18" fill="#1b1c24">LAKE PLACID</text>
+        <text x="340" y="68" text-anchor="middle" font-family="Special Elite" font-size="10" fill="#b07e1d" letter-spacing="2">D3—D5 · ADIRONDACKS</text>
+      </g>
+      <!-- 1000 Islands -->
+      <g>
+        <circle cx="430" cy="68" r="7" fill="#1b1c24"/>
+        <text x="430" y="55" text-anchor="middle" font-family="Big Shoulders Display" font-weight="700" font-size="10" fill="#1b1c24" letter-spacing="2">1000 ISLANDS</text>
+        <text x="430" y="42" text-anchor="middle" font-family="Special Elite" font-size="9" fill="#1b1c24">D5 DAY TRIP</text>
+      </g>
+      <!-- Lake Champlain Ferry -->
+      <g>
+        <circle cx="540" cy="64" r="6" fill="#285e64" stroke="#1b1c24" stroke-width="1.5"/>
+        <text x="540" y="48" text-anchor="middle" font-family="Special Elite" font-size="10" fill="#285e64" letter-spacing="2">FERRY</text>
+        <text x="540" y="34" text-anchor="middle" font-family="Special Elite" font-size="8" fill="#285e64">CHAMPLAIN</text>
+      </g>
+      <!-- Stowe (Vermont) -->
+      <g>
+        <circle cx="660" cy="60" r="13" fill="#d8a13a" stroke="#1b1c24" stroke-width="2"/>
+        <circle cx="660" cy="60" r="5" fill="#f0e5c8"/>
+        <text x="660" y="28" text-anchor="middle" font-family="Limelight" font-size="18" fill="#1b1c24">STOWE</text>
+        <text x="660" y="44" text-anchor="middle" font-family="Special Elite" font-size="10" fill="#b07e1d" letter-spacing="2">D6—D7 · VERMONT</text>
+      </g>
+      <!-- I-89 drive -->
+      <g>
+        <text x="800" y="68" text-anchor="middle" font-family="Special Elite" font-size="9" fill="#1b1c24" letter-spacing="3" opacity="0.7">I-89 · 4H DRIVE</text>
+      </g>
+      <!-- Boston -->
+      <g>
+        <circle cx="880" cy="230" r="14" fill="#285e64" stroke="#1b1c24" stroke-width="2"/>
+        <circle cx="880" cy="230" r="5" fill="#f0e5c8"/>
+        <text x="880" y="195" text-anchor="middle" font-family="Limelight" font-size="22" fill="#1b1c24">BOSTON</text>
+        <text x="880" y="212" text-anchor="middle" font-family="Special Elite" font-size="10" fill="#b07e1d" letter-spacing="2">D7—D10 · WEDDING</text>
+        <text x="880" y="262" text-anchor="middle" font-family="Special Elite" font-size="10" fill="#1b1c24">SOUTH STA.</text>
+      </g>
+      <!-- NYC pass -->
+      <g>
+        <circle cx="1000" cy="230" r="5" fill="#1b1c24" opacity="0.6"/>
+        <text x="1000" y="262" text-anchor="middle" font-family="Special Elite" font-size="9" fill="#1b1c24" opacity="0.55">NYC (PASS)</text>
+      </g>
+      <!-- Philadelphia -->
+      <g>
+        <circle cx="1080" cy="230" r="13" fill="#b94b32" stroke="#1b1c24" stroke-width="2"/>
+        <circle cx="1080" cy="230" r="5" fill="#f0e5c8"/>
+        <text x="1080" y="195" text-anchor="middle" font-family="Limelight" font-size="20" fill="#1b1c24">PHILLY</text>
+        <text x="1080" y="212" text-anchor="middle" font-family="Special Elite" font-size="10" fill="#b07e1d" letter-spacing="2">D10—D12</text>
+        <text x="1080" y="262" text-anchor="middle" font-family="Special Elite" font-size="10" fill="#1b1c24">30TH ST.</text>
+      </g>
+      <!-- Washington DC -->
+      <g>
+        <circle cx="1180" cy="230" r="13" fill="#d8a13a" stroke="#1b1c24" stroke-width="2"/>
+        <circle cx="1180" cy="230" r="5" fill="#f0e5c8"/>
+        <text x="1180" y="195" text-anchor="middle" font-family="Limelight" font-size="20" fill="#1b1c24">WASHINGTON</text>
+        <text x="1180" y="212" text-anchor="middle" font-family="Special Elite" font-size="10" fill="#b07e1d" letter-spacing="2">D12—D14</text>
+        <text x="1180" y="262" text-anchor="middle" font-family="Special Elite" font-size="10" fill="#1b1c24">UNION STA.</text>
+      </g>
+      <!-- Shenandoah branch -->
+      <line x1="1180" y1="230" x2="1230" y2="290" stroke="#7a8a5b" stroke-width="2" stroke-dasharray="4,4"/>
+      <g>
+        <polygon points="1230,290 1238,300 1226,302 1220,294" fill="#7a8a5b"/>
+        <text x="1245" y="304" text-anchor="start" font-family="Special Elite" font-size="10" fill="#4a5d3a" letter-spacing="2">SHENANDOAH</text>
+        <text x="1245" y="316" text-anchor="start" font-family="Special Elite" font-size="9" fill="#4a5d3a" opacity="0.7">D13 DAY TRIP</text>
+      </g>
+    </svg>
+  </div>
+</section>
+
+<!-- ==================== ADIRONDACKS ==================== -->
+<section class="city-poster adirondacks">
+  <div class="city-grid">
+    <div class="image-col">
+      <div class="corner-tag">★ Phase I · Days 3—5</div>
+      <div class="photo" style="background-image:url('https://commons.wikimedia.org/wiki/Special:FilePath/Whiteface%20Mountain%2C%20New%20York%20from%20Lake%20Placid%2002643.jpg?width=1280')"></div>
+      <!-- Maple leaf ornament -->
+      <svg class="ornament" style="bottom:30px; right:30px; width:120px; height:120px;" viewBox="0 0 120 120" aria-hidden="true">
+        <g fill="#f6ecd0" opacity="0.92">
+          <path d="M60 14 L66 32 L82 26 L74 42 L92 44 L78 56 L92 68 L74 70 L82 86 L66 80 L60 100 L54 80 L38 86 L46 70 L28 68 L42 56 L28 44 L46 42 L38 26 L54 32 Z"/>
+          <circle cx="60" cy="56" r="3" fill="#0a0c12"/>
+        </g>
+      </svg>
+    </div>
+    <div class="text-col">
+      <div class="phase">★ Phase I · Days 3—5</div>
+      <h2 class="cjk">阿迪朗達克</h2>
+      <div class="en-title">ADIRONDACKS, N.Y.</div>
+      <div class="tagline">High Peaks Foliage · 6 百萬英畝 · 1980 冬奧之城 · 1000 Islands</div>
+      <p class="intro">Adirondacks Park 6 百萬英畝，比 Yellowstone + Yosemite + Grand Canyon + Glacier 加起來還大。46 座 High Peaks 超過 4000 ft——9 月最後一週山頂楓紅 prime time。以 Lake Placid 為基地一天上 Whiteface Veterans Memorial Highway 開到 4867 ft 山頂、一天北上 St. Lawrence 河看 Boldt Castle 鍍金時代愛情遺跡。</p>
+
+      <table class="fare-table">
+        <thead>
+          <tr class="fare-head"><td colspan="3">★ Points of Interest · 必訪清單 ★</td></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="item-num">01</td>
+            <td class="item-name">Lake Placid<span class="item-en">1932 + 1980 冬奧</span></td>
+            <td class="item-desc">兩屆冬奧主辦地。Olympic Center 是 1980 "Miracle on Ice" 美國贏蘇聯冰球場館；跳台滑雪塔電梯到頂看 360° High Peaks；Mirror Lake 1 mile 環湖步道就在鎮上。</td>
+          </tr>
+          <tr>
+            <td class="item-num">02</td>
+            <td class="item-name">Whiteface Mountain<span class="item-en">Veterans Memorial Highway</span></td>
+            <td class="item-desc">5 mile 公路一路開到山頂 4867 ft。海拔上升 1 千多公尺剛好掃過綠→黃→紅→裸枝全色階；天氣好可看 Lake Champlain 與蒙特婁。</td>
+          </tr>
+          <tr>
+            <td class="item-num">03</td>
+            <td class="item-name">Mt Marcy + Cascade<span class="item-en">High Peaks</span></td>
+            <td class="item-desc">Marcy 5344 ft 是 NY 最高，Cascade 4 mile 來回 2h 是 46 座 High Peaks 裡最容易的——時間夠且有體力可挑一個半日。9 月底山頂可能下雪。</td>
+          </tr>
+          <tr>
+            <td class="item-num">04</td>
+            <td class="item-name">Boldt Castle<span class="item-en">Heart Island · 1000 Islands</span></td>
+            <td class="item-desc">George Boldt 1900 為妻子 Louise 蓋的萊茵河式城堡。Louise 1904 過世，他停工搬走再也沒回來。1977 修復開放，Alexandria Bay 搭船 15 min 上島。USD 12.5。</td>
+          </tr>
+          <tr>
+            <td class="item-num">05</td>
+            <td class="item-name">Antique Boat Museum<span class="item-en">Clayton</span></td>
+            <td class="item-desc">200+ 木製古董船，全美最大淡水海洋博物館。接 Boldt 之後 2 小時，剛好順路。</td>
+          </tr>
+          <tr>
+            <td class="item-num">06</td>
+            <td class="item-name">John Brown Farm<span class="item-en">North Elba</span></td>
+            <td class="item-desc">廢奴主義者 John Brown 故居 + 墓地，1859 帶兵突襲 Harpers Ferry 前一年才搬來。免費 30 min。</td>
+          </tr>
+          <tr>
+            <td class="item-num">07</td>
+            <td class="item-name">Great Camps<span class="item-en">鍍金時代山中別莊</span></td>
+            <td class="item-desc">Sagamore Lodge (Vanderbilt 家族，1.5h 導覽)、Camp Santanoni (Pruyn 家族，徒步 5 mile 進入無車道，原始保存)。1880–1920 木石建築。</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== FERRY INTERLUDE ==================== -->
+<section class="timetable-strip">
+  <div class="ts-inner">
+    <div class="ts-text">
+      <svg class="train-silhouette" viewBox="0 0 320 60" aria-hidden="true">
+        <g fill="currentColor">
+          <!-- Boat / ferry shape -->
+          <path d="M 20 38 L 80 38 L 110 30 L 220 30 L 250 38 L 290 38 L 280 50 L 30 50 Z"/>
+          <rect x="120" y="18" width="80" height="12" fill="currentColor"/>
+          <rect x="125" y="12" width="20" height="6"/>
+          <rect x="160" y="22" width="6" height="6" fill="#0a0c12"/>
+          <rect x="170" y="22" width="6" height="6" fill="#0a0c12"/>
+          <rect x="180" y="22" width="6" height="6" fill="#0a0c12"/>
+          <line x1="0" y1="54" x2="320" y2="54" stroke="currentColor" stroke-width="1"/>
+          <path d="M 0 54 Q 20 50 40 54 Q 60 58 80 54 Q 100 50 120 54" stroke="currentColor" stroke-width="0.8" fill="none" opacity="0.6"/>
+        </g>
+      </svg>
+      <div class="label">★ Interlude · Day 6 · 渡 Lake Champlain ★</div>
+      <h2>Adirondacks → Vermont</h2>
+      <div class="sub">Westport NY · Charlotte VT · 20 min Ferry</div>
+      <p>Lake Placid 走 NY 73 接 I-87 南下到 Westport 港，搭 Lake Champlain Transportation Co 渡輪 20 min 橫渡到 Charlotte（Vermont 端），免去繞 Crown Point Bridge 的 1 小時。湖中央回望 Adirondacks 高峰連綿；10 月初冷風從加拿大灌下來。上岸後 US 7 北上 Burlington 午餐，再走 I-89 + VT 100 進 Stowe。</p>
+    </div>
+    <table class="ts-table">
+      <tr><td>Leg 1</td><td>Lake Placid → Westport NY · NY 73 + I-87 · 1 h 30 m</td></tr>
+      <tr><td>Ferry</td><td>Westport → Charlotte VT · 20 min · USD 32 一車兩人</td></tr>
+      <tr><td>Leg 2</td><td>Charlotte → Burlington 午餐 · US 7 · 30 min</td></tr>
+      <tr><td>Leg 3</td><td>Burlington → Stowe · I-89 + VT 100 · 50 m</td></tr>
+      <tr><td>Total</td><td>4 h door-to-door · 渡輪 4–11 月航行</td></tr>
+      <tr><td>Tip</td><td>線上預約渡輪省排隊 · 過湖後 VT 加油較便宜</td></tr>
+    </table>
+  </div>
+</section>
+
+<!-- ==================== VERMONT ==================== -->
+<section class="city-poster vermont flip">
+  <div class="city-grid">
+    <div class="text-col">
+      <div class="phase">★ Phase II · Days 6—7</div>
+      <h2 class="cjk">佛蒙特</h2>
+      <div class="en-title">VERMONT</div>
+      <div class="tagline">Green Mountains · Mt Mansfield 4395 ft · Cabot Cheese · Shelburne</div>
+      <p class="intro">Vermont 9 月底是東岸楓紅最強的州——高海拔山頂先轉、山下慢慢跟上。以 Stowe 為基地，一天上 Mt Mansfield Toll Road 開到 Vermont 最高點，另一天下到 Lake Champlain 邊的 Shelburne Museum 看 39 棟移建建築跟一艘整艘搬到陸地上的蒸汽船。傍晚下 Cabot 酒廠試起司、回鎮上吃 farm-to-table。</p>
+
+      <table class="fare-table">
+        <thead>
+          <tr class="fare-head"><td colspan="3">★ Points of Interest · 必訪清單 ★</td></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="item-num">01</td>
+            <td class="item-name">Mt Mansfield Toll Road<span class="item-en">VT 最高峰 4395 ft</span></td>
+            <td class="item-desc">4.5 mile 收費道路 (USD 32 一車) 開到 The Nose；可再走 Long Trail 北段 1.4 mile 到 The Chin 最高點。9 月底山頂已 peak，山下還綠。</td>
+          </tr>
+          <tr>
+            <td class="item-num">02</td>
+            <td class="item-name">Stowe Recreation Path</td>
+            <td class="item-desc">5.3 mile 鋪面河谷 trail 沿 West Branch River 連接鎮中心到山腳；騎自行車或慢走，最容易看楓紅又不爬山。</td>
+          </tr>
+          <tr>
+            <td class="item-num">03</td>
+            <td class="item-name">Shelburne Museum<span class="item-en">39 棟移建建築</span></td>
+            <td class="item-desc">45 英畝、3–4 小時。穀倉、燈塔、教堂、火車站、覆蓋橋 + 1906 蒸汽船 Ticonderoga 整艘搬到陸地上。獨一無二，USD 28。</td>
+          </tr>
+          <tr>
+            <td class="item-num">04</td>
+            <td class="item-name">Cabot Creamery<span class="item-en">合作社起司</span></td>
+            <td class="item-desc">Waterbury 旁，免費 factory tour + 試吃。一字排開十幾款 cheddar / extra sharp / clothbound 切片自取。回 Stowe 路上順路。</td>
+          </tr>
+          <tr>
+            <td class="item-num">05</td>
+            <td class="item-name">Ben &amp; Jerry's Factory Tour<span class="item-en">Waterbury</span></td>
+            <td class="item-desc">30 min 導覽 + 試吃 USD 5。Flavor Graveyard 在外面（退役口味的墓園，有真的墓碑刻日期跟悼詞）。</td>
+          </tr>
+          <tr>
+            <td class="item-num">06</td>
+            <td class="item-name">Smugglers' Notch</td>
+            <td class="item-desc">VT 108 切過 Mt Mansfield 跟 Sterling Mountain 之間，巨岩夾道僅容單向錯車。9 月底氣溫驟降可能封閉，去之前確認 vtrans.vermont.gov。</td>
+          </tr>
+          <tr>
+            <td class="item-num">07</td>
+            <td class="item-name">Stowe Village + Cheese Trail<span class="item-en">餐酒延伸</span></td>
+            <td class="item-desc">1860 年代白教堂尖塔（明信片同款）。Doc Ponds / Plate Restaurant 吃 farm-to-table。Vermont Cheese Trail 40+ 起司農場可挑 2–3 家順路插。</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="image-col">
+      <div class="corner-tag">★ Phase II · Days 6—7</div>
+      <div class="photo" style="background-image:url('https://commons.wikimedia.org/wiki/Special:FilePath/The%20Chin%20of%20Mount%20Mansfield%2C%202007.jpg?width=1280')"></div>
+      <!-- Pine tree ornament -->
+      <svg class="ornament" style="top:30px; left:30px; width:130px; height:90px;" viewBox="0 0 130 90" aria-hidden="true">
+        <g fill="#f6ecd0" opacity="0.92">
+          <polygon points="30,10 18,32 26,32 14,50 24,50 8,72 52,72 36,50 46,50 34,32 42,32"/>
+          <polygon points="75,18 65,38 72,38 60,56 70,56 56,76 94,76 80,56 88,56 78,38 85,38"/>
+          <rect x="28" y="72" width="4" height="8"/>
+          <rect x="73" y="76" width="4" height="6"/>
+          <line x1="0" y1="86" x2="130" y2="86" stroke="#f6ecd0" stroke-width="2"/>
+          <line x1="0" y1="80" x2="130" y2="80" stroke="#f6ecd0" stroke-width="1" opacity="0.5"/>
+        </g>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== I-89 SPRINT INTERLUDE ==================== -->
+<section class="timetable-strip">
+  <div class="ts-inner">
+    <div class="ts-text">
+      <svg class="train-silhouette" viewBox="0 0 320 56" aria-hidden="true">
+        <g fill="currentColor">
+          <!-- Car / sedan -->
+          <path d="M 30 36 L 30 28 Q 30 22 50 22 L 230 22 L 250 12 L 270 12 L 290 22 L 300 28 L 300 36 Z"/>
+          <rect x="60" y="14" width="60" height="14" fill="#0a0c12" opacity="0.6"/>
+          <rect x="130" y="14" width="60" height="14" fill="#0a0c12" opacity="0.6"/>
+          <circle cx="80" cy="42" r="9"/>
+          <circle cx="80" cy="42" r="4" fill="#0a0c12"/>
+          <circle cx="240" cy="42" r="9"/>
+          <circle cx="240" cy="42" r="4" fill="#0a0c12"/>
+          <line x1="0" y1="51" x2="320" y2="51" stroke="currentColor" stroke-width="1"/>
+          <line x1="0" y1="20" x2="22" y2="20" stroke="currentColor" stroke-width="1" opacity="0.5"/>
+          <line x1="0" y1="30" x2="32" y2="30" stroke="currentColor" stroke-width="1" opacity="0.4"/>
+        </g>
+      </svg>
+      <div class="label">★ Interlude · Day 7 Evening · 衝刺婚禮 ★</div>
+      <h2>Stowe → Boston</h2>
+      <div class="sub">I-89 South · 跨 New Hampshire · I-93 · 4 h</div>
+      <p>9/26 傍晚從 Stowe 開回 Boston 提前一晚到場，確保婚禮日萬無一失。I-89 一路南下穿 New Hampshire（White Mountains 南緣，路上彩林點綴），到 Concord 接 I-93 直入 Boston。建議 16:00 出門、20:00 進飯店。萬一延誤：Manchester NH 過夜，週日早 7am 1.5h 進城。</p>
+    </div>
+    <table class="ts-table">
+      <tr><td>Leg 1</td><td>Stowe → I-89 入口 Waterbury · 15 min</td></tr>
+      <tr><td>Leg 2</td><td>I-89 跨 VT + NH · 2 h（過 White River Junction · Concord）</td></tr>
+      <tr><td>Leg 3</td><td>Concord → Boston · I-93 South · 1 h 15 m</td></tr>
+      <tr><td>還車</td><td>Boston Logan 或 Hertz South Station · 一週後 Amtrak 出發點</td></tr>
+      <tr><td>Total</td><td>4 h door-to-door</td></tr>
+      <tr><td>Tip</td><td>VT 段加滿油 · NH 高速無州稅</td></tr>
+    </table>
+  </div>
+</section>
+
+<!-- ==================== BOSTON ==================== -->
+<section class="city-poster boston">
+  <div class="city-grid">
+    <div class="image-col">
+      <div class="corner-tag">★ Phase III · Days 7—10 · Wedding</div>
+      <div class="photo" style="background-image:url('https://commons.wikimedia.org/wiki/Special:FilePath/Massachusetts%20State%20House%20Boston%20November%202016.jpg?width=1280')"></div>
+      <!-- Compass ornament -->
+      <svg class="ornament" style="bottom:30px; right:30px; width:120px; height:120px;" viewBox="0 0 120 120" aria-hidden="true">
+        <circle cx="60" cy="60" r="55" fill="none" stroke="#f6ecd0" stroke-width="2"/>
+        <circle cx="60" cy="60" r="46" fill="none" stroke="#f6ecd0" stroke-width="1" opacity="0.5"/>
+        <polygon points="60,10 65,60 60,55 55,60" fill="#f6ecd0"/>
+        <polygon points="60,110 65,60 60,65 55,60" fill="#f6ecd0" opacity="0.6"/>
+        <text x="60" y="22" text-anchor="middle" font-family="Limelight" font-size="11" fill="#f6ecd0">N</text>
+        <text x="60" y="106" text-anchor="middle" font-family="Limelight" font-size="11" fill="#f6ecd0">S</text>
+      </svg>
+    </div>
+    <div class="text-col">
+      <div class="phase">★ Phase III · Days 7—10 · 婚禮週末</div>
+      <h2 class="cjk">波士頓</h2>
+      <div class="en-title">BOSTON, MASS.</div>
+      <div class="tagline">Wedding Anchor · Buffer Day + Cambridge + 海鮮 · 9/27 婚禮日</div>
+      <p class="intro">Boston 是這趟旅行的錨點：9/27（日）婚禮典禮 + 晚宴。前一天進城讓自己有緩衝，當天上午睡飽 + Beacon Hill 巷弄散步。婚禮後留兩天恢復——一天走 Cambridge 校園 + brunch，一天 BPL Bates Hall + Seaport 海鮮，再從 South Station 上 Amtrak 南下。</p>
+
+      <table class="fare-table">
+        <thead>
+          <tr class="fare-head"><td colspan="3">★ Points of Interest · 必訪清單 ★</td></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="item-num">01</td>
+            <td class="item-name">Beacon Hill · Acorn Street<span class="item-en">明信片小巷</span></td>
+            <td class="item-desc">婚禮日早晨建議走的鵝卵石小巷，19 世紀煤氣燈跟磚屋立面。Charles Street 一帶咖啡 + 古董店；Tatte Bakery 分店 shakshuka brunch。</td>
+          </tr>
+          <tr>
+            <td class="item-num">02</td>
+            <td class="item-name">自由之路<span class="item-en">Freedom Trail</span></td>
+            <td class="item-desc">2.5 mile 紅磚線串 16 個革命遺址：Boston Common → 麻州州議會 → Faneuil Hall → Paul Revere House → Old North Church → Bunker Hill。半天散步。</td>
+          </tr>
+          <tr>
+            <td class="item-num">03</td>
+            <td class="item-name">Cambridge · Harvard + MIT</td>
+            <td class="item-desc">9/28 brunch 在 Cambridge — Harvard Yard + Widener Library 外觀、過河走 MIT 看 Gehry 的 Stata Center + Saarinen 的 Kresge 教堂。Toscanini's 冰淇淋。</td>
+          </tr>
+          <tr>
+            <td class="item-num">04</td>
+            <td class="item-name">MFA + Isabella Stewart Gardner<span class="item-en">art angle</span></td>
+            <td class="item-desc">MFA 美國館 + 印象派；Gardner 1903 女主人佈展的威尼斯式宮殿，1990 年遭竊未追回的空畫框依舊掛在原位。</td>
+          </tr>
+          <tr>
+            <td class="item-num">05</td>
+            <td class="item-name">Boston Public Library<span class="item-en">Bates Hall</span></td>
+            <td class="item-desc">McKim, Mead &amp; White 1895 文藝復興建築，Bates Hall 拱頂閱覽室是 Instagram 級空間；Sargent 壁畫廳免費。</td>
+          </tr>
+          <tr>
+            <td class="item-num">06</td>
+            <td class="item-name">North End 義式區<span class="item-en">Little Italy</span></td>
+            <td class="item-desc">Hanover Street 是吃的核心：婚禮慶功 Daily Catch (現金 only)、晚餐後 Mike's vs Modern Pastry Cannoli 對決。</td>
+          </tr>
+          <tr>
+            <td class="item-num">07</td>
+            <td class="item-name">Seaport · ICA + Long Wharf<span class="item-en">海鮮 + 黃昏</span></td>
+            <td class="item-desc">9/28 下午 Seaport 區 ICA 當代藝術館 + Long Wharf 黃昏；之後 Neptune Oyster 排隊吃龍蝦堡 + Wellfleet 生蠔。</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== AMTRAK INTERLUDE ==================== -->
+<section class="timetable-strip">
+  <div class="ts-inner">
+    <div class="ts-text">
+      <svg class="train-silhouette" viewBox="0 0 320 56" aria-hidden="true">
+        <g fill="currentColor">
+          <rect x="10" y="20" width="100" height="22" rx="2"/>
+          <polygon points="110,20 122,30 110,42"/>
+          <rect x="10" y="28" width="100" height="2" fill="#0a0c12"/>
+          <circle cx="30" cy="46" r="5"/>
+          <circle cx="55" cy="46" r="5"/>
+          <circle cx="85" cy="46" r="5"/>
+          <rect x="135" y="24" width="70" height="18" rx="2"/>
+          <circle cx="150" cy="46" r="4"/>
+          <circle cx="190" cy="46" r="4"/>
+          <rect x="215" y="24" width="70" height="18" rx="2"/>
+          <circle cx="230" cy="46" r="4"/>
+          <circle cx="270" cy="46" r="4"/>
+          <line x1="0" y1="51" x2="320" y2="51" stroke="currentColor" stroke-width="1"/>
+        </g>
+      </svg>
+      <div class="label">★ Interlude · Day 10 ★</div>
+      <h2>Northeast Corridor</h2>
+      <div class="sub">Boston · 直達 Philadelphia · 5 h 35 m</div>
+      <p>後半段全程鐵道。9/29 早上從 South Station 搭 NE Regional 一氣南下，跳過 New Haven + NYC 停留——前面 7 天已經跑山跑夠，現在進城吃喝就好。沿著羅德島海岸進入康乃狄克，穿過 Manhattan 地下 Penn Station 後跨紐華克進費城。</p>
+    </div>
+    <table class="ts-table">
+      <tr><td>Train No. 171</td><td>Amtrak NE Regional · Business Class +USD 30</td></tr>
+      <tr><td>Depart</td><td>Boston South Station · 07:15</td></tr>
+      <tr><td>Arrive</td><td>Philadelphia 30th St. · 12:50</td></tr>
+      <tr><td>Run Time</td><td>5 h 35 m · 442 km</td></tr>
+      <tr><td>停靠</td><td>Providence · New Haven · Stamford · NY Penn · Newark · Trenton</td></tr>
+      <tr><td>Tip</td><td>左側座位 Connecticut shoreline 海景 · 上車前 Tatte 買 brunch box</td></tr>
+    </table>
+  </div>
+</section>
+
+<!-- ==================== PHILADELPHIA ==================== -->
+<section class="city-poster philly flip">
+  <div class="city-grid">
+    <div class="text-col">
+      <div class="phase">★ Phase IV · Days 10—12</div>
+      <h2 class="cjk">費城</h2>
+      <div class="en-title">PHILADELPHIA, PA.</div>
+      <div class="tagline">Independence Mall + Magic Gardens + Cheesesteak 三派</div>
+      <p class="intro">這次費城兩天精簡版：一天獨立廳 + Reading Terminal Market 建國敘事 anchor，一天 Magic Gardens + Italian Market + cheesesteak 對決。沒安排 PMA 跟 Mütter——把時間還給 DC + Shenandoah。住 Old City，徒步可達獨立廳跟 30th Street Station 步道距離。</p>
+
+      <table class="fare-table">
+        <thead>
+          <tr class="fare-head"><td colspan="3">★ Points of Interest · 必訪清單 ★</td></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="item-num">01</td>
+            <td class="item-name">Independence NHP<span class="item-en">獨立廳 + 自由鐘</span></td>
+            <td class="item-desc">獨立廳 ranger-led 強制導覽，必須先在 recreation.gov 一週前訂。Washington 主持制憲會議的椅子原件還在 Assembly Room。</td>
+          </tr>
+          <tr>
+            <td class="item-num">02</td>
+            <td class="item-name">Reading Terminal Market</td>
+            <td class="item-desc">130 年市集：DiNic's 烤豬肉三明治（Bourdain 認證）、Bassetts 1861 冰淇淋、Beiler's Donuts、Dienner's 阿米許烤雞。週日休。</td>
+          </tr>
+          <tr>
+            <td class="item-num">03</td>
+            <td class="item-name">Magic Gardens</td>
+            <td class="item-desc">Isaiah Zagar 用 30 年覆蓋半條街的馬賽克迷宮——磁磚、酒瓶、自行車輪、鏡片。South Street 上整段牆延伸。週二休館。</td>
+          </tr>
+          <tr>
+            <td class="item-num">04</td>
+            <td class="item-name">Cheesesteak 三派對決</td>
+            <td class="item-desc">Pat's (1930 發明者 "whiz wit") / Geno's (隔個路口霓虹) / John's Roast Pork (James Beard 得獎，午餐 only，食物本身最好)。同個 9th &amp; Passyunk 路口走完當研究。</td>
+          </tr>
+          <tr>
+            <td class="item-num">05</td>
+            <td class="item-name">Italian Market · 9th Street</td>
+            <td class="item-desc">全美最古老營業中的戶外市集。Termini Bros vs Isgro Cannoli 對打、Di Bruno Bros 起司、Fante's 廚具、Anthony's 義式 espresso。</td>
+          </tr>
+          <tr>
+            <td class="item-num">06</td>
+            <td class="item-name">Elfreth's Alley<span class="item-en">1703</span></td>
+            <td class="item-desc">全美最老民宅街，32 棟 18 世紀老屋、鵝卵石路，仍是住宅。距離獨立廳步行 10 min，順手 30 min 拍照即可。</td>
+          </tr>
+          <tr>
+            <td class="item-num">07</td>
+            <td class="item-name">30th Street Station<span class="item-en">Beaux-Arts 火車站</span></td>
+            <td class="item-desc">1933 完工，石灰岩外牆 + 95 ft 挑高大廳。La Colombe 咖啡 + 候車長椅讓人想多停 30 分鐘。下一段 Acela 從這裡出發。</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="image-col">
+      <div class="corner-tag">★ Phase IV · Days 10—12</div>
+      <div class="photo" style="background-image:url('https://commons.wikimedia.org/wiki/Special:FilePath/Independence_Hall_10.jpg?width=1280')"></div>
+      <!-- Eagle/star ornament -->
+      <svg class="ornament" style="top:30px; left:30px; width:140px; height:80px;" viewBox="0 0 140 80" aria-hidden="true">
+        <g fill="#f6ecd0" opacity="0.9">
+          <polygon points="20,20 25,32 38,32 28,40 32,52 20,44 8,52 12,40 2,32 15,32"/>
+          <polygon points="70,20 75,32 88,32 78,40 82,52 70,44 58,52 62,40 52,32 65,32"/>
+          <polygon points="120,20 125,32 138,32 128,40 132,52 120,44 108,52 112,40 102,32 115,32"/>
+          <line x1="0" y1="70" x2="140" y2="70" stroke="#f6ecd0" stroke-width="2"/>
+          <line x1="0" y1="76" x2="140" y2="76" stroke="#f6ecd0" stroke-width="1" opacity="0.5"/>
+        </g>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== ACELA INTERLUDE ==================== -->
+<section class="timetable-strip">
+  <div class="ts-inner">
+    <div class="ts-text">
+      <svg class="train-silhouette" viewBox="0 0 320 56" aria-hidden="true">
+        <g fill="currentColor">
+          <path d="M 10 38 L 10 26 Q 10 18 30 16 L 280 16 Q 305 16 315 30 L 315 38 Z"/>
+          <rect x="40" y="22" width="40" height="8" fill="#0a0c12"/>
+          <rect x="90" y="22" width="40" height="8" fill="#0a0c12"/>
+          <rect x="140" y="22" width="40" height="8" fill="#0a0c12"/>
+          <rect x="190" y="22" width="40" height="8" fill="#0a0c12"/>
+          <rect x="240" y="22" width="40" height="8" fill="#0a0c12"/>
+          <circle cx="40" cy="44" r="4"/>
+          <circle cx="80" cy="44" r="4"/>
+          <circle cx="160" cy="44" r="4"/>
+          <circle cx="240" cy="44" r="4"/>
+          <circle cx="285" cy="44" r="4"/>
+          <line x1="0" y1="51" x2="320" y2="51" stroke="currentColor" stroke-width="1"/>
+          <line x1="0" y1="20" x2="20" y2="20" stroke="currentColor" stroke-width="1" opacity="0.5"/>
+          <line x1="0" y1="30" x2="30" y2="30" stroke="currentColor" stroke-width="1" opacity="0.4"/>
+          <line x1="0" y1="40" x2="15" y2="40" stroke="currentColor" stroke-width="1" opacity="0.3"/>
+        </g>
+      </svg>
+      <div class="label">★ Interlude · Day 12 Morning ★</div>
+      <h2>Acela Express</h2>
+      <div class="sub">Philadelphia → Washington · 1 h 41 m</div>
+      <p>從 30th Street Station 的石灰岩大廳出發，La Colombe 咖啡喝完登上 Amtrak 旗艦。Acela 在 Maryland 沿 Chesapeake Bay 灣口高速滑行，一份報紙還沒讀完車就到了華盛頓 Union Station。</p>
+    </div>
+    <table class="ts-table">
+      <tr><td>Train No. 2151</td><td>Amtrak Acela Express · Business Class</td></tr>
+      <tr><td>Depart</td><td>Philadelphia 30th St. · 09:36</td></tr>
+      <tr><td>Arrive</td><td>Washington Union · 11:17</td></tr>
+      <tr><td>Run Time</td><td>1 h 41 m · 219 km · max 240 km/h</td></tr>
+      <tr><td>Onboard</td><td>2+1 寬敞座位、Wi-Fi、Café Car、座位插座</td></tr>
+      <tr><td>Tip</td><td>右側看 Susquehanna 河大鐵橋</td></tr>
+    </table>
+  </div>
+</section>
+
+<!-- ==================== WASHINGTON D.C. ==================== -->
+<section class="city-poster dc">
+  <div class="city-grid">
+    <div class="image-col">
+      <div class="corner-tag">★ Phase V · Days 12—14 + Shenandoah</div>
+      <div class="photo" style="background-image:url('https://commons.wikimedia.org/wiki/Special:FilePath/2016-10-25%2011%2002%2003%20Trees%20with%20autumn%20foliage%20at%20the%20Crescent%20Rock%20Overlook%20along%20Shenandoah%20National%20Park%27s%20Skyline%20Drive%20in%20Page%20County%2C%20Virginia.jpg?width=1280')"></div>
+      <!-- Mountain + capitol ornament -->
+      <svg class="ornament" style="bottom:30px; right:30px; width:140px; height:100px;" viewBox="0 0 140 100" aria-hidden="true">
+        <g fill="#0a0c12" opacity="0.92">
+          <polygon points="10,60 30,30 50,55 70,20 90,50 110,28 130,58 130,72 10,72"/>
+          <line x1="0" y1="78" x2="140" y2="78" stroke="#0a0c12" stroke-width="2"/>
+          <line x1="0" y1="84" x2="140" y2="84" stroke="#0a0c12" stroke-width="1" opacity="0.6"/>
+        </g>
+      </svg>
+    </div>
+    <div class="text-col">
+      <div class="phase">★ Phase V · Days 12—14 + Shenandoah</div>
+      <h2 class="cjk">華盛頓</h2>
+      <div class="en-title">WASHINGTON, D.C.</div>
+      <div class="tagline">Mall + Smithsonian + Shenandoah Day Trip · 楓紅句點</div>
+      <p class="intro">D.C. 三天 + 一天 Shenandoah day trip 收尾。第一天午後 Lincoln + Vietnam Wall 黃昏；第二天 Hertz 租車一日往西開 90 min 進 Skyline Drive 105 mile 山脊路追楓紅起點；第三天 National Mall + Smithsonian + 傍晚 IAD 離境。住 Penn Quarter 或 Foggy Bottom，Mall 跟 Metro 都近。</p>
+
+      <table class="fare-table">
+        <thead>
+          <tr class="fare-head"><td colspan="3">★ Points of Interest · 必訪清單 ★</td></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="item-num">01</td>
+            <td class="item-name">林肯紀念堂 + 越戰碑<span class="item-en">Lincoln · Vietnam Wall</span></td>
+            <td class="item-desc">10/1 黃昏抵 DC 後直奔。Maya Lin 21 歲贏得越戰碑競圖的黑色花崗岩牆——15,000 個名字按死亡日期排，不按字母。</td>
+          </tr>
+          <tr>
+            <td class="item-num">02</td>
+            <td class="item-name">Shenandoah · Skyline Drive<span class="item-en">105 mile 山脊路</span></td>
+            <td class="item-desc">10/2 day trip — DC 西 1 h 30 m，租 Hertz 一日。沿 Blue Ridge 山脊 75 個觀景台。9 月底 10 月初是楓紅啟動週，3000+ ft 段落已開始橘紅。Stony Man 1.6 mile 上 4011 ft。</td>
+          </tr>
+          <tr>
+            <td class="item-num">03</td>
+            <td class="item-name">National Mall 紀念碑群</td>
+            <td class="item-desc">免費 24 h。WWII / Korean War / MLK Jr. (30 ft 花崗岩劈山而出) / FDR / Washington Monument (555 ft，timed ticket) / Jefferson Memorial（Tidal Basin）。</td>
+          </tr>
+          <tr>
+            <td class="item-num">04</td>
+            <td class="item-name">National Archives</td>
+            <td class="item-desc">Declaration / Constitution / Bill of Rights 三件原件並排放在 Rotunda，加 1297 Magna Carta 副本。免費，旺季 timed entry。</td>
+          </tr>
+          <tr>
+            <td class="item-num">05</td>
+            <td class="item-name">Air &amp; Space Museum<span class="item-en">Smithsonian</span></td>
+            <td class="item-desc">Spirit of St. Louis、Apollo 11 指令艙、月球岩石（可摸）、Wright Flyer 1903 原件。Mall 本館 2026 完成全面整修。</td>
+          </tr>
+          <tr>
+            <td class="item-num">06</td>
+            <td class="item-name">NMAAHC<span class="item-en">非裔美國人歷史</span></td>
+            <td class="item-desc">從地下三層（奴隸船）看到地上四層（嘻哈與當代藝術）。免費但需網路預約 timed entry pass，30 天前開放，週末搶手。預留 3–4 小時。</td>
+          </tr>
+          <tr>
+            <td class="item-num">07</td>
+            <td class="item-name">國會圖書館 Jefferson Building</td>
+            <td class="item-desc">主閱覽室是美國最美的室內空間之一；可預約 docent tour 走進閱覽層平台。鎮館展品：Gutenberg 聖經、Jefferson 親筆藏書清單。</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== 14-DAY TIMETABLE ==================== -->
+<section class="schedule">
+  <div class="schedule-inner">
+    <div class="header-block">
+      <div class="stencil">★ Form 1809-A · Time-Table ★</div>
+      <h2>FOURTEEN-DAY SCHEDULE</h2>
+      <div class="cjk">十 四 日 行 程 表</div>
+    </div>
+    <div class="schedule-grid">
+      <div class="ticket-card">
+        <div class="stub-num">01</div>
+        <div class="stub-date">9 / 20 (Sun)</div>
+        <h4>抵達紐約</h4>
+        <div class="ticket-route">TPE → JFK · LATE ARRIVAL</div>
+        <ul>
+          <li>EVA / 長榮 BR 32 或華航 CI 12 落地 JFK 晚間</li>
+          <li>機場接駁 / JFK 內 TWA Hotel 過夜</li>
+          <li>取 Hertz / Avis JFK 租車櫃台訂單 — 隔天提車</li>
+          <li>晚餐：機場輕食 — 飛 16h 就吃輕的</li>
+        </ul>
+        <div class="ticket-stamp teal">Arrival</div>
+      </div>
+      <div class="ticket-card">
+        <div class="stub-num">02</div>
+        <div class="stub-date">9 / 21 (Mon)</div>
+        <h4>NYC 半日 + Hudson Valley</h4>
+        <div class="ticket-route">NYC → COLD SPRING · 2 H DRIVE</div>
+        <ul>
+          <li>09:00 提車，曼哈頓 Top of the Rock 30 min 看全景</li>
+          <li>午餐：Joe's Pizza Carmine St.（百年披薩 anchor）</li>
+          <li>13:00 北上 I-87 約 2 h 到 Cold Spring / Beacon</li>
+          <li>下午 Storm King 雕塑公園或 Cold Spring 老街</li>
+          <li>晚餐：Brother's Trattoria (Beacon)</li>
+        </ul>
+      </div>
+      <div class="ticket-card">
+        <div class="stub-num">03</div>
+        <div class="stub-date">9 / 22 (Tue)</div>
+        <h4>進 Adirondacks</h4>
+        <div class="ticket-route">HUDSON VALLEY → LAKE PLACID · 3 H</div>
+        <ul>
+          <li>09:00 I-87 北上 Adirondack Northway 一路 3 h</li>
+          <li>中途 Albany 北 1h 處 Welcome Center 補給</li>
+          <li>13:00 抵 Lake Placid · Mirror Lake Inn check in</li>
+          <li>下午 Mirror Lake 環湖步道 + Olympic Center 外觀</li>
+          <li>晚餐：Generations Tap and Grill 美式 lodge</li>
+        </ul>
+        <div class="ticket-stamp">Rental Car</div>
+      </div>
+      <div class="ticket-card">
+        <div class="stub-num">04</div>
+        <div class="stub-date">9 / 23 (Wed)</div>
+        <h4>Whiteface + Olympic</h4>
+        <div class="ticket-route">ADIRONDACKS · WHITEFACE HWY</div>
+        <ul>
+          <li>09:00 Whiteface Memorial Highway 開到 4867 ft 山頂</li>
+          <li>山頂步道 200 m — 楓紅 prime time 山頂全紅</li>
+          <li>午餐：Lake Placid Pub &amp; Brewery（鎮上 craft beer）</li>
+          <li>下午 1980 Olympic Center "Miracle on Ice" 場館</li>
+          <li>傍晚跳台滑雪塔電梯到頂看夕陽掃過 High Peaks</li>
+          <li>晚餐：Liquids and Solids at the Handle Bar</li>
+        </ul>
+        <div class="ticket-stamp sage">Peak Foliage</div>
+      </div>
+      <div class="ticket-card">
+        <div class="stub-num">05</div>
+        <div class="stub-date">9 / 24 (Thu)</div>
+        <h4>1000 Islands + Boldt</h4>
+        <div class="ticket-route">LAKE PLACID ↔ ALEXANDRIA BAY · 3 H × 2</div>
+        <ul>
+          <li>08:00 出發西北經 Saranac → Tupper → Watertown</li>
+          <li>11:30 Alexandria Bay · Uncle Sam Boat Boldt Castle 行程</li>
+          <li>島上 2 h — 6 層樓未完工城堡 + 玻璃花房</li>
+          <li>午餐：船上 / 鎮上 Dockside Pub</li>
+          <li>順路 Antique Boat Museum (Clayton) 2 h</li>
+          <li>17:00 回 Lake Placid 3 h</li>
+        </ul>
+      </div>
+      <div class="ticket-card">
+        <div class="stub-num">06</div>
+        <div class="stub-date">9 / 25 (Fri)</div>
+        <h4>跨州到 Vermont</h4>
+        <div class="ticket-route">LAKE PLACID → STOWE · FERRY · 4 H</div>
+        <ul>
+          <li>09:00 NY 73 + I-87 南下到 Westport ferry dock</li>
+          <li>11:00 Lake Champlain ferry 20 min 到 Charlotte VT</li>
+          <li>12:30 Burlington Church Street 午餐 Penny Cluse</li>
+          <li>下午 US 7 + I-89 + VT 100 到 Stowe（1.5 h）</li>
+          <li>17:00 Stowe Trapp Family Lodge check in</li>
+          <li>晚餐：Cabot 試吃 + Doc Ponds farm-to-table</li>
+        </ul>
+        <div class="ticket-stamp mustard">Cross-State</div>
+      </div>
+      <div class="ticket-card">
+        <div class="stub-num">07</div>
+        <div class="stub-date">9 / 26 (Sat)</div>
+        <h4>Mansfield + 衝 Boston</h4>
+        <div class="ticket-route">STOWE → SHELBURNE → BOSTON · 4 H EVE</div>
+        <ul>
+          <li>08:00 Mt Mansfield Toll Road 上山 — The Nose + Long Trail 1.4 mile 到 The Chin 4395 ft</li>
+          <li>午餐：Stowe 鎮上 Plate Restaurant</li>
+          <li>13:00 Shelburne Museum 2.5 h 速看 (USD 28)</li>
+          <li>16:00 I-89 South → I-93 South 進 Boston（3.5 h）</li>
+          <li>20:00 Boston check in · 還租車 Logan / South Sta.</li>
+          <li>晚餐：Saltie Girl 海鮮輕食</li>
+        </ul>
+        <div class="ticket-stamp">Buffer Day</div>
+      </div>
+      <div class="ticket-card">
+        <div class="stub-num">08</div>
+        <div class="stub-date">9 / 27 (Sun)</div>
+        <h4>婚禮日</h4>
+        <div class="ticket-route">BOSTON · WEDDING DAY</div>
+        <ul>
+          <li>上午自由 — 睡飽 + Beacon Hill Acorn Street 散步</li>
+          <li>午餐輕食：Tatte (Beacon Hill 分店 shakshuka) 或 Flour Bakery</li>
+          <li><strong>下午 / 晚上：婚禮典禮 + 晚宴</strong></li>
+          <li>備用：婚禮拖太晚就外帶 Roxy's Grilled Cheese</li>
+        </ul>
+        <div class="ticket-stamp">Wedding</div>
+      </div>
+      <div class="ticket-card">
+        <div class="stub-num">09</div>
+        <div class="stub-date">9 / 28 (Mon)</div>
+        <h4>Cambridge + Brunch</h4>
+        <div class="ticket-route">BOSTON · CAMBRIDGE + MFA</div>
+        <ul>
+          <li>09:30 Harvard Yard + Widener Library 外觀</li>
+          <li>過 Charles River 到 MIT — Stata Center + Kresge Chapel</li>
+          <li>午餐：Toscanini's 冰淇淋（Burnt Caramel + Khaleesi）</li>
+          <li>下午 MFA Boston 三小時或 Isabella Stewart Gardner</li>
+          <li>晚餐：Neptune Oyster — 龍蝦堡 + Wellfleet 生蠔</li>
+        </ul>
+        <div class="ticket-stamp teal">Recovery</div>
+      </div>
+      <div class="ticket-card">
+        <div class="stub-num">10</div>
+        <div class="stub-date">9 / 29 (Tue)</div>
+        <h4>BOS → PHL Amtrak</h4>
+        <div class="ticket-route">SOUTH STA. → 30TH ST. · 5 H 35 M</div>
+        <ul>
+          <li>06:30 Uber 到 South Station · Tatte brunch box 上車</li>
+          <li>07:15 NE Regional #171 出發（Business Class +USD 30）</li>
+          <li>沿 Connecticut shoreline 海岸線，過 NY Penn 停 5 min</li>
+          <li>12:50 抵 30th Street Station · Old City 旅館 check in</li>
+          <li>下午 Elfreth's Alley + Christ Church Burial Ground</li>
+          <li>晚餐：Zahav（以色列菜 — 60 天前 OpenTable 訂位）</li>
+        </ul>
+        <div class="ticket-stamp mustard">Rail Day</div>
+      </div>
+      <div class="ticket-card">
+        <div class="stub-num">11</div>
+        <div class="stub-date">9 / 30 (Wed)</div>
+        <h4>Independence + Magic</h4>
+        <div class="ticket-route">PHILLY · OLD CITY + SOUTH ST.</div>
+        <ul>
+          <li>09:00 獨立廳 ranger-led tour（一週前 recreation.gov 預約）</li>
+          <li>自由鐘 + Congress Hall + Franklin Court</li>
+          <li>午餐：Reading Terminal Market — DiNic's + Bassetts</li>
+          <li>下午 Magic Gardens（Isaiah Zagar 馬賽克迷宮）</li>
+          <li>傍晚 Italian Market 9th Street + Cannoli 第二輪</li>
+          <li>晚餐：Cheesesteak 對決 Pat's vs Geno's vs John's</li>
+        </ul>
+      </div>
+      <div class="ticket-card">
+        <div class="stub-num">12</div>
+        <div class="stub-date">10 / 1 (Thu)</div>
+        <h4>Acela 南下 + Lincoln 黃昏</h4>
+        <div class="ticket-route">PHL → DC · MALL SUNSET</div>
+        <ul>
+          <li>09:36 Acela Express（Business Class，訂左側座位）</li>
+          <li>11:17 抵 Union Station · 行李寄旅館 Penn Quarter</li>
+          <li>午餐：Old Ebbitt Grill（1856，白宮對面 oyster bar 半價）</li>
+          <li>下午 National Archives 30 min + Smithsonian Castle</li>
+          <li>傍晚 anchor：Lincoln Memorial + Vietnam Wall 黃昏</li>
+          <li>晚餐：Le Diplomate（14th St 法式小酒館）</li>
+        </ul>
+        <div class="ticket-stamp mustard">Acela</div>
+      </div>
+      <div class="ticket-card">
+        <div class="stub-num">13</div>
+        <div class="stub-date">10 / 2 (Fri)</div>
+        <h4>Shenandoah Day Trip</h4>
+        <div class="ticket-route">DC → SKYLINE DRIVE · 1.5 H × 2</div>
+        <ul>
+          <li>07:00 Hertz Reagan National 取 SUV（一日 USD 75）</li>
+          <li>08:30 Front Royal 入口 Mile 0 · 入園費 USD 30/車</li>
+          <li>Hogback Overlook → Mary's Rock → Stony Man trailhead</li>
+          <li>10:30 Stony Man 1.6 mile loop 上 4011 ft</li>
+          <li>午餐：Skyland Resort dining room (Mile 41)</li>
+          <li>下午 Big Meadows + Dark Hollow Falls 1.4 mile</li>
+          <li>16:00 折返北口出園 · 19:00 回 DC 還車</li>
+          <li>晚餐：Ben's Chili Bowl U Street（half-smoke + chili）</li>
+        </ul>
+        <div class="ticket-stamp sage">Foliage Day</div>
+      </div>
+      <div class="ticket-card">
+        <div class="stub-num">14</div>
+        <div class="stub-date">10 / 3 (Sat) → 10/4</div>
+        <h4>Mall + 離境</h4>
+        <div class="ticket-route">DC · SMITHSONIAN · IAD</div>
+        <ul>
+          <li>09:00 NMAAHC 半日（須提前訂 timed entry pass）</li>
+          <li>午餐：Founding Farmers（farm-to-table brunch / waffles）</li>
+          <li>下午 Air &amp; Space 博物館或 LOC Jefferson 導覽</li>
+          <li>15:00 旅館取行李 → IAD（Uber USD 65）</li>
+          <li>離境：ANA NH 1（IAD → NRT → TPE）或 EVA 直飛</li>
+          <li>10/4 (Sun) 抵 TPE</li>
+        </ul>
+        <div class="ticket-stamp">Departure</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== DINING CAR ==================== -->
+<section class="dining-car">
+  <div class="dining-inner">
+    <div class="header-block">
+      <div class="stencil">★ Dining Car · Bill of Fare ★</div>
+      <h2>WHERE TO EAT</h2>
+      <div class="cjk">山 段 輕 嘗 · 城 段 點 名</div>
+    </div>
+    <div class="menu-grid">
+      <div class="menu-col">
+        <h3>VERMONT<span class="cjk">佛蒙特</span></h3>
+        <div class="menu-tagline">Cheese · Maple · Ice Cream Trail</div>
+
+        <div class="dish-line">
+          <div class="dish-name">Cabot Creamery</div>
+          <div class="dish-where">Waterbury</div>
+          <div class="dish-desc">合作社模式起司廠，免費 factory tour + 試吃。十幾款 cheddar / extra sharp / clothbound 切片自取——Vermont 起司 trail 的 anchor。</div>
+        </div>
+        <div class="dish-line">
+          <div class="dish-name">Ben &amp; Jerry's Factory</div>
+          <div class="dish-where">Waterbury</div>
+          <div class="dish-desc">30 min 導覽 + 試吃 USD 5。Flavor Graveyard 在外面（退役口味的墓園，真的墓碑刻日期跟悼詞）。</div>
+        </div>
+        <div class="dish-line">
+          <div class="dish-name">Doc Ponds</div>
+          <div class="dish-where">Stowe</div>
+          <div class="dish-desc">鎮上 farm-to-table craft beer + 烤雞 + cheeseburger。Vermont 啤酒選 Heady Topper 或 Sip of Sunshine。</div>
+        </div>
+        <div class="dish-line">
+          <div class="dish-name">Morse Farm 楓糖場</div>
+          <div class="dish-where">Montpelier</div>
+          <div class="dish-desc">採收季是 3 月但全年展示煮糖 + sample 不同等級 maple syrup（Grade A Amber vs Dark）。順道買一瓶帶走。</div>
+        </div>
+        <div class="dish-line">
+          <div class="dish-name">King Arthur Baking</div>
+          <div class="dish-where">Norwich</div>
+          <div class="dish-desc">美國最老麵粉商，現場 bakery + 教室。Stowe 回 Boston 路上順過 — 麵包 + scones 帶上車。</div>
+        </div>
+        <div class="dish-line">
+          <div class="dish-name">American Flatbread</div>
+          <div class="dish-where">Burlington</div>
+          <div class="dish-desc">渡輪過湖後 Burlington 午餐；木火烤 pizza + 在地食材，西海岸 vibe 但 Vermont 鄉村起司。</div>
+        </div>
+      </div>
+
+      <div class="menu-col">
+        <h3>BOSTON<span class="cjk">波士頓</span></h3>
+        <div class="menu-tagline">Seafood Anchor · 婚禮週末</div>
+
+        <div class="dish-line">
+          <div class="dish-name">Neptune Oyster</div>
+          <div class="dish-where">North End</div>
+          <div class="dish-desc">全市最熱門的龍蝦堡 (butter or mayo) + Wellfleet / Island Creek 生蠔。不接受訂位、開門前排隊。Hot lobster roll 加 drawn butter 是經典。</div>
+        </div>
+        <div class="dish-line">
+          <div class="dish-name">Daily Catch</div>
+          <div class="dish-where">Hanover St.</div>
+          <div class="dish-desc">沒招牌的西西里式海鮮，菜端在煎鍋上桌，現金 only。烏賊墨燉飯 + 蒜爆蛤蜊；20 個位子。婚禮後的小慶功首選。</div>
+        </div>
+        <div class="dish-line">
+          <div class="dish-name">Mike's vs Modern Pastry</div>
+          <div class="dish-where">Cannoli 對決</div>
+          <div class="dish-desc">Hanover St. 同條街隔三家。Mike's 觀光化但量大穩定，Modern 殼當場填內餡更脆。都買、邊走邊吃直接比。</div>
+        </div>
+        <div class="dish-line">
+          <div class="dish-name">Toscanini's</div>
+          <div class="dish-where">Cambridge MIT</div>
+          <div class="dish-desc">MIT 旁的傳奇冰淇淋。Burnt Caramel + Khaleesi + Earl Grey 是黃金三球。NYT 食評「全美最佳」。</div>
+        </div>
+        <div class="dish-line">
+          <div class="dish-name">Tatte Bakery</div>
+          <div class="dish-where">Beacon Hill</div>
+          <div class="dish-desc">婚禮日早晨輕食：shakshuka 早餐、coffee、almond croissant。Beacon Hill 分店有早晨光線拍照剛好。</div>
+        </div>
+        <div class="dish-line">
+          <div class="dish-name">Saltie Girl</div>
+          <div class="dish-where">Back Bay</div>
+          <div class="dish-desc">飛 16 小時後第一晚的輕海鮮 + 罐頭吧（西班牙 conservas 種類驚人）。海膽吐司 + 龍蝦堡 mini 版。</div>
+        </div>
+      </div>
+
+      <div class="menu-col">
+        <h3>PHILLY &amp; D.C.<span class="cjk">費城 + 華盛頓</span></h3>
+        <div class="menu-tagline">Cheesesteak · Half-Smoke · French Bistro</div>
+
+        <div class="dish-line">
+          <div class="dish-name">Cheesesteak 三派</div>
+          <div class="dish-where">Philly · 9th 街口</div>
+          <div class="dish-desc">Pat's（1930 發明者 "whiz wit"）/ Geno's（隔個十字路口霓虹）/ John's Roast Pork（James Beard 得獎，午餐 only，食物本身最好）。</div>
+        </div>
+        <div class="dish-line">
+          <div class="dish-name">Reading Terminal Market</div>
+          <div class="dish-where">Philly Center City</div>
+          <div class="dish-desc">130 年市集：DiNic's 烤豬肉三明治、Bassetts 1861 冰淇淋、Beiler's Donuts、Dienner's 阿米許烤雞。週日休。</div>
+        </div>
+        <div class="dish-line">
+          <div class="dish-name">Zahav</div>
+          <div class="dish-where">Philly Society Hill</div>
+          <div class="dish-desc">Solomonov 以色列菜旗艦；Hummus Tehina 基準款，"Mesibah" 嫩烤羔羊套餐 USD 90/人 整桌分。60 天前訂位。</div>
+        </div>
+        <div class="dish-line">
+          <div class="dish-name">Ben's Chili Bowl</div>
+          <div class="dish-where">DC · U Street</div>
+          <div class="dish-desc">1958 至今，Obama、Beyoncé 都來吃過。Half-smoke + 自製 chili + mustard + onions 是 D.C. 國民食物。Shenandoah day trip 回來吃。</div>
+        </div>
+        <div class="dish-line">
+          <div class="dish-name">Old Ebbitt Grill</div>
+          <div class="dish-where">DC · 白宮對面</div>
+          <div class="dish-desc">1856 年開幕，白宮對面 70 公尺；oyster bar happy hour（3–6pm 半價）是 D.C. 業內人士的暗語。</div>
+        </div>
+        <div class="dish-line">
+          <div class="dish-name">Le Diplomate</div>
+          <div class="dish-where">DC · 14th St</div>
+          <div class="dish-desc">Stephen Starr 法式小酒館；French onion soup gratinée + steak frites + Peach Mary brunch。週末必訂位。</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== LOGISTICS ==================== -->
+<section class="logistics-block">
+  <div class="logistics-inner">
+    <div class="header-block">
+      <div class="stencil">★ Issued by the Department of Itinerary ★</div>
+      <h2>Reservations &amp; Rentals</h2>
+    </div>
+    <div class="log-cols">
+      <div>
+        <h3>★ Must Reserve · 必預約</h3>
+        <ul>
+          <li><strong>租車 JFK 取 + Boston 還</strong>（單向跨州費 USD 150–250 · 9/21–9/26 共 6 天 SUV）</li>
+          <li><strong>Lake Champlain 渡輪</strong> · ferries.com · 4–11 月航行 · 線上預約省排隊</li>
+          <li><strong>Boldt Castle 船票</strong> · Uncle Sam Boat Tours · 9 月底班次減少建議網路預訂</li>
+          <li><strong>Mt Mansfield Toll Road</strong> · 9 月底 8am–4pm 開放 · 雪/霜可能臨時關閉</li>
+          <li><strong>Acela / NE Regional</strong> · Amtrak.com · 60 天內票價飛漲</li>
+          <li><strong>Independence Hall ranger tour</strong> · recreation.gov · 一週前開放</li>
+          <li><strong>NMAAHC timed entry pass</strong> · si.edu · 30 天前開放</li>
+          <li><strong>Zahav (Philly)</strong> · OpenTable · 60 天前訂位</li>
+          <li><strong>Shenandoah day-trip 租車</strong> · DC Reagan National Hertz · 一日 SUV · 前一週訂</li>
+        </ul>
+      </div>
+      <div>
+        <h3>★ Lodging &amp; Driving · 住宿駕駛</h3>
+        <ul>
+          <li><strong>NYC 機場過夜</strong>：TWA Hotel (JFK 內) 或 LGA Marriott — 隔天早 8 點提車不耽誤</li>
+          <li><strong>Hudson Valley</strong>：Hudson House Inn (Cold Spring) 或 Roundhouse (Beacon)</li>
+          <li><strong>Lake Placid</strong>：Mirror Lake Inn (Forbes 4 星) / High Peaks Resort / Whiteface Lodge</li>
+          <li><strong>Stowe</strong>：Trapp Family Lodge (Sound of Music 真實家族) 或 Edson Hill (馬廄改造)</li>
+          <li><strong>Boston / Philly / DC</strong>：Back Bay · Old City · Penn Quarter（Mall + Metro）</li>
+          <li><strong>租車：</strong>mid-size SUV — 後車廂裝行李、Adirondack 山路底盤高安心</li>
+          <li><strong>EZ-Pass：</strong>I-87 / I-89 / NJ + PA Turnpike 都收費 · 預先網路訂或租車公司加裝</li>
+          <li><strong>燃料：</strong>Vermont 比 NY 便宜過湖再加 · NH 高速無州稅進 Boston 前最後機會</li>
+          <li><strong>9/26 衝刺：</strong>16:00 出門 20:00 抵達 · 萬一延誤 Manchester NH 過夜週日早 7am 進城</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== FOOTER ==================== -->
+<footer class="printer">
+  <div class="device">★ FIELD NOTES · FOLIAGE CHASER ★</div>
+  <div class="meta">Printed for personal use only · Route No. 3 · 14 Days · 2026/9/20 → 10/4</div>
+  <div class="links">
+    <a href="../">5 主題</a> · <a href="./">精修版</a> · <a href="../../">原版</a> · <a href="../../explore/">EXPLORE</a>
+  </div>
+  <div class="meta" style="margin-top:14px;opacity:0.55;">Images: Wikimedia Commons (CC BY-SA / Public Domain) · Set in Limelight, Big Shoulders Display, Crimson Pro &amp; Special Elite</div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,1327 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Founding History Deep · 建國史深度 13 天 · 精修版｜Hudson Valley → Boston → Philadelphia → DC · 2026 Autumn</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Noto+Sans+TC:wght@300;400;500;700&family=Noto+Serif+TC:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1f2e;
+    --ink-soft: #3a4356;
+    --paper: #f6f1e7;
+    --paper-deep: #ece4d2;
+    --brass: #b8893d;
+    --brass-deep: #8a6326;
+    --brick: #8c3c2c;
+    --moss: #4a5d3a;
+    --rule: rgba(26, 31, 46, 0.18);
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: "Noto Sans TC", "Helvetica Neue", system-ui, sans-serif;
+    color: var(--ink);
+    background: var(--paper);
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+    position: relative;
+  }
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1000;
+    opacity: 0.55;
+    mix-blend-mode: multiply;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch' seed='3'/><feColorMatrix values='0 0 0 0 0.1 0 0 0 0 0.08 0 0 0 0 0.05 0 0 0 0.18 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+    background-size: 220px 220px;
+  }
+  .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.9s cubic-bezier(.22,.61,.36,1), transform 0.9s cubic-bezier(.22,.61,.36,1); }
+  .reveal.in { opacity: 1; transform: translateY(0); }
+  .reveal[data-delay="1"] { transition-delay: 0.08s; }
+  .reveal[data-delay="2"] { transition-delay: 0.16s; }
+  .reveal[data-delay="3"] { transition-delay: 0.24s; }
+  .reveal[data-delay="4"] { transition-delay: 0.32s; }
+  .reveal[data-delay="5"] { transition-delay: 0.40s; }
+  .reveal[data-delay="6"] { transition-delay: 0.48s; }
+  @media (prefers-reduced-motion: reduce) {
+    .reveal { opacity: 1; transform: none; transition: none; }
+  }
+  h1, h2, h3, .serif {
+    font-family: "Cormorant Garamond", "Noto Serif TC", "Songti TC", serif;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+  }
+  a { color: var(--brass-deep); text-decoration: none; border-bottom: 1px solid rgba(184,137,61,0.3); }
+  a:hover { color: var(--brick); border-bottom-color: var(--brick); }
+
+  .topbar {
+    border-bottom: 1px solid var(--rule);
+    background: var(--paper);
+    padding: 14px 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .topbar .brand { font-family: "Cormorant Garamond", serif; font-size: 20px; letter-spacing: 0.16em; }
+  .topbar .nav { display: flex; flex-wrap: wrap; gap: 4px 10px; color: var(--ink-soft); align-items: center; font-size: 12px; }
+  .topbar .nav a { color: var(--brass-deep); border-bottom: 1px solid rgba(184,137,61,0.35); padding-bottom: 1px; }
+  .topbar .nav a.current { color: var(--brick); border-bottom-color: var(--brick); font-weight: 700; }
+  .topbar .nav .sep { opacity: 0.4; }
+
+  /* Hero */
+  .hero {
+    position: relative;
+    min-height: 78vh;
+    display: flex;
+    align-items: flex-end;
+    overflow: hidden;
+    background: #0d1320;
+  }
+  .hero::before {
+    content: "";
+    position: absolute; inset: 0;
+    background-image:
+      radial-gradient(ellipse 80% 60% at 20% 70%, rgba(13,19,32,0.78) 0%, rgba(13,19,32,0.35) 50%, rgba(13,19,32,0) 80%),
+      linear-gradient(180deg, rgba(13,19,32,0.45) 0%, rgba(13,19,32,0.65) 55%, rgba(13,19,32,0.94) 100%),
+      url("https://commons.wikimedia.org/wiki/Special:FilePath/Independence_Hall_10.jpg?width=1920");
+    background-size: cover;
+    background-position: center 35%;
+    filter: saturate(0.6) brightness(0.72) contrast(1.06);
+    will-change: transform;
+  }
+  body.scrolled .hero::before { transform: translate3d(0, var(--parallax, 0px), 0); }
+  .hero-inner {
+    position: relative;
+    z-index: 2;
+    color: #f6f1e7;
+    padding: 64px 48px;
+    max-width: 1200px;
+  }
+  .hero .kicker {
+    font-size: 12px;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: #d9b67a;
+    margin-bottom: 18px;
+  }
+  .hero .alt-style {
+    display: inline-block;
+    margin-left: 14px;
+    font-size: 11px;
+    letter-spacing: 0.28em;
+    color: #d9b67a;
+    border: 1px solid rgba(217,182,122,0.6);
+    padding: 4px 10px;
+    border-bottom: 1px solid rgba(217,182,122,0.6);
+    border-radius: 2px;
+    text-transform: uppercase;
+  }
+  .hero .alt-style:hover { color: #f6f1e7; border-color: #f6f1e7; }
+  .hero h1 {
+    font-size: clamp(30px, 5.2vw, 64px);
+    line-height: 1.05;
+    margin: 0 0 22px;
+    color: #f6f1e7;
+    text-shadow: 0 2px 30px rgba(13,19,32,0.5), 0 1px 2px rgba(13,19,32,0.4);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px 14px;
+  }
+  .hero h1 .arrow {
+    display: inline-flex;
+    align-items: center;
+    color: #d9b67a;
+    opacity: 0.9;
+  }
+  .hero h1 .arrow svg { width: clamp(28px, 3.2vw, 48px); height: auto; }
+  .hero p.lede {
+    font-family: "Noto Serif TC", serif;
+    font-size: clamp(16px, 1.6vw, 19px);
+    max-width: 760px;
+    color: rgba(246,241,231,0.92);
+    margin: 0 0 28px;
+    text-shadow: 0 1px 18px rgba(13,19,32,0.5);
+  }
+  .hero .ribbon {
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 28px;
+    border-top: 1px solid rgba(217,182,122,0.4);
+    border-bottom: 1px solid rgba(217,182,122,0.4);
+    padding: 14px 0;
+    font-size: 13px;
+    letter-spacing: 0.12em;
+    color: #e6d6b6;
+  }
+  .hero .ribbon span strong { color: #f6f1e7; font-weight: 700; padding-right: 4px; }
+
+  section { padding: 96px 48px; }
+  .wrap { max-width: 1180px; margin: 0 auto; }
+  .eyebrow {
+    font-size: 11px;
+    letter-spacing: 0.36em;
+    text-transform: uppercase;
+    color: var(--brass-deep);
+    margin-bottom: 14px;
+  }
+  h2.section-title {
+    font-size: clamp(30px, 3.6vw, 46px);
+    margin: 0 0 16px;
+    color: var(--ink);
+  }
+  p.section-lede {
+    font-family: "Noto Serif TC", serif;
+    font-size: 18px;
+    color: var(--ink-soft);
+    max-width: 760px;
+    margin: 0 0 56px;
+  }
+
+  .pillars {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 28px;
+  }
+  .pillar {
+    border-top: 2px solid var(--brass);
+    padding-top: 22px;
+  }
+  .pillar .num {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 36px;
+    color: var(--brass-deep);
+    line-height: 1;
+    margin-bottom: 14px;
+  }
+  .pillar h3 { font-size: 22px; margin: 0 0 10px; }
+  .pillar p { margin: 0; color: var(--ink-soft); font-size: 15px; }
+
+  .city {
+    background: var(--paper-deep);
+  }
+  .city.alt { background: var(--paper); }
+  .city .grid {
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: 56px;
+    align-items: stretch;
+  }
+  .city.flip .grid { grid-template-columns: 0.95fr 1.05fr; }
+  .city.flip .text { order: 2; }
+  .city.flip .gallery { order: 1; }
+  .city .text h3.city-name {
+    font-size: clamp(40px, 4.6vw, 64px);
+    line-height: 1;
+    margin: 0 0 4px;
+  }
+  .city .text .sub-en {
+    font-family: "Cormorant Garamond", serif;
+    font-style: italic;
+    color: var(--brass-deep);
+    font-size: 22px;
+    margin-bottom: 24px;
+  }
+  .city .text p.intro {
+    font-family: "Noto Serif TC", serif;
+    font-size: 17px;
+    color: var(--ink-soft);
+    margin: 0 0 24px;
+  }
+  .highlight-list { padding: 0; margin: 0 0 24px; list-style: none; }
+  .highlight-list li {
+    padding: 14px 0;
+    border-bottom: 1px dashed var(--rule);
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+  }
+  .highlight-list li:last-child { border-bottom: 0; }
+  .highlight-list .hl-name {
+    font-weight: 600;
+    font-size: 16px;
+    color: var(--ink);
+    flex: 0 0 32%;
+  }
+  .highlight-list .hl-en {
+    font-family: "Cormorant Garamond", serif;
+    font-style: italic;
+    color: var(--brass-deep);
+    font-size: 14px;
+    margin-left: 4px;
+  }
+  .highlight-list .hl-desc {
+    color: var(--ink-soft);
+    font-size: 15px;
+    flex: 1;
+  }
+  .gallery {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 220px 220px;
+    gap: 12px;
+  }
+  .gallery .photo {
+    background-size: cover;
+    background-position: center;
+    border-radius: 2px;
+    box-shadow: 0 12px 28px rgba(26,31,46,0.18);
+    position: relative;
+    overflow: hidden;
+  }
+  .gallery .photo.tall { grid-row: 1 / span 2; }
+  .gallery .photo .caption {
+    position: absolute;
+    left: 0; right: 0; bottom: 0;
+    background: linear-gradient(180deg, transparent 0%, rgba(13,19,32,0.78) 100%);
+    color: #f6f1e7;
+    padding: 22px 14px 12px;
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    font-family: "Cormorant Garamond", serif;
+  }
+
+  .train {
+    background: #0d1320;
+    color: #f6f1e7;
+    padding: 0;
+    overflow: hidden;
+  }
+  .train .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    min-height: 540px;
+  }
+  .train .img {
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+  }
+  .train .img.amtrak {
+    background-image:
+      linear-gradient(90deg, rgba(13,19,32,0) 60%, rgba(13,19,32,0.6) 100%),
+      url("https://commons.wikimedia.org/wiki/Special:FilePath/Northbound%20Amtrak%20Acela%20Express%20approaching%20Readville%20March%202022.jpg?width=1920");
+  }
+  .train .img.metro-north {
+    background-image:
+      linear-gradient(90deg, rgba(13,19,32,0) 60%, rgba(13,19,32,0.6) 100%),
+      url("https://commons.wikimedia.org/wiki/Special:FilePath/Walkway%20over%20the%20Hudson%20opening%20day.JPG?width=1920");
+  }
+  .train .img.bos-pkg {
+    background-image:
+      linear-gradient(90deg, rgba(13,19,32,0) 60%, rgba(13,19,32,0.6) 100%),
+      url("https://commons.wikimedia.org/wiki/Special:FilePath/Old%20Campus%20Courtyard%20and%20Durfee%20Hall%2C%20Yale%20University%2C%20New%20Haven%2C%202007.jpg?width=1920");
+  }
+  .train .copy { padding: 80px 56px; }
+  .train .copy .eyebrow { color: #d9b67a; }
+  .train h2 {
+    color: #f6f1e7;
+    font-size: clamp(32px, 3.6vw, 46px);
+    margin: 0 0 16px;
+  }
+  .train p {
+    font-family: "Noto Serif TC", serif;
+    color: rgba(246,241,231,0.85);
+    font-size: 17px;
+    max-width: 560px;
+  }
+  .train table.spec {
+    margin-top: 28px;
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 520px;
+    font-size: 14px;
+  }
+  .train table.spec td {
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(217,182,122,0.25);
+    vertical-align: top;
+  }
+  .train table.spec td:first-child {
+    color: #d9b67a;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    font-size: 11px;
+    width: 38%;
+  }
+  .train table.spec td:last-child { color: #f6f1e7; }
+
+  .itinerary { background: var(--paper); }
+  .day-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0;
+    border-top: 1px solid var(--rule);
+    border-left: 1px solid var(--rule);
+  }
+  .day {
+    padding: 32px 28px;
+    border-right: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    background: var(--paper);
+  }
+  .day .day-num {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 14px;
+    color: var(--brass-deep);
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  .day h4 {
+    font-family: "Cormorant Garamond", "Noto Serif TC", serif;
+    font-size: 24px;
+    margin: 0 0 4px;
+    font-weight: 600;
+  }
+  .day .city-tag {
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin-bottom: 14px;
+  }
+  .day ul {
+    margin: 0; padding-left: 18px;
+    color: var(--ink-soft);
+    font-size: 15px;
+  }
+  .day ul li { margin-bottom: 6px; }
+  .day .accent {
+    display: inline-block;
+    margin-top: 14px;
+    margin-right: 6px;
+    padding: 4px 10px;
+    background: var(--brass);
+    color: #fff;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+  .day .accent.brick { background: var(--brick); }
+  .day .accent.moss { background: var(--moss); }
+
+  .food { background: var(--paper-deep); }
+  .food-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+  }
+  .food-col h3 {
+    font-size: 28px;
+    margin: 0 0 6px;
+    border-bottom: 2px solid var(--brass);
+    padding-bottom: 8px;
+  }
+  .food-col .city-en {
+    font-family: "Cormorant Garamond", serif;
+    font-style: italic;
+    color: var(--brass-deep);
+    font-size: 15px;
+    margin-bottom: 18px;
+    display: block;
+  }
+  .food-col .dish {
+    padding: 12px 0;
+    border-bottom: 1px dashed var(--rule);
+  }
+  .food-col .dish:last-child { border-bottom: 0; }
+  .food-col .dish .name {
+    font-weight: 600;
+    color: var(--ink);
+    font-size: 15px;
+    margin-bottom: 2px;
+  }
+  .food-col .dish .name .where {
+    font-family: "Cormorant Garamond", serif;
+    font-style: italic;
+    color: var(--brass-deep);
+    font-weight: 400;
+    font-size: 13px;
+    margin-left: 6px;
+  }
+  .food-col .dish .desc {
+    color: var(--ink-soft);
+    font-size: 14px;
+    line-height: 1.65;
+  }
+  .food-banner {
+    margin: 56px 0 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 12px;
+    height: 200px;
+  }
+  .food-banner .photo {
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    box-shadow: 0 8px 18px rgba(26,31,46,0.15);
+  }
+  .food-banner .photo .caption {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    background: linear-gradient(180deg, transparent, rgba(13,19,32,0.78));
+    color: #f6f1e7;
+    padding: 22px 12px 10px;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 12px;
+    letter-spacing: 0.1em;
+  }
+
+  .logistics { background: var(--paper); }
+  .log-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 56px;
+  }
+  .log-grid h3 {
+    font-size: 24px;
+    margin: 0 0 14px;
+    border-bottom: 2px solid var(--brass);
+    padding-bottom: 8px;
+    display: inline-block;
+  }
+  .log-grid ul { margin: 0; padding-left: 20px; color: var(--ink-soft); }
+  .log-grid li { margin-bottom: 8px; line-height: 1.8; }
+  .log-grid li strong { color: var(--ink); }
+
+  footer {
+    background: var(--paper);
+    padding: 40px 48px;
+    text-align: center;
+    border-top: 1px solid var(--rule);
+    color: var(--ink-soft);
+    font-size: 13px;
+    letter-spacing: 0.08em;
+  }
+  footer .marque {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 20px;
+    letter-spacing: 0.18em;
+    color: var(--ink);
+    margin-bottom: 8px;
+  }
+
+  @media (max-width: 900px) {
+    section { padding: 64px 24px; }
+    .topbar { padding: 12px 20px; flex-direction: column; gap: 6px; align-items: flex-start; }
+    .hero-inner { padding: 48px 24px; }
+    .pillars { grid-template-columns: 1fr 1fr; }
+    .city .grid, .city.flip .grid { grid-template-columns: 1fr; gap: 32px; }
+    .city.flip .text { order: 1; }
+    .city.flip .gallery { order: 2; }
+    .gallery { grid-template-rows: 200px 200px; }
+    .train .grid { grid-template-columns: 1fr; min-height: auto; }
+    .train .img { min-height: 320px; }
+    .train .copy { padding: 56px 24px; }
+    .day-grid { grid-template-columns: 1fr; }
+    .food-grid { grid-template-columns: 1fr; }
+    .food-banner { grid-template-columns: 1fr; height: auto; }
+    .food-banner .photo { height: 180px; }
+    .log-grid { grid-template-columns: 1fr; gap: 32px; }
+  }
+  @media (max-width: 520px) {
+    .pillars { grid-template-columns: 1fr; }
+    .gallery { grid-template-columns: 1fr; grid-template-rows: 220px 220px 220px; }
+    .gallery .photo.tall { grid-row: auto; }
+    .highlight-list .hl-name { flex: 0 0 100%; }
+    .highlight-list li { flex-wrap: wrap; }
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="brand">FIELD NOTES · 個人行旅</div>
+  <div class="nav">
+    <a href="../">← 5 主題行程</a>
+    <span class="sep">·</span>
+    <a href="../01-classic/">01 Classic</a>
+    <a href="../02-history/" class="current">02 History</a>
+    <a href="../03-foliage/">03 Foliage</a>
+    <a href="../04-niagara-finger/">04 Niagara</a>
+    <a href="../05-foodie/">05 Foodie</a>
+    <span class="sep">·</span>
+    <a href="../../">Home</a>
+  </div>
+</div>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="kicker">Trip 02 · Founding History Deep · 13 Days · 2026 Autumn<a href="poster.html" class="alt-style">另一風格 · 海報版 →</a></div>
+    <h1>
+      <span>Hudson Valley</span>
+      <span class="arrow" aria-hidden="true">
+        <svg viewBox="0 0 64 18" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="0" y1="6" x2="46" y2="6"/>
+          <line x1="0" y1="12" x2="46" y2="12"/>
+          <line x1="6" y1="3.5" x2="6" y2="14.5" opacity="0.6"/>
+          <line x1="14" y1="3.5" x2="14" y2="14.5" opacity="0.6"/>
+          <line x1="22" y1="3.5" x2="22" y2="14.5" opacity="0.6"/>
+          <line x1="30" y1="3.5" x2="30" y2="14.5" opacity="0.6"/>
+          <line x1="38" y1="3.5" x2="38" y2="14.5" opacity="0.6"/>
+          <path d="M44 1.5 L62 9 L44 16.5"/>
+        </svg>
+      </span>
+      <span>Boston</span>
+      <span class="arrow" aria-hidden="true">
+        <svg viewBox="0 0 64 18" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="0" y1="6" x2="46" y2="6"/>
+          <line x1="0" y1="12" x2="46" y2="12"/>
+          <line x1="6" y1="3.5" x2="6" y2="14.5" opacity="0.6"/>
+          <line x1="14" y1="3.5" x2="14" y2="14.5" opacity="0.6"/>
+          <line x1="22" y1="3.5" x2="22" y2="14.5" opacity="0.6"/>
+          <line x1="30" y1="3.5" x2="30" y2="14.5" opacity="0.6"/>
+          <line x1="38" y1="3.5" x2="38" y2="14.5" opacity="0.6"/>
+          <path d="M44 1.5 L62 9 L44 16.5"/>
+        </svg>
+      </span>
+      <span>Philadelphia</span>
+      <span class="arrow" aria-hidden="true">
+        <svg viewBox="0 0 64 18" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="0" y1="6" x2="46" y2="6"/>
+          <line x1="0" y1="12" x2="46" y2="12"/>
+          <line x1="6" y1="3.5" x2="6" y2="14.5" opacity="0.6"/>
+          <line x1="14" y1="3.5" x2="14" y2="14.5" opacity="0.6"/>
+          <line x1="22" y1="3.5" x2="22" y2="14.5" opacity="0.6"/>
+          <line x1="30" y1="3.5" x2="30" y2="14.5" opacity="0.6"/>
+          <line x1="38" y1="3.5" x2="38" y2="14.5" opacity="0.6"/>
+          <path d="M44 1.5 L62 9 L44 16.5"/>
+        </svg>
+      </span>
+      <span>Washington D.C.</span>
+    </h1>
+    <p class="lede">為 9 月 27 日 Boston 婚禮展開的十三日行旅，沿著美國建國史的時間軸往前讀：殖民地 Hudson Valley → 革命 Boston → 制憲 Philadelphia → 聯邦 Washington。從 FDR 的 Springwood 到 Washington 的 Mount Vernon，從 1775 年 Old North Church 的兩盞燈到 1865 年 Arlington 的無名戰士墓——一條按年代翻頁的歷史敘事。</p>
+    <div class="ribbon">
+      <span><strong>13</strong> Days</span>
+      <span><strong>4</strong> Phases</span>
+      <span><strong>1</strong> Wedding</span>
+      <span><strong>1</strong> Acela Express</span>
+      <span><strong>3</strong> Amtrak Legs</span>
+      <span><strong>5</strong> Presidential Sites</span>
+    </div>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">行旅主題</div>
+    <h2 class="section-title">為什麽是 Hudson Valley · Boston · Philly · DC？</h2>
+    <p class="section-lede">十三天，照時間順序讀完美國建國史：先從 Hudson 河上游的 FDR 故居（20 世紀總統制度的成熟）倒著上溯到 1802 年的西點軍校；中段在 Boston 婚禮的前後走 Freedom Trail 與 JFK 圖書館；接著在費城的 Independence Hall 與 Valley Forge 把獨立與制憲串連；最後在華盛頓的國家檔案、Mount Vernon 與 Arlington 把整條敘事收束。一條 Amtrak 走廊、四個城市、五座總統相關場域。</p>
+
+    <div class="pillars">
+      <div class="pillar">
+        <div class="num">01</div>
+        <h3>殖民地起點</h3>
+        <p>Hudson Valley 殖民地、West Point 軍校、Sleepy Hollow 荷蘭裔老教堂——殖民地年代的場景；FDR + Vanderbilt 故居加上 20 世紀總統史的尾聲。</p>
+      </div>
+      <div class="pillar">
+        <div class="num">02</div>
+        <h3>革命之路</h3>
+        <p>Boston Freedom Trail 紅磚 2.5 mile 串 16 個革命遺址，從 1773 茶葉黨到 1775 萊辛頓開戰；加 JFK Library 為 20 世紀的鏡像。</p>
+      </div>
+      <div class="pillar">
+        <div class="num">03</div>
+        <h3>制憲現場</h3>
+        <p>Philadelphia Independence Hall + Museum of the American Revolution + Carpenters' Hall + Valley Forge NHP，從 1776 簽署、1787 制憲到 1777 過冬營地。</p>
+      </div>
+      <div class="pillar">
+        <div class="num">04</div>
+        <h3>聯邦時代</h3>
+        <p>National Archives 三件原件、國會 Hill、Mount Vernon Washington 莊園與 Arlington 國家公墓——把建國敘事收束在大理石的首都。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PHASE I · HUDSON VALLEY ===== -->
+<section class="city">
+  <div class="wrap">
+    <div class="grid">
+      <div class="text">
+        <div class="eyebrow">Phase I · Days 1–4</div>
+        <h3 class="city-name">Hudson Valley</h3>
+        <div class="sub-en">Hudson Valley, NY — Colonial Roots &amp; Presidential Estates</div>
+        <p class="intro">飛機落 JFK，先在 Manhattan 走半天倒時差，再搭 Metro-North 沿哈德遜河北上 Cold Spring 或 Hyde Park。這片河谷曾經是荷蘭殖民地的西界、革命戰爭的鐵鍊封鎖點、鍍金時代豪宅帶、以及 20 世紀羅斯福家族的政治舞臺。把建國史的「起跑線」往前推一步——在獨立廳之前先看殖民地的地景。</p>
+        <ul class="highlight-list">
+          <li>
+            <div class="hl-name">FDR Home + Library<span class="hl-en">Franklin D. Roosevelt NHS</span></div>
+            <div class="hl-desc">羅斯福終身故居「Springwood」+ 全美第一座總統圖書館（1939）+ Eleanor 自己獨立的「Val-Kill」屋（她對獨立空間的堅持是政治史的一個註腳）+ Top Cottage。NPS 站點，4 小時，USD 12。</div>
+          </li>
+          <li>
+            <div class="hl-name">Vanderbilt Mansion<span class="hl-en">Hyde Park NHS</span></div>
+            <div class="hl-desc">與 FDR 故居只隔幾英里。McKim, Mead &amp; White 1898 設計的 Beaux-Arts 鍍金時代大宅，54 個房間家具原件保留，俯瞰 Hudson 河。免費 NPS 站點，自選導覽。</div>
+          </li>
+          <li>
+            <div class="hl-name">West Point 西點軍校<span class="hl-en">United States Military Academy</span></div>
+            <div class="hl-desc">1802 年創立，全美最老軍校。免費 NPS guided tour（必須帶 US ID 安檢）。走進 cadets 校區、Trophy Point 看南北戰爭繳獲大砲、Battle Monument、Old Cadet Chapel。哈德遜河大轉彎處的山頂位置壯觀。週六上午學期間有 cadets 列隊儀式。</div>
+          </li>
+          <li>
+            <div class="hl-name">Walkway over the Hudson<span class="hl-en">Poughkeepsie Pedestrian Bridge</span></div>
+            <div class="hl-desc">Poughkeepsie 廢棄鐵橋改裝，世界最長步行高架橋 1.28 mile、212 ft 高，看哈德遜河全景。免費。下午光線最好，配 FDR 一日剛好。</div>
+          </li>
+          <li>
+            <div class="hl-name">Cold Spring &amp; Boscobel</div>
+            <div class="hl-desc">Metro-North 火車 90 min 可達的鵝卵石老鎮。Main Street 維多利亞建築 + Boscobel（1808 莊園 + 哈德遜河觀景）+ Constitution Marsh 沼澤步道。可作為 Hudson Valley 入口的住宿點。</div>
+          </li>
+          <li>
+            <div class="hl-name">Sleepy Hollow / Tarrytown<span class="hl-en">Headless Horseman 原鄉</span></div>
+            <div class="hl-desc">NYC 北 30 min Metro-North 可達。Washington Irving《無頭騎士》原鄉。Old Dutch Church 墓園、Kykuit（洛克菲勒六代家族莊園，可預約導覽看哈德遜河景花園）、Lyndhurst（哥德復興豪宅）。</div>
+          </li>
+          <li>
+            <div class="hl-name">Culinary Institute of America<span class="hl-en">CIA Hyde Park</span></div>
+            <div class="hl-desc">美國頂尖廚藝學校，校園裡開 4 家風格不同學生餐廳（American Bounty / Caterina de' Medici / Bocuse / Ristorante Caterina）。主廚都是頂尖教授帶學生。中午 prix fixe USD 30–45 性價比驚人。建議訂位。</div>
+          </li>
+        </ul>
+      </div>
+      <div class="gallery">
+        <div class="photo tall" style="background-image:url('https://commons.wikimedia.org/wiki/Special:FilePath/Walkway%20over%20the%20Hudson%20opening%20day.JPG?width=1024')">
+          <div class="caption">Walkway over the Hudson · 1.28 mi</div>
+        </div>
+        <div class="photo" style="background-image:url('https://commons.wikimedia.org/wiki/Special:FilePath/Hyde%20Park%20-%20Home%20of%20Franklin%20D.%20Roosevelt%20National%20Historic%20Site%20-%2020160530090633.jpg?width=1024')">
+          <div class="caption">FDR Home · Springwood</div>
+        </div>
+        <div class="photo" style="background-image:url('https://commons.wikimedia.org/wiki/Special:FilePath/Hudson%20River%20West%20Point%20Plain.JPG?width=1024')">
+          <div class="caption">West Point · Hudson Highlands</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== INTERLUDE: HUDSON → BOSTON ===== -->
+<section class="train">
+  <div class="grid">
+    <div class="img metro-north" aria-hidden="true"></div>
+    <div class="copy">
+      <div class="eyebrow">Interlude · Day 5 · 9/26 Sat</div>
+      <h2>Hudson Line + Amtrak<br><span class="serif" style="font-style:italic;color:#d9b67a;">Poughkeepsie · New York · Boston</span></h2>
+      <p>把哈德遜河谷的兩晚收尾——早上沿著 Metro-North Hudson Line 從 Poughkeepsie 順著河岸南下，車窗左側整段都是哈德遜，到 Penn Station 接 Amtrak Northeast Regional 一路往北穿康乃狄克、羅德島，黃昏抵達 Boston South Station。提前一晚進城，把婚禮日緩衝多留一天。</p>
+      <table class="spec">
+        <tr><td>Train 1</td><td>Metro-North Hudson Line · Poughkeepsie → Grand Central · 約 2h00m</td></tr>
+        <tr><td>Transfer</td><td>Manhattan 1h（GCT 午餐 / Bryant Park 散步 / 搬到 Penn Station）</td></tr>
+        <tr><td>Train 2</td><td>Amtrak NE Regional · NYP → BOS South · 約 4h20m</td></tr>
+        <tr><td>Door-to-door</td><td>約 8 小時含轉乘 · USD 130–160 二段加總</td></tr>
+        <tr><td>Tip</td><td>Hudson Line 訂左側座位整段看河；Amtrak NEC 訂東側座位 (E 字尾) 過 Connecticut shoreline 看海</td></tr>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PHASE II · BOSTON ===== -->
+<section class="city alt">
+  <div class="wrap">
+    <div class="grid">
+      <div class="text">
+        <div class="eyebrow">Phase II · Days 5–7</div>
+        <h3 class="city-name">波士頓</h3>
+        <div class="sub-en">Boston, MA — Revolution &amp; the Wedding</div>
+        <p class="intro">Boston 是這趟旅行的中段樞紐：9/27（日）的婚禮就在這裡。前一晚從 Hudson 抵達，整天緩衝；婚禮過後留一天「JFK Library + Freedom Trail 縮短版」復原，再南下 Philly。歷史敘事在這段從革命戰爭跳到 20 世紀總統史——Old North Church 的兩盞燈與 Dorchester 海邊貝聿銘的白色玻璃塔，互為鏡像。</p>
+        <ul class="highlight-list">
+          <li>
+            <div class="hl-name">自由之路<span class="hl-en">Freedom Trail</span></div>
+            <div class="hl-desc">2.5 英里紅磚線串 16 個革命遺址：Boston Common → 麻州州議會 → Park Street Church → 老南會議廳 → Faneuil Hall → Paul Revere House → Old North Church → Bunker Hill。半天散步剛好。</div>
+          </li>
+          <li>
+            <div class="hl-name">Old North Church<span class="hl-en">1775 · 兩盞燈</span></div>
+            <div class="hl-desc">"One if by land, two if by sea" — Paul Revere 1775/4/18 夜半騎馬報信前，掛兩盞燈通報英軍走海路。教堂尖塔本體與會眾席至今原狀；地下室有 Old North 印刷廠原件。</div>
+          </li>
+          <li>
+            <div class="hl-name">JFK Presidential Library<span class="hl-en">Dorchester · 貝聿銘 1979</span></div>
+            <div class="hl-desc">Dorchester（地鐵紅線可到）。貝聿銘設計的白色幾何建築 + 完整 JFK 任期文獻 + 古巴飛彈危機決策室還原 + Jacqueline 任內白宮裝飾再現。波士頓港的視野是建築的一部分。USD 14，半天。</div>
+          </li>
+          <li>
+            <div class="hl-name">麻州州議會<span class="hl-en">Massachusetts State House</span></div>
+            <div class="hl-desc">Charles Bulfinch 1798 設計，金葉貼面圓頂 1874 年改鍍金；州議事廳免費 self-guided tour，平日早上人少。</div>
+          </li>
+          <li>
+            <div class="hl-name">Boston Tea Party Ships<span class="hl-en">1773</span></div>
+            <div class="hl-desc">茶葉黨真實船複製 + 互動劇場（你會被叫上去倒茶下海）。歷史學者扮演原汁原味，給革命前夕的這次「公民不服從」加上完整的場景重現。1.5 小時 · USD 35。</div>
+          </li>
+          <li>
+            <div class="hl-name">MFA Boston + Isabella Stewart Gardner<span class="hl-en">art angle</span></div>
+            <div class="hl-desc">MFA：美國館 + 日本/亞洲館 + 印象派並列。Gardner：1903 年女主人親自佈展的威尼斯式宮殿，1990 年遭竊未追回的空畫框依舊掛在原位。婚禮緩衝日下午備用。</div>
+          </li>
+          <li>
+            <div class="hl-name">North End 義大利區<span class="hl-en">Little Italy</span></div>
+            <div class="hl-desc">Hanover St. 是吃的核心；婚禮日前可以排 Mike's vs Modern Pastry 的 Cannoli 對決，晚餐去 Daily Catch（沒招牌、現點現做）或 Neptune Oyster（生蠔 + 龍蝦堡）。</div>
+          </li>
+        </ul>
+      </div>
+      <div class="gallery">
+        <div class="photo tall" style="background-image:url('https://commons.wikimedia.org/wiki/Special:FilePath/USA%20Boston%20Public%20Library%202%20MA.jpg?width=1024')">
+          <div class="caption">Boston Public Library · Bates Hall</div>
+        </div>
+        <div class="photo" style="background-image:url('https://commons.wikimedia.org/wiki/Special:FilePath/JFK%20library%20Stitch%20Crop.jpg?width=1024')">
+          <div class="caption">JFK Library · Dorchester · 貝聿銘</div>
+        </div>
+        <div class="photo" style="background-image:url('https://commons.wikimedia.org/wiki/Special:FilePath/Faneuil%20Hall%20Boston%20Massachusetts.JPG?width=1024')">
+          <div class="caption">Faneuil Hall · 1742</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== INTERLUDE: BOS → NEW HAVEN → PHL ===== -->
+<section class="train">
+  <div class="grid">
+    <div class="img bos-pkg" aria-hidden="true"></div>
+    <div class="copy">
+      <div class="eyebrow">Interlude · Day 8 · 9/29 Tue</div>
+      <h2>Northeast Corridor<br><span class="serif" style="font-style:italic;color:#d9b67a;">Boston · New Haven · Philadelphia</span></h2>
+      <p>美國最古老、也最忙的鐵道走廊。從 Boston South Station 出發，沿羅德島海岸進入康乃狄克——在 New Haven 下車吃一頓 Frank Pepe's 1925 年煤窯白蛤披薩、走 Yale Old Campus 與 Sterling Memorial Library 半小時，再上回 NE Regional 直奔費城 30th Street Station。一天串起殖民地北端的 Yale 與制憲現場的 Philly。</p>
+      <table class="spec">
+        <tr><td>Train 1</td><td>Amtrak NE Regional · BOS South → NHV · 約 2h45m</td></tr>
+        <tr><td>Stopover</td><td>New Haven · 3 小時 · Yale Old Campus + Frank Pepe's Pizzeria</td></tr>
+        <tr><td>Train 2</td><td>Amtrak NE Regional · NHV → PHL 30th Street · 約 3h30m</td></tr>
+        <tr><td>Total</td><td>9h door-to-door（含中停）· 約 USD 130 含商務艙升等</td></tr>
+        <tr><td>Tip</td><td>左側座位看海（Connecticut shoreline）；Pepe's 主店在 Wooster St.，從車站走 20 分鐘或 Uber 5 分鐘</td></tr>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PHASE III · PHILADELPHIA ===== -->
+<section class="city">
+  <div class="wrap">
+    <div class="grid">
+      <div class="text">
+        <div class="eyebrow">Phase III · Days 8–10</div>
+        <h3 class="city-name">費城</h3>
+        <div class="sub-en">Philadelphia, PA — The Cradle of a Nation</div>
+        <p class="intro">紅磚、鑄鐵欄杆、街角壁畫；從 1776 年的獨立廳到 1777–78 年的 Valley Forge 過冬，再到 1787 年的制憲——這座城市握著美國建國史最密集的兩年。三天裡刻意把「室內文獻」與「室外戰場」分開：第一天 Independence NHP 看簽署現場，第二天開車到 Valley Forge NHP 看 Washington 過冬營地，把抽象的憲法文字落地到雪地的木造小屋。</p>
+        <ul class="highlight-list">
+          <li>
+            <div class="hl-name">Independence Hall<span class="hl-en">1753 · 制憲現場</span></div>
+            <div class="hl-desc">1776 Declaration of Independence 簽署、1787 Constitution 起草同地點。Ranger-led 強制導覽，必須先在 recreation.gov 一週前訂 timed entry。會帶進 Assembly Room，Washington 主持制憲會議的椅子原件還在，椅背刻太陽（Franklin 在會議結束時說「我終於知道這是日出而非日落」的典故）。</div>
+          </li>
+          <li>
+            <div class="hl-name">Museum of the American Revolution<span class="hl-en">2017 新館</span></div>
+            <div class="hl-desc">Washington 戰時帳篷原件（1778–83 命令部，輪展），互動劇場敘事。被評為全美最佳新博物館之一。配 Independence Hall 同日去能把「為何要打」與「怎麼打」連起來。USD 24，2 小時。</div>
+          </li>
+          <li>
+            <div class="hl-name">Carpenters' Hall<span class="hl-en">1774 第一屆大陸會議</span></div>
+            <div class="hl-desc">私人協會仍擁有並運作。1774 年 9 月，13 個殖民地代表第一次在這棟磚樓開會，比 Independence Hall 還早兩年。免費，30 分鐘。</div>
+          </li>
+          <li>
+            <div class="hl-name">National Constitution Center</div>
+            <div class="hl-desc">Independence Mall 北端。Signers' Hall 有 42 位制憲簽署人真人大小銅像散落，可走在他們之間。互動展覽把憲法 7 條 + 27 條修正案逐條打開。USD 14.5，2 小時。</div>
+          </li>
+          <li>
+            <div class="hl-name">Valley Forge NHP<span class="hl-en">西 45 min · 1777–78 過冬</span></div>
+            <div class="hl-desc">3500 英畝。5 mile 自駕環道穿過士兵營房遺址、Washington's HQ（Isaac Potts House 原件保留）、von Steuben 訓練場、National Memorial Arch。重建 huts 群示意 12,000 大陸軍那個冬天的居住條件。免費 NPS 站點，半天剛好。</div>
+          </li>
+          <li>
+            <div class="hl-name">Liberty Bell + Congress Hall</div>
+            <div class="hl-desc">自由鐘 1752 年第一次敲就裂，現在玻璃亭內。Congress Hall 是費城當首都那 13 年（1790–1800）國會所在，Washington 第二次就職、John Adams 就職都在這房間。兩處都在 Independence Mall 走路範圍。</div>
+          </li>
+          <li>
+            <div class="hl-name">Elfreth's Alley<span class="hl-en">1703</span></div>
+            <div class="hl-desc">全美最古老連續使用住宅街，32 棟老屋，鵝卵石路。是「Philly 紅磚」的氣味樣本。30 分鐘散步剛好。配 Christ Church + Franklin 墓園同區。</div>
+          </li>
+        </ul>
+      </div>
+      <div class="gallery">
+        <div class="photo tall" style="background-image:url('https://commons.wikimedia.org/wiki/Special:FilePath/Independence_Hall_10.jpg?width=1024')">
+          <div class="caption">Independence Hall · 1776 / 1787</div>
+        </div>
+        <div class="photo" style="background-image:url('https://commons.wikimedia.org/wiki/Special:FilePath/Liberty_Bell_2008.jpg?width=1024')">
+          <div class="caption">The Liberty Bell · 1752</div>
+        </div>
+        <div class="photo" style="background-image:url('https://commons.wikimedia.org/wiki/Special:FilePath/Washington%27s%20Headquarters%20Valley%20Forge.jpg?width=1024')">
+          <div class="caption">Washington's HQ · Valley Forge</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== INTERLUDE: ACELA PHL → DC ===== -->
+<section class="train">
+  <div class="grid">
+    <div class="img amtrak" aria-hidden="true"></div>
+    <div class="copy">
+      <div class="eyebrow">Interlude · Day 11 · 10/2 Fri Morning</div>
+      <h2>Acela Express<br><span class="serif" style="font-style:italic;color:#d9b67a;">Philadelphia → Washington</span></h2>
+      <p>從 30th Street Station 寬敞的石灰岩大廳出發，車站咖啡 (La Colombe) 喝完，登上 Amtrak 旗艦列車。Acela 在 Maryland 沿著 Chesapeake Bay 灣口高速滑行，大約一小時四十分鐘——你還沒看完一份 New York Times，車就到了華盛頓 Union Station。下午直接進國家檔案館看憲法原件，把費城的「簽署現場」與華盛頓的「保存原件」串成一條時間線。</p>
+      <table class="spec">
+        <tr><td>Train</td><td>Amtrak Acela Express · Business Class（Train #2151 / 2153）</td></tr>
+        <tr><td>Depart</td><td>Philadelphia 30th Street · 09:36</td></tr>
+        <tr><td>Arrive</td><td>Washington Union · 11:17</td></tr>
+        <tr><td>Run Time</td><td>1 h 41 min · 219 km · 最高時速 240 km/h</td></tr>
+        <tr><td>Onboard</td><td>2 + 1 寬敞座位、Wi-Fi、Café Car、座位插座；行李無限件</td></tr>
+        <tr><td>Tip</td><td>右側 (windows facing east) 看 Susquehanna 河大鐵橋；買票看好 "Acela" vs "NE Regional" 票價差約 USD 60，時間差 25 分鐘</td></tr>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PHASE IV · WASHINGTON DC ===== -->
+<section class="city alt flip">
+  <div class="wrap">
+    <div class="grid">
+      <div class="text">
+        <div class="eyebrow">Phase IV · Days 11–13</div>
+        <h3 class="city-name">華盛頓 D.C.</h3>
+        <div class="sub-en">Washington, D.C. — The Marble &amp; Memory Capital</div>
+        <p class="intro">如果費城屬於 18 世紀的紅磚，華盛頓就是 19–20 世紀的白色大理石。13 天敘事在這裡收束：National Archives 把憲法的紙本原件擺在玻璃櫃裡，Mount Vernon 把 Washington 從建國之父還原成一個維吉尼亞莊園主，Arlington 把「死於國家」的軍人 40 萬座墓擺到 Robert E. Lee 的舊家後院。歷史的厚度與重量在這裡同時被舉起來。</p>
+        <ul class="highlight-list">
+          <li>
+            <div class="hl-name">National Archives<span class="hl-en">Charters of Freedom</span></div>
+            <div class="hl-desc">Declaration of Independence / Constitution / Bill of Rights 三件原件並排放在 Rotunda 中央氮氣保存櫃，加 1297 年的 Magna Carta 副本。免費，旺季建議訂 timed entry。配費城的 Independence Hall 同日讀完，敘事閉環。</div>
+          </li>
+          <li>
+            <div class="hl-name">U.S. Capitol Tour<span class="hl-en">Capitol Hill</span></div>
+            <div class="hl-desc">圓頂 1855–66 在內戰中蓋完。免費導覽需提前線上預約或請參議員辦公室代訂（更深入版本）。Rotunda、National Statuary Hall、Crypt 三層空間。配 LOC + Supreme Court 同一個 Capitol Hill 步行圈。</div>
+          </li>
+          <li>
+            <div class="hl-name">國會圖書館<span class="hl-en">Library of Congress · Jefferson Building</span></div>
+            <div class="hl-desc">Thomas Jefferson Building 主閱覽室是美國最美的室內空間之一；可預約 docent tour 走進閱覽層平台。鎮館展品：Gutenberg 聖經、Jefferson 親筆藏書清單。</div>
+          </li>
+          <li>
+            <div class="hl-name">Mount Vernon<span class="hl-en">南 25 min · Washington 莊園</span></div>
+            <div class="hl-desc">Washington 終身故居與墓地。主屋導覽（家具原件）、George + Martha 墓園、奴隸住所與 1983 加建的紀念碑、鐵匠舖、菜園、養蜂、織布。Potomac 河岸的位置是建築的一部分。USD 28，半天。從 DC 開車或包 Old Town Trolley。</div>
+          </li>
+          <li>
+            <div class="hl-name">Arlington National Cemetery<span class="hl-en">VA 側</span></div>
+            <div class="hl-desc">40 萬座墓，624 英畝。無名戰士墓換班儀式 4–9 月每 30 min 一次。Kennedy 家族墓 + 永恆之火。Arlington House 是 Robert E. Lee 內戰前的家，1864 聯邦軍開始在他家後院埋陣亡者，後來變成國家公墓。3 小時。</div>
+          </li>
+          <li>
+            <div class="hl-name">非裔美國人歷史與文化館<span class="hl-en">NMAAHC</span></div>
+            <div class="hl-desc">Smithsonian 最新且最強的敘事館；建議從地下三層（奴隸船）看到地上四層（嘻哈與當代藝術），預留 4 小時。免費但需網路預約 timed entry pass。</div>
+          </li>
+          <li>
+            <div class="hl-name">林肯紀念堂 + 越戰碑<span class="hl-en">Lincoln · Vietnam Wall</span></div>
+            <div class="hl-desc">黃昏走 Reflecting Pool；Maya Lin 21 歲贏得越戰碑競圖時的黑色花崗岩牆比想像中安靜得多——一萬五千個名字按死亡日期、不按字母排列。</div>
+          </li>
+        </ul>
+      </div>
+      <div class="gallery">
+        <div class="photo tall" style="background-image:url('https://commons.wikimedia.org/wiki/Special:FilePath/George%20Washington%27s%20Mount%20Vernon.jpg?width=1024')">
+          <div class="caption">Mount Vernon · Washington's estate</div>
+        </div>
+        <div class="photo" style="background-image:url('https://commons.wikimedia.org/wiki/Special:FilePath/Tomb%20of%20the%20Unknown%20Soldier%20%28Arlington%20National%20Cemetery%29%20%2817701180979%29.jpg?width=1024')">
+          <div class="caption">Tomb of the Unknown Soldier · Arlington</div>
+        </div>
+        <div class="photo" style="background-image:url('https://commons.wikimedia.org/wiki/Special:FilePath/United_States_Capitol_-_west_front.jpg?width=1024')">
+          <div class="caption">U.S. Capitol · west front</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 13-DAY ITINERARY ===== -->
+<section class="itinerary">
+  <div class="wrap">
+    <div class="eyebrow">Day-by-day · 從落地到登機</div>
+    <h2 class="section-title">13 天逐日筆記</h2>
+    <p class="section-lede">從 JFK 機場落地當下開始，到 IAD 國際線登機結束。每日節奏刻意「半日深度 + 半日散步 + 一個非吃不可的 anchor」，但比 10 天 Classic 版更慢——多了 Hudson Valley 4 天 + Valley Forge / Mount Vernon / Arlington 三個野外場域。</p>
+
+    <div class="day-grid">
+      <div class="day">
+        <div class="day-num">Day 01 · 9/22 (Tue)</div>
+        <h4>抵達紐約 JFK</h4>
+        <div class="city-tag">NYC · JFK Airport</div>
+        <ul>
+          <li>下午 EVA / Delta 落地 JFK Terminal 4 / 1</li>
+          <li>AirTrain + LIRR / E 線進城（約 50 min · USD 11）</li>
+          <li>旅館建議 Midtown East 或 Hell's Kitchen，方便明日上 Grand Central</li>
+          <li>傍晚 Bryant Park 散步倒時差 + Grand Central Main Concourse 抬頭看星座天花板</li>
+          <li><strong>晚餐：</strong>Joe's Pizza (Carmine St.) 或 Katz's Deli — 飛 16h 就吃 NYC 街頭</li>
+        </ul>
+        <span class="accent">Arrival</span>
+      </div>
+      <div class="day">
+        <div class="day-num">Day 02 · 9/23 (Wed)</div>
+        <h4>NYC 半日 + 上 Hudson</h4>
+        <div class="city-tag">Manhattan → Cold Spring / Hyde Park</div>
+        <ul>
+          <li>上午 Times Square 拍照 → Bryant Park → NYPL 主館 + Stephen A. Schwarzman 玫瑰閱覽室</li>
+          <li><strong>午餐：</strong>Grand Central Oyster Bar（1913 開到現在，地下拱頂 Guastavino 磚拱）</li>
+          <li>13:43 Grand Central → Metro-North Hudson Line → Cold Spring（90 min）或 Poughkeepsie（2h）</li>
+          <li>傍晚 check in Hudson 河邊 B&amp;B；河邊散步看夕陽</li>
+          <li><strong>晚餐：</strong>Cold Spring · Hudson House 1832 河景餐廳 / 或 Hyde Park · CIA American Bounty</li>
+        </ul>
+        <span class="accent moss">Transfer</span>
+      </div>
+      <div class="day">
+        <div class="day-num">Day 03 · 9/24 (Thu)</div>
+        <h4>FDR 故居 + Vanderbilt 莊園</h4>
+        <div class="city-tag">Hyde Park · Presidential Library</div>
+        <ul>
+          <li>09:00 FDR Home (Springwood) NPS 導覽：主屋 + Eleanor 的 Val-Kill + Top Cottage</li>
+          <li>FDR Presidential Library — 全美第一座總統圖書館（1939）</li>
+          <li><strong>午餐：</strong>CIA Hyde Park · Bocuse 法式（prix fixe USD 45 性價比高，須訂位）</li>
+          <li>下午 Vanderbilt Mansion NHS（與 FDR 只隔幾英里）— 鍍金時代豪宅，免費 NPS</li>
+          <li>傍晚 Walkway over the Hudson 走完 1.28 mile（212 ft 高，免費）</li>
+          <li><strong>晚餐：</strong>Beacon · Homespun Foods 或回 Cold Spring 旅館</li>
+        </ul>
+      </div>
+      <div class="day">
+        <div class="day-num">Day 04 · 9/25 (Fri)</div>
+        <h4>West Point + Hudson Highlands</h4>
+        <div class="city-tag">Hudson Highlands · USMA</div>
+        <ul>
+          <li>09:00 從 Cold Spring / Poughkeepsie 開車或包車南下 West Point（45–60 min）</li>
+          <li>10:00 USMA 訪客中心 — 預訂 West Point Tour Bus 導覽（含 Trophy Point / Old Cadet Chapel / Battle Monument）— <strong>必須帶護照安檢</strong></li>
+          <li><strong>午餐：</strong>The Thayer Hotel 餐廳（軍校內，俯瞰 Hudson 河）</li>
+          <li>下午 Storm King Art Center（雕塑公園，500 英畝 + Calder/Serra/Goldsworthy）或 Bear Mountain State Park</li>
+          <li><strong>晚餐：</strong>回 Cold Spring 鎮上 Riverview 或 Brassiere Le Bouchon</li>
+        </ul>
+      </div>
+      <div class="day">
+        <div class="day-num">Day 05 · 9/26 (Sat)</div>
+        <h4>Hudson → Boston</h4>
+        <div class="city-tag">Metro-North + Amtrak NE Regional</div>
+        <ul>
+          <li>09:00 Cold Spring / Poughkeepsie 搭 Hudson Line 南下 GCT（2h）</li>
+          <li>11:00 Manhattan 1h 停留：行李寄 Penn Station 寄物櫃 + GCT 午餐</li>
+          <li><strong>午餐：</strong>Magnolia Bakery (Rockefeller) 或 Shake Shack 速戰</li>
+          <li>13:00 Penn Station → Amtrak NE Regional → BOS South Station（4h20m）</li>
+          <li>17:30 抵 Boston South Station — Back Bay / Beacon Hill 旅館</li>
+          <li><strong>晚餐：</strong>Saltie Girl（Back Bay 海鮮 + 罐頭吧）— 適合倒時差後輕食</li>
+        </ul>
+        <span class="accent">Rail Day</span>
+      </div>
+      <div class="day">
+        <div class="day-num">Day 06 · 9/27 (Sun)</div>
+        <h4>婚禮日</h4>
+        <div class="city-tag">Boston · Wedding Day</div>
+        <ul>
+          <li>上午自由（建議睡飽 + Beacon Hill 巷弄散步、Acorn Street 拍照）</li>
+          <li><strong>午餐：</strong>Tatte Bakery（Beacon Hill 分店，shakshuka）或 Flour Bakery（Joanne Chang）輕食</li>
+          <li><strong>下午 / 晚上：婚禮典禮 + 晚宴</strong></li>
+          <li>備用方案：婚禮拖太晚就外帶 Roxy's Grilled Cheese 回旅館</li>
+        </ul>
+        <span class="accent brick">Wedding</span>
+      </div>
+      <div class="day">
+        <div class="day-num">Day 07 · 9/28 (Mon)</div>
+        <h4>JFK Library + Freedom Trail</h4>
+        <div class="city-tag">Dorchester + Downtown</div>
+        <ul>
+          <li>上午 JFK Presidential Library &amp; Museum（地鐵紅線 JFK/UMass 站，貝聿銘建築）</li>
+          <li><strong>午餐：</strong>Neptune Oyster（北端海鮮 anchor — 開門前 30 分排隊）：龍蝦堡 + 半打生蠔</li>
+          <li>下午走 Freedom Trail 後半：Faneuil Hall → Paul Revere House → Old North Church → Bunker Hill</li>
+          <li>傍晚 Boston Tea Party Ships &amp; Museum（互動劇場，被叫上去倒茶下海）</li>
+          <li><strong>晚餐：</strong>Daily Catch（Hanover St. · 義式 squid ink 燉飯，現金 only）+ Mike's vs Modern Cannoli 對決</li>
+        </ul>
+      </div>
+      <div class="day">
+        <div class="day-num">Day 08 · 9/29 (Tue)</div>
+        <h4>BOS → New Haven → Philly</h4>
+        <div class="city-tag">Amtrak NE Regional · Stopover</div>
+        <ul>
+          <li>07:00 South Station 出發 NE Regional 南下</li>
+          <li>09:45 抵 New Haven Union — 寄物 3h</li>
+          <li>Yale Old Campus + Sterling Memorial Library + Beinecke 善本書館（大理石半透明立面）半小時</li>
+          <li><strong>午餐：</strong>Frank Pepe Pizzeria Napoletana（1925 年，Wooster St. · White Clam Pizza 是煤窯披薩 OG）</li>
+          <li>13:30 NE Regional 續往南</li>
+          <li>17:00 抵 30th Street Station — Old City 飯店 check in</li>
+          <li><strong>晚餐：</strong>Zahav（以色列菜、James Beard Best Restaurant 2019 — 至少 60 天前 OpenTable 訂位）</li>
+        </ul>
+        <span class="accent">Rail Day</span>
+      </div>
+      <div class="day">
+        <div class="day-num">Day 09 · 9/30 (Wed)</div>
+        <h4>Independence NHP 整日</h4>
+        <div class="city-tag">Philly · Old City · 建國敘事日</div>
+        <ul>
+          <li>09:00 獨立廳 ranger-led tour（一週前 recreation.gov 預約 timed entry）</li>
+          <li>Liberty Bell + Congress Hall + Carpenters' Hall（1774 第一屆大陸會議）</li>
+          <li><strong>午餐：</strong>Reading Terminal Market — DiNic's 烤豬肉三明治（Bourdain 認證）+ Bassetts 1861 冰淇淋</li>
+          <li>下午 Museum of the American Revolution（Washington 戰時帳篷原件）</li>
+          <li>傍晚 National Constitution Center · Signers' Hall 銅像散步</li>
+          <li>Christ Church + Franklin 墓園 + Elfreth's Alley（30 min 老街散步）</li>
+          <li><strong>晚餐：</strong>John's Roast Pork（10th &amp; Snyder · cheesesteak 派系 #3 — 義式麵包 + roast pork w/ broccoli rabe &amp; sharp provolone）</li>
+        </ul>
+      </div>
+      <div class="day">
+        <div class="day-num">Day 10 · 10/1 (Thu)</div>
+        <h4>Valley Forge NHP 日歸</h4>
+        <div class="city-tag">PHL → Valley Forge → PHL</div>
+        <ul>
+          <li>09:00 30th St. 租車或 Uber 西行 45 min 到 Valley Forge NHP</li>
+          <li>10:00 訪客中心 18 min 影片 + 拿地圖；開始 5 mile self-driving loop</li>
+          <li>Washington's HQ (Isaac Potts House) + Muhlenberg 重建士兵 huts + National Memorial Arch + von Steuben 訓練場</li>
+          <li><strong>午餐：</strong>King of Prussia Town Center（近 Valley Forge 10 min）或回 PHL 再吃</li>
+          <li>下午回 Philly：Magic Gardens（Zagar 馬賽克迷宮）+ Italian Market 9th St. 散步</li>
+          <li><strong>晚餐：</strong>Cheesesteak 對決：Pat's vs Geno's（同個 9th 街路口、24h、深夜版本更道地）</li>
+        </ul>
+      </div>
+      <div class="day">
+        <div class="day-num">Day 11 · 10/2 (Fri)</div>
+        <h4>Acela 南下 + National Archives + Capitol</h4>
+        <div class="city-tag">PHL → DC · Mall</div>
+        <ul>
+          <li>09:36 Acela Express（Business Class · 訂 east side）</li>
+          <li>11:17 抵 Union Station — 行李寄旅館（建議 Penn Quarter 或 Foggy Bottom）</li>
+          <li><strong>午餐：</strong>Old Ebbitt Grill（1856 年，白宮對面，oyster bar happy hour 半價 3–6pm）</li>
+          <li>下午 National Archives — Declaration / Constitution / Bill of Rights 三件原件並排</li>
+          <li>傍晚 Capitol Hill 步行：U.S. Capitol 外觀 + Library of Congress Jefferson Building 主閱覽室 + Supreme Court 外觀</li>
+          <li><strong>晚餐：</strong>Le Diplomate（14th St · 法式小酒館 · French onion soup + steak frites）</li>
+        </ul>
+        <span class="accent">Acela Express</span>
+      </div>
+      <div class="day">
+        <div class="day-num">Day 12 · 10/3 (Sat)</div>
+        <h4>Mount Vernon + Arlington + 離境</h4>
+        <div class="city-tag">DC · Potomac River · Departure</div>
+        <ul>
+          <li>08:30 開車或 Old Town Trolley 南下 Mount Vernon（25 min）</li>
+          <li>09:00–12:30 Washington 莊園主屋導覽 + 墓園 + 奴隸住所 + Pioneer Farm + Potomac 河岸</li>
+          <li><strong>午餐：</strong>Mount Vernon Inn 莊園內餐廳（殖民地風）或回 Old Town Alexandria · Virtue Feed &amp; Grain</li>
+          <li>下午 Arlington National Cemetery — Tomb of the Unknown Soldier 換班儀式（每 30 min）+ Kennedy 永恆之火 + Arlington House (Lee mansion)</li>
+          <li>16:00 旅館取行李 → IAD 國際線（Silver Line + 5A 公車或 Uber 約 USD 65）</li>
+          <li><strong>離境：</strong>ANA NH 1（IAD → NRT → TPE）</li>
+        </ul>
+        <span class="accent brick">Departure</span>
+      </div>
+      <div class="day">
+        <div class="day-num">Day 13 · 10/4 (Sun)</div>
+        <h4>抵達台北</h4>
+        <div class="city-tag">In transit · TPE</div>
+        <ul>
+          <li>飛行中（NRT 轉機 2h）</li>
+          <li>下午 / 傍晚抵 TPE 桃園機場</li>
+          <li>13 天敘事閉環：從清教徒到 21 世紀的 Smithsonian，把美國史讀成一條 Amtrak 走廊</li>
+          <li><strong>Optional ext：</strong>若多留一日 (10/3 改 10/4 飛)，可加 Antietam Battlefield（1862/9/17 內戰最血腥單日戰役，DC 西北 1.5h，8.5 mi 自駕環道）</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOD MAP ===== -->
+<section class="food">
+  <div class="wrap">
+    <div class="eyebrow">Food Map · 四段美食地圖</div>
+    <h2 class="section-title">非吃不可的清單</h2>
+    <p class="section-lede">13 天比 10 天 Classic 版多了 Hudson Valley 段（CIA 廚藝學校 + 河谷小鎮）與 NYC 機場前後的兩餐切片。Boston 走海鮮 + 義式、費城吃市集 + cheesesteak、DC 從歷史餐廳到新派 fine dining 都收進來。</p>
+
+    <div class="food-grid">
+      <div class="food-col">
+        <h3>Hudson Valley + NYC</h3>
+        <span class="city-en">Hudson Valley · pre-wedding</span>
+
+        <div class="dish">
+          <div class="name">CIA Hyde Park<span class="where">@ Culinary Institute</span></div>
+          <div class="desc">美國頂尖廚藝學校校園裡 4 家風格不同學生餐廳。American Bounty（美式）/ Caterina de' Medici（義式）/ Bocuse（法式）/ Ristorante。中午 prix fixe USD 30–45 性價比驚人。建議訂位。</div>
+        </div>
+        <div class="dish">
+          <div class="name">Grand Central Oyster Bar<span class="where">@ NYC GCT</span></div>
+          <div class="desc">1913 開到現在，地下拱頂是 Guastavino 西班牙磚拱原件。30+ 種生蠔當日列表，white clam chowder 是經典。火車轉乘間最完美的午餐選項。</div>
+        </div>
+        <div class="dish">
+          <div class="name">Hudson House<span class="where">@ Cold Spring</span></div>
+          <div class="desc">1832 年河邊小旅館的餐廳，正對 Hudson 河與 West Point 山脈。秋日 patio 晚餐配 New York Cabernet Franc。Cold Spring 鎮上散步收尾。</div>
+        </div>
+        <div class="dish">
+          <div class="name">Hudson 鎮 · Warren Street</div>
+          <div class="desc">Hudson Valley 北端 2h 路程，Warren Street 一條街排滿 100+ 古董店 + 獨立餐廳，「布魯克林上州版」。若 Hudson Valley 加一天可去。</div>
+        </div>
+        <div class="dish">
+          <div class="name">Beacon · Homespun Foods</div>
+          <div class="desc">Main Street 餐廳密度高。Homespun Foods 是當地早午餐 OG。Brother's Trattoria 是 NYC 來的義裔老闆。火車直達。</div>
+        </div>
+        <div class="dish">
+          <div class="name">Joe's Pizza<span class="where">@ Carmine St.</span></div>
+          <div class="desc">NYC 經典 slice，下飛機第一晚最不會錯的選擇。1975 年至今。Carmine St. 本店 + Times Square 分店都 OK。</div>
+        </div>
+      </div>
+
+      <div class="food-col">
+        <h3>波士頓</h3>
+        <span class="city-en">Boston · Seafood &amp; North End</span>
+
+        <div class="dish">
+          <div class="name">Neptune Oyster<span class="where">@ North End</span></div>
+          <div class="desc">全市最熱門的龍蝦堡 (butter or mayo) + Wellfleet / Island Creek 生蠔。不接受訂位、開門前排起隊。Hot lobster roll 加 drawn butter 是經典；午餐版本比晚餐好。</div>
+        </div>
+        <div class="dish">
+          <div class="name">Daily Catch<span class="where">@ Hanover St.</span></div>
+          <div class="desc">沒招牌的西西里式海鮮，菜端在煎鍋上桌，現金 only。烏賊墨燉飯 + 蒜爆蛤蜊義大利麵；20 個位子；老闆會直接端著鍋從你旁邊飛過。</div>
+        </div>
+        <div class="dish">
+          <div class="name">Mike's vs Modern Pastry<span class="where">@ Hanover St.</span></div>
+          <div class="desc">Cannoli 兩家對決：Mike's 觀光化但量大穩定，Modern 殼當場填內餡更脆。同條街隔三家，都買、邊走邊吃直接比。</div>
+        </div>
+        <div class="dish">
+          <div class="name">Saltie Girl<span class="where">@ Back Bay</span></div>
+          <div class="desc">海鮮罐頭吧（葡萄牙油漬鯡魚、西班牙鳳尾魚）+ 龍蝦堡。倒時差後輕食最合適，落地當晚不會出錯。</div>
+        </div>
+        <div class="dish">
+          <div class="name">Union Oyster House<span class="where">@ Faneuil Hall</span></div>
+          <div class="desc">1826 年開到現在，全美最老仍在營業的餐廳。Daniel Webster 的老座位有銅牌；觀光、但 New England Clam Chowder 跟生蠔吧 worth it。</div>
+        </div>
+        <div class="dish">
+          <div class="name">Frank Pepe's<span class="where">@ New Haven Stopover</span></div>
+          <div class="desc">1925 年開始的煤窯披薩 OG，Wooster St. 本店。White Clam Pizza（無 tomato sauce，白蛤 + olive oil + oregano + Pecorino）是必點。中段火車轉乘的午餐。</div>
+        </div>
+      </div>
+
+      <div class="food-col">
+        <h3>費城 + DC</h3>
+        <span class="city-en">Philly · DC · founding cities</span>
+
+        <div class="dish">
+          <div class="name">Cheesesteak 三派對決<span class="where">@ Philly</span></div>
+          <div class="desc">Pat's（1930 年，發明者，"whiz wit" 配方下單）+ Geno's（隔個十字路口，霓虹燈閃，更甜更滿）+ John's Roast Pork（James Beard 得獎，午餐 only，公認食物本身最好）。</div>
+        </div>
+        <div class="dish">
+          <div class="name">Reading Terminal Market<span class="where">@ Center City</span></div>
+          <div class="desc">130 年市集：DiNic's 烤豬肉三明治、Bassetts 1861 冰淇淋、Beiler's Donuts、Dienner's 阿米許烤雞。週日休市，務必避開。</div>
+        </div>
+        <div class="dish">
+          <div class="name">Zahav<span class="where">@ Society Hill</span></div>
+          <div class="desc">Solomonov 以色列菜旗艦；Hummus Tehina 基準款，"Mesibah" 嫩烤羔羊套餐 USD 90/人。60 天前訂位是底線。</div>
+        </div>
+        <div class="dish">
+          <div class="name">Ben's Chili Bowl<span class="where">@ U Street DC</span></div>
+          <div class="desc">1958 年開到今天，Duke Ellington、Obama、Beyoncé 都來吃過。Half-smoke + 自製 chili + mustard + onions 是 D.C. 國民食物。</div>
+        </div>
+        <div class="dish">
+          <div class="name">Old Ebbitt Grill<span class="where">@ White House DC</span></div>
+          <div class="desc">1856 年，白宮對面 70 公尺；oyster bar happy hour（3–6pm 半價）是 D.C. 業內人士的暗語。Crab cake + clam chowder。</div>
+        </div>
+        <div class="dish">
+          <div class="name">Mount Vernon Inn<span class="where">@ Mt Vernon 莊園內</span></div>
+          <div class="desc">Washington 莊園裡的殖民地風餐廳，僕役制服 + 燭光晚餐 / 中午輕食。peanut soup 是 18 世紀 Virginia 經典。配 Mt Vernon 半日剛好。</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="food-banner">
+      <div class="photo" style="background-image:url('https://commons.wikimedia.org/wiki/Special:FilePath/Lobster%20Roll%20at%20the%20Lobster%20Claw%2C%20Bar%20Harbor.jpg?width=1024')">
+        <div class="caption">Lobster Roll · New England Standard</div>
+      </div>
+      <div class="photo" style="background-image:url('https://commons.wikimedia.org/wiki/Special:FilePath/Philly%20cheesesteak%20sandwich%2C%20Philadelphia%2C%20Pennsylvania%2C%20USA%20-%2020120502.jpg?width=1024')">
+        <div class="caption">Philly Cheesesteak · Whiz Wit</div>
+      </div>
+      <div class="photo" style="background-image:url('https://commons.wikimedia.org/wiki/Special:FilePath/Reading_Terminal_Market.jpg?width=1024')">
+        <div class="caption">Reading Terminal · 130 年市集</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== LOGISTICS ===== -->
+<section class="logistics">
+  <div class="wrap">
+    <div class="eyebrow">Logistics · 行前備忘</div>
+    <h2 class="section-title">事前預約 / 行政提醒</h2>
+    <p class="section-lede">這條 13 天線路 80% 是「走進去就好」，但有 20% 必須提前預約，否則現場排不到。Hudson Valley 段需要租車或自駕，是與 Classic 10 天版的最大差異。</p>
+
+    <div class="log-grid">
+      <div>
+        <h3>必預約 / 必準備</h3>
+        <ul>
+          <li><strong>West Point Tour Bus</strong> · westpointtours.com · <strong>必須帶護照</strong>，現場安檢，旺季 1 週前訂</li>
+          <li><strong>FDR Home + Vanderbilt</strong> · nps.gov · timed ticket，網路或現場拿，週末旺季建議線上</li>
+          <li><strong>CIA Hyde Park 學生餐廳</strong> · ciachef.edu/restaurants · 至少 1 週前 OpenTable 訂位</li>
+          <li><strong>Independence Hall ranger tour</strong> · recreation.gov · 一週前開放，秋天平日有 timed entry</li>
+          <li><strong>National Archives timed entry</strong> · recreation.gov · 旺季週末建議預約</li>
+          <li><strong>U.S. Capitol Tour</strong> · visitthecapitol.gov · 線上訂或請參議員代訂（後者進入區域更深）</li>
+          <li><strong>NMAAHC timed entry pass</strong> · si.edu · 30 天前開放，週末搶手（若 Day 12 有時間加排）</li>
+          <li><strong>Mount Vernon</strong> · mountvernon.org · 旺季假日建議線上訂 timed entry，USD 28</li>
+          <li><strong>Acela Express</strong> · Amtrak.com · 60 天內票價飛漲，越早越便宜，Business 比 Coach 多 USD 30 但值</li>
+          <li><strong>Zahav (Philly)</strong> · OpenTable · 60 天前訂位是底線</li>
+        </ul>
+      </div>
+      <div>
+        <h3>飯店 / 住宿建議</h3>
+        <ul>
+          <li><strong>NYC（Day 1）</strong>：Midtown East / Hell's Kitchen，靠近 Grand Central，第二天好搭 Metro-North</li>
+          <li><strong>Hudson Valley（Day 2–4）</strong>：Cold Spring B&amp;B（Hudson House / Pig Hill Inn）或 Hyde Park（Roosevelt Inn）；想升等可選 Mohonk Mountain House（1869 維多利亞旅館）</li>
+          <li><strong>Boston（Day 5–7）</strong>：Back Bay 或 Beacon Hill，地鐵 Red / Green Line 都好接（婚禮場地若在 Cambridge / Newton 再調整）</li>
+          <li><strong>Philadelphia（Day 8–10）</strong>：Old City 或 Rittenhouse，徒步可達獨立廳跟 Reading Terminal</li>
+          <li><strong>Washington D.C.（Day 11–12）</strong>：Penn Quarter / Foggy Bottom，Mall 跟 Metro 都近；避開 K Street 商業區</li>
+          <li>三大城（BOS / PHL / DC）都有 Marriott Bonvoy 和 Hyatt 高級點數選擇</li>
+        </ul>
+
+        <h3 style="margin-top:32px;">交通 / 通勤</h3>
+        <ul>
+          <li><strong>JFK Airport</strong>：AirTrain + LIRR Jamaica → Manhattan 約 50 min, USD 11</li>
+          <li><strong>Hudson Valley</strong>：Metro-North Hudson Line（Cold Spring / Poughkeepsie 直達）；FDR + West Point 段需<strong>租車</strong>或包車（建議 Day 3–4 兩天租）</li>
+          <li><strong>Manhattan → Boston</strong>：Penn Station 搭 Amtrak NE Regional（4h20m）</li>
+          <li><strong>Boston Logan</strong>：本路線不用（從 JFK 進、IAD 出），但若有調整：Silver Line 直入 South Station 免費</li>
+          <li><strong>城際移動</strong>：全程 Amtrak — Boston→New Haven→Philly→DC，分段買比 NEC pass 划算</li>
+          <li><strong>Valley Forge 日歸</strong>：30th St. 出發租車或 Uber（USD 50–60 單程）；Trolley 路線在週末有觀光車</li>
+          <li><strong>Mount Vernon 日歸</strong>：DC 開車南下 25 min；無車的話 Old Town Trolley 從 DC 出發 USD 65 含門票來回</li>
+          <li><strong>D.C. → IAD</strong>：Silver Line 通車後可地鐵到 Wiehle-Reston East 換接駁，但行李多建議 Uber（USD 60–80）</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="marque">FIELD NOTES · 個人行旅 · Trip 02 · Founding History Deep</div>
+  <div>2026 Autumn · 13 Days · Hudson Valley + Boston Wedding + Philadelphia + Washington D.C.</div>
+  <div style="margin-top:8px;font-size:11px;letter-spacing:0.16em;">圖片來源：Wikimedia Commons (CC BY-SA / Public Domain) · 行程細節依 Amtrak 時刻表 / 飯店空房 / 餐廳訂位實況微調</div>
+</footer>
+
+<script>
+  (function () {
+    const selectors = [
+      { sel: '.pillar', stagger: true },
+      { sel: '.gallery .photo', stagger: true },
+      { sel: '.day', stagger: true },
+      { sel: '.food-col', stagger: true },
+      { sel: '.dish' },
+      { sel: '.log-grid > div', stagger: true },
+      { sel: '.food-banner .photo', stagger: true },
+      { sel: '.train .copy', stagger: false },
+      { sel: '.section-title' },
+      { sel: 'p.section-lede' },
+      { sel: '.city .text .highlight-list li' },
+      { sel: '.train table.spec tr' },
+    ];
+    selectors.forEach(({ sel, stagger }) => {
+      const els = document.querySelectorAll(sel);
+      els.forEach((el, i) => {
+        el.classList.add('reveal');
+        if (stagger) el.dataset.delay = Math.min(i % 6, 5);
+      });
+    });
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('in');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+    let ticking = false;
+    document.body.classList.add('scrolled');
+    window.addEventListener('scroll', () => {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          const y = Math.min(window.scrollY * 0.28, 220);
+          document.body.style.setProperty('--parallax', y + 'px');
+          ticking = false;
+        });
+        ticking = true;
+      }
+    }, { passive: true });
+  })();
+</script>
+
+</body>
+</html>

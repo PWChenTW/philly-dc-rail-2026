@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>美東文化鐵道之旅 · 個人行旅筆記｜Boston → Philadelphia → DC · 2026 Autumn</title>
+<title>Trip 01 · Classic Corridor 經典直達 10 天 · 精修版｜Boston → Philadelphia → DC · 2026 Autumn</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Noto+Sans+TC:wght@300;400;500;700&family=Noto+Serif+TC:wght@400;600;700&display=swap" rel="stylesheet">
@@ -27,6 +27,31 @@
     background: var(--paper);
     line-height: 1.7;
     -webkit-font-smoothing: antialiased;
+    position: relative;
+  }
+  /* Paper grain texture overlay — fixed, multiplies onto everything below */
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1000;
+    opacity: 0.55;
+    mix-blend-mode: multiply;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch' seed='3'/><feColorMatrix values='0 0 0 0 0.1 0 0 0 0 0.08 0 0 0 0 0.05 0 0 0 0.18 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+    background-size: 220px 220px;
+  }
+  /* Scroll-reveal */
+  .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.9s cubic-bezier(.22,.61,.36,1), transform 0.9s cubic-bezier(.22,.61,.36,1); }
+  .reveal.in { opacity: 1; transform: translateY(0); }
+  .reveal[data-delay="1"] { transition-delay: 0.08s; }
+  .reveal[data-delay="2"] { transition-delay: 0.16s; }
+  .reveal[data-delay="3"] { transition-delay: 0.24s; }
+  .reveal[data-delay="4"] { transition-delay: 0.32s; }
+  .reveal[data-delay="5"] { transition-delay: 0.40s; }
+  .reveal[data-delay="6"] { transition-delay: 0.48s; }
+  @media (prefers-reduced-motion: reduce) {
+    .reveal { opacity: 1; transform: none; transition: none; }
   }
   h1, h2, h3, .serif {
     font-family: "Cormorant Garamond", "Noto Serif TC", "Songti TC", serif;
@@ -63,12 +88,16 @@
     content: "";
     position: absolute; inset: 0;
     background-image:
-      linear-gradient(180deg, rgba(13,19,32,0.15) 0%, rgba(13,19,32,0.55) 55%, rgba(13,19,32,0.92) 100%),
+      radial-gradient(ellipse 80% 60% at 20% 70%, rgba(13,19,32,0.78) 0%, rgba(13,19,32,0.35) 50%, rgba(13,19,32,0) 80%),
+      linear-gradient(180deg, rgba(13,19,32,0.45) 0%, rgba(13,19,32,0.65) 55%, rgba(13,19,32,0.94) 100%),
       url("https://commons.wikimedia.org/wiki/Special:FilePath/United_States_Capitol_-_west_front.jpg?width=1920");
     background-size: cover;
     background-position: center 30%;
-    filter: saturate(0.85) contrast(1.05);
+    filter: saturate(0.55) brightness(0.7) contrast(1.08);
+    will-change: transform;
   }
+  /* Subtle hero parallax */
+  body.scrolled .hero::before { transform: translate3d(0, var(--parallax, 0px), 0); }
   .hero-inner {
     position: relative;
     z-index: 2;
@@ -86,22 +115,28 @@
   .hero h1 {
     font-size: clamp(34px, 5.8vw, 72px);
     line-height: 1.05;
-    margin: 0 0 18px;
+    margin: 0 0 22px;
     color: #f6f1e7;
+    text-shadow: 0 2px 30px rgba(13,19,32,0.5), 0 1px 2px rgba(13,19,32,0.4);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px 14px;
   }
   .hero h1 .arrow {
-    font-family: "Cormorant Garamond", serif;
-    font-style: italic;
+    display: inline-flex;
+    align-items: center;
     color: #d9b67a;
-    padding: 0 10px;
-    font-weight: 400;
+    opacity: 0.9;
   }
+  .hero h1 .arrow svg { width: clamp(34px, 4vw, 56px); height: auto; }
   .hero p.lede {
     font-family: "Noto Serif TC", serif;
     font-size: clamp(16px, 1.6vw, 19px);
     max-width: 720px;
-    color: rgba(246,241,231,0.86);
+    color: rgba(246,241,231,0.9);
     margin: 0 0 28px;
+    text-shadow: 0 1px 18px rgba(13,19,32,0.5);
   }
   .hero .ribbon {
     display: inline-flex;
@@ -460,10 +495,64 @@
     margin-bottom: 8px;
   }
 
+  /* Trip switcher bar */
+  .trip-bar {
+    background: var(--paper-deep);
+    border-bottom: 1px solid var(--rule);
+    padding: 12px 32px;
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 18px;
+    align-items: center;
+    color: var(--ink-soft);
+  }
+  .trip-bar .trip-label {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 13px;
+    letter-spacing: 0.22em;
+    color: var(--brass-deep);
+    text-transform: uppercase;
+    margin-right: 6px;
+  }
+  .trip-bar a {
+    color: var(--ink-soft);
+    border-bottom: 1px dotted rgba(26,31,46,0.25);
+    padding-bottom: 1px;
+  }
+  .trip-bar a:hover { color: var(--brick); border-bottom-color: var(--brick); }
+  .trip-bar a.current {
+    color: var(--ink);
+    font-weight: 700;
+    border-bottom: 2px solid var(--brass);
+    padding-bottom: 0;
+  }
+  .trip-bar .sep { color: var(--rule); }
+  .style-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-left: auto;
+    padding: 5px 12px;
+    border: 1px solid var(--brass);
+    border-radius: 999px;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    color: var(--brass-deep);
+    text-decoration: none;
+    background: rgba(184,137,61,0.06);
+  }
+  .style-chip:hover { background: var(--brass); color: var(--paper); border-bottom: 1px solid var(--brass); }
+
   /* Responsive */
   @media (max-width: 900px) {
     section { padding: 64px 24px; }
     .topbar { padding: 12px 20px; flex-direction: column; gap: 6px; align-items: flex-start; }
+    .trip-bar { padding: 10px 20px; gap: 4px 14px; font-size: 11px; }
+    .style-chip { margin-left: 0; margin-top: 6px; }
     .hero-inner { padding: 48px 24px; }
     .pillars { grid-template-columns: 1fr 1fr; }
     .city .grid, .city.flip .grid { grid-template-columns: 1fr; gap: 32px; }
@@ -491,14 +580,56 @@
 <body>
 
 <div class="topbar">
-  <div class="brand">FIELD NOTES · 個人行旅</div>
-  <div class="meta">原版 · v1 · <a href="./refined/" style="color:var(--brass-deep);text-decoration:none;border-bottom:1px solid currentColor;margin-left:8px;">精修版</a> · <a href="./poster/" style="color:var(--brass-deep);text-decoration:none;border-bottom:1px solid currentColor;margin-left:6px;">海報版</a> · <a href="./explore/" style="color:var(--brass-deep);text-decoration:none;border-bottom:1px solid currentColor;margin-left:6px;">探索</a> · <a href="./trips/" style="color:var(--brass-deep);text-decoration:none;border-bottom:1px solid currentColor;margin-left:6px;">5 條主題行程</a></div>
+  <div class="brand">FIELD NOTES · 個人行旅 · Trip 01</div>
+  <div class="meta">精修版 · Refined · <a href="../../" style="color:var(--brass-deep);text-decoration:none;border-bottom:1px solid currentColor;margin-left:8px;">原版 Home</a> · <a href="../" style="color:var(--brass-deep);text-decoration:none;border-bottom:1px solid currentColor;margin-left:6px;">← 5 主題行程</a></div>
+</div>
+
+<div class="trip-bar">
+  <span class="trip-label">其他主題</span>
+  <a href="../01-classic/" class="current">01 · Classic 經典</a>
+  <span class="sep">·</span>
+  <a href="../02-history/">02 · Founding History 建國史</a>
+  <span class="sep">·</span>
+  <a href="../03-foliage/">03 · Foliage Chaser 楓紅</a>
+  <span class="sep">·</span>
+  <a href="../04-niagara-finger/">04 · Niagara + Finger Lakes 自然</a>
+  <span class="sep">·</span>
+  <a href="../05-foodie/">05 · Foodie 美食</a>
+  <a href="./poster.html" class="style-chip">海報版 →</a>
 </div>
 
 <header class="hero">
   <div class="hero-inner">
-    <div class="kicker">Northeast Corridor · 2026 Autumn</div>
-    <h1>Boston<span class="arrow">→</span>Philadelphia<span class="arrow">→</span>Washington D.C.</h1>
+    <div class="kicker">Trip 01 · Classic Corridor · 經典直達 10 天 · 2026 Autumn</div>
+    <h1>
+      <span>Boston</span>
+      <span class="arrow" aria-hidden="true">
+        <svg viewBox="0 0 64 18" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="0" y1="6" x2="46" y2="6"/>
+          <line x1="0" y1="12" x2="46" y2="12"/>
+          <line x1="6" y1="3.5" x2="6" y2="14.5" opacity="0.6"/>
+          <line x1="14" y1="3.5" x2="14" y2="14.5" opacity="0.6"/>
+          <line x1="22" y1="3.5" x2="22" y2="14.5" opacity="0.6"/>
+          <line x1="30" y1="3.5" x2="30" y2="14.5" opacity="0.6"/>
+          <line x1="38" y1="3.5" x2="38" y2="14.5" opacity="0.6"/>
+          <path d="M44 1.5 L62 9 L44 16.5"/>
+        </svg>
+      </span>
+      <span>Philadelphia</span>
+      <span class="arrow" aria-hidden="true">
+        <svg viewBox="0 0 64 18" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="0" y1="6" x2="46" y2="6"/>
+          <line x1="0" y1="12" x2="46" y2="12"/>
+          <line x1="6" y1="3.5" x2="6" y2="14.5" opacity="0.6"/>
+          <line x1="14" y1="3.5" x2="14" y2="14.5" opacity="0.6"/>
+          <line x1="22" y1="3.5" x2="22" y2="14.5" opacity="0.6"/>
+          <line x1="30" y1="3.5" x2="30" y2="14.5" opacity="0.6"/>
+          <line x1="38" y1="3.5" x2="38" y2="14.5" opacity="0.6"/>
+          <path d="M44 1.5 L62 9 L44 16.5"/>
+        </svg>
+      </span>
+      <span>Washington D.C.</span>
+    </h1>
     <p class="lede">為了 9 月 27 日 Boston 婚禮而展開的十日行旅。<br>三座城市、一條 Amtrak 走廊、一條從殖民史穿到憲政、再到大理石博物館的敘事線——以及一張到處停下來吃的美食地圖。</p>
     <div class="ribbon">
       <span><strong>10</strong> Days</span>
@@ -1039,6 +1170,56 @@
   <div>2026 Autumn · Boston Wedding + Northeast Corridor · 給自己看的</div>
   <div style="margin-top:8px;font-size:11px;letter-spacing:0.16em;">圖片來源：Wikimedia Commons (CC BY-SA / Public Domain) · 行程細節依 Amtrak 時刻表 / 飯店空房 / 餐廳訂位實況微調</div>
 </footer>
+
+<script>
+  // Scroll-reveal: tag elements + observe entry
+  (function () {
+    const selectors = [
+      { sel: '.pillar', stagger: true },
+      { sel: '.gallery .photo', stagger: true },
+      { sel: '.day', stagger: true },
+      { sel: '.food-col', stagger: true },
+      { sel: '.dish' },
+      { sel: '.log-grid > div', stagger: true },
+      { sel: '.food-banner .photo', stagger: true },
+      { sel: '.train .copy', stagger: false },
+      { sel: '.section-title' },
+      { sel: 'p.section-lede' },
+      { sel: '.city .text .highlight-list li' },
+      { sel: '.train table.spec tr' },
+    ];
+    selectors.forEach(({ sel, stagger }) => {
+      const els = document.querySelectorAll(sel);
+      els.forEach((el, i) => {
+        el.classList.add('reveal');
+        if (stagger) el.dataset.delay = Math.min(i % 6, 5);
+      });
+    });
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('in');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+    // Hero parallax (subtle)
+    let ticking = false;
+    document.body.classList.add('scrolled');
+    window.addEventListener('scroll', () => {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          const y = Math.min(window.scrollY * 0.28, 220);
+          document.body.style.setProperty('--parallax', y + 'px');
+          ticking = false;
+        });
+        ticking = true;
+      }
+    }, { passive: true });
+  })();
+</script>
 
 </body>
 </html>

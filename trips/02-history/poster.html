@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>NORTHEAST CORRIDOR · A Pictorial Rail Bulletin · 2026</title>
+<title>FOUNDING HISTORY DEEP · Trip 02 · A Pictorial Rail Bulletin · 2026</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Limelight&family=Big+Shoulders+Display:wght@500;700;900&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=Special+Elite&family=Noto+Serif+TC:wght@500;700;900&display=swap" rel="stylesheet">
@@ -33,7 +33,6 @@
     -webkit-font-smoothing: antialiased;
     overflow-x: hidden;
   }
-  /* Layered paper texture — grain + ben-day dots subtle */
   body::before {
     content: ""; position: fixed; inset: 0;
     pointer-events: none; z-index: 5000;
@@ -48,7 +47,6 @@
     background-size: 7px 7px;
   }
 
-  /* Typography presets */
   .display, h1, h2 {
     font-family: "Limelight", "Noto Serif TC", serif;
     font-weight: 400;
@@ -70,7 +68,6 @@
     letter-spacing: 0.02em;
   }
 
-  /* Masthead */
   .masthead {
     background: var(--ink-deep);
     color: var(--paper);
@@ -85,13 +82,15 @@
     text-transform: uppercase;
     position: relative;
     z-index: 10;
+    flex-wrap: wrap;
+    gap: 8px;
   }
-  .masthead .left, .masthead .right { display: flex; gap: 14px; align-items: center; }
+  .masthead .left, .masthead .right { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
   .masthead a { color: var(--mustard); text-decoration: none; border-bottom: 1px dotted var(--mustard); }
   .masthead a:hover { color: var(--paper); border-color: var(--paper); }
-  .masthead .ornament { color: var(--mustard); }
+  .masthead a.current { color: var(--paper); border-bottom-color: var(--paper); font-weight: 700; }
+  .masthead .ornament { color: var(--mustard); opacity: 0.6; }
 
-  /* HERO POSTER COVER */
   .cover {
     position: relative;
     min-height: 100vh;
@@ -119,7 +118,7 @@
     z-index: 2;
     border: 2px solid var(--mustard);
     padding: 48px 60px;
-    max-width: 920px;
+    max-width: 980px;
     width: 100%;
   }
   .cover .frame::before, .cover .frame::after {
@@ -139,8 +138,8 @@
   }
   .cover h1.title {
     font-family: "Limelight", serif;
-    font-size: clamp(58px, 11vw, 148px);
-    line-height: 0.88;
+    font-size: clamp(46px, 9vw, 124px);
+    line-height: 0.9;
     margin: 0 0 16px;
     color: var(--mustard);
     text-shadow:
@@ -150,7 +149,7 @@
   .cover .subtitle-cjk {
     font-family: "Noto Serif TC", serif;
     font-weight: 700;
-    font-size: clamp(22px, 3vw, 36px);
+    font-size: clamp(20px, 2.8vw, 32px);
     color: var(--cream);
     letter-spacing: 0.3em;
     margin: 0 0 28px;
@@ -162,7 +161,7 @@
     font-style: italic;
     font-size: clamp(15px, 1.5vw, 18px);
     color: rgba(246,236,208,0.86);
-    max-width: 620px;
+    max-width: 680px;
     margin: 0 auto 40px;
     line-height: 1.7;
   }
@@ -175,7 +174,7 @@
   }
   .cover .stamps {
     display: flex;
-    gap: 18px;
+    gap: 14px;
     justify-content: center;
     flex-wrap: wrap;
     margin-top: 16px;
@@ -183,7 +182,7 @@
   .cover .stamp {
     border: 1.5px solid var(--mustard);
     color: var(--mustard);
-    padding: 8px 18px;
+    padding: 8px 16px;
     font-family: "Big Shoulders Display", sans-serif;
     font-weight: 700;
     letter-spacing: 0.14em;
@@ -199,8 +198,20 @@
     margin-right: 4px;
     color: var(--cream);
   }
+  .cover .alt-style {
+    display: inline-block;
+    margin-top: 22px;
+    font-family: "Special Elite", monospace;
+    font-size: 12px;
+    letter-spacing: 0.28em;
+    color: var(--mustard);
+    text-transform: uppercase;
+    border: 1px dashed var(--mustard);
+    padding: 6px 14px;
+    text-decoration: none;
+  }
+  .cover .alt-style:hover { color: var(--cream); border-color: var(--cream); }
 
-  /* Route map */
   .route-strip {
     background: var(--paper-warm);
     padding: 60px 32px;
@@ -209,7 +220,7 @@
     position: relative;
   }
   .route-strip-inner {
-    max-width: 1180px;
+    max-width: 1280px;
     margin: 0 auto;
   }
   .route-strip .label {
@@ -227,7 +238,6 @@
     display: block;
   }
 
-  /* CITY POSTER */
   .city-poster {
     position: relative;
     padding: 0;
@@ -254,11 +264,10 @@
     background-size: cover;
     background-position: center;
   }
-  /* True duotone via SVG filter — see <svg> defs after <body> */
+  .city-poster.hudson .image-col .photo { filter: url(#dt-sage); }
   .city-poster.boston .image-col .photo { filter: url(#dt-teal); }
   .city-poster.philly .image-col .photo { filter: url(#dt-terracotta); }
   .city-poster.dc .image-col .photo { filter: url(#dt-mustard); }
-  /* Halftone dot overlay for screen-print look */
   .city-poster .image-col::after {
     content: "";
     position: absolute;
@@ -294,6 +303,7 @@
     background: var(--paper);
     position: relative;
   }
+  .city-poster.hudson .text-col { background: var(--paper-warm); }
   .city-poster.boston .text-col { background: var(--paper); }
   .city-poster.philly .text-col { background: var(--paper-warm); }
   .city-poster.dc .text-col { background: var(--paper); }
@@ -309,24 +319,26 @@
   .city-poster .text-col h2.cjk {
     font-family: "Noto Serif TC", serif;
     font-weight: 900;
-    font-size: clamp(64px, 8vw, 120px);
+    font-size: clamp(54px, 7vw, 110px);
     line-height: 0.9;
     margin: 0;
     color: var(--ink-deep);
     letter-spacing: 0.04em;
   }
+  .city-poster.hudson .text-col h2.cjk { color: var(--sage); }
   .city-poster.boston .text-col h2.cjk { color: var(--teal-deep); }
   .city-poster.philly .text-col h2.cjk { color: var(--terracotta-deep); }
   .city-poster.dc .text-col h2.cjk { color: var(--mustard-deep); }
 
   .city-poster .text-col .en-title {
     font-family: "Limelight", serif;
-    font-size: clamp(28px, 3.8vw, 52px);
+    font-size: clamp(26px, 3.6vw, 50px);
     color: var(--ink-deep);
     line-height: 1;
     margin: 8px 0 4px;
     text-shadow: 3px 3px 0 var(--mustard);
   }
+  .city-poster.hudson .text-col .en-title { text-shadow: 3px 3px 0 var(--sage); color: var(--ink-deep); }
   .city-poster.boston .text-col .en-title { text-shadow: 3px 3px 0 var(--teal); color: var(--teal-deep); }
   .city-poster.philly .text-col .en-title { text-shadow: 3px 3px 0 var(--terracotta); color: var(--terracotta-deep); }
   .city-poster.dc .text-col .en-title { text-shadow: 3px 3px 0 var(--mustard); color: var(--ink-deep); }
@@ -403,7 +415,6 @@
     line-height: 1.6;
   }
 
-  /* Train interludes — like timetable strips */
   .timetable-strip {
     background: var(--ink-deep);
     color: var(--cream);
@@ -490,7 +501,6 @@
     font-size: 14.5px;
   }
 
-  /* Big train silhouette ornament */
   .train-silhouette {
     width: 100%;
     color: var(--mustard);
@@ -498,13 +508,12 @@
     margin-bottom: 14px;
   }
 
-  /* 10-day timetable section */
   .schedule {
     background: var(--paper-warm);
     padding: 80px 40px;
     border-top: 6px double var(--ink);
   }
-  .schedule-inner { max-width: 1180px; margin: 0 auto; }
+  .schedule-inner { max-width: 1280px; margin: 0 auto; }
   .schedule .header-block {
     text-align: center;
     margin-bottom: 48px;
@@ -516,7 +525,7 @@
   }
   .schedule h2 {
     font-family: "Limelight", serif;
-    font-size: clamp(40px, 5.5vw, 80px);
+    font-size: clamp(38px, 5vw, 76px);
     margin: 0;
     color: var(--ink-deep);
     text-shadow: 4px 4px 0 var(--mustard);
@@ -531,29 +540,21 @@
   }
   .schedule-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 0;
     border: 3px solid var(--ink-deep);
     background: var(--ink-deep);
   }
   .ticket-card {
     background: var(--paper);
-    padding: 28px 26px;
+    padding: 26px 22px;
     position: relative;
     border-right: 1px solid var(--ink-deep);
     border-bottom: 1px solid var(--ink-deep);
   }
-  .ticket-card::before {
-    content: "";
-    position: absolute;
-    top: 0; left: 50%;
-    width: 1px; height: 100%;
-    background: repeating-linear-gradient(180deg, var(--ink-deep) 0 4px, transparent 4px 10px);
-    opacity: 0;
-  }
   .ticket-card .stub-num {
     font-family: "Limelight", serif;
-    font-size: 42px;
+    font-size: 40px;
     color: var(--terracotta);
     line-height: 1;
     margin: 0 0 4px;
@@ -571,15 +572,15 @@
   .ticket-card h4 {
     font-family: "Noto Serif TC", serif;
     font-weight: 700;
-    font-size: 18px;
+    font-size: 17px;
     margin: 0 0 4px;
     color: var(--ink-deep);
   }
   .ticket-card .ticket-route {
     font-family: "Big Shoulders Display", sans-serif;
     font-weight: 700;
-    font-size: 11px;
-    letter-spacing: 0.2em;
+    font-size: 10.5px;
+    letter-spacing: 0.18em;
     text-transform: uppercase;
     color: var(--terracotta-deep);
     margin-bottom: 14px;
@@ -588,13 +589,13 @@
     margin: 0; padding-left: 18px;
     font-family: "Crimson Pro", "Noto Serif TC", serif;
     color: var(--ink);
-    font-size: 14px;
+    font-size: 13.5px;
     line-height: 1.7;
   }
   .ticket-card ul li { margin-bottom: 4px; }
   .ticket-card .ticket-stamp {
     position: absolute;
-    bottom: 16px; right: 18px;
+    bottom: 14px; right: 16px;
     border: 1.5px solid var(--terracotta);
     color: var(--terracotta);
     padding: 4px 10px;
@@ -608,8 +609,8 @@
   }
   .ticket-card .ticket-stamp.mustard { border-color: var(--mustard-deep); color: var(--mustard-deep); background: rgba(216,161,58,0.08); }
   .ticket-card .ticket-stamp.teal { border-color: var(--teal); color: var(--teal); background: rgba(40,94,100,0.08); }
+  .ticket-card .ticket-stamp.sage { border-color: var(--sage); color: var(--sage); background: rgba(122,138,91,0.1); }
 
-  /* Dining Car (Food) */
   .dining-car {
     background: var(--ink-deep);
     color: var(--cream);
@@ -650,7 +651,7 @@
   }
   .menu-col h3 {
     font-family: "Limelight", serif;
-    font-size: 36px;
+    font-size: 32px;
     color: var(--mustard);
     margin: 0 0 4px;
     text-shadow: 2px 2px 0 var(--terracotta-deep);
@@ -659,7 +660,7 @@
     display: block;
     font-family: "Noto Serif TC", serif;
     font-weight: 700;
-    font-size: 22px;
+    font-size: 20px;
     color: var(--cream);
     margin-top: 4px;
     text-shadow: none;
@@ -713,7 +714,6 @@
     margin-top: 4px;
   }
 
-  /* Logistics — printed at bottom like back of poster */
   .logistics-block {
     background: var(--paper-warm);
     padding: 64px 40px;
@@ -764,7 +764,6 @@
   }
   .log-cols li strong { color: var(--ink-deep); }
 
-  /* Printer footer */
   .printer {
     background: var(--ink-deep);
     color: var(--paper);
@@ -774,7 +773,7 @@
   }
   .printer .device {
     font-family: "Limelight", serif;
-    font-size: 28px;
+    font-size: 26px;
     color: var(--mustard);
     letter-spacing: 0.2em;
     margin-bottom: 14px;
@@ -789,7 +788,6 @@
   .printer .links { margin-top: 12px; }
   .printer .links a { color: var(--mustard); border-bottom: 1px dotted; text-decoration: none; margin: 0 8px; }
 
-  /* Responsive */
   @media (max-width: 900px) {
     .masthead { flex-wrap: wrap; gap: 6px; padding: 10px 18px; font-size: 11px; }
     .cover { padding: 56px 18px; min-height: auto; }
@@ -811,14 +809,28 @@
     .logistics-block { padding: 48px 18px; }
     .log-cols { grid-template-columns: 1fr; gap: 32px; }
   }
+  @media (max-width: 1100px) and (min-width: 901px) {
+    .schedule-grid { grid-template-columns: repeat(2, 1fr); }
+  }
 </style>
 </head>
 <body>
 
-<!-- SVG duotone filter defs (offscreen) -->
+<!-- SVG duotone filter defs -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <defs>
-    <!-- TEAL (Boston): dark teal shadows → cream highlights -->
+    <filter id="dt-sage" color-interpolation-filters="sRGB">
+      <feColorMatrix type="matrix" values="
+        0.299 0.587 0.114 0 0
+        0.299 0.587 0.114 0 0
+        0.299 0.587 0.114 0 0
+        0     0     0     1 0"/>
+      <feComponentTransfer>
+        <feFuncR tableValues="0.20 0.94"/>
+        <feFuncG tableValues="0.24 0.93"/>
+        <feFuncB tableValues="0.13 0.78"/>
+      </feComponentTransfer>
+    </filter>
     <filter id="dt-teal" color-interpolation-filters="sRGB">
       <feColorMatrix type="matrix" values="
         0.299 0.587 0.114 0 0
@@ -831,7 +843,6 @@
         <feFuncB tableValues="0.245 0.816"/>
       </feComponentTransfer>
     </filter>
-    <!-- TERRACOTTA (Philly): rust shadows → cream highlights -->
     <filter id="dt-terracotta" color-interpolation-filters="sRGB">
       <feColorMatrix type="matrix" values="
         0.299 0.587 0.114 0 0
@@ -844,7 +855,6 @@
         <feFuncB tableValues="0.07 0.816"/>
       </feComponentTransfer>
     </filter>
-    <!-- MUSTARD (DC): ink shadows → mustard highlights -->
     <filter id="dt-mustard" color-interpolation-filters="sRGB">
       <feColorMatrix type="matrix" values="
         0.299 0.587 0.114 0 0
@@ -863,33 +873,25 @@
 <div class="masthead">
   <div class="left">
     <span>★ ★ ★</span>
-    <span>NORTHEAST CORRIDOR · A PICTORIAL BULLETIN · VOL. I · 2026</span>
+    <span>FOUNDING HISTORY DEEP · TRIP 02 · VOL. II · 2026</span>
   </div>
   <div class="right">
-    <a href="../">原版</a>
+    <a href="../">← 5 ROUTES</a>
     <span class="ornament">·</span>
-    <a href="../refined/">精修版</a>
+    <a href="../01-classic/poster.html">01</a>
+    <a href="poster.html" class="current">02 HIST</a>
+    <a href="../03-foliage/poster.html">03</a>
+    <a href="../04-niagara-finger/poster.html">04</a>
+    <a href="../05-foodie/poster.html">05</a>
     <span class="ornament">·</span>
-    <a href="../explore/">EXPLORE</a>
-    <span class="ornament">·</span>
-    <a href="../trips/">5 TRIPS</a>
+    <a href="index.html">精修版</a>
+    <a href="../../">HOME</a>
   </div>
 </div>
 
 <!-- ==================== COVER ==================== -->
 <section class="cover">
-  <!-- Sunburst ornament -->
   <svg class="sunburst" viewBox="-100 -100 200 200" aria-hidden="true">
-    <g fill="#d8a13a">
-      <!-- 36 rays -->
-      <script type="ignore">no script</script>
-    </g>
-  </svg>
-  <svg class="sunburst" viewBox="-100 -100 200 200" aria-hidden="true">
-    <defs>
-      <pattern id="ray" patternUnits="userSpaceOnUse" width="200" height="200">
-      </pattern>
-    </defs>
     <g fill="#d8a13a">
       <polygon points="0,-95 2.5,-22 -2.5,-22"/>
       <polygon points="0,-95 2.5,-22 -2.5,-22" transform="rotate(10)"/>
@@ -933,24 +935,17 @@
   </svg>
 
   <div class="frame">
-    <div class="route-num">★ Route No. 1 · Form 1804 · Issued 2026 ★</div>
-    <h1 class="title">GO EAST</h1>
-    <div class="subtitle-cjk">美 東 文 化 鐵 道 之 旅</div>
-    <!-- Train silhouette -->
+    <div class="route-num">★ Route No. 02 · Form 1776 · Issued 2026 ★</div>
+    <h1 class="title">FOUNDING<br>HISTORY DEEP</h1>
+    <div class="subtitle-cjk">建 國 史 深 度 · 十 三 日</div>
     <svg class="train-graphic" viewBox="0 0 600 90" aria-hidden="true">
       <g fill="currentColor">
-        <!-- Locomotive body -->
         <rect x="20" y="32" width="180" height="42" rx="4"/>
-        <!-- Cab -->
         <rect x="10" y="18" width="60" height="20" rx="3"/>
-        <!-- Front nose -->
         <polygon points="200,32 220,52 200,74"/>
-        <!-- Window -->
         <rect x="22" y="24" width="40" height="10" fill="#1b1c24"/>
-        <!-- Stripes -->
         <rect x="20" y="48" width="180" height="3" fill="#1b1c24"/>
         <rect x="20" y="56" width="180" height="2" fill="#1b1c24" opacity="0.5"/>
-        <!-- Wheels -->
         <circle cx="50" cy="80" r="9"/>
         <circle cx="50" cy="80" r="4" fill="#1b1c24"/>
         <circle cx="100" cy="80" r="9"/>
@@ -959,10 +954,8 @@
         <circle cx="150" cy="80" r="4" fill="#1b1c24"/>
         <circle cx="190" cy="80" r="9"/>
         <circle cx="190" cy="80" r="4" fill="#1b1c24"/>
-        <!-- Smoke stack -->
         <rect x="160" y="14" width="14" height="22" rx="1"/>
         <rect x="156" y="10" width="22" height="6" rx="1"/>
-        <!-- Coach 1 -->
         <rect x="240" y="38" width="130" height="36" rx="3"/>
         <rect x="248" y="44" width="20" height="14" fill="#1b1c24"/>
         <rect x="272" y="44" width="20" height="14" fill="#1b1c24"/>
@@ -973,7 +966,6 @@
         <circle cx="260" cy="80" r="3" fill="#1b1c24"/>
         <circle cx="350" cy="80" r="7"/>
         <circle cx="350" cy="80" r="3" fill="#1b1c24"/>
-        <!-- Coach 2 -->
         <rect x="380" y="38" width="130" height="36" rx="3"/>
         <rect x="388" y="44" width="20" height="14" fill="#1b1c24"/>
         <rect x="412" y="44" width="20" height="14" fill="#1b1c24"/>
@@ -984,116 +976,123 @@
         <circle cx="400" cy="80" r="3" fill="#1b1c24"/>
         <circle cx="490" cy="80" r="7"/>
         <circle cx="490" cy="80" r="3" fill="#1b1c24"/>
-        <!-- Tracks -->
         <line x1="0" y1="88" x2="600" y2="88" stroke="currentColor" stroke-width="1.5"/>
         <line x1="0" y1="86" x2="600" y2="86" stroke="currentColor" stroke-width="0.5" opacity="0.6"/>
       </g>
     </svg>
 
-    <p class="lede">為 9 月 27 日 Boston 婚禮而展開的十日行旅。一條 Amtrak 走廊，從清教徒登陸的港灣出發，沿著大西洋海岸往南，在費城讀完憲法，於華盛頓的大理石間結束。</p>
+    <p class="lede">為 9 月 27 日 Boston 婚禮而展開的十三日行旅。從 Hudson Valley 殖民地起點，沿著美國建國史的時間軸往南讀——FDR + West Point + 革命 Boston + 制憲 Philly + Valley Forge 過冬營 + 聯邦 DC 大理石。一張按年代翻頁的歷史時刻表。</p>
     <div class="stamps">
-      <div class="stamp"><strong>10</strong> DAYS</div>
-      <div class="stamp"><strong>3</strong> CITIES</div>
+      <div class="stamp"><strong>13</strong> DAYS</div>
+      <div class="stamp"><strong>4</strong> PHASES</div>
       <div class="stamp"><strong>1</strong> WEDDING</div>
       <div class="stamp"><strong>1</strong> ACELA</div>
-      <div class="stamp"><strong>9+</strong> MUSEUMS</div>
+      <div class="stamp"><strong>5</strong> PRES. SITES</div>
     </div>
+    <a href="index.html" class="alt-style">另一風格 · 精修版 →</a>
   </div>
 </section>
 
 <!-- ==================== ROUTE MAP ==================== -->
 <section class="route-strip">
   <div class="route-strip-inner">
-    <div class="label">★ Route Map · 走 廊 全 圖 ★</div>
-    <svg class="route-svg" viewBox="0 0 1200 180" preserveAspectRatio="xMidYMid meet">
+    <div class="label">★ Route Map · 四 段 全 圖 ★</div>
+    <svg class="route-svg" viewBox="0 0 1280 200" preserveAspectRatio="xMidYMid meet">
       <!-- Decorative double line -->
-      <line x1="60" y1="90" x2="1140" y2="90" stroke="#1b1c24" stroke-width="3"/>
-      <line x1="60" y1="100" x2="1140" y2="100" stroke="#1b1c24" stroke-width="1.5"/>
-      <!-- Ties between rails -->
+      <line x1="60" y1="100" x2="1220" y2="100" stroke="#1b1c24" stroke-width="3"/>
+      <line x1="60" y1="110" x2="1220" y2="110" stroke="#1b1c24" stroke-width="1.5"/>
+      <!-- Ties -->
       <g stroke="#1b1c24" stroke-width="1">
-        <line x1="80" y1="86" x2="80" y2="104"/>
-        <line x1="120" y1="86" x2="120" y2="104"/>
-        <line x1="160" y1="86" x2="160" y2="104"/>
-        <line x1="200" y1="86" x2="200" y2="104"/>
-        <line x1="280" y1="86" x2="280" y2="104"/>
-        <line x1="320" y1="86" x2="320" y2="104"/>
-        <line x1="360" y1="86" x2="360" y2="104"/>
-        <line x1="440" y1="86" x2="440" y2="104"/>
-        <line x1="480" y1="86" x2="480" y2="104"/>
-        <line x1="520" y1="86" x2="520" y2="104"/>
-        <line x1="560" y1="86" x2="560" y2="104"/>
-        <line x1="640" y1="86" x2="640" y2="104"/>
-        <line x1="680" y1="86" x2="680" y2="104"/>
-        <line x1="720" y1="86" x2="720" y2="104"/>
-        <line x1="760" y1="86" x2="760" y2="104"/>
-        <line x1="800" y1="86" x2="800" y2="104"/>
-        <line x1="880" y1="86" x2="880" y2="104"/>
-        <line x1="920" y1="86" x2="920" y2="104"/>
-        <line x1="960" y1="86" x2="960" y2="104"/>
-        <line x1="1000" y1="86" x2="1000" y2="104"/>
-        <line x1="1080" y1="86" x2="1080" y2="104"/>
-        <line x1="1120" y1="86" x2="1120" y2="104"/>
+        <line x1="80" y1="96" x2="80" y2="114"/>
+        <line x1="120" y1="96" x2="120" y2="114"/>
+        <line x1="160" y1="96" x2="160" y2="114"/>
+        <line x1="200" y1="96" x2="200" y2="114"/>
+        <line x1="240" y1="96" x2="240" y2="114"/>
+        <line x1="320" y1="96" x2="320" y2="114"/>
+        <line x1="360" y1="96" x2="360" y2="114"/>
+        <line x1="400" y1="96" x2="400" y2="114"/>
+        <line x1="440" y1="96" x2="440" y2="114"/>
+        <line x1="520" y1="96" x2="520" y2="114"/>
+        <line x1="560" y1="96" x2="560" y2="114"/>
+        <line x1="600" y1="96" x2="600" y2="114"/>
+        <line x1="640" y1="96" x2="640" y2="114"/>
+        <line x1="720" y1="96" x2="720" y2="114"/>
+        <line x1="760" y1="96" x2="760" y2="114"/>
+        <line x1="800" y1="96" x2="800" y2="114"/>
+        <line x1="840" y1="96" x2="840" y2="114"/>
+        <line x1="920" y1="96" x2="920" y2="114"/>
+        <line x1="960" y1="96" x2="960" y2="114"/>
+        <line x1="1000" y1="96" x2="1000" y2="114"/>
+        <line x1="1040" y1="96" x2="1040" y2="114"/>
+        <line x1="1120" y1="96" x2="1120" y2="114"/>
+        <line x1="1160" y1="96" x2="1160" y2="114"/>
+        <line x1="1200" y1="96" x2="1200" y2="114"/>
       </g>
-      <!-- Station markers -->
+      <!-- Hudson Valley (start) -->
       <g>
-        <!-- Boston -->
-        <circle cx="240" cy="95" r="14" fill="#285e64" stroke="#1b1c24" stroke-width="2"/>
-        <circle cx="240" cy="95" r="5" fill="#f0e5c8"/>
-        <text x="240" y="48" text-anchor="middle" font-family="Limelight" font-size="22" fill="#1b1c24">BOSTON</text>
-        <text x="240" y="62" text-anchor="middle" font-family="Special Elite" font-size="10" fill="#b07e1d" letter-spacing="2">D1—D5</text>
-        <text x="240" y="138" text-anchor="middle" font-family="Special Elite" font-size="11" fill="#1b1c24">SOUTH STA.</text>
-        <text x="240" y="152" text-anchor="middle" font-family="Special Elite" font-size="9" fill="#1b1c24" opacity="0.7">MP 0</text>
+        <circle cx="160" cy="105" r="14" fill="#7a8a5b" stroke="#1b1c24" stroke-width="2"/>
+        <circle cx="160" cy="105" r="5" fill="#f0e5c8"/>
+        <text x="160" y="56" text-anchor="middle" font-family="Limelight" font-size="20" fill="#1b1c24">HUDSON VALLEY</text>
+        <text x="160" y="72" text-anchor="middle" font-family="Special Elite" font-size="10" fill="#b07e1d" letter-spacing="2">D1—D5</text>
+        <text x="160" y="148" text-anchor="middle" font-family="Special Elite" font-size="11" fill="#1b1c24">METRO-NORTH</text>
+        <text x="160" y="162" text-anchor="middle" font-family="Special Elite" font-size="9" fill="#1b1c24" opacity="0.7">FDR · WEST POINT</text>
       </g>
-      <!-- New Haven -->
+      <!-- NYC pass -->
       <g>
-        <circle cx="400" cy="95" r="9" fill="#b94b32" stroke="#1b1c24" stroke-width="2"/>
-        <circle cx="400" cy="95" r="3" fill="#f0e5c8"/>
-        <text x="400" y="62" text-anchor="middle" font-family="Big Shoulders Display" font-weight="700" font-size="13" fill="#8c361f" letter-spacing="2">NEW HAVEN</text>
-        <text x="400" y="138" text-anchor="middle" font-family="Special Elite" font-size="9" fill="#1b1c24">STOP-OVER</text>
-        <text x="400" y="152" text-anchor="middle" font-family="Special Elite" font-size="9" fill="#1b1c24" opacity="0.7">MP 156</text>
+        <circle cx="280" cy="105" r="7" fill="#1b1c24"/>
+        <text x="280" y="148" text-anchor="middle" font-family="Special Elite" font-size="10" fill="#1b1c24" opacity="0.7">NYC GCT</text>
+        <text x="280" y="162" text-anchor="middle" font-family="Special Elite" font-size="9" fill="#1b1c24" opacity="0.55">TRANSFER</text>
       </g>
-      <!-- New York -->
+      <!-- Boston -->
       <g>
-        <circle cx="600" cy="95" r="7" fill="#1b1c24"/>
-        <text x="600" y="138" text-anchor="middle" font-family="Special Elite" font-size="10" fill="#1b1c24" opacity="0.65">NEW YORK (PASS)</text>
-        <text x="600" y="152" text-anchor="middle" font-family="Special Elite" font-size="9" fill="#1b1c24" opacity="0.55">MP 230</text>
+        <circle cx="480" cy="105" r="14" fill="#285e64" stroke="#1b1c24" stroke-width="2"/>
+        <circle cx="480" cy="105" r="5" fill="#f0e5c8"/>
+        <text x="480" y="56" text-anchor="middle" font-family="Limelight" font-size="22" fill="#1b1c24">BOSTON</text>
+        <text x="480" y="72" text-anchor="middle" font-family="Special Elite" font-size="10" fill="#b07e1d" letter-spacing="2">D5—D8 · WEDDING</text>
+        <text x="480" y="148" text-anchor="middle" font-family="Special Elite" font-size="11" fill="#1b1c24">SOUTH STA.</text>
+        <text x="480" y="162" text-anchor="middle" font-family="Special Elite" font-size="9" fill="#1b1c24" opacity="0.7">MP 0</text>
+      </g>
+      <!-- New Haven stopover -->
+      <g>
+        <circle cx="680" cy="105" r="9" fill="#b94b32" stroke="#1b1c24" stroke-width="2"/>
+        <circle cx="680" cy="105" r="3" fill="#f0e5c8"/>
+        <text x="680" y="72" text-anchor="middle" font-family="Big Shoulders Display" font-weight="700" font-size="13" fill="#8c361f" letter-spacing="2">NEW HAVEN</text>
+        <text x="680" y="148" text-anchor="middle" font-family="Special Elite" font-size="9" fill="#1b1c24">STOP-OVER · YALE</text>
+        <text x="680" y="162" text-anchor="middle" font-family="Special Elite" font-size="9" fill="#1b1c24" opacity="0.7">MP 156</text>
       </g>
       <!-- Philadelphia -->
       <g>
-        <circle cx="820" cy="95" r="14" fill="#b94b32" stroke="#1b1c24" stroke-width="2"/>
-        <circle cx="820" cy="95" r="5" fill="#f0e5c8"/>
-        <text x="820" y="48" text-anchor="middle" font-family="Limelight" font-size="22" fill="#1b1c24">PHILADELPHIA</text>
-        <text x="820" y="62" text-anchor="middle" font-family="Special Elite" font-size="10" fill="#b07e1d" letter-spacing="2">D6—D8</text>
-        <text x="820" y="138" text-anchor="middle" font-family="Special Elite" font-size="11" fill="#1b1c24">30TH ST.</text>
-        <text x="820" y="152" text-anchor="middle" font-family="Special Elite" font-size="9" fill="#1b1c24" opacity="0.7">MP 320</text>
+        <circle cx="880" cy="105" r="14" fill="#b94b32" stroke="#1b1c24" stroke-width="2"/>
+        <circle cx="880" cy="105" r="5" fill="#f0e5c8"/>
+        <text x="880" y="56" text-anchor="middle" font-family="Limelight" font-size="22" fill="#1b1c24">PHILADELPHIA</text>
+        <text x="880" y="72" text-anchor="middle" font-family="Special Elite" font-size="10" fill="#b07e1d" letter-spacing="2">D8—D11 · + VALLEY FORGE</text>
+        <text x="880" y="148" text-anchor="middle" font-family="Special Elite" font-size="11" fill="#1b1c24">30TH ST.</text>
+        <text x="880" y="162" text-anchor="middle" font-family="Special Elite" font-size="9" fill="#1b1c24" opacity="0.7">MP 320</text>
       </g>
-      <!-- Baltimore (pass) -->
+      <!-- Baltimore pass -->
       <g>
-        <circle cx="980" cy="95" r="5" fill="#1b1c24"/>
-        <text x="980" y="138" text-anchor="middle" font-family="Special Elite" font-size="9" fill="#1b1c24" opacity="0.55">BALTIMORE (PASS)</text>
+        <circle cx="1040" cy="105" r="5" fill="#1b1c24"/>
+        <text x="1040" y="148" text-anchor="middle" font-family="Special Elite" font-size="9" fill="#1b1c24" opacity="0.55">BALTIMORE (PASS)</text>
       </g>
       <!-- Washington DC -->
       <g>
-        <circle cx="1100" cy="95" r="14" fill="#d8a13a" stroke="#1b1c24" stroke-width="2"/>
-        <circle cx="1100" cy="95" r="5" fill="#f0e5c8"/>
-        <text x="1100" y="48" text-anchor="middle" font-family="Limelight" font-size="22" fill="#1b1c24">WASHINGTON</text>
-        <text x="1100" y="62" text-anchor="middle" font-family="Special Elite" font-size="10" fill="#b07e1d" letter-spacing="2">D9—D10</text>
-        <text x="1100" y="138" text-anchor="middle" font-family="Special Elite" font-size="11" fill="#1b1c24">UNION STA.</text>
-        <text x="1100" y="152" text-anchor="middle" font-family="Special Elite" font-size="9" fill="#1b1c24" opacity="0.7">MP 460</text>
+        <circle cx="1160" cy="105" r="14" fill="#d8a13a" stroke="#1b1c24" stroke-width="2"/>
+        <circle cx="1160" cy="105" r="5" fill="#f0e5c8"/>
+        <text x="1160" y="56" text-anchor="middle" font-family="Limelight" font-size="22" fill="#1b1c24">WASHINGTON</text>
+        <text x="1160" y="72" text-anchor="middle" font-family="Special Elite" font-size="10" fill="#b07e1d" letter-spacing="2">D11—D12 · MT VERNON · ARLINGTON</text>
+        <text x="1160" y="148" text-anchor="middle" font-family="Special Elite" font-size="11" fill="#1b1c24">UNION STA.</text>
+        <text x="1160" y="162" text-anchor="middle" font-family="Special Elite" font-size="9" fill="#1b1c24" opacity="0.7">MP 460</text>
       </g>
     </svg>
   </div>
 </section>
 
-<!-- ==================== BOSTON ==================== -->
-<section class="city-poster boston">
+<!-- ==================== HUDSON VALLEY ==================== -->
+<section class="city-poster hudson">
   <div class="city-grid">
     <div class="image-col">
       <div class="corner-tag">★ Phase I · Days 1—5</div>
-      <div class="photo" style="background-image:url('https://commons.wikimedia.org/wiki/Special:FilePath/Massachusetts%20State%20House%20Boston%20November%202016.jpg?width=1280')"></div>
-      <div class="duotone dark"></div>
-      <div class="duotone"></div>
-      <!-- Compass ornament -->
+      <div class="photo" style="background-image:url('https://commons.wikimedia.org/wiki/Special:FilePath/Hyde%20Park%20-%20Home%20of%20Franklin%20D.%20Roosevelt%20National%20Historic%20Site%20-%2020160530090633.jpg?width=1280')"></div>
       <svg class="ornament" style="bottom:30px; right:30px; width:120px; height:120px;" viewBox="0 0 120 120" aria-hidden="true">
         <circle cx="60" cy="60" r="55" fill="none" stroke="#f6ecd0" stroke-width="2"/>
         <circle cx="60" cy="60" r="46" fill="none" stroke="#f6ecd0" stroke-width="1" opacity="0.5"/>
@@ -1105,10 +1104,10 @@
     </div>
     <div class="text-col">
       <div class="phase">★ Phase I · Days 1—5</div>
-      <h2 class="cjk">波士頓</h2>
-      <div class="en-title">BOSTON, MASS.</div>
-      <div class="tagline">Where the Story Begins · 1620 殖民 → 1773 茶葉黨 → 1775 革命</div>
-      <p class="intro">飛機落在 Logan，迎面是新英格蘭九月的乾爽。Boston 是這趟旅行真正的入口：婚禮在 9/27（日）舉行，前面三天用來倒時差、走 Freedom Trail 紅磚線、摸 Cambridge 校園、在 North End 跟義裔老闆對話；婚禮過後留一天緩衝，把吃跟逛排滿——再南下。</p>
+      <h2 class="cjk">哈德遜河谷</h2>
+      <div class="en-title">HUDSON VALLEY, N.Y.</div>
+      <div class="tagline">Colonial Roots &amp; Presidential Estates · 1609 哈德遜抵岸 → 1802 West Point → 1933 FDR</div>
+      <p class="intro">飛機落 JFK，先在 Manhattan 走半天倒時差，再搭 Metro-North 沿哈德遜河北上 Cold Spring 或 Hyde Park。這片河谷曾經是荷蘭殖民地的西界、革命戰爭的鐵鍊封鎖點、鍍金時代豪宅帶、以及 20 世紀羅斯福家族的政治舞臺。把建國史的「起跑線」往前推一步——在獨立廳之前先看殖民地的地景。</p>
 
       <table class="fare-table">
         <thead>
@@ -1117,38 +1116,38 @@
         <tbody>
           <tr>
             <td class="item-num">01</td>
-            <td class="item-name">自由之路<span class="item-en">Freedom Trail</span></td>
-            <td class="item-desc">2.5 mile 紅磚線串 16 個革命遺址：Boston Common → 麻州州議會 → Park Street Church → Faneuil Hall → Paul Revere House → Old North Church → Bunker Hill。半天散步。</td>
+            <td class="item-name">FDR Home + Library<span class="item-en">Franklin D. Roosevelt NHS</span></td>
+            <td class="item-desc">羅斯福終身故居 Springwood + 全美第一座總統圖書館（1939）+ Eleanor 的 Val-Kill 屋 + Top Cottage。NPS 站點，4 小時。</td>
           </tr>
           <tr>
             <td class="item-num">02</td>
-            <td class="item-name">麻州州議會<span class="item-en">Mass. State House</span></td>
-            <td class="item-desc">Charles Bulfinch 1798 設計，金葉貼面圓頂 1874 改鍍金。免費 self-guided tour，平日早上人少。</td>
+            <td class="item-name">Vanderbilt Mansion<span class="item-en">Hyde Park NHS</span></td>
+            <td class="item-desc">McKim, Mead &amp; White 1898 設計的 Beaux-Arts 鍍金時代大宅，54 個房間家具原件，俯瞰 Hudson 河。免費 NPS。</td>
           </tr>
           <tr>
             <td class="item-num">03</td>
-            <td class="item-name">波士頓公共圖書館<span class="item-en">Boston Public Library</span></td>
-            <td class="item-desc">McKim, Mead &amp; White 1895 文藝復興建築，Bates Hall 拱頂閱覽室；Sargent 壁畫廳免費，下午茶在 Courtyard 餐廳。</td>
+            <td class="item-name">West Point 西點軍校<span class="item-en">U.S. Military Academy</span></td>
+            <td class="item-desc">1802 創立，全美最老軍校。NPS 導覽（必須帶護照安檢）。Trophy Point + Battle Monument + Old Cadet Chapel。</td>
           </tr>
           <tr>
             <td class="item-num">04</td>
-            <td class="item-name">MFA Boston<span class="item-en">Museum of Fine Arts</span></td>
-            <td class="item-desc">美國館 + 日本/亞洲館 + 印象派並列；Sargent "Daughters of Edward Darley Boit"、Gauguin "Where Do We Come From?"。</td>
+            <td class="item-name">Walkway over the Hudson<span class="item-en">Poughkeepsie Pedestrian Bridge</span></td>
+            <td class="item-desc">廢棄鐵橋改裝成世界最長步行高架橋 1.28 mile、212 ft 高，看哈德遜河全景。免費。</td>
           </tr>
           <tr>
             <td class="item-num">05</td>
-            <td class="item-name">伊莎貝拉嘉納藝術館<span class="item-en">Isabella Stewart Gardner</span></td>
-            <td class="item-desc">1903 年女主人親自佈展的威尼斯式宮殿，1990 年遭竊未追回的空畫框依舊掛在原位。</td>
+            <td class="item-name">Cold Spring &amp; Boscobel</td>
+            <td class="item-desc">Metro-North 90 min 鵝卵石老鎮。Boscobel 1808 莊園 + Constitution Marsh 沼澤步道。住宿首選。</td>
           </tr>
           <tr>
             <td class="item-num">06</td>
-            <td class="item-name">Cambridge<span class="item-en">Harvard / MIT</span></td>
-            <td class="item-desc">Harvard Yard + Sanders Theatre + Widener Library 外觀；MIT 過河看 Gehry 的 Stata Center + Saarinen 的 Kresge 教堂。</td>
+            <td class="item-name">Sleepy Hollow / Tarrytown<span class="item-en">Headless Horseman 原鄉</span></td>
+            <td class="item-desc">Washington Irving《無頭騎士》原鄉。Old Dutch Church 墓園 + Kykuit 洛克菲勒莊園 + Lyndhurst 哥德復興豪宅。</td>
           </tr>
           <tr>
             <td class="item-num">07</td>
-            <td class="item-name">North End 義大利區<span class="item-en">Little Italy</span></td>
-            <td class="item-desc">Hanover St. 是吃的核心；Mike's vs Modern Pastry Cannoli 對決、Daily Catch 義式海鮮、Neptune Oyster 龍蝦堡。</td>
+            <td class="item-name">CIA Hyde Park<span class="item-en">Culinary Institute of America</span></td>
+            <td class="item-desc">美國頂尖廚藝學校 4 家學生餐廳（American Bounty / Caterina / Bocuse / Ristorante）。Prix fixe USD 30–45 性價比驚人。</td>
           </tr>
         </tbody>
       </table>
@@ -1156,7 +1155,7 @@
   </div>
 </section>
 
-<!-- ==================== TRAIN INTERLUDE 1 ==================== -->
+<!-- ==================== INTERLUDE: HUDSON → BOSTON ==================== -->
 <section class="timetable-strip">
   <div class="ts-inner">
     <div class="ts-text">
@@ -1177,30 +1176,30 @@
           <line x1="0" y1="51" x2="320" y2="51" stroke="currentColor" stroke-width="1"/>
         </g>
       </svg>
-      <div class="label">★ Interlude · Day 6 ★</div>
-      <h2>Northeast Corridor</h2>
-      <div class="sub">Boston · New Haven · Philadelphia</div>
-      <p>美國最古老、也最忙的鐵道走廊。從 Boston South Station 出發，沿羅德島海岸進入康乃狄克——在 New Haven 下車吃一頓 Pepe's 煤窯白蛤披薩，走 Yale Old Campus 半小時，再上回 NE Regional 直奔費城 30th Street Station。</p>
+      <div class="label">★ Interlude · Day 5 · 9/26 Sat ★</div>
+      <h2>Hudson Line + Amtrak</h2>
+      <div class="sub">Poughkeepsie · New York · Boston</div>
+      <p>把哈德遜河谷的兩晚收尾——早上沿 Metro-North Hudson Line 從 Poughkeepsie 順著河岸南下 Grand Central，再轉 Penn Station 接 Amtrak NE Regional 穿康乃狄克、羅德島，黃昏抵達 Boston South Station。提前一晚進城，把婚禮日緩衝多留一天。</p>
     </div>
     <table class="ts-table">
-      <tr><td>Train No. 171</td><td>Amtrak NE Regional · BOS → NHV · 約 2 h 45 m</td></tr>
-      <tr><td>Stop-over</td><td>New Haven · 3 hr · Yale Old Campus + Pepe's Pizzeria</td></tr>
-      <tr><td>Train No. 175</td><td>Amtrak NE Regional · NHV → PHL 30th St. · 約 3 h 30 m</td></tr>
-      <tr><td>Door-to-door</td><td>9 hr 含中停 · USD 130 含商務艙升等</td></tr>
-      <tr><td>Tip</td><td>左側座位看 Connecticut shoreline 海景</td></tr>
+      <tr><td>Train 1</td><td>Metro-North Hudson Line · POU → GCT · 約 2 h 00 m</td></tr>
+      <tr><td>Transfer</td><td>Manhattan 1 hr · GCT 午餐 / 搬到 Penn Station</td></tr>
+      <tr><td>Train 2</td><td>Amtrak NE Regional · NYP → BOS South · 約 4 h 20 m</td></tr>
+      <tr><td>Door-to-door</td><td>約 8 hr 含轉乘 · USD 130–160 兩段加總</td></tr>
+      <tr><td>Tip</td><td>Hudson Line 左側看河；NEC 東側 (E 尾車廂) 過 CT shoreline 看海</td></tr>
     </table>
   </div>
 </section>
 
-<!-- ==================== PHILADELPHIA ==================== -->
-<section class="city-poster philly flip">
+<!-- ==================== BOSTON ==================== -->
+<section class="city-poster boston flip">
   <div class="city-grid">
     <div class="text-col">
-      <div class="phase">★ Phase II · Days 6—8</div>
-      <h2 class="cjk">費城</h2>
-      <div class="en-title">PHILADELPHIA, PA.</div>
-      <div class="tagline">Cradle of a Nation · 1776 獨立 → 1787 制憲 → 1800 前美國首都</div>
-      <p class="intro">紅磚、鑄鐵欄杆、街角壁畫；從 1776 年的獨立廳到今日的 Reading Terminal Market，費城同時握著歷史的厚度與街頭的溫度。把行程切成「建國敘事日」與「藝術 + 街區日」兩條線索：上午看憲法現場，下午選一家 cheesesteak 的陣營（Pat's vs Geno's vs John's Roast Pork）開始辯論。</p>
+      <div class="phase">★ Phase II · Days 5—8 · WEDDING</div>
+      <h2 class="cjk">波士頓</h2>
+      <div class="en-title">BOSTON, MASS.</div>
+      <div class="tagline">Revolution &amp; the Wedding · 1773 茶葉黨 → 1775 萊辛頓 → 1961 JFK</div>
+      <p class="intro">Boston 是這趟旅行的中段樞紐：9/27（日）的婚禮就在這裡。前一晚從 Hudson 抵達整天緩衝；婚禮過後留一天 JFK Library + Freedom Trail 復原。歷史敘事在這段從革命戰爭跳到 20 世紀總統史——Old North Church 的兩盞燈與 Dorchester 海邊貝聿銘的白色玻璃塔互為鏡像。</p>
 
       <table class="fare-table">
         <thead>
@@ -1209,48 +1208,45 @@
         <tbody>
           <tr>
             <td class="item-num">01</td>
-            <td class="item-name">獨立國家歷史公園<span class="item-en">Independence NHP</span></td>
-            <td class="item-desc">獨立廳、自由鐘、國會議事廳——憲法誕生的三公里半徑。獨立廳需提前一週 recreation.gov 預約 ranger-led tour。</td>
+            <td class="item-name">自由之路<span class="item-en">Freedom Trail</span></td>
+            <td class="item-desc">2.5 mile 紅磚線串 16 個革命遺址。Boston Common → State House → Faneuil Hall → Paul Revere House → Old North Church → Bunker Hill。半天散步。</td>
           </tr>
           <tr>
             <td class="item-num">02</td>
-            <td class="item-name">Reading Terminal Market</td>
-            <td class="item-desc">130 年室內市集；Bassetts 冰淇淋（1861，全美最老連續經營冰淇淋）、Dienner's 阿米許烤雞、DiNic's 烤豬肉三明治。週日休市。</td>
+            <td class="item-name">Old North Church<span class="item-en">1775 · 兩盞燈</span></td>
+            <td class="item-desc">"One if by land, two if by sea" — Paul Revere 1775/4/18 夜半騎馬報信前掛兩盞燈通報英軍走海路。教堂尖塔本體原狀。</td>
           </tr>
           <tr>
             <td class="item-num">03</td>
-            <td class="item-name">費城藝術博物館<span class="item-en">Philadelphia Museum of Art</span></td>
-            <td class="item-desc">Rocky 階梯只是序曲；Cy Twombly 50 Days at Iliam 永久展、Marcel Duchamp 完整館藏、東亞藝術以日本茶室原件聞名。</td>
+            <td class="item-name">JFK Presidential Library<span class="item-en">Dorchester · 貝聿銘 1979</span></td>
+            <td class="item-desc">地鐵紅線 JFK/UMass 站。白色幾何建築 + JFK 任期文獻 + 古巴飛彈危機決策室還原 + Jacqueline 白宮裝飾再現。USD 14。</td>
           </tr>
           <tr>
             <td class="item-num">04</td>
-            <td class="item-name">Magic Gardens</td>
-            <td class="item-desc">Isaiah Zagar 半條街的馬賽克迷宮——磁磚、酒瓶、自行車輪，一個藝術家用 30 年覆蓋的城市無意識。週二休館。</td>
+            <td class="item-name">麻州州議會<span class="item-en">Mass. State House</span></td>
+            <td class="item-desc">Charles Bulfinch 1798 設計，金葉貼面圓頂 1874 改鍍金。免費 self-guided tour，平日早上人少。</td>
           </tr>
           <tr>
             <td class="item-num">05</td>
-            <td class="item-name">Mütter Museum</td>
-            <td class="item-desc">19 世紀醫學標本館（皺縮頭顱、暹羅雙生連體標本、Einstein 大腦切片）；給願意凝視身體史的人。</td>
+            <td class="item-name">Boston Tea Party Ships<span class="item-en">1773</span></td>
+            <td class="item-desc">茶葉黨真實船複製 + 互動劇場，你會被叫上去倒茶下海。歷史學者扮演演出。1.5 小時 USD 35。</td>
           </tr>
           <tr>
             <td class="item-num">06</td>
-            <td class="item-name">Eastern State Penitentiary</td>
-            <td class="item-desc">廢棄輻射型監獄，Al Capone 牢房保留陳設；秋天另有 "Halloween Nights" 沉浸式劇場（9 月底開始，線上購票）。</td>
+            <td class="item-name">MFA + Isabella Gardner<span class="item-en">art angle</span></td>
+            <td class="item-desc">MFA 美國館 + 印象派 + 日本館。Gardner 1903 威尼斯式宮殿，1990 遭竊空畫框依舊掛在原位。婚禮緩衝日下午備用。</td>
           </tr>
           <tr>
             <td class="item-num">07</td>
-            <td class="item-name">Italian Market · 9th St.</td>
-            <td class="item-desc">全美最古老營業中的戶外市集；Termini Bros vs Isgro 兩家 Cannoli 對打、Di Bruno Bros 起司、Anthony's 義式 espresso。</td>
+            <td class="item-name">North End 義大利區<span class="item-en">Little Italy</span></td>
+            <td class="item-desc">Hanover St. 吃的核心。Mike's vs Modern Pastry Cannoli 對決、Daily Catch 義式海鮮、Neptune Oyster 龍蝦堡。</td>
           </tr>
         </tbody>
       </table>
     </div>
     <div class="image-col">
-      <div class="corner-tag">★ Phase II · Days 6—8</div>
-      <div class="photo" style="background-image:url('https://commons.wikimedia.org/wiki/Special:FilePath/Independence_Hall_10.jpg?width=1280')"></div>
-      <div class="duotone dark"></div>
-      <div class="duotone"></div>
-      <!-- Eagle/star ornament -->
+      <div class="corner-tag">★ Phase II · Days 5—8</div>
+      <div class="photo" style="background-image:url('https://commons.wikimedia.org/wiki/Special:FilePath/Massachusetts%20State%20House%20Boston%20November%202016.jpg?width=1280')"></div>
       <svg class="ornament" style="top:30px; left:30px; width:140px; height:80px;" viewBox="0 0 140 80" aria-hidden="true">
         <g fill="#f6ecd0" opacity="0.9">
           <polygon points="20,20 25,32 38,32 28,40 32,52 20,44 8,52 12,40 2,32 15,32"/>
@@ -1264,13 +1260,117 @@
   </div>
 </section>
 
+<!-- ==================== INTERLUDE: BOS → NHV → PHL ==================== -->
+<section class="timetable-strip">
+  <div class="ts-inner">
+    <div class="ts-text">
+      <svg class="train-silhouette" viewBox="0 0 320 56" aria-hidden="true">
+        <g fill="currentColor">
+          <rect x="10" y="20" width="100" height="22" rx="2"/>
+          <polygon points="110,20 122,30 110,42"/>
+          <rect x="10" y="28" width="100" height="2" fill="#1b1c24"/>
+          <circle cx="30" cy="46" r="5"/>
+          <circle cx="55" cy="46" r="5"/>
+          <circle cx="85" cy="46" r="5"/>
+          <rect x="135" y="24" width="70" height="18" rx="2"/>
+          <circle cx="150" cy="46" r="4"/>
+          <circle cx="190" cy="46" r="4"/>
+          <rect x="215" y="24" width="70" height="18" rx="2"/>
+          <circle cx="230" cy="46" r="4"/>
+          <circle cx="270" cy="46" r="4"/>
+          <line x1="0" y1="51" x2="320" y2="51" stroke="currentColor" stroke-width="1"/>
+        </g>
+      </svg>
+      <div class="label">★ Interlude · Day 8 · 9/29 Tue ★</div>
+      <h2>Northeast Corridor</h2>
+      <div class="sub">Boston · New Haven · Philadelphia</div>
+      <p>從 Boston South Station 出發，沿羅德島海岸進入康乃狄克——在 New Haven 下車吃一頓 Frank Pepe's 1925 年煤窯白蛤披薩，走 Yale Old Campus 與 Sterling 圖書館半小時，再上回 NE Regional 直奔費城 30th Street Station。</p>
+    </div>
+    <table class="ts-table">
+      <tr><td>Train No. 171</td><td>Amtrak NE Regional · BOS → NHV · 約 2 h 45 m</td></tr>
+      <tr><td>Stop-over</td><td>New Haven · 3 hr · Yale Old Campus + Pepe's Pizzeria</td></tr>
+      <tr><td>Train No. 175</td><td>Amtrak NE Regional · NHV → PHL 30th St. · 約 3 h 30 m</td></tr>
+      <tr><td>Door-to-door</td><td>9 hr 含中停 · USD 130 含商務艙升等</td></tr>
+      <tr><td>Tip</td><td>左側看 Connecticut shoreline 海景；Pepe's 主店在 Wooster St.</td></tr>
+    </table>
+  </div>
+</section>
+
+<!-- ==================== PHILADELPHIA ==================== -->
+<section class="city-poster philly">
+  <div class="city-grid">
+    <div class="image-col">
+      <div class="corner-tag">★ Phase III · Days 8—11</div>
+      <div class="photo" style="background-image:url('https://commons.wikimedia.org/wiki/Special:FilePath/Independence_Hall_10.jpg?width=1280')"></div>
+      <svg class="ornament" style="bottom:30px; right:30px; width:140px; height:80px;" viewBox="0 0 140 80" aria-hidden="true">
+        <g fill="#f6ecd0" opacity="0.9">
+          <polygon points="20,20 25,32 38,32 28,40 32,52 20,44 8,52 12,40 2,32 15,32"/>
+          <polygon points="70,20 75,32 88,32 78,40 82,52 70,44 58,52 62,40 52,32 65,32"/>
+          <polygon points="120,20 125,32 138,32 128,40 132,52 120,44 108,52 112,40 102,32 115,32"/>
+          <line x1="0" y1="70" x2="140" y2="70" stroke="#f6ecd0" stroke-width="2"/>
+          <line x1="0" y1="76" x2="140" y2="76" stroke="#f6ecd0" stroke-width="1" opacity="0.5"/>
+        </g>
+      </svg>
+    </div>
+    <div class="text-col">
+      <div class="phase">★ Phase III · Days 8—11</div>
+      <h2 class="cjk">費城</h2>
+      <div class="en-title">PHILADELPHIA, PA.</div>
+      <div class="tagline">Cradle of a Nation · 1776 獨立 → 1777 Valley Forge 過冬 → 1787 制憲</div>
+      <p class="intro">紅磚、鑄鐵欄杆、街角壁畫；從 1776 獨立廳到 1777–78 Valley Forge 過冬，再到 1787 制憲——這座城市握著美國建國史最密集的兩年。三天裡刻意把「室內文獻」與「室外戰場」分開：第一天 Independence NHP 看簽署現場，第二天開車到 Valley Forge NHP 看 Washington 過冬營地，把抽象的憲法文字落地到雪地的木造小屋。</p>
+
+      <table class="fare-table">
+        <thead>
+          <tr class="fare-head"><td colspan="3">★ Points of Interest · 必訪清單 ★</td></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="item-num">01</td>
+            <td class="item-name">Independence Hall<span class="item-en">1753 · 制憲現場</span></td>
+            <td class="item-desc">1776 Declaration + 1787 Constitution 同地點。Ranger-led 強制導覽，一週前 recreation.gov 訂 timed entry。Washington 椅背刻太陽。</td>
+          </tr>
+          <tr>
+            <td class="item-num">02</td>
+            <td class="item-name">Museum of the American Revolution<span class="item-en">2017 新館</span></td>
+            <td class="item-desc">Washington 戰時帳篷原件（1778–83 命令部，輪展），互動劇場。被評為全美最佳新博物館之一。USD 24。</td>
+          </tr>
+          <tr>
+            <td class="item-num">03</td>
+            <td class="item-name">Carpenters' Hall<span class="item-en">1774 第一屆大陸會議</span></td>
+            <td class="item-desc">私人協會仍擁有並運作。1774 年 9 月 13 個殖民地代表第一次在此開會，比 Independence Hall 還早兩年。免費。</td>
+          </tr>
+          <tr>
+            <td class="item-num">04</td>
+            <td class="item-name">National Constitution Center</td>
+            <td class="item-desc">Signers' Hall 有 42 位制憲簽署人真人大小銅像散落，可走在他們之間。USD 14.5。</td>
+          </tr>
+          <tr>
+            <td class="item-num">05</td>
+            <td class="item-name">Valley Forge NHP<span class="item-en">西 45 min · 1777–78 過冬</span></td>
+            <td class="item-desc">3500 英畝。5 mile 自駕環道：Washington's HQ (Isaac Potts House 原件) + 重建 huts + von Steuben 訓練場 + National Memorial Arch。免費。</td>
+          </tr>
+          <tr>
+            <td class="item-num">06</td>
+            <td class="item-name">Liberty Bell + Congress Hall</td>
+            <td class="item-desc">自由鐘 1752 第一次敲就裂。Congress Hall 是費城當首都那 13 年（1790–1800）國會所在；Washington 第二次就職在此房間。</td>
+          </tr>
+          <tr>
+            <td class="item-num">07</td>
+            <td class="item-name">Elfreth's Alley<span class="item-en">1703</span></td>
+            <td class="item-desc">全美最古老連續使用住宅街，32 棟老屋鵝卵石路。「Philly 紅磚」氣味樣本。30 分鐘配 Christ Church + Franklin 墓園同區。</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
 <!-- ==================== ACELA INTERLUDE ==================== -->
 <section class="timetable-strip">
   <div class="ts-inner">
     <div class="ts-text">
       <svg class="train-silhouette" viewBox="0 0 320 56" aria-hidden="true">
         <g fill="currentColor">
-          <!-- Sleek modern Acela shape -->
           <path d="M 10 38 L 10 26 Q 10 18 30 16 L 280 16 Q 305 16 315 30 L 315 38 Z"/>
           <rect x="40" y="22" width="40" height="8" fill="#1b1c24"/>
           <rect x="90" y="22" width="40" height="8" fill="#1b1c24"/>
@@ -1283,16 +1383,15 @@
           <circle cx="240" cy="44" r="4"/>
           <circle cx="285" cy="44" r="4"/>
           <line x1="0" y1="51" x2="320" y2="51" stroke="currentColor" stroke-width="1"/>
-          <!-- Speed lines -->
           <line x1="0" y1="20" x2="20" y2="20" stroke="currentColor" stroke-width="1" opacity="0.5"/>
           <line x1="0" y1="30" x2="30" y2="30" stroke="currentColor" stroke-width="1" opacity="0.4"/>
           <line x1="0" y1="40" x2="15" y2="40" stroke="currentColor" stroke-width="1" opacity="0.3"/>
         </g>
       </svg>
-      <div class="label">★ Interlude · Day 9 Morning ★</div>
+      <div class="label">★ Interlude · Day 11 · 10/2 Fri Morning ★</div>
       <h2>Acela Express</h2>
       <div class="sub">Philadelphia → Washington · 1 h 41 m</div>
-      <p>從 30th Street Station 寬敞的石灰岩大廳出發，車站咖啡（La Colombe）喝完，登上 Amtrak 旗艦列車。Acela 在 Maryland 沿著 Chesapeake Bay 灣口高速滑行——你還沒看完一份 New York Times，車就到了華盛頓 Union Station。</p>
+      <p>從 30th Street Station 寬敞的石灰岩大廳出發，車站咖啡（La Colombe）喝完，登上 Amtrak 旗艦列車。Acela 在 Maryland 沿著 Chesapeake Bay 灣口高速滑行——你還沒看完一份 New York Times，車就到了華盛頓 Union Station。下午直接進國家檔案館看憲法原件。</p>
     </div>
     <table class="ts-table">
       <tr><td>Train No. 2151</td><td>Amtrak Acela Express · Business Class</td></tr>
@@ -1306,14 +1405,61 @@
 </section>
 
 <!-- ==================== WASHINGTON D.C. ==================== -->
-<section class="city-poster dc">
+<section class="city-poster dc flip">
   <div class="city-grid">
+    <div class="text-col">
+      <div class="phase">★ Phase IV · Days 11—12</div>
+      <h2 class="cjk">華盛頓</h2>
+      <div class="en-title">WASHINGTON, D.C.</div>
+      <div class="tagline">Marble &amp; Memory Capital · National Archives + Mount Vernon + Arlington</div>
+      <p class="intro">如果費城屬於 18 世紀的紅磚，華盛頓就是 19–20 世紀的白色大理石。13 天敘事在這裡收束：National Archives 把憲法的紙本原件擺在玻璃櫃裡，Mount Vernon 把 Washington 從建國之父還原成一個維吉尼亞莊園主，Arlington 把「死於國家」的軍人 40 萬座墓擺到 Robert E. Lee 的舊家後院。</p>
+
+      <table class="fare-table">
+        <thead>
+          <tr class="fare-head"><td colspan="3">★ Points of Interest · 必訪清單 ★</td></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="item-num">01</td>
+            <td class="item-name">National Archives<span class="item-en">Charters of Freedom</span></td>
+            <td class="item-desc">Declaration / Constitution / Bill of Rights 三件原件並排放在 Rotunda 中央氮氣保存櫃，加 1297 年 Magna Carta 副本。免費，旺季預約。</td>
+          </tr>
+          <tr>
+            <td class="item-num">02</td>
+            <td class="item-name">U.S. Capitol Tour</td>
+            <td class="item-desc">圓頂 1855–66 在內戰中蓋完。免費導覽需提前線上預約或請參議員辦公室代訂。Rotunda + Statuary Hall + Crypt 三層。</td>
+          </tr>
+          <tr>
+            <td class="item-num">03</td>
+            <td class="item-name">國會圖書館<span class="item-en">Library of Congress</span></td>
+            <td class="item-desc">Jefferson Building 主閱覽室是美國最美的室內空間之一。可預約 docent tour。鎮館：Gutenberg 聖經、Jefferson 親筆藏書清單。</td>
+          </tr>
+          <tr>
+            <td class="item-num">04</td>
+            <td class="item-name">Mount Vernon<span class="item-en">南 25 min · Washington 莊園</span></td>
+            <td class="item-desc">Washington 終身故居與墓地。主屋 + George/Martha 墓園 + 奴隸住所 + 鐵匠舖、菜園、養蜂、織布。Potomac 河岸位置。USD 28。</td>
+          </tr>
+          <tr>
+            <td class="item-num">05</td>
+            <td class="item-name">Arlington National Cemetery</td>
+            <td class="item-desc">40 萬座墓 624 英畝。無名戰士墓換班儀式 4–9 月每 30 min。Kennedy 永恆之火。Arlington House 是 Lee 內戰前的家。</td>
+          </tr>
+          <tr>
+            <td class="item-num">06</td>
+            <td class="item-name">NMAAHC<span class="item-en">非裔美國人歷史館</span></td>
+            <td class="item-desc">從地下三層（奴隸船）看到地上四層（嘻哈與當代藝術），預留 4 小時。免費但需網路預約 timed entry pass。</td>
+          </tr>
+          <tr>
+            <td class="item-num">07</td>
+            <td class="item-name">林肯紀念堂 + 越戰碑<span class="item-en">Lincoln · Vietnam Wall</span></td>
+            <td class="item-desc">黃昏走 Reflecting Pool；Maya Lin 黑色花崗岩牆——15,000 個名字按死亡日期排，不按字母。</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
     <div class="image-col">
-      <div class="corner-tag">★ Phase III · Days 9—10</div>
-      <div class="photo" style="background-image:url('https://commons.wikimedia.org/wiki/Special:FilePath/Lincoln_Memorial_%28Lincoln_contrasty%29.jpg?width=1280')"></div>
-      <div class="duotone dark"></div>
-      <div class="duotone"></div>
-      <!-- Capitol dome ornament -->
+      <div class="corner-tag">★ Phase IV · Days 11—12</div>
+      <div class="photo" style="background-image:url('https://commons.wikimedia.org/wiki/Special:FilePath/George%20Washington%27s%20Mount%20Vernon.jpg?width=1280')"></div>
       <svg class="ornament" style="bottom:30px; right:30px; width:140px; height:100px;" viewBox="0 0 140 100" aria-hidden="true">
         <g fill="#1b1c24" opacity="0.9">
           <polygon points="70,8 76,18 64,18"/>
@@ -1326,190 +1472,190 @@
         </g>
       </svg>
     </div>
-    <div class="text-col">
-      <div class="phase">★ Phase III · Days 9—10</div>
-      <h2 class="cjk">華盛頓</h2>
-      <div class="en-title">WASHINGTON, D.C.</div>
-      <div class="tagline">The Marble &amp; Memory Capital · 國家檔案 + Smithsonian + 紀念碑群</div>
-      <p class="intro">如果費城屬於 18 世紀的紅磚，華盛頓就是 19–20 世紀的白色大理石。以 National Mall 為軸線、Smithsonian 為主菜——刻意避開「博物館一日趕場」陷阱：每天只進兩到三館，剩下時間留給 Georgetown 河岸、U Street 爵士酒吧、與 Tidal Basin 黃昏。</p>
-
-      <table class="fare-table">
-        <thead>
-          <tr class="fare-head"><td colspan="3">★ Points of Interest · 必訪清單 ★</td></tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td class="item-num">01</td>
-            <td class="item-name">國家航空太空博物館<span class="item-en">Air &amp; Space Museum</span></td>
-            <td class="item-desc">Spirit of St. Louis、Apollo 11 指令艙、月球岩石（可摸）、Wright Flyer 1903 原件。Mall 本館 2026 完成全面整修。</td>
-          </tr>
-          <tr>
-            <td class="item-num">02</td>
-            <td class="item-name">NMAAHC<span class="item-en">非裔美國人歷史館</span></td>
-            <td class="item-desc">從地下三層（奴隸船）看到地上四層（嘻哈與當代藝術），預留 4 小時。免費但需網路預約 timed entry pass。</td>
-          </tr>
-          <tr>
-            <td class="item-num">03</td>
-            <td class="item-name">林肯紀念堂 + 越戰碑<span class="item-en">Lincoln · Vietnam Wall</span></td>
-            <td class="item-desc">黃昏走 Reflecting Pool；Maya Lin 黑色花崗岩牆——15,000 個名字按死亡日期排，不按字母。</td>
-          </tr>
-          <tr>
-            <td class="item-num">04</td>
-            <td class="item-name">國會圖書館<span class="item-en">Library of Congress</span></td>
-            <td class="item-desc">Jefferson Building 主閱覽室是美國最美的室內空間之一；可預約 docent tour 走進閱覽層平台。鎮館展品：Gutenberg 聖經。</td>
-          </tr>
-          <tr>
-            <td class="item-num">05</td>
-            <td class="item-name">國家藝術館<span class="item-en">National Gallery of Art</span></td>
-            <td class="item-desc">西樓古典（達文西〈吉內芙拉·班奇〉是西半球唯一一張達文西原作）、東樓貝聿銘 1978 三角幾何、Sculpture Garden。</td>
-          </tr>
-          <tr>
-            <td class="item-num">06</td>
-            <td class="item-name">Georgetown · U Street</td>
-            <td class="item-desc">Georgetown C&amp;O 運河沿岸晚餐 + Cady's Alley；U Street 是 Duke Ellington 出生地，Ben's Chili Bowl 1958 開到現在。</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
   </div>
 </section>
 
-<!-- ==================== 10-DAY TIMETABLE ==================== -->
+<!-- ==================== 13-DAY TIMETABLE ==================== -->
 <section class="schedule">
   <div class="schedule-inner">
     <div class="header-block">
-      <div class="stencil">★ Form 1804-A · Time-Table ★</div>
-      <h2>TEN-DAY SCHEDULE</h2>
-      <div class="cjk">十 日 行 程 表</div>
+      <div class="stencil">★ Form 1776-A · Time-Table ★</div>
+      <h2>THIRTEEN-DAY SCHEDULE</h2>
+      <div class="cjk">十 三 日 行 程 表</div>
     </div>
     <div class="schedule-grid">
       <div class="ticket-card">
         <div class="stub-num">01</div>
-        <div class="stub-date">9 / 24 (Thu)</div>
-        <h4>抵達波士頓</h4>
-        <div class="ticket-route">TPE → BOS · LOGAN AIRPORT</div>
+        <div class="stub-date">9 / 22 (Tue)</div>
+        <h4>抵達紐約 JFK</h4>
+        <div class="ticket-route">TPE → JFK · MANHATTAN</div>
         <ul>
-          <li>下午 EVA / Delta 落地 BOS Logan</li>
-          <li>Silver Line 公車或 Uber 進城</li>
-          <li>傍晚 Boston Common + Public Garden 散步倒時差</li>
-          <li>晚餐：Saltie Girl 海鮮（飛 16h 就吃輕的）</li>
+          <li>下午 EVA / Delta 落地 JFK</li>
+          <li>AirTrain + LIRR / E 線進城</li>
+          <li>傍晚 Bryant Park + GCT 抬頭看星座天花板</li>
+          <li>晚餐：Joe's Pizza 或 Katz's Deli</li>
         </ul>
-        <div class="ticket-stamp teal">Arrival</div>
+        <div class="ticket-stamp sage">Arrival</div>
       </div>
       <div class="ticket-card">
         <div class="stub-num">02</div>
-        <div class="stub-date">9 / 25 (Fri)</div>
-        <h4>Freedom Trail 全走</h4>
-        <div class="ticket-route">BOSTON · DOWNTOWN + NORTH END</div>
+        <div class="stub-date">9 / 23 (Wed)</div>
+        <h4>NYC 半日 + 上 Hudson</h4>
+        <div class="ticket-route">MANHATTAN → COLD SPRING / HYDE PARK</div>
         <ul>
-          <li>09:00 從 Boston Common 出發走完 2.5 mi 紅磚線</li>
-          <li>麻州州議會 + Faneuil Hall + Quincy Market</li>
-          <li>午餐：Union Oyster House (1826)</li>
-          <li>晚餐：Daily Catch · 飯後 Mike's vs Modern Cannoli</li>
+          <li>上午 Times Square + Bryant Park + NYPL 主館</li>
+          <li>午餐：GCT Oyster Bar (1913, Guastavino 拱頂)</li>
+          <li>13:43 Metro-North Hudson Line 北上</li>
+          <li>晚餐：Hudson House 河景 / CIA American Bounty</li>
         </ul>
+        <div class="ticket-stamp sage">Transfer</div>
       </div>
       <div class="ticket-card">
         <div class="stub-num">03</div>
-        <div class="stub-date">9 / 26 (Sat)</div>
-        <h4>Cambridge + 藝博</h4>
-        <div class="ticket-route">CAMBRIDGE · FENWAY</div>
+        <div class="stub-date">9 / 24 (Thu)</div>
+        <h4>FDR 故居 + Vanderbilt</h4>
+        <div class="ticket-route">HYDE PARK · PRESIDENTIAL LIBRARY</div>
         <ul>
-          <li>Harvard Yard + Widener Library + MIT (Stata/Kresge)</li>
-          <li>午餐：Toscanini's 冰淇淋</li>
-          <li>下午 MFA Boston 三小時 + Isabella Stewart Gardner</li>
-          <li>婚禮預演晚餐</li>
+          <li>09:00 FDR Home (Springwood) + Val-Kill + Library</li>
+          <li>午餐：CIA Hyde Park · Bocuse 法式</li>
+          <li>下午 Vanderbilt Mansion NHS 鍍金時代豪宅</li>
+          <li>傍晚 Walkway over the Hudson 1.28 mile</li>
         </ul>
-        <div class="ticket-stamp">Rehearsal</div>
       </div>
       <div class="ticket-card">
         <div class="stub-num">04</div>
+        <div class="stub-date">9 / 25 (Fri)</div>
+        <h4>West Point + Highlands</h4>
+        <div class="ticket-route">HUDSON HIGHLANDS · USMA</div>
+        <ul>
+          <li>09:00 開車南下 West Point（45–60 min）</li>
+          <li>10:00 USMA Tour Bus（<strong>需護照安檢</strong>）</li>
+          <li>Trophy Point + Old Cadet Chapel + Battle Monument</li>
+          <li>午餐：Thayer Hotel 俯瞰 Hudson 河</li>
+          <li>下午 Storm King Art Center 或 Bear Mountain</li>
+        </ul>
+      </div>
+      <div class="ticket-card">
+        <div class="stub-num">05</div>
+        <div class="stub-date">9 / 26 (Sat)</div>
+        <h4>Hudson → Boston</h4>
+        <div class="ticket-route">METRO-NORTH + AMTRAK NE REGIONAL</div>
+        <ul>
+          <li>09:00 Cold Spring / Poughkeepsie → GCT (2h)</li>
+          <li>11:00 Manhattan 1h 寄物 + 午餐</li>
+          <li>13:00 Penn Station → BOS South (4h20m)</li>
+          <li>17:30 抵 BOS · 晚餐 Saltie Girl</li>
+        </ul>
+        <div class="ticket-stamp mustard">Rail Day</div>
+      </div>
+      <div class="ticket-card">
+        <div class="stub-num">06</div>
         <div class="stub-date">9 / 27 (Sun)</div>
         <h4>婚禮日</h4>
         <div class="ticket-route">BOSTON · WEDDING DAY</div>
         <ul>
           <li>上午自由（建議睡飽 + Beacon Hill 巷弄散步）</li>
-          <li>午餐：Tatte Bakery 或 Flour Bakery 輕食</li>
+          <li>午餐：Tatte 或 Flour Bakery 輕食</li>
           <li><strong>下午 / 晚上：婚禮典禮 + 晚宴</strong></li>
         </ul>
         <div class="ticket-stamp">Wedding</div>
       </div>
       <div class="ticket-card">
-        <div class="stub-num">05</div>
+        <div class="stub-num">07</div>
         <div class="stub-date">9 / 28 (Mon)</div>
-        <h4>波士頓海鮮日</h4>
-        <div class="ticket-route">BOSTON · SEAPORT + BPL</div>
+        <h4>JFK Library + Freedom Trail</h4>
+        <div class="ticket-route">DORCHESTER + DOWNTOWN</div>
         <ul>
-          <li>上午 BPL Bates Hall + Sargent 壁畫</li>
-          <li>午餐：Neptune Oyster（北端海鮮 anchor，排隊）</li>
-          <li>下午 Seaport ICA + Long Wharf sunset</li>
-          <li>晚餐：Eventide Fenway（brown butter lobster roll）</li>
+          <li>上午 JFK Presidential Library（貝聿銘建築）</li>
+          <li>午餐：Neptune Oyster 龍蝦堡 + 生蠔</li>
+          <li>下午 Freedom Trail 後半：Old North + Bunker Hill</li>
+          <li>傍晚 Boston Tea Party Ships 互動劇場</li>
+          <li>晚餐：Daily Catch + Cannoli 對決</li>
         </ul>
+        <div class="ticket-stamp teal">JFK</div>
       </div>
       <div class="ticket-card">
-        <div class="stub-num">06</div>
+        <div class="stub-num">08</div>
         <div class="stub-date">9 / 29 (Tue)</div>
         <h4>BOS → NHV → PHL</h4>
         <div class="ticket-route">AMTRAK NE REGIONAL · STOPOVER</div>
         <ul>
           <li>07:00 South Station 出發</li>
-          <li>09:45 New Haven 寄物 3h + Yale 散步</li>
-          <li>午餐：Frank Pepe Pizzeria (1925, White Clam Pizza)</li>
-          <li>17:00 抵 30th St. · 晚餐：Zahav（須訂位）</li>
+          <li>09:45 New Haven 寄物 3h + Yale + Beinecke</li>
+          <li>午餐：Frank Pepe's (1925, White Clam Pizza)</li>
+          <li>17:00 抵 30th St. · 晚餐 Zahav（須訂位）</li>
         </ul>
         <div class="ticket-stamp mustard">Rail Day</div>
       </div>
       <div class="ticket-card">
-        <div class="stub-num">07</div>
-        <div class="stub-date">9 / 30 (Wed)</div>
-        <h4>建國敘事日</h4>
-        <div class="ticket-route">PHILLY · INDEPENDENCE NHP</div>
-        <ul>
-          <li>09:00 獨立廳 ranger-led tour（一週前預約）</li>
-          <li>自由鐘 + 國會議事廳 + Franklin Court</li>
-          <li>午餐：Reading Terminal Market (DiNic's + Bassetts)</li>
-          <li>下午 Mütter Museum + 傍晚 Eastern State Penitentiary</li>
-          <li>晚餐：John's Roast Pork（cheesesteak 派系 #3）</li>
-        </ul>
-      </div>
-      <div class="ticket-card">
-        <div class="stub-num">08</div>
-        <div class="stub-date">10 / 1 (Thu)</div>
-        <h4>藝術 + Cheesesteak 對決</h4>
-        <div class="ticket-route">PHILLY · ART MUSEUM + ITALIAN MARKET</div>
-        <ul>
-          <li>09:30 費城藝博館（含東亞展廳）</li>
-          <li>午餐 Cheesesteak 對決：Pat's vs Geno's</li>
-          <li>下午 Italian Market 9th St. + Magic Gardens</li>
-          <li>晚餐：Suraya（黎巴嫩菜·Fishtown）</li>
-        </ul>
-      </div>
-      <div class="ticket-card">
         <div class="stub-num">09</div>
+        <div class="stub-date">9 / 30 (Wed)</div>
+        <h4>Independence NHP 整日</h4>
+        <div class="ticket-route">PHILLY · 建國敘事日</div>
+        <ul>
+          <li>09:00 Independence Hall ranger tour（須預約）</li>
+          <li>Liberty Bell + Congress Hall + Carpenters' Hall</li>
+          <li>午餐：Reading Terminal Market</li>
+          <li>下午 Museum of American Revolution + Constitution Ctr</li>
+          <li>傍晚 Christ Church + Elfreth's Alley</li>
+          <li>晚餐：John's Roast Pork（cheesesteak #3）</li>
+        </ul>
+      </div>
+      <div class="ticket-card">
+        <div class="stub-num">10</div>
+        <div class="stub-date">10 / 1 (Thu)</div>
+        <h4>Valley Forge NHP 日歸</h4>
+        <div class="ticket-route">PHL → VALLEY FORGE → PHL</div>
+        <ul>
+          <li>09:00 30th St. 租車西行 45 min</li>
+          <li>5 mile 自駕環道：Washington's HQ + 重建 huts</li>
+          <li>von Steuben 訓練場 + National Memorial Arch</li>
+          <li>下午回 Philly · Magic Gardens + Italian Market</li>
+          <li>晚餐：Pat's vs Geno's cheesesteak 對決</li>
+        </ul>
+        <div class="ticket-stamp">Valley Forge</div>
+      </div>
+      <div class="ticket-card">
+        <div class="stub-num">11</div>
         <div class="stub-date">10 / 2 (Fri)</div>
-        <h4>Acela 南下 + DC 入城</h4>
+        <h4>Acela + Archives + Capitol</h4>
         <div class="ticket-route">PHL → DC · MALL</div>
         <ul>
           <li>09:36 Acela Express（Business Class）</li>
           <li>11:17 抵 Union Station</li>
           <li>午餐：Old Ebbitt Grill（1856，白宮對面）</li>
-          <li>下午 Air &amp; Space + 傍晚 Lincoln Memorial</li>
-          <li>晚餐：Le Diplomate（14th St 法式小酒館）</li>
+          <li>下午 National Archives 看憲法三件原件</li>
+          <li>傍晚 Capitol + LOC Jefferson Building 主閱覽室</li>
+          <li>晚餐：Le Diplomate（14th St 法式）</li>
         </ul>
         <div class="ticket-stamp mustard">Acela</div>
       </div>
       <div class="ticket-card">
-        <div class="stub-num">10</div>
+        <div class="stub-num">12</div>
         <div class="stub-date">10 / 3 (Sat)</div>
-        <h4>NMAAHC + 國會山 + 離境</h4>
-        <div class="ticket-route">DC · EAST MALL · DEPARTURE</div>
+        <h4>Mt Vernon + Arlington + 離境</h4>
+        <div class="ticket-route">DC · POTOMAC RIVER · DEPARTURE</div>
         <ul>
-          <li>09:00 NMAAHC 半日</li>
-          <li>午餐：Ben's Chili Bowl（U Street · half-smoke）</li>
-          <li>下午 國會圖書館 Jefferson Building 導覽</li>
-          <li>15:00 → IAD · ANA NH 1（IAD → NRT → TPE）</li>
-          <li>10/04 (Sun) 抵 TPE</li>
+          <li>08:30 開車或 Old Town Trolley 南下 Mt Vernon</li>
+          <li>09:00–12:30 Washington 莊園 + 墓園 + 奴隸住所</li>
+          <li>午餐：Mount Vernon Inn 殖民地風</li>
+          <li>下午 Arlington · 無名戰士墓換班 + Kennedy 永恆之火</li>
+          <li>16:00 → IAD · ANA NH 1（IAD → NRT → TPE）</li>
         </ul>
         <div class="ticket-stamp">Departure</div>
+      </div>
+      <div class="ticket-card">
+        <div class="stub-num">13</div>
+        <div class="stub-date">10 / 4 (Sun)</div>
+        <h4>抵達台北</h4>
+        <div class="ticket-route">IN TRANSIT · TPE</div>
+        <ul>
+          <li>飛行中（NRT 轉機 2h）</li>
+          <li>下午 / 傍晚抵 TPE 桃園機場</li>
+          <li>13 天敘事閉環</li>
+          <li><strong>Optional：</strong>若多留一日可加 Antietam Battlefield</li>
+        </ul>
+        <div class="ticket-stamp sage">Home</div>
       </div>
     </div>
   </div>
@@ -1524,6 +1670,42 @@
       <div class="cjk">非 吃 不 可 的 清 單</div>
     </div>
     <div class="menu-grid">
+      <div class="menu-col">
+        <h3>HUDSON + NYC<span class="cjk">河谷 + 紐約</span></h3>
+        <div class="menu-tagline">Pre-Wedding · CIA Hyde Park · GCT Oyster Bar</div>
+
+        <div class="dish-line">
+          <div class="dish-name">CIA Hyde Park</div>
+          <div class="dish-where">廚藝學校</div>
+          <div class="dish-desc">美國頂尖廚藝學校校園裡 4 家學生餐廳：American Bounty 美式 / Caterina 義式 / Bocuse 法式 / Ristorante。中午 prix fixe USD 30–45 性價比驚人。建議訂位。</div>
+        </div>
+        <div class="dish-line">
+          <div class="dish-name">GCT Oyster Bar</div>
+          <div class="dish-where">NYC Grand Central</div>
+          <div class="dish-desc">1913 開到現在，地下拱頂是 Guastavino 西班牙磚拱原件。30+ 種生蠔當日列表，white clam chowder 經典。轉乘間最完美的午餐。</div>
+        </div>
+        <div class="dish-line">
+          <div class="dish-name">Hudson House</div>
+          <div class="dish-where">Cold Spring</div>
+          <div class="dish-desc">1832 年河邊小旅館的餐廳，正對 Hudson 河與 West Point 山脈。秋日 patio 晚餐配 New York Cabernet Franc。</div>
+        </div>
+        <div class="dish-line">
+          <div class="dish-name">Joe's Pizza</div>
+          <div class="dish-where">Carmine St. NYC</div>
+          <div class="dish-desc">NYC 經典 slice，1975 至今。下飛機第一晚最不會錯的選擇。Carmine St. 本店或 Times Square 分店。</div>
+        </div>
+        <div class="dish-line">
+          <div class="dish-name">Katz's Delicatessen</div>
+          <div class="dish-where">Lower East Side</div>
+          <div class="dish-desc">1888 年至今。Pastrami on Rye 是 NYC 猶太裔移民食物的圖騰。櫃台拿號制，給切肉師傅 USD 1 小費換更厚一片。</div>
+        </div>
+        <div class="dish-line">
+          <div class="dish-name">Beacon · Homespun</div>
+          <div class="dish-where">Hudson Valley</div>
+          <div class="dish-desc">Beacon Main Street 早午餐 OG。Brother's Trattoria 是 NYC 來的義裔老闆。火車直達。</div>
+        </div>
+      </div>
+
       <div class="menu-col">
         <h3>BOSTON<span class="cjk">波士頓</span></h3>
         <div class="menu-tagline">Seafood · North End · Italian-American</div>
@@ -1544,9 +1726,9 @@
           <div class="dish-desc">Hanover St. 同條街隔三家。Mike's 觀光化但量大穩定，Modern 殼當場填餡更脆。都買、邊走邊吃直接比。</div>
         </div>
         <div class="dish-line">
-          <div class="dish-name">Eventide Fenway</div>
-          <div class="dish-where">緬因海鮮</div>
-          <div class="dish-desc">Portland 來的姐妹店；招牌 brown butter lobster roll 用蒸過 steamed bun，奶油焦化甜度神奇。</div>
+          <div class="dish-name">Saltie Girl</div>
+          <div class="dish-where">Back Bay</div>
+          <div class="dish-desc">海鮮罐頭吧（葡萄牙油漬鯡魚、西班牙鳳尾魚）+ 龍蝦堡。倒時差後輕食最合適，落地當晚不會出錯。</div>
         </div>
         <div class="dish-line">
           <div class="dish-name">Union Oyster House</div>
@@ -1554,19 +1736,19 @@
           <div class="dish-desc">全美最老仍在營業的餐廳。Daniel Webster 的老座位有銅牌；New England Clam Chowder + 生蠔吧。</div>
         </div>
         <div class="dish-line">
-          <div class="dish-name">Toscanini's</div>
-          <div class="dish-where">Cambridge MIT</div>
-          <div class="dish-desc">冰淇淋傳奇。Burnt Caramel + Khaleesi + Earl Grey 是黃金三球。NYT 食評說「全美最佳」。</div>
+          <div class="dish-name">Frank Pepe's</div>
+          <div class="dish-where">New Haven Stopover</div>
+          <div class="dish-desc">1925 年煤窯披薩 OG，Wooster St. 本店。White Clam Pizza（無 tomato sauce，白蛤 + olive oil + oregano + Pecorino）必點。</div>
         </div>
       </div>
 
       <div class="menu-col">
-        <h3>PHILADELPHIA<span class="cjk">費城</span></h3>
-        <div class="menu-tagline">Cheesesteak · Italian Market · Hoagie</div>
+        <h3>PHL + DC<span class="cjk">建國雙城</span></h3>
+        <div class="menu-tagline">Cheesesteak · Half-Smoke · Power Lunch</div>
 
         <div class="dish-line">
-          <div class="dish-name">Pat's vs Geno's vs John's</div>
-          <div class="dish-where">Cheesesteak 三派</div>
+          <div class="dish-name">Cheesesteak 三派</div>
+          <div class="dish-where">Philly</div>
           <div class="dish-desc">Pat's（1930 發明者）/ Geno's（隔個十字路口，霓虹燈）/ John's Roast Pork（James Beard 得獎，午餐 only，食物本身最好）。</div>
         </div>
         <div class="dish-line">
@@ -1577,58 +1759,22 @@
         <div class="dish-line">
           <div class="dish-name">Zahav</div>
           <div class="dish-where">Society Hill</div>
-          <div class="dish-desc">Solomonov 的以色列菜旗艦；Hummus Tehina 基準款，"Mesibah" 嫩烤羔羊套餐 (USD 90/人) 整桌一起分。60 天前訂位是底線。</div>
+          <div class="dish-desc">Solomonov 以色列菜旗艦；Hummus Tehina 基準款，Mesibah 嫩烤羔羊套餐 USD 90/人。60 天前訂位是底線。</div>
         </div>
-        <div class="dish-line">
-          <div class="dish-name">Termini Bros / Isgro</div>
-          <div class="dish-where">Italian Market</div>
-          <div class="dish-desc">Cannoli 第二輪：Termini 殼厚實偏甜、Isgro 餡 ricotta 更清。9th 街順道買 Di Bruno 起司、Anthony's espresso。</div>
-        </div>
-        <div class="dish-line">
-          <div class="dish-name">South Philly Barbacoa</div>
-          <div class="dish-where">9th &amp; Carpenter</div>
-          <div class="dish-desc">Oaxacan 家族手工 lamb barbacoa，只賣早上 6am–3pm，週六排隊到對街。</div>
-        </div>
-        <div class="dish-line">
-          <div class="dish-name">Federal Donuts</div>
-          <div class="dish-where">multi-loc.</div>
-          <div class="dish-desc">Solomonov 副業，韓式炸雞 + 手作甜甜圈反差；hot fresh donut 上桌 60 秒內最神。</div>
-        </div>
-      </div>
-
-      <div class="menu-col">
-        <h3>WASHINGTON<span class="cjk">華盛頓</span></h3>
-        <div class="menu-tagline">Half-Smoke · International · Power Lunch</div>
-
         <div class="dish-line">
           <div class="dish-name">Ben's Chili Bowl</div>
-          <div class="dish-where">U Street</div>
-          <div class="dish-desc">1958 年至今。Duke Ellington、Obama、Beyoncé 都來吃過。Half-smoke + 自製 chili + mustard + onions 是 D.C. 國民食物。</div>
+          <div class="dish-where">U Street DC</div>
+          <div class="dish-desc">1958 至今。Duke Ellington、Obama、Beyoncé 都來吃過。Half-smoke + 自製 chili + mustard + onions 是 D.C. 國民食物。</div>
         </div>
         <div class="dish-line">
           <div class="dish-name">Old Ebbitt Grill</div>
           <div class="dish-where">1856 · 白宮對面</div>
-          <div class="dish-desc">白宮對面 70 公尺；oyster bar happy hour（3–6pm 半價）是 D.C. 業內暗語。Crab cake + clam chowder。</div>
+          <div class="dish-desc">oyster bar happy hour（3–6pm 半價）是 D.C. 業內暗語。Crab cake + clam chowder 經典款。</div>
         </div>
         <div class="dish-line">
-          <div class="dish-name">Le Diplomate</div>
-          <div class="dish-where">14th St NW</div>
-          <div class="dish-desc">Stephen Starr 的法式小酒館；French onion soup gratinée + steak frites + Peach Mary brunch。週末必訂位。</div>
-        </div>
-        <div class="dish-line">
-          <div class="dish-name">Rasika</div>
-          <div class="dish-where">Penn Quarter</div>
-          <div class="dish-desc">Michelin 推薦 modern Indian；Palak Chaat（炸菠菜葉 + 優格 + 羅望子）— 連 Obama 都愛。</div>
-        </div>
-        <div class="dish-line">
-          <div class="dish-name">Eden Center</div>
-          <div class="dish-where">Falls Church 25min</div>
-          <div class="dish-desc">全美第二大越南社區，整個 mall 都是越南店；phở / banh mi / chè 滿街。Phở Xe Lửa、Huong Viet 是門面。</div>
-        </div>
-        <div class="dish-line">
-          <div class="dish-name">9th St NW · Little Ethiopia</div>
-          <div class="dish-where">Dukem / Etete</div>
-          <div class="dish-desc">DC 有全美最大衣索比亞社群（80 年代難民潮）。用 injera 發酵海綿狀大薄餅夾各種燉肉。</div>
+          <div class="dish-name">Mount Vernon Inn</div>
+          <div class="dish-where">Mt Vernon 莊園</div>
+          <div class="dish-desc">Washington 莊園裡的殖民地風餐廳，僕役制服 + 燭光晚餐 / 中午輕食。peanut soup 是 18 世紀 Virginia 經典。</div>
         </div>
       </div>
     </div>
@@ -1646,22 +1792,30 @@
       <div>
         <h3>★ Must Reserve · 必預約</h3>
         <ul>
+          <li><strong>West Point Tour Bus</strong> · westpointtours.com · <strong>必須帶護照</strong>，1 週前訂</li>
+          <li><strong>FDR Home + Vanderbilt</strong> · nps.gov · timed ticket，週末旺季建議線上</li>
+          <li><strong>CIA Hyde Park 學生餐廳</strong> · OpenTable · 1 週前訂位</li>
           <li><strong>Independence Hall ranger tour</strong> · recreation.gov · 一週前開放</li>
-          <li><strong>NMAAHC timed entry pass</strong> · si.edu · 30 天前開放</li>
-          <li><strong>Library of Congress docent tour</strong> · 現場排，建議 9:30 到</li>
+          <li><strong>National Archives timed entry</strong> · recreation.gov · 旺季週末建議</li>
+          <li><strong>U.S. Capitol Tour</strong> · visitthecapitol.gov · 線上訂或請參議員代訂</li>
+          <li><strong>Mount Vernon</strong> · mountvernon.org · 旺季假日建議 timed entry · USD 28</li>
           <li><strong>Acela Express</strong> · Amtrak.com · 60 天內票價飛漲</li>
           <li><strong>Zahav (Philly)</strong> · OpenTable · 60 天前訂位是底線</li>
-          <li><strong>Eastern State Halloween Nights</strong> · 9 月底開季</li>
         </ul>
       </div>
       <div>
         <h3>★ Lodging &amp; Transit · 住宿交通</h3>
         <ul>
-          <li><strong>Boston</strong>：Back Bay 或 Beacon Hill；地鐵 Red / Green Line 都好接</li>
-          <li><strong>Philadelphia</strong>：Old City 或 Rittenhouse，徒步可達獨立廳</li>
-          <li><strong>Washington D.C.</strong>：Penn Quarter / Foggy Bottom，Mall + Metro 都近</li>
-          <li><strong>BOS Logan</strong>：Silver Line 直入 South Station 免費</li>
+          <li><strong>NYC (D1)</strong>：Midtown East / Hell's Kitchen，靠 GCT 方便上 Hudson Line</li>
+          <li><strong>Hudson Valley (D2–4)</strong>：Cold Spring B&amp;B 或 Hyde Park（Roosevelt Inn）；可升 Mohonk Mountain House 1869 維多利亞</li>
+          <li><strong>Boston (D5–7)</strong>：Back Bay 或 Beacon Hill；地鐵 Red / Green Line 都好接</li>
+          <li><strong>Philadelphia (D8–10)</strong>：Old City 或 Rittenhouse，徒步可達獨立廳</li>
+          <li><strong>Washington D.C. (D11–12)</strong>：Penn Quarter / Foggy Bottom，Mall + Metro 都近</li>
+          <li><strong>JFK Airport</strong>：AirTrain + LIRR Jamaica → Manhattan 約 50 min, USD 11</li>
+          <li><strong>Hudson Valley</strong>：Metro-North Hudson Line；FDR + West Point 需<strong>租車</strong>（建議 D3–4 兩天）</li>
           <li><strong>城際</strong>：全程 Amtrak，分段買比 NEC pass 划算</li>
+          <li><strong>Valley Forge 日歸</strong>：30th St. 出發 Uber USD 50–60 單程；週末有 Trolley 觀光車</li>
+          <li><strong>Mount Vernon 日歸</strong>：DC 開車南下 25 min；無車的話 Old Town Trolley USD 65 含門票來回</li>
           <li><strong>DC → IAD</strong>：行李多建議 Uber（USD 60–80）</li>
         </ul>
       </div>
@@ -1671,10 +1825,10 @@
 
 <!-- ==================== FOOTER ==================== -->
 <footer class="printer">
-  <div class="device">★ FIELD NOTES · 個人行旅 ★</div>
-  <div class="meta">Printed for personal use only · 2026 Autumn · Boston Wedding + Northeast Corridor</div>
+  <div class="device">★ FIELD NOTES · TRIP 02 · FOUNDING HISTORY DEEP ★</div>
+  <div class="meta">Printed for personal use only · 2026 Autumn · 13 Days · Hudson Valley + Boston Wedding + Philadelphia + Washington D.C.</div>
   <div class="links">
-    <a href="../">原版</a> · <a href="../refined/">精修版</a> · <a href="../explore/">EXPLORE</a> · <a href="../trips/">5 TRIPS</a>
+    <a href="index.html">精修版</a> · <a href="../">5 主題行程</a> · <a href="../../">Home</a>
   </div>
   <div class="meta" style="margin-top:14px;opacity:0.55;">Images: Wikimedia Commons (CC BY-SA / Public Domain) · Set in Limelight, Big Shoulders Display, Crimson Pro &amp; Special Elite</div>
 </footer>
