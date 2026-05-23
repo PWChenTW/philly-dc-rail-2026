@@ -412,6 +412,224 @@
     table.compare th, table.compare td { padding: 10px 12px; font-size: 13px; }
     table.compare td.stars { font-size: 14px; }
   }
+
+  /* ============ Paper grain texture overlay ============ */
+  body::before {
+    content: ""; position: fixed; inset: 0;
+    pointer-events: none; z-index: 1000;
+    opacity: 0.48; mix-blend-mode: multiply;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch' seed='3'/><feColorMatrix values='0 0 0 0 0.1 0 0 0 0 0.08 0 0 0 0 0.05 0 0 0 0.2 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+    background-size: 220px 220px;
+  }
+  .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.8s cubic-bezier(.22,.61,.36,1), transform 0.8s cubic-bezier(.22,.61,.36,1); }
+  .reveal.in { opacity: 1; transform: translateY(0); }
+  @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; } }
+
+  /* ============ MAP SECTION ============ */
+  .map-section {
+    background: linear-gradient(180deg, var(--paper-deep) 0%, var(--paper) 100%);
+    padding: 64px 28px 80px;
+    border-bottom: 1px solid var(--rule);
+    position: relative;
+  }
+  .map-inner { max-width: 1200px; margin: 0 auto; }
+  .map-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+  .map-header .titles .eyebrow {
+    font-size: 11px; letter-spacing: 0.36em;
+    text-transform: uppercase; color: var(--brass-deep);
+    margin-bottom: 8px;
+  }
+  .map-header h2 {
+    font-size: clamp(28px, 3.4vw, 42px);
+    margin: 0; line-height: 1;
+  }
+  .map-header .legend {
+    display: flex; gap: 18px; flex-wrap: wrap;
+    font-size: 12px; color: var(--ink-soft);
+  }
+  .map-header .legend-item {
+    display: inline-flex; align-items: center; gap: 6px;
+  }
+  .map-header .legend .swatch {
+    display: inline-block; width: 24px; height: 6px; border-radius: 1px;
+  }
+  .map-header .legend .swatch.amtrak {
+    background: var(--brass);
+  }
+  .map-header .legend .swatch.drive {
+    background: transparent;
+    border-top: 2px dashed var(--terracotta-fallback, #8c3c2c);
+    height: 2px;
+  }
+  .map-frame {
+    background: #f6f1e7;
+    background-image:
+      radial-gradient(ellipse at 80% 50%, rgba(72,142,168,0.10) 0%, transparent 65%),
+      radial-gradient(ellipse 12% 8% at 8% 12%, rgba(72,142,168,0.18) 0%, transparent 70%);
+    border: 1px solid rgba(26,31,46,0.22);
+    box-shadow: 0 12px 36px rgba(26,31,46,0.10), inset 0 0 0 6px rgba(26,31,46,0.04);
+    padding: 8px;
+    position: relative;
+    overflow: hidden;
+  }
+  .map-frame::before {
+    /* subtle inner border */
+    content: ""; position: absolute; inset: 14px;
+    border: 1px solid rgba(26,31,46,0.15);
+    pointer-events: none;
+    z-index: 2;
+  }
+  .map-svg {
+    width: 100%; height: auto; display: block;
+    position: relative; z-index: 1;
+  }
+  /* Map elements */
+  .map-svg .land { fill: transparent; }
+  .map-svg .water-label {
+    fill: rgba(40,94,100,0.55);
+    font-family: "Cormorant Garamond", serif;
+    font-style: italic;
+    font-size: 13px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
+  .map-svg .coast {
+    fill: none;
+    stroke: rgba(40,94,100,0.35);
+    stroke-width: 1.5;
+    stroke-dasharray: 3 3;
+  }
+  .map-svg .route {
+    fill: none;
+    stroke-width: 2.5;
+    stroke-linecap: round;
+  }
+  .map-svg .route.amtrak {
+    stroke: #b8893d;
+    stroke-width: 3.5;
+  }
+  .map-svg .route.drive {
+    stroke: #8c3c2c;
+    stroke-width: 2;
+    stroke-dasharray: 6 5;
+    opacity: 0.7;
+  }
+  .map-svg .route-label {
+    font-family: "Cormorant Garamond", serif;
+    font-style: italic;
+    font-size: 11px;
+    fill: var(--ink);
+  }
+  .map-svg .route-label.amtrak { fill: var(--brass-deep); font-weight: 600; }
+  .map-svg .route-label.drive { fill: #8c3c2c; }
+  .map-svg .pin {
+    cursor: pointer;
+    transition: transform 0.18s cubic-bezier(.22,.61,.36,1);
+    transform-origin: center;
+    transform-box: fill-box;
+  }
+  .map-svg .pin:hover { transform: scale(1.18); }
+  .map-svg .pin-circle.city { fill: var(--ink); stroke: var(--paper); stroke-width: 3; }
+  .map-svg .pin-circle.region.nature { fill: #4a5d3a; stroke: var(--paper); stroke-width: 2; }
+  .map-svg .pin-circle.region.history { fill: #8c3c2c; stroke: var(--paper); stroke-width: 2; }
+  .map-svg .pin-circle.region.mixed { fill: #b8893d; stroke: var(--paper); stroke-width: 2; }
+  .map-svg .pin-circle.passthrough { fill: var(--ink-fade); }
+  .map-svg .pin-label {
+    font-family: "Noto Sans TC", sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    fill: var(--ink);
+    text-anchor: middle;
+  }
+  .map-svg .pin-label.city {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+  }
+  .map-svg .pin-label.small {
+    font-size: 12px;
+    fill: var(--ink-soft);
+  }
+  .map-svg .pin-label.cjk {
+    font-family: "Noto Serif TC", serif;
+    font-weight: 700;
+  }
+  .map-svg .pin-meta {
+    font-family: "Cormorant Garamond", serif;
+    font-style: italic;
+    font-size: 11px;
+    fill: var(--brass-deep);
+    text-anchor: middle;
+  }
+  .map-svg .compass { fill: var(--ink); opacity: 0.85; }
+  .map-svg .compass-N {
+    font-family: "Cormorant Garamond", serif;
+    font-weight: 700;
+    font-size: 14px;
+    fill: var(--paper);
+    text-anchor: middle;
+  }
+  .map-svg .scale-bar { stroke: var(--ink); stroke-width: 1.5; fill: none; }
+  .map-svg .scale-label {
+    font-family: "Cormorant Garamond", serif;
+    font-style: italic;
+    font-size: 11px;
+    fill: var(--ink);
+  }
+  /* Filter dimming on map */
+  body[data-filter="nature"] .map-svg .pin:not([data-strong~="nature"]) { opacity: 0.22; }
+  body[data-filter="history"] .map-svg .pin:not([data-strong~="history"]) { opacity: 0.22; }
+  body[data-filter="food"] .map-svg .pin:not([data-strong~="food"]) { opacity: 0.22; }
+  /* Also dim non-relevant routes — keep Amtrak always visible since it's structural */
+  body[data-filter="nature"] .map-svg .route.amtrak,
+  body[data-filter="history"] .map-svg .route.amtrak,
+  body[data-filter="food"] .map-svg .route.amtrak { opacity: 0.55; }
+  /* Region highlight flash when scrolled to from pin */
+  .region.flash { animation: flash-bg 1.4s ease-out; }
+  @keyframes flash-bg {
+    0% { background: rgba(184,137,61,0.18); }
+    100% { background: var(--paper); }
+  }
+
+  /* ============ Distance reckoner table ============ */
+  .distances {
+    margin-top: 36px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+  }
+  .distance-card {
+    background: var(--paper-card);
+    border: 1px solid var(--rule);
+    padding: 18px 22px;
+  }
+  .distance-card h3 {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 18px;
+    margin: 0 0 10px;
+    color: var(--ink);
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 6px;
+  }
+  .distance-card table { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+  .distance-card td { padding: 5px 0; vertical-align: top; }
+  .distance-card td:first-child { color: var(--ink-soft); }
+  .distance-card td:nth-child(2) { color: var(--ink); font-weight: 600; text-align: right; padding-right: 12px; }
+  .distance-card td:last-child { color: var(--brass-deep); font-family: "Cormorant Garamond", serif; font-style: italic; text-align: right; }
+
+  @media (max-width: 900px) {
+    .map-section { padding: 40px 14px 56px; }
+    .distances { grid-template-columns: 1fr; gap: 16px; }
+    .map-header h2 { font-size: 26px; }
+  }
 </style>
 </head>
 <body data-filter="all">
@@ -419,7 +637,9 @@
 <div class="topbar">
   <div class="brand">FIELD NOTES · 個人行旅</div>
   <nav>
-    <a href="../">← 婚禮+南線行程</a>
+    <a href="../">原版</a>
+    <a href="../refined/">精修版</a>
+    <a href="../poster/">海報版</a>
     <a href="./" class="current">探索 / Explore</a>
   </nav>
 </div>
@@ -431,6 +651,185 @@
     <p class="lede">在 Boston 婚禮（9/27）之外，紐約以北 5 個區域 + 三城（Boston / Philly / DC）各自能玩什麼。按你關心的軸線（自然 / 歷史 / 美食）篩選，再決定要組成怎樣的路線。</p>
   </div>
 </header>
+
+<!-- ==================== MAP SECTION ==================== -->
+<section class="map-section">
+  <div class="map-inner">
+    <div class="map-header">
+      <div class="titles">
+        <div class="eyebrow">Geography · 地理位置與路程</div>
+        <h2>美東鐵道走廊 · 八點全圖</h2>
+      </div>
+      <div class="legend">
+        <span class="legend-item"><span class="swatch amtrak"></span>Amtrak 鐵道</span>
+        <span class="legend-item"><span class="swatch drive"></span>開車 / 飛機</span>
+        <span class="legend-item">● 城市 / 婚禮主場</span>
+        <span class="legend-item"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#4a5d3a;"></span>區域候選</span>
+      </div>
+    </div>
+    <div class="map-frame">
+      <svg class="map-svg" viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid meet" role="img" aria-label="美東地圖">
+        <!-- Atlantic Ocean (right side) -->
+        <path class="coast" d="M 1200 60 Q 1110 110 1100 230 Q 1085 290 1055 330 Q 1000 370 975 425 Q 945 485 895 525 Q 845 565 795 585 L 1200 600 Z" fill="rgba(72,142,168,0.08)"/>
+        <text class="water-label" x="1115" y="440" transform="rotate(74 1115 440)">Atlantic Ocean · 大西洋</text>
+
+        <!-- Lake Ontario -->
+        <ellipse class="coast" cx="100" cy="115" rx="125" ry="32" fill="rgba(72,142,168,0.12)"/>
+        <text class="water-label" x="100" y="120" text-anchor="middle">Lake Ontario</text>
+
+        <!-- Lake Erie (smaller, lower) -->
+        <ellipse class="coast" cx="40" cy="215" rx="60" ry="20" fill="rgba(72,142,168,0.12)"/>
+        <text class="water-label" x="40" y="220" text-anchor="middle" font-size="10">Lake Erie</text>
+
+        <!-- ============ ROUTES ============ -->
+        <!-- NE Corridor Amtrak: BOS - NYC - PHL - DC -->
+        <path class="route amtrak" d="M 1080 226 L 720 368"/>
+        <path class="route amtrak" d="M 720 368 L 580 433"/>
+        <path class="route amtrak" d="M 580 433 L 355 522"/>
+
+        <!-- Route labels (Amtrak) -->
+        <g>
+          <rect x="868" y="282" width="100" height="14" fill="rgba(246,241,231,0.92)" rx="2"/>
+          <text class="route-label amtrak" x="918" y="293" text-anchor="middle">215 mi · 3 h 45 m</text>
+        </g>
+        <g>
+          <rect x="610" y="392" width="90" height="14" fill="rgba(246,241,231,0.92)" rx="2"/>
+          <text class="route-label amtrak" x="655" y="403" text-anchor="middle">95 mi · 1 h 15</text>
+        </g>
+        <g>
+          <rect x="430" y="468" width="100" height="14" fill="rgba(246,241,231,0.92)" rx="2"/>
+          <text class="route-label amtrak" x="480" y="479" text-anchor="middle">140 mi · 1 h 41 (Acela)</text>
+        </g>
+
+        <!-- Drive routes from NYC -->
+        <path class="route drive" d="M 720 368 L 728 276"/>
+        <path class="route drive" d="M 720 368 Q 580 320 420 219"/>
+        <path class="route drive" d="M 720 368 Q 500 290 113 164"/>
+        <path class="route drive" d="M 720 368 Q 750 200 721 62"/>
+        <path class="route drive" d="M 720 368 Q 820 200 877 46"/>
+
+        <!-- Drive labels -->
+        <g>
+          <rect x="744" y="316" width="68" height="14" fill="rgba(246,241,231,0.92)" rx="2"/>
+          <text class="route-label drive" x="778" y="327" text-anchor="middle">90 mi · 2 h</text>
+        </g>
+        <g>
+          <rect x="528" y="298" width="80" height="14" fill="rgba(246,241,231,0.92)" rx="2"/>
+          <text class="route-label drive" x="568" y="309" text-anchor="middle">220 mi · 4.5 h</text>
+        </g>
+        <g>
+          <rect x="320" y="252" width="146" height="14" fill="rgba(246,241,231,0.92)" rx="2"/>
+          <text class="route-label drive" x="393" y="263" text-anchor="middle">400 mi · 7 h · 1 h ✈ BUF</text>
+        </g>
+        <g>
+          <rect x="760" y="172" width="76" height="14" fill="rgba(246,241,231,0.92)" rx="2"/>
+          <text class="route-label drive" x="798" y="183" text-anchor="middle">290 mi · 5 h</text>
+        </g>
+        <g>
+          <rect x="824" y="172" width="76" height="14" fill="rgba(246,241,231,0.92)" rx="2"/>
+          <text class="route-label drive" x="862" y="183" text-anchor="middle">320 mi · 5.5 h</text>
+        </g>
+
+        <!-- ============ PINS ============ -->
+        <!-- Cities -->
+        <g class="pin" data-region="boston" data-strong="history food">
+          <text class="pin-label city" x="1080" y="200" text-anchor="middle">Boston</text>
+          <text class="pin-label cjk small" x="1080" y="253" text-anchor="middle">波士頓 · ♥ 婚禮</text>
+          <circle class="pin-circle city" cx="1080" cy="226" r="14"/>
+          <circle cx="1080" cy="226" r="5" fill="#d9b67a"/>
+        </g>
+        <g class="pin" data-region="">
+          <circle class="pin-circle passthrough" cx="720" cy="368" r="6"/>
+          <text class="pin-label small" x="720" y="392" text-anchor="middle">New York (途經)</text>
+        </g>
+        <g class="pin" data-region="philadelphia" data-strong="history food">
+          <text class="pin-label city" x="580" y="408" text-anchor="middle">Philadelphia</text>
+          <text class="pin-label cjk small" x="580" y="461" text-anchor="middle">費城</text>
+          <circle class="pin-circle city" cx="580" cy="433" r="14"/>
+          <circle cx="580" cy="433" r="5" fill="#b94b32"/>
+        </g>
+        <g class="pin" data-region="dc" data-strong="nature history food">
+          <text class="pin-label city" x="355" y="497" text-anchor="middle">Washington</text>
+          <text class="pin-label cjk small" x="355" y="550" text-anchor="middle">華盛頓 D.C.</text>
+          <circle class="pin-circle city" cx="355" cy="522" r="14"/>
+          <circle cx="355" cy="522" r="5" fill="#d8a13a"/>
+        </g>
+
+        <!-- Regions -->
+        <g class="pin" data-region="niagara" data-strong="nature history">
+          <text class="pin-label" x="113" y="146" text-anchor="middle">Niagara</text>
+          <text class="pin-label cjk small" x="113" y="190" text-anchor="middle">尼加拉瓜瀑布</text>
+          <circle class="pin-circle region history" cx="113" cy="164" r="10"/>
+        </g>
+        <g class="pin" data-region="finger-lakes" data-strong="nature history food">
+          <text class="pin-label" x="420" y="201" text-anchor="middle">Finger Lakes</text>
+          <text class="pin-label cjk small" x="420" y="245" text-anchor="middle">手指湖區 ⭐</text>
+          <circle class="pin-circle region nature" cx="420" cy="219" r="10"/>
+        </g>
+        <g class="pin" data-region="hudson-valley" data-strong="nature history food">
+          <text class="pin-label" x="753" y="272" text-anchor="start">Hudson Valley</text>
+          <text class="pin-label cjk small" x="753" y="290" text-anchor="start">哈德遜河谷</text>
+          <circle class="pin-circle region history" cx="728" cy="276" r="10"/>
+        </g>
+        <g class="pin" data-region="adirondacks" data-strong="nature">
+          <text class="pin-label" x="721" y="44" text-anchor="middle">Adirondacks</text>
+          <text class="pin-label cjk small" x="721" y="92" text-anchor="middle">+ 1000 Islands</text>
+          <circle class="pin-circle region nature" cx="721" cy="62" r="10"/>
+        </g>
+        <g class="pin" data-region="vermont" data-strong="nature history food">
+          <text class="pin-label" x="877" y="32" text-anchor="middle">Vermont</text>
+          <text class="pin-label cjk small" x="877" y="76" text-anchor="middle">綠山州</text>
+          <circle class="pin-circle region mixed" cx="877" cy="46" r="10"/>
+        </g>
+
+        <!-- Compass rose (top-right) -->
+        <g transform="translate(1160, 60)">
+          <circle r="22" fill="#1a1f2e"/>
+          <polygon points="0,-18 4,2 0,-3 -4,2" fill="#f6f1e7"/>
+          <polygon points="0,18 4,-2 0,3 -4,-2" fill="#f6f1e7" opacity="0.5"/>
+          <text class="compass-N" x="0" y="3">N</text>
+        </g>
+
+        <!-- Scale bar (bottom-left) -->
+        <g transform="translate(60, 560)">
+          <line class="scale-bar" x1="0" y1="0" x2="200" y2="0"/>
+          <line class="scale-bar" x1="0" y1="-4" x2="0" y2="4"/>
+          <line class="scale-bar" x1="100" y1="-3" x2="100" y2="3"/>
+          <line class="scale-bar" x1="200" y1="-4" x2="200" y2="4"/>
+          <text class="scale-label" x="0" y="18">0</text>
+          <text class="scale-label" x="100" y="18" text-anchor="middle">100 mi</text>
+          <text class="scale-label" x="200" y="18" text-anchor="end">200 mi</text>
+        </g>
+
+        <!-- Map title within frame -->
+        <text x="600" y="32" text-anchor="middle" fill="#8a6326" font-family="Cormorant Garamond, serif" font-size="13" font-weight="600" letter-spacing="4" style="text-transform:uppercase;">★ Northeast U.S. · Pictorial Map ★</text>
+      </svg>
+    </div>
+
+    <!-- Distance reckoner cards -->
+    <div class="distances">
+      <div class="distance-card">
+        <h3>🚆 Amtrak NE Corridor 三段</h3>
+        <table>
+          <tr><td>Boston ↔ New York</td><td>215 mi</td><td>Acela 3 h 45 / NER 4 h 30</td></tr>
+          <tr><td>New York ↔ Philadelphia</td><td>95 mi</td><td>Acela 1 h 15 / NER 1 h 30</td></tr>
+          <tr><td>Philadelphia ↔ Washington</td><td>140 mi</td><td>Acela 1 h 41 / NER 1 h 55</td></tr>
+          <tr><td style="border-top:1px solid var(--rule);padding-top:8px;color:var(--ink);font-weight:600;">BOS → DC 全程</td><td style="border-top:1px solid var(--rule);padding-top:8px;">450 mi</td><td style="border-top:1px solid var(--rule);padding-top:8px;">Acela ~6 h 41 直達</td></tr>
+        </table>
+      </div>
+      <div class="distance-card">
+        <h3>🚗 從 NYC 出發 · 開車 / 飛機</h3>
+        <table>
+          <tr><td>Hudson Valley (Hyde Park)</td><td>90 mi</td><td>2 h drive · Metro-North 火車</td></tr>
+          <tr><td>Finger Lakes (Ithaca)</td><td>220 mi</td><td>4.5 h drive</td></tr>
+          <tr><td>Niagara Falls</td><td>400 mi</td><td>7 h drive · or 1 h ✈ via BUF</td></tr>
+          <tr><td>Adirondacks (Lake Placid)</td><td>290 mi</td><td>5 h drive</td></tr>
+          <tr><td>Vermont (Stowe)</td><td>320 mi</td><td>5.5 h drive · or from BOS 200 mi</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
 
 <div class="filter-rail">
   <div class="filter-rail-inner">
@@ -861,13 +1260,43 @@ pills.forEach(p => {
   });
 });
 
+// Reusable scroll-to-region with flash
+function scrollToRegion(id) {
+  if (!id) return;
+  const target = document.getElementById(id);
+  if (!target) return;
+  target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  target.classList.remove('flash');
+  // Trigger reflow to restart animation
+  void target.offsetWidth;
+  target.classList.add('flash');
+  setTimeout(() => target.classList.remove('flash'), 1600);
+}
+
 // Table row click → scroll to region
 document.querySelectorAll('#compare-body tr').forEach(tr => {
-  tr.addEventListener('click', () => {
-    const id = tr.dataset.region;
-    document.getElementById(id).scrollIntoView({ behavior: 'smooth', block: 'start' });
-  });
+  tr.addEventListener('click', () => scrollToRegion(tr.dataset.region));
 });
+
+// Map pin click → scroll to region
+document.querySelectorAll('.map-svg .pin').forEach(pin => {
+  pin.addEventListener('click', () => scrollToRegion(pin.dataset.region));
+});
+
+// Scroll-reveal animations
+(function () {
+  const targets = document.querySelectorAll('.region, .distance-card, .map-frame, .pillar, .section-divider h2');
+  targets.forEach(el => el.classList.add('reveal'));
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('in');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -6% 0px' });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+})();
 
 updateCount();
 </script>
