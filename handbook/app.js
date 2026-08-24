@@ -78,7 +78,7 @@ const trip = {
         { label: '18:40', status: 'planned', text: '最晚約此時抵達 Moynihan Train Hall' },
         { label: '19:12', status: 'confirmed', text: 'Northeast Regional 176 出發；Coach Seat' },
         { label: '23:50', status: 'confirmed', text: '抵達 Boston South Station，前往 HI Boston Hostel' },
-        { label: 'Before trip', status: 'need', text: '先向 hostel 確認深夜入住與 front desk 安排' }
+        { label: 'Check-in', status: 'confirmed', text: 'Hostel 已收到預計 00:00–01:00 抵達的通知' }
       ],
       decision: '舊版 17:38 車次作廢；已買的是 19:12 → 23:50。'
     },
@@ -90,9 +90,9 @@ const trip = {
         { label: 'Core', status: 'planned', text: 'Boston Common → Public Garden → Beacon Hill → Freedom Trail 核心 → North End' },
         { label: 'Late day', status: 'planned', text: 'Harborwalk；有餘裕再接 Back Bay / Copley' },
         { label: 'Extra', status: 'optional', text: 'Harvard / Cambridge，不為了打卡硬塞' },
-        { label: 'Night', status: 'need', text: '預訂 9/26 住宿：Boston 再住一晚，或晚間移動 North Shore' }
+        { label: 'Night', status: 'confirmed', text: '9/26 住宿已預訂' }
       ],
-      decision: '住宿策略會影響隔天搬行李方式，需先於細排行程決定。'
+      decision: '住宿缺口已解決；依實際住宿地點安排隔天前往 Beverly 的方式。'
     },
     {
       date: '9/27', weekday: '日', city: 'Beverly', title: 'Tupper Manor Wedding',
@@ -101,20 +101,20 @@ const trip = {
         { label: 'Morning', status: 'planned', text: '退房、帶行李前往 Beverly；行程刻意留鬆' },
         { label: 'Afternoon', status: 'confirmed', text: 'Tupper Manor 婚禮開始' },
         { label: '≈ 22:00', status: 'confirmed', text: '婚禮預計結束' },
-        { label: 'Night', status: 'need', text: '預訂 Tupper Manor / Wylie Inn / Beverly 附近住宿' }
+        { label: 'Night', status: 'confirmed', text: '9/27 婚禮夜住宿已預訂' }
       ],
-      decision: '婚禮結束後必須在場地附近過夜。'
+      decision: '婚禮與當晚住宿都已固定，不在晚間跨城。'
     },
     {
-      date: '9/28', weekday: '一', city: 'Transit', title: 'Beverly → Philadelphia',
-      summary: '婚禮隔天是長移動日，只期待一個舒服的 Philly 晚上。',
+      date: '9/28', weekday: '一', city: 'Transit', title: 'Beverly → Philadelphia by car',
+      summary: '搭費城同學便車南下，省去回 Boston 轉 Amtrak 的摩擦。',
       slots: [
-        { label: 'Morning', status: 'planned', text: '正常早餐、退房；依行李量選 rideshare 或 commuter rail 回 Boston' },
-        { label: 'Train', status: 'need', text: '預訂 Boston / Back Bay → Philadelphia Amtrak，不選過早班次' },
-        { label: 'Evening', status: 'planned', text: '飯店 check-in → City Hall / Rittenhouse Square → cheesesteak' },
-        { label: 'Night', status: 'need', text: '預訂 Philadelphia 住宿' }
+        { label: 'Morning', status: 'planned', text: '正常早餐、退房，與同學確認集合時間與地點' },
+        { label: 'Drive', status: 'confirmed', text: '搭費城同學便車回 Philadelphia' },
+        { label: 'Evening', status: 'planned', text: '到同學家安頓 → City Hall / Rittenhouse Square → cheesesteak' },
+        { label: 'Night', status: 'confirmed', text: '住費城同學家' }
       ],
-      decision: 'Boston → Philadelphia 約 5–6 小時級，抵達後不排 timed entry。'
+      decision: '不需 Boston → Philadelphia Amtrak 或 Philadelphia 飯店；抵達後仍不排 timed entry。'
     },
     {
       date: '9/29', weekday: '二', city: 'Philly', title: '建國史主線',
@@ -166,27 +166,27 @@ const trip = {
         { label: 'Day', status: 'optional', text: 'Georgetown、Arlington、第二間 Smithsonian、White House / Lafayette Square 擇一' },
         { label: 'Meal', status: 'planned', text: '安排舒服的最後一餐，不為清單跨城' },
         { label: 'Evening', status: 'planned', text: '以 Silver Line 或 rideshare 前往 IAD，保留充足報到緩衝' },
-        { label: 'Flight', status: 'need', text: 'IAD → TPE 尚未開票，先完成購票' }
+        { label: 'Flight', status: 'confirmed', text: 'IAD → TPE 已開票；10/4 01:15 起飛' }
       ],
-      decision: '01:15 起飛代表 10/3 晚上就是實際離境時間。'
+      decision: '回程已開票；01:15 起飛代表 10/3 晚上就是實際離境時間。'
     },
     {
       date: '10/4', weekday: '日', city: 'Flight', title: 'Washington → Taipei',
-      summary: '目前是規劃航班，不可當成已出票行程。',
+      summary: '回程已開票，10/3 晚上就是實際離境時段。',
       slots: [
-        { label: '01:15', status: 'planned', text: '預計 IAD 起飛；ticket not issued' },
-        { label: 'In flight', status: 'planned', text: '長程飛行並跨越國際換日線' }
+        { label: '01:15', status: 'confirmed', text: 'IAD 起飛；ticketed' },
+        { label: 'In flight', status: 'confirmed', text: '長程飛行並跨越國際換日線' }
       ],
-      decision: '只有完成開票後，這張卡才能改成 Confirmed。'
+      decision: '班機已確認；10/3 須依 IAD 報到需求反推離開 DC 的時間。'
     },
     {
       date: '10/5', weekday: '一', city: 'Taipei', title: '抵達 Taipei',
       summary: '旅程結束，上午不安排不可移動的承諾。',
       slots: [
-        { label: '05:10', status: 'planned', text: '預計抵達 TPE Terminal 2' },
+        { label: '05:10', status: 'confirmed', text: '抵達 TPE Terminal 2' },
         { label: 'Morning', status: 'planned', text: '入境、領行李、返家；保留延誤備案' }
       ],
-      decision: '抵達時間仍隨尚未開票的回程航班而定。'
+      decision: '上午不安排不可移動的承諾，保留入境與交通延誤備案。'
     }
   ],
   bookings: [
@@ -208,31 +208,50 @@ const trip = {
     {
       type: 'LODGING · RESERVED', date: '9/25 → 9/26', title: 'HI Boston Hostel', status: 'confirmed',
       facts: ['19 Stuart Street, Boston', 'Check-in 9/25 16:00 起', 'Check-out 9/26 11:00 前', 'Men’s 6-Bed Dorm · US$116.45'],
-      note: '可免費取消至 9/22 23:59 EDT。',
-      warning: '23:50 才抵達 South Station：出發前必須確認 late check-in。'
+      note: 'Hostel 已收到 00:00–01:00 check-in 通知；可免費取消至 9/22 23:59 EDT。'
     },
     {
       type: 'FIXED EVENT', date: '9/27 SUN', title: 'Wedding · Tupper Manor', status: 'confirmed',
       facts: ['295 Hale St, Beverly, MA', '下午開始至約 22:00', '這天不安排 Boston 觀光', '婚禮後必須住 Beverly 附近'],
-      note: '婚禮固定；9/27 當晚住宿目前仍未預訂。'
+      note: '婚禮固定；9/27 當晚住宿也已預訂。'
+    },
+    {
+      type: 'LODGING · RESERVED', date: '9/26 → 9/27', title: '9/26 Accommodation', status: 'confirmed',
+      facts: ['住宿已預訂', '不再是 itinerary gap', '依住宿地點安排隔天 Beverly 交通'],
+      note: '住宿名稱與地址未放入公開頁面。'
+    },
+    {
+      type: 'LODGING · RESERVED', date: '9/27 → 9/28', title: 'Wedding Night Accommodation', status: 'confirmed',
+      facts: ['住宿已預訂', '婚禮結束後直接入住', '不在 22:00 後跨城'],
+      note: '住宿名稱與地址未放入公開頁面。'
+    },
+    {
+      type: 'RIDE + HOSTING · ARRANGED', date: '9/28 → 9/30', title: 'Philadelphia with classmate', status: 'confirmed',
+      facts: ['9/28 搭同學便車回 Philadelphia', 'Philadelphia 期間住同學家', '不需 Boston → Philly Amtrak', '不需 Philadelphia 飯店'],
+      note: '出發前再確認 9/28 集合時間與地點。'
+    },
+    {
+      type: 'RETURN FLIGHT · TICKETED', date: '10/4 → 10/5', title: 'Washington → Taipei', status: 'confirmed',
+      facts: ['10/4 01:15 · IAD 出發', '10/5 05:10 · TPE Terminal 2 抵達', '機票已開票', '10/3 晚上前往 IAD'],
+      note: 'DC 住宿與 10/3 機場移動方式仍待決定。'
     }
   ],
   transport: [
     { mode: 'FLIGHT', date: '9/19', title: 'TPE → JFK', status: 'confirmed', meta: 'CI12 · 17:40 → 20:40', detail: '已開票。JFK Terminal 4 抵達，當晚住朋友家。' },
     { mode: 'TRAIN', date: '9/25', title: 'New York → Boston', status: 'confirmed', meta: 'Train 176 · 19:12 → 23:50', detail: '已開票。Moynihan Train Hall → South Station；抵達後步行／短程車前往 hostel。' },
     { mode: 'LOCAL', date: '9/27', title: 'Boston / North Shore → Beverly', status: 'planned', meta: '依 9/26 住宿位置決定', detail: '行李多時優先比較 rideshare；大眾運輸需把週日班距算進去。' },
-    { mode: 'TRAIN', date: '9/28', title: 'Boston → Philadelphia', status: 'need', meta: '尚未訂票 · 約 5–6 小時級', detail: '婚禮隔天避免過早出發；先從 Beverly 回到 South Station / Back Bay。' },
+    { mode: 'CAR', date: '9/28', title: 'Beverly / North Shore → Philadelphia', status: 'confirmed', meta: '同學便車 · 已安排', detail: '不需回 Boston 搭 Amtrak；出發前只要確認集合時間、地點與行李空間。' },
     { mode: 'TRAIN', date: '9/30', title: 'Philadelphia → Washington, DC', status: 'need', meta: '尚未訂票 · 早上出發', detail: '市中心到市中心；目標在中午至午後早段抵達 Union Station。' },
     { mode: 'METRO / CAR', date: '10/3', title: 'DC → IAD', status: 'planned', meta: 'Silver Line 或 rideshare', detail: '01:15 班機等於 10/3 晚上離境；依住宿位置反推離開時間。' },
-    { mode: 'FLIGHT', date: '10/4', title: 'IAD → TPE', status: 'need', meta: '預計 01:15 → 10/5 05:10', detail: '尚未開票。出票前不得視為確定班次。' }
+    { mode: 'FLIGHT', date: '10/4', title: 'IAD → TPE', status: 'confirmed', meta: 'Ticketed · 01:15 → 10/5 05:10', detail: '已開票。10/3 晚上須依報到時間前往 IAD。' }
   ],
   cities: [
     {
       name: 'New York', code: 'NYC · SECOND VISIT',
       thesis: '把第二次紐約留給街區、食物和晚上節目；不重做第一次旅行的地標清單。',
       priority: ['Williamsburg / Greenpoint', 'Queens food day', 'West Village 與河岸慢走'],
-      optional: ['Broadway / Off-Broadway', 'Comedy show', '有特定展覽才進博物館'],
-      guardrail: '夜生活不以酒吧為中心；DUMBO、MoMA、Met 等已去過地點不主動重排。'
+      optional: ['Hadestown / Maybe Happy Ending', 'Comedy Cellar 早場', 'The Play That Goes Wrong'],
+      guardrail: '夜生活不以酒吧為中心；Comedy Cellar 的 two-item minimum 可用食物或非酒精飲料完成。'
     },
     {
       name: 'Boston', code: 'BOS · ONE FULL DAY',
@@ -276,14 +295,8 @@ const trip = {
   ],
   actions: {
     high: [
-      { id: 'return-flight', urgent: true, text: '開票：IAD → TPE（預計 10/4 01:15 → 10/5 05:10）' },
-      { id: 'hostel-late-checkin', urgent: true, text: '向 HI Boston Hostel 確認 9/25 深夜入住安排' },
-      { id: 'lodging-0926', urgent: true, text: '預訂 9/26 住宿：Boston 或 North Shore' },
-      { id: 'lodging-0927', urgent: true, text: '預訂 9/27 Beverly / Tupper Manor 附近住宿' },
-      { id: 'train-0928', text: '預訂 9/28 Boston → Philadelphia Amtrak' },
-      { id: 'lodging-philly', text: '預訂 Philadelphia 住宿' },
-      { id: 'train-0930', text: '預訂 9/30 Philadelphia → DC Amtrak' },
-      { id: 'lodging-dc', text: '預訂 Washington, DC 住宿' },
+      { id: 'train-0930', urgent: true, text: '預訂 9/30 Philadelphia → DC Amtrak' },
+      { id: 'lodging-dc', urgent: true, text: '預訂 Washington, DC 住宿' },
       { id: 'independence-entry', text: '確認 / 預約 Independence Hall 入場' },
       { id: 'capitol-tour', text: '確認 / 預約 U.S. Capitol tour' },
       { id: 'loc-entry', text: '確認 / 預約 Library of Congress 入場' },
@@ -525,7 +538,7 @@ function showToast(message) {
 function initActions() {
   $('#printBtn').addEventListener('click', () => window.print());
   $('#copySummaryBtn').addEventListener('click', async () => {
-    const summary = `East Coast 2026\n9/19 CI12 TPE 17:40 → JFK 20:40（已開票）\n9/20–9/24 New York City\n9/24 18:00 Keens · 7 位（已確認）\n9/25 Train 176 Moynihan 19:12 → Boston 23:50（已開票）\n9/26 Boston；住宿待訂\n9/27 Beverly wedding；住宿待訂\n9/28 Philadelphia\n9/30 Washington, DC\n10/4 01:15 IAD → TPE（規劃中，尚未開票）\n10/5 05:10 預計抵達 TPE`;
+    const summary = `East Coast 2026\n9/19 CI12 TPE 17:40 → JFK 20:40（已開票）\n9/20–9/24 New York City\n9/24 18:00 Keens · 7 位（已確認）\n9/25 Train 176 Moynihan 19:12 → Boston 23:50（已開票）\n9/25 HI Boston；00:00–01:00 check-in 已通知\n9/26 住宿已訂\n9/27 Beverly wedding＋住宿已訂\n9/28 同學便車回 Philadelphia；住同學家\n9/30 Washington, DC（交通與住宿待訂）\n10/4 01:15 IAD → TPE（已開票）\n10/5 05:10 抵達 TPE`;
     try {
       await navigator.clipboard.writeText(summary);
       showToast('行程摘要已複製');

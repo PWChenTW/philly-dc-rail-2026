@@ -252,6 +252,10 @@ h1, h2, h3, h4, p { text-wrap: pretty; }
 .urgent-items strong, .urgent-items span { display: block; }
 .urgent-items strong { font-size: 13px; }
 .urgent-items span { margin-top: 3px; color: var(--muted); font-size: 11px; }
+.resolved-strip { border-color: color-mix(in srgb, var(--confirmed) 38%, var(--line)); background: var(--confirmed-bg); }
+.resolved-strip .urgent-heading .micro-label { color: var(--confirmed); }
+.resolved-strip .urgent-icon { background: var(--confirmed); }
+.resolved-strip .urgent-items a { border-color: color-mix(in srgb, var(--confirmed) 25%, var(--line)); }
 
 .action-layout { display: grid; grid-template-columns: 1.08fr .92fr; gap: 18px; align-items: start; }
 .panel { padding: 25px; border: 1px solid var(--line); border-radius: 22px; background: var(--surface); }
