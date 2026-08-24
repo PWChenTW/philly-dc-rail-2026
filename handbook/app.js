@@ -5,9 +5,44 @@ const statusLabels = {
   optional: 'Optional'
 };
 
+const visuals = {
+  NYC: { src: 'images/nyc-sunset.jpg', alt: 'Brooklyn Bridge 與 Manhattan skyline 的金色日落', label: 'NEW YORK · GOLDEN HOUR' },
+  Boston: { src: 'images/boston-beacon-hill.jpg', alt: 'Boston Beacon Hill 的紅磚 Acorn Street', label: 'BOSTON · BRICK & HISTORY' },
+  Beverly: { src: 'images/beverly-coast.jpg', alt: 'Beverly 的 Massachusetts Bay 海岸景色', label: 'BEVERLY · COASTAL WEDDING' },
+  Philly: { src: 'images/philly-independence-hall.jpg', alt: 'Philadelphia Independence Hall 的紅磚建築', label: 'PHILADELPHIA · FOUNDING STORY' },
+  DC: { src: 'images/dc-lincoln-memorial.jpg', alt: 'Washington DC Lincoln Memorial 與 Reflecting Pool', label: 'WASHINGTON, DC · AFTER DARK' }
+};
+
 const trip = {
   start: '2026-09-19T00:00:00+08:00',
   end: '2026-10-05T23:59:59+08:00',
+  highlights: [
+    {
+      visual: 'NYC', sequence: '01', date: '9/19—9/25', title: '把紐約留給第二次來的人',
+      pitch: '不重跑帝國大廈與時代廣場。這次從 West Village 的街角、Williamsburg 的店鋪、Katz’s 的切肉聲，一路待到 Brooklyn waterfront 亮起金色。',
+      tags: ['Neighborhoods', 'Food', 'Broadway after dark']
+    },
+    {
+      visual: 'Boston', sequence: '02', date: '9/25—9/27', title: '一天走進三百年歷史',
+      pitch: '用 Beacon Hill 的磚巷開場，沿 Freedom Trail 走到 North End，再把傍晚交給港邊。短，但會很像一部完整的片。',
+      tags: ['Freedom Trail', 'Beacon Hill']
+    },
+    {
+      visual: 'Beverly', sequence: '03', date: '9/27', title: '旅程唯一無法複製的一幕',
+      pitch: 'Massachusetts Bay 的海風、Tupper Manor 的婚禮、久違的朋友。這一天不趕景點，因為你不是觀光客，而是故事裡的賓客。',
+      tags: ['Wedding', 'North Shore']
+    },
+    {
+      visual: 'Philly', sequence: '04', date: '9/28—9/30', title: '在美國誕生的地方住兩晚',
+      pitch: '同學的便車與家，讓 Philadelphia 不只是過境。白天走 Independence Hall，午餐鑽進 Reading Terminal，晚上回到有人情味的城市。',
+      tags: ['Founding history', 'Local hosting']
+    },
+    {
+      visual: 'DC', sequence: '05', date: '9/30—10/4', title: '白天看制度，入夜看記憶',
+      pitch: 'Capitol、Library of Congress 與 Smithsonian 各有自己的日子；太陽落下後，沿 National Mall 走進紀念碑的光。',
+      tags: ['Smithsonian', 'Monuments at dusk']
+    }
+  ],
   itinerary: [
     {
       date: '9/19', weekday: '六', city: 'NYC', title: 'Taipei → New York',
@@ -247,28 +282,28 @@ const trip = {
   ],
   cities: [
     {
-      name: 'New York', code: 'NYC · SECOND VISIT',
+      name: 'New York', code: 'NYC · SECOND VISIT', visual: 'NYC',
       thesis: '把第二次紐約留給街區、食物和晚上節目；不重做第一次旅行的地標清單。',
       priority: ['Williamsburg / Greenpoint', 'Queens food day', 'West Village 與河岸慢走'],
       optional: ['Hadestown / Maybe Happy Ending', 'Comedy Cellar 早場', 'The Play That Goes Wrong'],
       guardrail: '夜生活不以酒吧為中心；Comedy Cellar 的 two-item minimum 可用食物或非酒精飲料完成。'
     },
     {
-      name: 'Boston', code: 'BOS · ONE FULL DAY',
+      name: 'Boston', code: 'BOS · ONE FULL DAY', visual: 'Boston',
       thesis: '9/26 是唯一完整日，先完成 Boston 獨有的歷史核心，再考慮 Back Bay 或 Cambridge。',
       priority: ['Boston Common / Beacon Hill', 'Freedom Trail 核心', 'North End / Harborwalk'],
       optional: ['Copley / Public Library', 'Harvard / Cambridge', '單一室內歷史點'],
       guardrail: '不把 Harvard 硬塞進已經走不完的歷史路線。'
     },
     {
-      name: 'Philadelphia', code: 'PHL · FOUNDING STORY',
+      name: 'Philadelphia', code: 'PHL · FOUNDING STORY', visual: 'Philly',
       thesis: '只有一個完整日，優先理解美國建國史；美術館是加分題，不是主線。',
       priority: ['Independence Hall / Liberty Bell', 'Old City / Elfreth’s Alley', 'Reading Terminal Market'],
       optional: ['Barnes Foundation', 'City Hall / Rittenhouse', 'PMA / Rocky Steps'],
       guardrail: '不要把 9/29 變成兩間美術館的趕場日。'
     },
     {
-      name: 'Washington, DC', code: 'DC · 3.5 DAYS',
+      name: 'Washington, DC', code: 'DC · 3.5 DAYS', visual: 'DC',
       thesis: '把制度、Smithsonian 與紀念碑拆成不同日，最後一天保留自由選擇與機場緩衝。',
       priority: ['Capitol / Library of Congress', '一間 Smithsonian 主館', 'National Mall dusk / night'],
       optional: ['Arlington', '第二間 Smithsonian', 'Dupont / Georgetown 補遺'],
@@ -276,18 +311,18 @@ const trip = {
     }
   ],
   food: [
-    { city: 'NYC', title: '三個明確錨點', items: [
+    { city: 'NYC', title: '三個明確錨點', image: 'images/katz-pastrami.jpg', alt: 'Katz’s Delicatessen 的 pastrami sandwich', items: [
       { tag: 'Confirmed', status: 'confirmed', name: 'Keens Steakhouse', note: '9/24 18:00 · 7 位' },
       { tag: 'Must repeat', status: 'planned', name: 'Katz’s Delicatessen', note: '放在 Lower East Side 日' },
       { tag: 'Must repeat', status: 'planned', name: 'Joe’s Pizza', note: 'West Village 動線順路再訪' },
       { tag: 'Priority', status: 'planned', name: 'Queens food', note: 'Jackson Heights 優先；Flushing 看胃口' }
     ]},
-    { city: 'PHL', title: 'Roast pork 優先於第二份牛排', items: [
+    { city: 'PHL', title: 'Roast pork 優先於第二份牛排', image: 'images/reading-terminal.jpg', alt: 'Philadelphia Reading Terminal Market 內部', items: [
       { tag: 'Priority', status: 'planned', name: 'DiNic’s roast pork', note: 'Reading Terminal Market' },
       { tag: 'Planned', status: 'planned', name: 'Cheesesteak', note: '抵達晚或行程中吃一次即可' },
       { tag: 'Optional', status: 'optional', name: 'Soft pretzel', note: '看到合適的就吃，不特地繞路' }
     ]},
-    { city: 'DC', title: '替整趟補上不同風味', items: [
+    { city: 'DC', title: '替整趟補上不同風味', image: 'images/ethiopian-platter.jpg', alt: '鋪在 injera 上的 Ethiopian fasting platter', items: [
       { tag: 'Priority', status: 'planned', name: 'Ethiopian food', note: '出發前選一家並確認營業日' },
       { tag: 'Planned', status: 'planned', name: 'Mid-Atlantic / Chesapeake', note: '做為最後幾天較完整的一餐' },
       { tag: 'Optional', status: 'optional', name: 'Half-smoke', note: '順路即可，不設成 mandatory stop' }
@@ -345,6 +380,34 @@ function statusBadge(status, label = statusLabels[status]) {
   return `<span class="status-badge status-${status}">${label}</span>`;
 }
 
+function resolveDayVisual(day) {
+  if (visuals[day.city]) return visuals[day.city];
+  if (day.title.includes('Washington')) return visuals.DC;
+  if (day.title.includes('Philadelphia')) return visuals.Philly;
+  if (day.title.includes('Beverly')) return visuals.Beverly;
+  if (day.title.includes('Boston')) return visuals.Boston;
+  return visuals.NYC;
+}
+
+function renderHighlights() {
+  $('#highlightGrid').innerHTML = trip.highlights.map((highlight, index) => {
+    const visual = visuals[highlight.visual];
+    return `
+      <article class="highlight-card highlight-card-${index + 1}">
+        <img src="${visual.src}" alt="${visual.alt}" width="1920" height="1280" loading="${index === 0 ? 'eager' : 'lazy'}" decoding="async" />
+        <div class="highlight-shade"></div>
+        <div class="highlight-topline"><span>${highlight.sequence}</span><span>${highlight.date}</span></div>
+        <div class="highlight-copy">
+          <span class="micro-label">${visual.label}</span>
+          <h3>${highlight.title}</h3>
+          <p>${highlight.pitch}</p>
+          <div class="highlight-tags">${highlight.tags.map(tag => `<span>${tag}</span>`).join('')}</div>
+        </div>
+      </article>
+    `;
+  }).join('');
+}
+
 function renderItinerary() {
   const labels = { All: '全部', NYC: 'NYC', Transit: '移動日', Boston: 'Boston', Beverly: '婚禮', Philly: 'Philly', DC: 'DC', Flight: '飛行', Taipei: '台北' };
   const filters = ['All', ...new Set(trip.itinerary.map(day => day.city))];
@@ -354,9 +417,14 @@ function renderItinerary() {
 
   $('#itineraryGrid').innerHTML = trip.itinerary.map((day, index) => {
     const statuses = [...new Set(day.slots.map(slot => slot.status))];
+    const visual = resolveDayVisual(day);
     return `
       <details class="day-card" data-city="${day.city}">
         <summary>
+          <div class="day-media">
+            <img src="${visual.src}" alt="" width="960" height="640" loading="lazy" decoding="async" />
+            <span>${visual.label}</span>
+          </div>
           <div class="day-topline">
             <div class="day-index">${String(index + 1).padStart(2, '0')}</div>
             <div class="day-date"><small>${day.date}（${day.weekday}）</small><strong>${day.title}</strong></div>
@@ -417,22 +485,34 @@ function renderTransport() {
 }
 
 function renderCityGuides() {
-  $('#cityGuideGrid').innerHTML = trip.cities.map(city => `
-    <article class="city-card">
-      <div class="city-card-head"><span class="micro-label">${city.code}</span><h3>${city.name}</h3><p>${city.thesis}</p></div>
-      <div class="city-columns">
-        <div><h4>Priority</h4><ul>${city.priority.map(item => `<li>${item}</li>`).join('')}</ul></div>
-        <div><h4>Optional</h4><ul>${city.optional.map(item => `<li>${item}</li>`).join('')}</ul></div>
-      </div>
-      <p class="guardrail"><strong>Guardrail</strong>${city.guardrail}</p>
-    </article>
-  `).join('');
+  $('#cityGuideGrid').innerHTML = trip.cities.map(city => {
+    const visual = visuals[city.visual];
+    return `
+      <article class="city-card">
+        <div class="city-card-media">
+          <img src="${visual.src}" alt="${visual.alt}" width="1200" height="800" loading="lazy" decoding="async" />
+          <div class="city-card-title"><span>${city.code}</span><h3>${city.name}</h3></div>
+        </div>
+        <div class="city-card-body">
+          <p class="city-thesis">${city.thesis}</p>
+          <div class="city-columns">
+            <div><h4>Priority</h4><ul>${city.priority.map(item => `<li>${item}</li>`).join('')}</ul></div>
+            <div><h4>Optional</h4><ul>${city.optional.map(item => `<li>${item}</li>`).join('')}</ul></div>
+          </div>
+          <p class="guardrail"><strong>Guardrail</strong>${city.guardrail}</p>
+        </div>
+      </article>
+    `;
+  }).join('');
 }
 
 function renderFood() {
   $('#foodGrid').innerHTML = trip.food.map(group => `
     <article class="food-card">
-      <div class="food-title"><span>${group.city}</span><h3>${group.title}</h3></div>
+      <div class="food-cover">
+        <img src="${group.image}" alt="${group.alt}" width="1200" height="800" loading="lazy" decoding="async" />
+        <div class="food-title"><span>${group.city}</span><h3>${group.title}</h3></div>
+      </div>
       <div class="food-list">${group.items.map(item => `
         <div class="food-item">
           <div><strong>${item.name}</strong><small>${item.note}</small></div>
@@ -557,6 +637,7 @@ function initActions() {
   });
 }
 
+renderHighlights();
 renderItinerary();
 renderBookings();
 renderTransport();
