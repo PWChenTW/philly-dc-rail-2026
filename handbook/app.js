@@ -6,11 +6,54 @@ const statusLabels = {
 };
 
 const visuals = {
-  NYC: { src: 'images/nyc-sunset.jpg', alt: 'Brooklyn Bridge 與 Manhattan skyline 的金色日落', label: 'NEW YORK · GOLDEN HOUR' },
-  Boston: { src: 'images/boston-beacon-hill.jpg', alt: 'Boston Beacon Hill 的紅磚 Acorn Street', label: 'BOSTON · BRICK & HISTORY' },
-  Beverly: { src: 'images/beverly-coast.jpg', alt: 'Beverly 的 Massachusetts Bay 海岸景色', label: 'BEVERLY · COASTAL WEDDING' },
-  Philly: { src: 'images/philly-independence-hall.jpg', alt: 'Philadelphia Independence Hall 的紅磚建築', label: 'PHILADELPHIA · FOUNDING STORY' },
-  DC: { src: 'images/dc-lincoln-memorial.jpg', alt: 'Washington DC Lincoln Memorial 與 Reflecting Pool', label: 'WASHINGTON, DC · AFTER DARK' }
+  NYC: {
+    src: 'images/nyc-sunset.jpg', alt: 'Brooklyn Bridge 與 Manhattan skyline 的金色日落', label: 'NEW YORK · GOLDEN HOUR',
+    photos: [
+      { src: 'images/nyc-sunset.jpg', alt: 'Brooklyn Bridge 與 Manhattan skyline 的金色日落', caption: 'Brooklyn sunset' },
+      { src: 'images/nyc-high-line.jpg', alt: 'Chelsea 的 High Line elevated park', caption: 'High Line' },
+      { src: 'images/nyc-williamsburg.jpg', alt: 'Williamsburg Bedford Avenue 的街景', caption: 'Williamsburg' },
+      { src: 'images/nyc-jackson-heights.jpg', alt: 'Queens Jackson Heights 的商店與高架地鐵', caption: 'Jackson Heights' },
+      { src: 'images/nyc-washington-square.jpg', alt: 'Washington Square Park 與拱門', caption: 'Washington Square' },
+      { src: 'images/nyc-grand-central.jpg', alt: 'Grand Central Terminal 主大廳', caption: 'Grand Central' },
+      { src: 'images/katz-pastrami.jpg', alt: 'Katz’s Delicatessen 的 pastrami sandwich', caption: 'Katz’s pastrami' }
+    ]
+  },
+  Boston: {
+    src: 'images/boston-beacon-hill.jpg', alt: 'Boston Beacon Hill 的紅磚 Acorn Street', label: 'BOSTON · BRICK & HISTORY',
+    photos: [
+      { src: 'images/boston-beacon-hill.jpg', alt: 'Boston Beacon Hill 的紅磚 Acorn Street', caption: 'Beacon Hill' },
+      { src: 'images/boston-public-garden.jpg', alt: 'Boston Public Garden 湖上的 Swan Boats', caption: 'Public Garden' },
+      { src: 'images/boston-old-state-house.jpg', alt: 'Freedom Trail 上的 Boston Old State House', caption: 'Freedom Trail' },
+      { src: 'images/boston-north-end.jpg', alt: 'Boston North End 的夜間街景', caption: 'North End' }
+    ]
+  },
+  Beverly: {
+    src: 'images/beverly-coast.jpg', alt: 'Beverly 的 Massachusetts Bay 海岸景色', label: 'BEVERLY · COASTAL WEDDING',
+    photos: [
+      { src: 'images/beverly-tupper-manor.jpg', alt: 'Beverly Endicott College 的 Tupper Manor', caption: 'Tupper Manor' },
+      { src: 'images/beverly-coast.jpg', alt: 'Beverly 的 Massachusetts Bay 海岸景色', caption: 'Mingo Beach' },
+      { src: 'images/beverly-endicott-pond.jpg', alt: 'Endicott College 校園池塘與花園', caption: 'Endicott campus' },
+      { src: 'images/beverly-west-beach.jpg', alt: '從空中看 Beverly West Beach', caption: 'West Beach' }
+    ]
+  },
+  Philly: {
+    src: 'images/philly-independence-hall.jpg', alt: 'Philadelphia Independence Hall 的紅磚建築', label: 'PHILADELPHIA · FOUNDING STORY',
+    photos: [
+      { src: 'images/philly-independence-hall.jpg', alt: 'Philadelphia Independence Hall 的紅磚建築', caption: 'Independence Hall' },
+      { src: 'images/philly-liberty-bell.jpg', alt: 'Philadelphia Liberty Bell', caption: 'Liberty Bell' },
+      { src: 'images/philly-elfreths-alley.jpg', alt: 'Philadelphia Elfreth’s Alley 的歷史街屋', caption: 'Elfreth’s Alley' },
+      { src: 'images/reading-terminal.jpg', alt: 'Philadelphia Reading Terminal Market 內部', caption: 'Reading Terminal' }
+    ]
+  },
+  DC: {
+    src: 'images/dc-lincoln-memorial.jpg', alt: 'Washington DC Lincoln Memorial 與 Reflecting Pool', label: 'WASHINGTON, DC · AFTER DARK',
+    photos: [
+      { src: 'images/dc-lincoln-memorial.jpg', alt: 'Washington DC Lincoln Memorial 與 Reflecting Pool', caption: 'Lincoln Memorial' },
+      { src: 'images/dc-capitol.jpg', alt: 'Washington DC United States Capitol', caption: 'U.S. Capitol' },
+      { src: 'images/dc-library-congress.jpg', alt: 'Library of Congress Main Reading Room', caption: 'Library of Congress' },
+      { src: 'images/dc-georgetown.jpg', alt: 'Georgetown waterfront 與 Potomac River', caption: 'Georgetown waterfront' }
+    ]
+  }
 };
 
 const trip = {
@@ -47,6 +90,7 @@ const trip = {
     {
       date: '9/19', weekday: '六', city: 'NYC', title: 'Taipei → New York',
       summary: '抵達日只處理入境與進城，不綁任何晚間訂位。',
+      gallery: ['Brooklyn sunset', 'Grand Central', 'Washington Square'],
       slots: [
         { label: '17:40', status: 'confirmed', text: 'CI12 · TPE Terminal 2 出發' },
         { label: '20:40', status: 'confirmed', text: '抵達 JFK Terminal 4；入境、領行李後進城' },
@@ -57,6 +101,7 @@ const trip = {
     {
       date: '9/20', weekday: '日', city: 'NYC', title: 'West Side 慢速開場',
       summary: '用河岸與 Village 調時差，避開第一次到紐約式的地標清單。',
+      gallery: ['High Line', 'Washington Square', 'Brooklyn sunset'],
       slots: [
         { label: 'Day', status: 'planned', text: 'Chelsea / Meatpacking → High Line → Hudson River Park' },
         { label: 'Late day', status: 'planned', text: 'Little Island（順路才去）→ West Village → Greenwich Village' },
@@ -68,6 +113,7 @@ const trip = {
     {
       date: '9/21', weekday: '一', city: 'NYC', title: 'Lower East Side 食物日',
       summary: '把經典再訪放進街區脈絡，不為了吃而跨城折返。',
+      gallery: ['Katz’s pastrami', 'Washington Square', 'Brooklyn sunset'],
       slots: [
         { label: 'Day', status: 'planned', text: 'Lower East Side → Katz’s Delicatessen → East Village' },
         { label: 'Late day', status: 'optional', text: 'Nolita 或 Chinatown 邊緣，依體力收放' },
@@ -78,6 +124,7 @@ const trip = {
     {
       date: '9/22', weekday: '二', city: 'NYC', title: 'Brooklyn 第二次造訪',
       summary: '主角是 Williamsburg、Greenpoint 的日常感與日落水岸。',
+      gallery: ['Williamsburg', 'Brooklyn sunset', 'Washington Square'],
       slots: [
         { label: 'Day', status: 'planned', text: 'Williamsburg 的咖啡、烘焙、商店與街區漫遊' },
         { label: 'Late day', status: 'planned', text: 'Greenpoint → Brooklyn waterfront 看日落' },
@@ -88,6 +135,7 @@ const trip = {
     {
       date: '9/23', weekday: '三', city: 'NYC', title: 'Queens 或一個真正的留白日',
       summary: '這是全段 NYC 的天氣緩衝，不要提前塞滿。',
+      gallery: ['Jackson Heights', 'Katz’s pastrami', 'Washington Square'],
       slots: [
         { label: 'Option A', status: 'planned', text: 'Jackson Heights 食物行程；若還有胃口再去 Flushing' },
         { label: 'Option B', status: 'optional', text: '書店、購物、咖啡與一場真正想看的展覽' },
@@ -98,6 +146,7 @@ const trip = {
     {
       date: '9/24', weekday: '四', city: 'NYC', title: 'Midtown＋Keens',
       summary: '下午開始收斂在 Midtown，為 18:00 晚餐留足安全邊界。',
+      gallery: ['Grand Central', 'Washington Square', 'Brooklyn sunset'],
       slots: [
         { label: 'Day', status: 'planned', text: 'Bryant Park、New York Public Library、Grand Central 或 Midtown 購物' },
         { label: '18:00', status: 'confirmed', text: 'Keens Steakhouse · 7 位 · 72 W 36th St' },
@@ -389,12 +438,19 @@ function resolveDayVisual(day) {
   return visuals.NYC;
 }
 
+function rotatedPhotos(visual, offset = 0, count = 3) {
+  return Array.from({ length: count }, (_, index) => visual.photos[(offset + index) % visual.photos.length]);
+}
+
 function renderHighlights() {
   $('#highlightGrid').innerHTML = trip.highlights.map((highlight, index) => {
     const visual = visuals[highlight.visual];
+    const photos = rotatedPhotos(visual, index, 3);
     return `
       <article class="highlight-card highlight-card-${index + 1}">
-        <img src="${visual.src}" alt="${visual.alt}" width="1920" height="1280" loading="${index === 0 ? 'eager' : 'lazy'}" decoding="async" />
+        <div class="highlight-gallery">
+          ${photos.map((photo, photoIndex) => `<img src="${photo.src}" alt="${photo.alt}" width="1280" height="850" loading="${index === 0 && photoIndex === 0 ? 'eager' : 'lazy'}" decoding="async" />`).join('')}
+        </div>
         <div class="highlight-shade"></div>
         <div class="highlight-topline"><span>${highlight.sequence}</span><span>${highlight.date}</span></div>
         <div class="highlight-copy">
@@ -418,12 +474,16 @@ function renderItinerary() {
   $('#itineraryGrid').innerHTML = trip.itinerary.map((day, index) => {
     const statuses = [...new Set(day.slots.map(slot => slot.status))];
     const visual = resolveDayVisual(day);
+    const photos = day.gallery
+      ? day.gallery.map(caption => visual.photos.find(photo => photo.caption === caption)).filter(Boolean)
+      : rotatedPhotos(visual, index, 3);
     return `
       <details class="day-card" data-city="${day.city}">
         <summary>
           <div class="day-media">
-            <img src="${visual.src}" alt="" width="960" height="640" loading="lazy" decoding="async" />
-            <span>${visual.label}</span>
+            ${photos.map(photo => `
+              <figure><img src="${photo.src}" alt="" width="640" height="420" loading="lazy" decoding="async" /><figcaption>${photo.caption}</figcaption></figure>
+            `).join('')}
           </div>
           <div class="day-topline">
             <div class="day-index">${String(index + 1).padStart(2, '0')}</div>
@@ -489,8 +549,8 @@ function renderCityGuides() {
     const visual = visuals[city.visual];
     return `
       <article class="city-card">
-        <div class="city-card-media">
-          <img src="${visual.src}" alt="${visual.alt}" width="1200" height="800" loading="lazy" decoding="async" />
+        <div class="city-card-media city-card-gallery">
+          ${rotatedPhotos(visual, 0, 3).map(photo => `<img src="${photo.src}" alt="${photo.alt}" width="960" height="640" loading="lazy" decoding="async" />`).join('')}
           <div class="city-card-title"><span>${city.code}</span><h3>${city.name}</h3></div>
         </div>
         <div class="city-card-body">
@@ -507,10 +567,14 @@ function renderCityGuides() {
 }
 
 function renderFood() {
-  $('#foodGrid').innerHTML = trip.food.map(group => `
+  $('#foodGrid').innerHTML = trip.food.map(group => {
+    const cityVisual = visuals[group.city === 'PHL' ? 'Philly' : group.city];
+    const sidePhoto = cityVisual.photos[1];
+    return `
     <article class="food-card">
       <div class="food-cover">
         <img src="${group.image}" alt="${group.alt}" width="1200" height="800" loading="lazy" decoding="async" />
+        <img src="${sidePhoto.src}" alt="${sidePhoto.alt}" width="640" height="800" loading="lazy" decoding="async" />
         <div class="food-title"><span>${group.city}</span><h3>${group.title}</h3></div>
       </div>
       <div class="food-list">${group.items.map(item => `
@@ -520,7 +584,8 @@ function renderFood() {
         </div>
       `).join('')}</div>
     </article>
-  `).join('');
+  `;
+  }).join('');
 }
 
 function renderChecklist(type, items, target) {
