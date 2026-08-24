@@ -1,6 +1,7 @@
-const CACHE='east-coast-2026-v5';
+const CACHE='east-coast-2026-v7';
 const ASSETS=[
-  './','./index.html','./styles.css','./app.js','./manifest.webmanifest',
+  './','./index.html','./itinerary.html','./nyc.html','./new-england.html',
+  './philadelphia.html','./dc.html','./logistics.html','./styles.css','./app.js','./manifest.webmanifest',
   './images/nyc-sunset.jpg','./images/boston-beacon-hill.jpg','./images/beverly-coast.jpg',
   './images/philly-independence-hall.jpg','./images/dc-lincoln-memorial.jpg',
   './images/katz-pastrami.jpg','./images/reading-terminal.jpg','./images/ethiopian-platter.jpg',
