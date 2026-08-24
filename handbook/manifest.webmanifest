@@ -1,10 +1,10 @@
 {
-  "name": "East Coast 2026 Travel Handbook",
+  "name": "East Coast 2026 Trip Handbook",
   "short_name": "East Coast 2026",
   "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#f4f0e7",
-  "theme_color": "#17324d",
+  "theme_color": "#132a3a",
   "lang": "zh-Hant",
   "icons": []
 }

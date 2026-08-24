@@ -3,183 +3,185 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#17324d" />
-  <meta name="description" content="Powen 的 2026 美國東岸婚禮旅行 handbook：紐約、波士頓、Beverly、費城與華盛頓 DC。" />
-  <title>East Coast 2026 · Travel Handbook</title>
+  <meta name="theme-color" content="#132a3a" />
+  <meta name="description" content="Powen 的 2026 美國東岸旅行操作手冊：紐約、波士頓、Beverly、費城與華盛頓 DC。" />
+  <title>East Coast 2026 · Trip Handbook</title>
   <link rel="manifest" href="manifest.webmanifest" />
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect rx='14' width='64' height='64' fill='%2317324d'/%3E%3Cpath d='M14 40c9-3 13-15 22-18 6-2 9 2 14-1' fill='none' stroke='%23f4c46b' stroke-width='5' stroke-linecap='round'/%3E%3Ccircle cx='15' cy='40' r='5' fill='%23fff'/%3E%3Ccircle cx='50' cy='21' r='5' fill='%23fff'/%3E%3C/svg%3E" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect rx='16' width='64' height='64' fill='%23132a3a'/%3E%3Cpath d='M15 43c9-4 13-17 22-20 6-2 9 2 13-2' fill='none' stroke='%23eea26e' stroke-width='5' stroke-linecap='round'/%3E%3Ccircle cx='15' cy='43' r='5' fill='%23fffaf3'/%3E%3Ccircle cx='50' cy='21' r='5' fill='%23fffaf3'/%3E%3C/svg%3E" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <a class="skip-link" href="#main">跳到主要內容</a>
+
   <header class="topbar">
-    <a class="brand" href="#overview" aria-label="回到總覽">
-      <span class="brand-mark">EC</span>
-      <span><strong>East Coast 2026</strong><small>NYC · Boston · Beverly · Philly · DC</small></span>
+    <a class="brand" href="#overview" aria-label="回到旅程總覽">
+      <span class="brand-mark" aria-hidden="true">EC</span>
+      <span><strong>East Coast 2026</strong><small>Trip operating handbook</small></span>
     </a>
     <nav class="desktop-nav" aria-label="主要導覽">
-      <a href="#overview">總覽</a>
-      <a href="#itinerary">逐日行程</a>
-      <a href="#cities">城市攻略</a>
-      <a href="#logistics">交通</a>
-      <a href="#prep">預約與行前</a>
+      <a href="#actions">待處理</a>
+      <a href="#itinerary">逐日</a>
+      <a href="#bookings">已確認</a>
+      <a href="#transport">交通</a>
+      <a href="#playbook">城市與吃什麼</a>
+      <a href="#notes">筆記</a>
     </nav>
     <div class="header-actions">
-      <button id="themeToggle" class="icon-btn" title="切換深色模式" aria-label="切換深色模式">◐</button>
-      <button id="printBtn" class="btn btn-small">列印 / PDF</button>
+      <button id="themeToggle" class="icon-btn" type="button" title="切換深色模式" aria-label="切換深色模式">◐</button>
+      <button id="printBtn" class="btn btn-small" type="button">列印 / PDF</button>
     </div>
   </header>
 
-  <main>
+  <main id="main">
     <section id="overview" class="hero section-shell">
       <div class="hero-copy">
-        <p class="eyebrow">2026.09.19 — 2026.10.05</p>
-        <h1>一趟以婚禮為錨點，<br />一路看懂美國東岸城市性格的旅行。</h1>
-        <p class="hero-lead">JFK 入境，Beverly 婚禮，IAD 離境。先在紐約吃與走，再往 Boston、Philadelphia、Washington DC 推進。</p>
+        <p class="eyebrow">2026.09.19 SAT — 10.05 MON</p>
+        <h1>美東行程，<br /><span>把確定與未定分清楚。</span></h1>
+        <p class="hero-lead">JFK 入境、Beverly 婚禮、一路搭火車南下，預計由 IAD 回台。這是旅途中能直接打開使用的操作面板，不是景點大全。</p>
         <div class="hero-actions">
-          <a class="btn" href="#itinerary">打開逐日行程</a>
-          <button id="copySummaryBtn" class="btn btn-ghost">複製行程摘要</button>
+          <a class="btn" href="#actions">先看待處理事項</a>
+          <button id="copySummaryBtn" class="btn btn-ghost" type="button">複製行程摘要</button>
         </div>
-        <div class="status-line"><span class="pulse"></span><span id="countdownText">計算距離出發日…</span></div>
+        <div class="countdown-line"><span class="pulse" aria-hidden="true"></span><span id="countdownText">計算距離出發日…</span></div>
       </div>
 
-      <div class="route-card" aria-label="旅行路線圖">
-        <svg class="route-map" viewBox="0 0 760 330" role="img" aria-labelledby="routeTitle routeDesc">
-          <title id="routeTitle">美國東岸旅行路線</title>
-          <desc id="routeDesc">紐約、波士頓、Beverly、費城與華盛頓 DC 的旅行順序。</desc>
-          <defs>
-            <linearGradient id="sea" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0" stop-color="#d9edf2"/>
-              <stop offset="1" stop-color="#eef4ed"/>
-            </linearGradient>
-            <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
-              <feDropShadow dx="0" dy="6" stdDeviation="6" flood-opacity=".15"/>
-            </filter>
-          </defs>
-          <rect x="0" y="0" width="760" height="330" rx="28" fill="url(#sea)"/>
-          <path d="M660 35 C610 65 620 105 570 125 C515 148 510 180 448 190 C370 202 348 246 270 252 C195 258 142 284 88 300" fill="none" stroke="#ffffff" stroke-width="48" stroke-linecap="round" opacity=".75"/>
-          <path d="M653 45 C600 75 610 109 563 130 C508 155 500 184 442 195 C365 210 340 250 264 260 C185 270 137 291 82 306" fill="none" stroke="#d7dfd9" stroke-width="2" stroke-dasharray="8 8"/>
-          <path d="M557 122 C488 160 395 203 269 251 C201 276 135 294 83 304" fill="none" stroke="#e78d5b" stroke-width="5" stroke-linecap="round" stroke-dasharray="3 12"/>
-          <g class="route-node" transform="translate(555 118)"><circle r="16"/><text x="0" y="-28">Boston</text><small x="0" y="31">9/25–9/27</small></g>
-          <g class="route-node wedding" transform="translate(626 74)"><circle r="13"/><text x="0" y="-25">Beverly</text><small x="0" y="27">Wedding</small></g>
-          <g class="route-node" transform="translate(440 196)"><circle r="16"/><text x="0" y="-28">NYC</text><small x="0" y="31">9/19–9/25</small></g>
-          <g class="route-node" transform="translate(266 259)"><circle r="16"/><text x="0" y="-28">Philly</text><small x="0" y="31">9/28–9/30</small></g>
-          <g class="route-node" transform="translate(82 305)"><circle r="16"/><text x="0" y="-28">DC</text><small x="0" y="31">9/30–10/4</small></g>
-          <g transform="translate(24 25)">
-            <rect width="184" height="58" rx="15" fill="#17324d" filter="url(#shadow)"/>
-            <text x="18" y="25" fill="#fff" font-size="14" font-weight="700">Route logic</text>
-            <text x="18" y="44" fill="#dce7ef" font-size="12">先往北參加婚禮，再一路南下</text>
-          </g>
-        </svg>
+      <div class="route-board" aria-label="旅行路線與狀態">
+        <div class="route-board-head">
+          <div><span class="micro-label">ROUTE / 17 DAYS</span><strong>Taipei → East Coast → Taipei</strong></div>
+          <span class="status-badge status-planned">回程未開票</span>
+        </div>
+        <ol class="route-line">
+          <li><span class="route-dot confirmed"></span><div><strong>New York City</strong><small>9/19–9/25 · 朋友家</small></div></li>
+          <li><span class="route-dot confirmed"></span><div><strong>Boston</strong><small>9/25–9/27 · 9/26 住宿待訂</small></div></li>
+          <li><span class="route-dot need"></span><div><strong>Beverly</strong><small>9/27 Wedding · 當晚住宿待訂</small></div></li>
+          <li><span class="route-dot planned"></span><div><strong>Philadelphia</strong><small>9/28–9/30</small></div></li>
+          <li><span class="route-dot planned"></span><div><strong>Washington, DC</strong><small>9/30–10/3 · 10/4 01:15 預計離境</small></div></li>
+        </ol>
+        <div class="status-key" aria-label="狀態圖例">
+          <span class="status-badge status-confirmed">Confirmed</span>
+          <span class="status-badge status-planned">Planned</span>
+          <span class="status-badge status-need">Need to book</span>
+          <span class="status-badge status-optional">Optional</span>
+        </div>
       </div>
     </section>
 
-    <section class="metrics section-shell" aria-label="旅行摘要">
-      <article><span class="metric-value">17</span><span class="metric-label">跨越日曆日</span></article>
-      <article><span class="metric-value">14</span><span class="metric-label">美國住宿晚數</span></article>
-      <article><span class="metric-value">8</span><span class="metric-label">預計請假日</span></article>
-      <article><span class="metric-value">4+1</span><span class="metric-label">城市＋婚禮場地</span></article>
+    <section class="metrics section-shell" aria-label="旅程摘要">
+      <article><span class="metric-value">4 + 1</span><span class="metric-label">已確認訂位＋固定婚禮</span></article>
+      <article><span class="metric-value">2</span><span class="metric-label">尚未解決的住宿夜</span></article>
+      <article><span class="metric-value">5</span><span class="metric-label">NYC 完整活動日</span></article>
+      <article><span class="metric-value">3.5</span><span class="metric-label">DC 有效活動日</span></article>
     </section>
 
-    <section class="decision-strip section-shell">
-      <div>
-        <span class="section-kicker">目前版本的核心判斷</span>
-        <h2>NYC 多留、Boston 不灌水、婚禮後把交通摩擦算進去。</h2>
+    <section class="urgent-strip section-shell" aria-labelledby="urgentTitle">
+      <div class="urgent-heading">
+        <span class="urgent-icon" aria-hidden="true">!</span>
+        <div><span class="micro-label">DO NOT MISS</span><h2 id="urgentTitle">兩晚住宿缺口，現在仍未解決</h2></div>
       </div>
-      <div class="decision-pills">
-        <span>NYC 約 5 天</span>
-        <span>Boston 約 1.5 天</span>
-        <span>Philly 約 1.5 天</span>
-        <span>DC 約 3.5 天</span>
+      <div class="urgent-items">
+        <a href="#actions"><strong>9/26 · Boston / North Shore</strong><span>需選擇留 Boston 或當晚移動 Beverly</span></a>
+        <a href="#actions"><strong>9/27 · Beverly / Tupper Manor</strong><span>婚禮約 22:00 結束，必須住場地附近</span></a>
+      </div>
+    </section>
+
+    <section id="actions" class="section-shell section-block">
+      <div class="section-heading">
+        <div><span class="section-kicker">ACTION BOARD</span><h2>先把會卡住行程的事處理掉</h2></div>
+        <p>勾選進度只存在這台裝置的瀏覽器。高優先清單刻意把住宿、長程交通與需預約景點放在一起。</p>
+      </div>
+      <div class="action-layout">
+        <div class="panel panel-critical">
+          <div class="panel-title"><div><span class="panel-step">01</span><h3>高優先</h3></div><button class="text-btn" type="button" data-reset="actions-high">重設</button></div>
+          <div id="highPriorityChecklist" class="checklist"></div>
+        </div>
+        <div class="panel">
+          <div class="panel-title"><div><span class="panel-step">02</span><h3>接著決定</h3></div><button class="text-btn" type="button" data-reset="actions-medium">重設</button></div>
+          <div id="mediumPriorityChecklist" class="checklist"></div>
+        </div>
       </div>
     </section>
 
     <section id="itinerary" class="section-shell section-block">
-      <div class="section-heading">
+      <div class="section-heading itinerary-heading">
         <div><span class="section-kicker">DAY BY DAY</span><h2>逐日行程</h2></div>
-        <div class="filter-row" id="cityFilters" aria-label="城市篩選"></div>
+        <p>每一天只保留主軸、固定錨點和一個退路。點開卡片看上午／下午／晚上的安排。</p>
       </div>
+      <div class="filter-row" id="cityFilters" aria-label="依城市篩選行程"></div>
       <div id="itineraryGrid" class="itinerary-grid"></div>
     </section>
 
-    <section id="cities" class="section-shell section-block">
+    <section id="bookings" class="section-shell section-block">
       <div class="section-heading">
-        <div><span class="section-kicker">CITY PLAYBOOK</span><h2>城市攻略</h2></div>
-        <p>每座城市只抓一個核心敘事，避免把旅行變成景點清單。</p>
+        <div><span class="section-kicker">CONFIRMED ANCHORS</span><h2>已確認訂位與固定事件</h2></div>
+        <p>這些資料優先於建議行程。公開頁面只保留當天有用的資訊，不含訂位代碼、票號或付款資料。</p>
+      </div>
+      <div id="bookingGrid" class="booking-grid"></div>
+    </section>
+
+    <section id="transport" class="section-shell section-block">
+      <div class="section-heading">
+        <div><span class="section-kicker">TRANSPORT</span><h2>城市間移動</h2></div>
+        <p>已買的票顯示精確班次；尚未買的只鎖定方向與合理節奏，不製造假確定性。</p>
+      </div>
+      <div id="transportList" class="transport-list"></div>
+      <aside class="return-callout">
+        <div><span class="status-badge status-planned">Planned — ticket not issued</span><h3>10/4 01:15 IAD → TPE</h3></div>
+        <p>10/3 是最後一個有效觀光日；晚上須預留前往 IAD、報到與安檢時間。預計 10/5 05:10 抵達 TPE T2。</p>
+      </aside>
+    </section>
+
+    <section id="playbook" class="section-shell section-block">
+      <div class="section-heading">
+        <div><span class="section-kicker">CITY PLAYBOOK</span><h2>城市策略</h2></div>
+        <p>紐約是第二次去；Boston 只有一個完整日；Philly 抓建國史；DC 把主館和紀念碑拆開。</p>
       </div>
       <div id="cityGuideGrid" class="city-guide-grid"></div>
     </section>
 
-    <section id="logistics" class="section-shell section-block">
+    <section id="food" class="section-shell section-block">
       <div class="section-heading">
-        <div><span class="section-kicker">LOGISTICS</span><h2>交通與婚禮日物流</h2></div>
-        <p>精準班次尚未開放時，先鎖定「不容易出錯的結構」。</p>
+        <div><span class="section-kicker">FOOD SHORTLIST</span><h2>這趟要吃什麼</h2></div>
+        <p>只留真正有角色的餐點；不靠酒吧填晚上，也避免後半段繼續重複牛排與三明治。</p>
       </div>
-
-      <div class="logistics-layout">
-        <div id="transportCards" class="transport-list"></div>
-        <aside class="wedding-panel">
-          <span class="section-kicker">9/27 · BEVERLY</span>
-          <h3>Tupper Manor 婚禮日</h3>
-          <p>婚禮下午開始、晚上 10 點結束，並在場地旁住宿。這一天完全不安排城市移動。</p>
-          <ol>
-            <li>Boston 飯店退房，行李一起帶往 Beverly。</li>
-            <li>預留 Boston → Beverly 的週日交通緩衝。</li>
-            <li>入住 Wylie Inn／婚禮指定住宿後再換裝。</li>
-            <li>9/28 早餐、退房後，再前往 Boston South Station 搭南下 Amtrak。</li>
-          </ol>
-          <a class="text-link" href="https://maps.google.com/?q=Tupper+Manor+295+Hale+St+Beverly+MA+01915" target="_blank" rel="noopener">在 Google Maps 開啟場地 ↗</a>
-        </aside>
-      </div>
+      <div id="foodGrid" class="food-grid"></div>
     </section>
 
-    <section id="prep" class="section-shell section-block">
+    <section id="notes" class="section-shell section-block">
       <div class="section-heading">
-        <div><span class="section-kicker">CONTROL CENTER</span><h2>預約、清單與個人筆記</h2></div>
-        <p>勾選狀態與筆記會存在瀏覽器內，不需登入。</p>
+        <div><span class="section-kicker">PERSONAL CONTROL CENTER</span><h2>行李與個人筆記</h2></div>
+        <p>筆記與勾選狀態會自動存在瀏覽器中，不會送到伺服器。</p>
       </div>
-      <div class="prep-grid">
-        <div class="panel">
-          <div class="panel-title"><h3>預約優先序</h3><button class="text-btn" data-reset="reservations">重設</button></div>
-          <div id="reservationChecklist" class="checklist"></div>
-        </div>
-        <div class="panel">
-          <div class="panel-title"><h3>行李清單</h3><button class="text-btn" data-reset="packing">重設</button></div>
-          <div id="packingChecklist" class="checklist two-col"></div>
-        </div>
+      <div class="notes-layout">
         <div class="panel notes-panel">
           <div class="panel-title"><h3>旅程筆記</h3><span id="saveState">自動儲存</span></div>
-          <textarea id="tripNotes" placeholder="飯店候選、朋友約飯、想吃的店、尚未決定的展覽……"></textarea>
+          <textarea id="tripNotes" aria-label="旅程筆記" placeholder="朋友約飯、候選旅館、演出場次、想吃的店……"></textarea>
         </div>
-        <div class="panel budget-panel">
-          <div class="panel-title"><h3>快速預算盤點</h3><button class="text-btn" id="resetBudget">重設</button></div>
-          <div id="budgetInputs" class="budget-inputs"></div>
-          <div class="budget-total"><span>估算總額</span><strong id="budgetTotal">NT$0</strong></div>
-          <small>僅供粗估，預設幣別為新台幣。</small>
+        <div class="panel">
+          <div class="panel-title"><h3>行李清單</h3><button class="text-btn" type="button" data-reset="packing">重設</button></div>
+          <div id="packingChecklist" class="checklist packing-list"></div>
         </div>
       </div>
     </section>
 
     <section class="section-shell sources-section">
       <div>
-        <span class="section-kicker">LIVE SOURCES</span>
-        <h2>出發前應重新確認</h2>
-        <p>網站中的城市安排是穩定框架；交通班次、預約規則與開放時間應在開賣後重新核對。</p>
+        <span class="section-kicker">CHECK AGAIN</span>
+        <h2>出發前回官方頁面確認</h2>
+        <p>班次、開放時間與 timed-entry 規則會變；這裡只放最後確認時最有用的入口。</p>
       </div>
       <div class="source-links">
+        <a href="https://www.china-airlines.com/" target="_blank" rel="noopener">China Airlines ↗</a>
         <a href="https://www.amtrak.com/northeast-regional-train" target="_blank" rel="noopener">Amtrak Northeast Regional ↗</a>
-        <a href="https://www.amtrak.com/acela-train" target="_blank" rel="noopener">Amtrak Acela ↗</a>
         <a href="https://tuppermanor.com/" target="_blank" rel="noopener">Tupper Manor ↗</a>
-        <a href="https://flights.evaair.com/en-us/flights-from-washington-to-taipei" target="_blank" rel="noopener">EVA IAD → TPE ↗</a>
-        <a href="https://www.nyctourism.com/" target="_blank" rel="noopener">NYC Tourism ↗</a>
-        <a href="https://www.meetboston.com/" target="_blank" rel="noopener">Meet Boston ↗</a>
-        <a href="https://www.visitphilly.com/" target="_blank" rel="noopener">Visit Philly ↗</a>
-        <a href="https://washington.org/" target="_blank" rel="noopener">Washington.org ↗</a>
+        <a href="https://www.visitthecapitol.gov/" target="_blank" rel="noopener">U.S. Capitol Visitor Center ↗</a>
+        <a href="https://www.loc.gov/visit/" target="_blank" rel="noopener">Library of Congress ↗</a>
+        <a href="https://www.si.edu/visit" target="_blank" rel="noopener">Smithsonian Visitor Information ↗</a>
       </div>
     </section>
   </main>
 
   <footer>
-    <p>Built for Powen · Baseline v1 · Last updated 2026-07-22</p>
+    <p>East Coast 2026 · Current handbook · Updated 2026-08-24</p>
     <a href="#overview">回到頂端 ↑</a>
   </footer>
 
