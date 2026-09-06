@@ -19,11 +19,11 @@ const trip = {
     { date:'9/26', day:'SAT', city:'Boston', page:'new-england.html#ne-0926', title:'Boston 一日長鏡頭', summary:'從 Beacon Hill 接上精選 Freedom Trail，黃昏停在 North End 與港邊。', route:'Common → Beacon Hill → Freedom Trail → North End', status:'planned', images:['boston-beacon-hill.jpg','boston-public-garden.jpg','boston-old-state-house.jpg','boston-north-end.jpg'] },
     { date:'9/27', day:'SUN', city:'Beverly', page:'new-england.html#ne-0927', title:'Tupper Manor Wedding', summary:'今天不追景點；海岸、朋友與婚禮就是全程唯一不可複製的一天。', route:'Beverly → Tupper Manor → 住宿', status:'confirmed', images:['beverly-tupper-manor.jpg','beverly-coast.jpg','beverly-endicott-pond.jpg','beverly-west-beach.jpg'] },
     { date:'9/28', day:'MON', city:'Transit', page:'new-england.html#ne-0928', title:'Boston → Philadelphia', summary:'朋友送到 South Station；11:40 的 Train 173 直達 Philadelphia。', route:'South Station 11:40 → 30th Street 17:29', status:'confirmed', images:['boston-old-state-house.jpg','philly-30th-street.jpg','reading-terminal.jpg','philly-independence-hall.jpg'] },
-    { date:'9/29', day:'TUE', city:'Philadelphia', page:'philadelphia.html#phl-0929', title:'建國史，準時開場', summary:'10:50 前到安檢；11:20 Independence Hall 已訂，之後串 Liberty Bell 與 Old City。', route:'Independence Hall 11:20 → Liberty Bell → Old City', status:'confirmed', images:['philly-independence-hall.jpg','philly-liberty-bell.jpg','philly-elfreths-alley.jpg','reading-terminal.jpg'] },
-    { date:'9/30', day:'WED', city:'Transit', page:'philadelphia.html#phl-0930', title:'Philadelphia → Washington', summary:'Train 141 早班南下；11:47 抵達 Union Station，下午只做城市暖身。', route:'30th Street 09:50 → Union Station 11:47 → U Street', status:'confirmed', images:['philly-30th-street.jpg','dc-capitol.jpg','dc-u-street.jpg','dc-georgetown.jpg'] },
-    { date:'10/1', day:'THU', city:'Washington, DC', page:'dc.html#dc-1001', title:'民主制度的一天', summary:'10:20 Capitol、13:00 Library of Congress，15:15 之後 National Archives。', route:'Capitol 10:20 → LOC 13:00 → Archives', status:'confirmed', images:['dc-capitol.jpg','dc-library-congress.jpg','dc-archives.jpg','dc-georgetown.jpg'] },
-    { date:'10/2', day:'FRI', city:'Washington, DC', page:'dc.html#dc-1002', title:'雙館行軍＋紀念碑夜走', summary:'10:00 Air & Space、13:00 NMAAHC 都已訂；日落後沿 Reflecting Pool 走到 Lincoln。', route:'Air & Space 10:00 → NMAAHC 13:00 → Lincoln', status:'confirmed', images:['dc-air-space.jpg','dc-nmaahc.jpg','dc-lincoln-memorial.jpg','dc-capitol.jpg'] },
-    { date:'10/3', day:'SAT', city:'Washington, DC', page:'dc.html#dc-1003', title:'自由半日，準時離境', summary:'Natural History 或 Washington Monument 擇一；20:15–20:30 離開 U Street 前往 IAD。', route:'彈性半日 → 取行李 → IAD', status:'planned', images:['dc-nmaahc.jpg','dc-georgetown.jpg','ethiopian-platter.jpg','dc-lincoln-memorial.jpg'] },
+    { date:'9/29', day:'TUE', city:'Philadelphia', page:'philadelphia.html#phl-0929', title:'建國史，準時開場', summary:'11:20 Independence Hall；市場午餐後，16:45 執行 Zahav 單人吧台策略。', route:'Hall 11:20 → Reading Terminal → Zahav walk-in 16:45', status:'confirmed', images:['philly-independence-hall.jpg','philly-liberty-bell.jpg','philly-elfreths-alley.jpg','reading-terminal.jpg'] },
+    { date:'9/30', day:'WED', city:'Transit', page:'philadelphia.html#phl-0930', title:'Philadelphia → Washington', summary:'Train 141 早班南下；放完行李以 Ben’s half-smoke 為 DC 開場。', route:'30th Street 09:50 → Union Station 11:47 → Ben’s → Georgetown', status:'confirmed', images:['philly-30th-street.jpg','dc-capitol.jpg','dc-u-street.jpg','dc-georgetown.jpg'] },
+    { date:'10/1', day:'THU', city:'Washington, DC', page:'dc.html#dc-1001', title:'民主制度的一天', summary:'Capitol、Library of Congress、Archives 後，18:30 The Dabney 已訂。', route:'Capitol 10:20 → LOC 13:00 → Archives → The Dabney 18:30', status:'confirmed', images:['dc-capitol.jpg','dc-library-congress.jpg','dc-archives.jpg','dc-georgetown.jpg'] },
+    { date:'10/2', day:'FRI', city:'Washington, DC', page:'dc.html#dc-1002', title:'雙館行軍＋紀念碑夜走', summary:'雙館與紀念碑長走之後，20:30 Old Ebbitt Grill 單人桌已訂。', route:'Air & Space 10:00 → NMAAHC 13:00 → Lincoln → Old Ebbitt 20:30', status:'confirmed', images:['dc-air-space.jpg','dc-nmaahc.jpg','dc-lincoln-memorial.jpg','dc-capitol.jpg'] },
+    { date:'10/3', day:'SAT', city:'Washington, DC', page:'dc.html#dc-1003', title:'自由半日，準時離境', summary:'Unconventional brunch、彈性半日與 Chercher early dinner；20:15–20:30 離開 U Street。', route:'Brunch → 彈性半日 → Chercher 17:15 → 取行李 → IAD', status:'planned', images:['dc-nmaahc.jpg','dc-georgetown.jpg','ethiopian-platter.jpg','dc-lincoln-memorial.jpg'] },
     { date:'10/4', day:'SUN', city:'Flight', page:'dc.html#dc-1003', title:'Washington → Taipei', summary:'01:15 從 IAD 起飛；真正的離境行動都在 10/3 晚上完成。', route:'IAD 01:15 → BR3 → 跨越換日線', status:'confirmed', images:['dc-lincoln-memorial.jpg','dc-capitol.jpg','nyc-sunset.jpg','boston-beacon-hill.jpg'] },
     { date:'10/5', day:'MON', city:'Taipei', page:'itinerary.html#day-17', title:'抵達 Taipei', summary:'05:10 抵達 TPE Terminal 2，上午不排任何不可移動的承諾。', route:'TPE T2 → 入境／領行李 → 回家', status:'confirmed', images:['nyc-sunset.jpg','boston-beacon-hill.jpg','philly-independence-hall.jpg','dc-lincoln-memorial.jpg'] }
   ],
@@ -41,6 +41,8 @@ const trip = {
     { type:'TRAIN · TICKETED', date:'9/30', title:'Northeast Regional 141', facts:['09:50 · Philadelphia 30th Street','11:47 · Washington Union Station','Coach','至少提前 25 分抵達'] },
     { type:'LODGING · RESERVED', date:'9/30 → 10/3', title:'U Street Capsule Hostel', facts:['U Street / Shaw','6 Pod Mixed · locked capsule','靠近 Metro','公開頁不放付款與床位資料'] },
     { type:'DC · ALL RESERVED', date:'10/1 → 10/2', title:'Capitol + LOC + Archives + Smithsonian', facts:['10/1 Capitol 10:20','10/1 Library of Congress 13:00','10/1 National Archives','10/2 Air & Space 10:00 · NMAAHC 13:00'] },
+    { type:'DINNER · RESERVED', date:'10/1', title:'The Dabney', facts:['18:30 · 1 位','High Top','bar-area à la carte','9/30 18:30 DC 前免費取消；逾時 US$25 + tax'] },
+    { type:'DINNER · RESERVED', date:'10/2', title:'Old Ebbitt Grill', facts:['20:30 · 1 位','OpenTable confirmed','675 15th St NW','紀念碑夜走後前往'] },
     { type:'RETURN · TICKETED', date:'10/4 → 10/5', title:'BR3 · Washington → Taipei', facts:['10/4 01:15 · IAD','10/5 05:10 · TPE Terminal 2','10/3 晚上就是離境日','目標 21:30 左右抵達 IAD'] }
   ],
   transport: [
@@ -56,6 +58,7 @@ const trip = {
   actions: {
     high: [
       ['shukette','Shukette 開放後補訂；訂不到就保留彈性，不硬塞'],
+      ['zahav-bar','9/22 查看 chef’s counter、9/27 查看吧台位；都沒有就 9/29 16:45 walk-in'],
       ['hi-cancel','9/22 23:59 EDT 前確認朋友行程，若不變就取消 HI Boston'],
       ['train-cancel','9/25 開車方案確認後，在 Train 176 發車前取消 Amtrak']
     ],
@@ -63,7 +66,7 @@ const trip = {
       ['jfk-weehawken','把 JFK → Weehawken 深夜交通方案與朋友聯絡方式存離線'],
       ['washington-monument','決定是否搶 Washington Monument；Natural History 可直接排候補'],
       ['iad-transfer','10/3 確認行李寄放與 U Street → IAD 最終走法'],
-      ['ethiopian','選一間 U Street／Shaw 附近 Ethiopian final meal']
+      ['chercher','確認 10/3 Chercher 17:15 的營業與候位策略；18:45 前離席']
     ],
     packing: [
       ['passport','護照、ESTA、旅遊保險資料'],['tickets','機票、Amtrak、劇場與 timed entry 加入錢包／離線保存'],
