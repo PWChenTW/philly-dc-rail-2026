@@ -1,10 +1,10 @@
 {
-  "name": "One Seat to the East Coast · 2026",
-  "short_name": "East Coast 2026",
+  "name": "Northbound. Southbound. · East Coast 2026",
+  "short_name": "East Coast ’26",
   "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#f4f0e7",
-  "theme_color": "#132a3a",
+  "theme_color": "#142b3a",
   "lang": "zh-Hant",
   "icons": []
 }

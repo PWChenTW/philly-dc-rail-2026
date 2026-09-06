@@ -28,5 +28,12 @@ The handbook uses resized local copies of the following photographs. No endorsem
 | `nyc-high-line.jpg` | [High Line, New York](https://commons.wikimedia.org/wiki/File:High_Line,_New_York.jpg) | rboed | [CC BY 2.0](https://creativecommons.org/licenses/by/2.0/) |
 | `nyc-williamsburg.jpg` | [Bedford Ave, Brooklyn](https://commons.wikimedia.org/wiki/File:Bedford_Ave,_Brooklyn.JPG) | Kaodro | [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/) |
 | `nyc-jackson-heights.jpg` | [Jackson Heights, Queens NY](https://commons.wikimedia.org/wiki/File:Jackson_Heights,_Queens_NY.jpg) | Tenzin Youdon | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) |
+| `nyc-new-amsterdam.jpg` | [New Amsterdam Theatre, New York, United States (Unsplash)](https://commons.wikimedia.org/wiki/File:New_Amsterdam_Theatre,_New_York,_United_States_(Unsplash).jpg) | Jad Limcaco | [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/) |
+| `nyc-pizza.jpg` | [NYPizzaSlice](https://commons.wikimedia.org/wiki/File:NYPizzaSlice.jpg) | Hungry Dudes | [CC BY 2.0](https://creativecommons.org/licenses/by/2.0/) |
+| `philly-30th-street.jpg` | [Interior of 30th Street Station](https://commons.wikimedia.org/wiki/File:Interior_of_30th_Street_Station.jpg) | Difference engine | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) |
+| `dc-nmaahc.jpg` | [National Museum of African American History and Culture in February 2020](https://commons.wikimedia.org/wiki/File:National_Museum_of_African_American_History_and_Culture_in_February_2020.jpg) | Frank Schulenburg | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) |
+| `dc-archives.jpg` | [National Archives Building — southeast corner](https://commons.wikimedia.org/wiki/File:National_Archives_Building_-_southeast_corner.JPG) | AgnosticPreachersKid | [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/) |
+| `dc-air-space.jpg` | [National Air and Space Museum (55256212753)](https://commons.wikimedia.org/wiki/File:National_Air_and_Space_Museum_(55256212753).jpg) | Ajay Suresh / ajay_suresh | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) |
+| `dc-u-street.jpg` | [Ben's Chili Bowl (4583064662)](https://commons.wikimedia.org/wiki/File:Ben%27s_Chili_Bowl_(4583064662).jpg) | Tim Sackton | [CC BY-SA 2.0](https://creativecommons.org/licenses/by-sa/2.0/) |
 
 The downloaded files are resized versions made available through Wikimedia Commons. The site may crop them responsively with CSS (`object-fit: cover`); no other material changes were made.
