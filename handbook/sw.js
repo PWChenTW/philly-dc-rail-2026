@@ -1,4 +1,4 @@
-const CACHE='east-coast-2026-v10';
+const CACHE='east-coast-2026-v11';
 const ASSETS=[
   './','./index.html','./itinerary.html','./nyc.html','./new-england.html',
   './philadelphia.html','./dc.html','./food.html','./logistics.html','./styles.css','./app.js','./manifest.webmanifest',
