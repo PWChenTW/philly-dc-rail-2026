@@ -1,7 +1,7 @@
-const CACHE='east-coast-2026-v11';
+const CACHE='east-coast-2026-v12';
 const ASSETS=[
   './','./index.html','./itinerary.html','./nyc.html','./new-england.html',
-  './philadelphia.html','./dc.html','./food.html','./logistics.html','./styles.css','./app.js','./manifest.webmanifest',
+  './philadelphia.html','./dc.html','./food.html','./logistics.html','./styles.css','./app.js','./styles.css?v=12','./app.js?v=12','./manifest.webmanifest',
   './images/nyc-sunset.jpg','./images/boston-beacon-hill.jpg','./images/beverly-coast.jpg',
   './images/philly-independence-hall.jpg','./images/dc-lincoln-memorial.jpg',
   './images/katz-pastrami.jpg','./images/reading-terminal.jpg','./images/ethiopian-platter.jpg',
@@ -17,7 +17,9 @@ const ASSETS=[
 self.addEventListener('install',e=>e.waitUntil(caches.open(CACHE).then(c=>c.addAll(ASSETS)).then(()=>self.skipWaiting())));
 self.addEventListener('activate',e=>e.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k!==CACHE).map(k=>caches.delete(k)))).then(()=>self.clients.claim())));
 self.addEventListener('fetch',e=>{
-  if(e.request.mode==='navigate'){
+  const url=new URL(e.request.url);
+  const isShellAsset=url.origin===self.location.origin && /\.(css|js|webmanifest)$/.test(url.pathname);
+  if(e.request.mode==='navigate'||isShellAsset){
     e.respondWith(fetch(e.request).then(response=>{
       const copy=response.clone();
       caches.open(CACHE).then(cache=>cache.put(e.request,copy));
