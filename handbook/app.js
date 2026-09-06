@@ -1,8 +1,8 @@
 const statusLabels = { confirmed: '已鎖定', planned: '已排好', watch: '待追蹤', optional: '可選' };
 const pages = [
   ['index.html', '首頁'], ['itinerary.html', '逐日路線'], ['nyc.html', 'New York'],
-  ['food.html', '吃什麼'], ['new-england.html', 'New England'],
-  ['philadelphia.html', 'Philadelphia'], ['dc.html', 'Washington, DC'], ['logistics.html', 'Control Room']
+  ['new-england.html', 'New England'], ['philadelphia.html', 'Philadelphia'],
+  ['dc.html', 'Washington, DC'], ['food.html', '吃什麼'], ['logistics.html', 'Control Room']
 ];
 
 const trip = {
