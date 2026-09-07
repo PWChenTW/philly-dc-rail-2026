@@ -1,7 +1,7 @@
-const CACHE='east-coast-2026-v12';
+const CACHE='east-coast-2026-v14';
 const ASSETS=[
   './','./index.html','./itinerary.html','./nyc.html','./new-england.html',
-  './philadelphia.html','./dc.html','./food.html','./logistics.html','./styles.css','./app.js','./styles.css?v=12','./app.js?v=12','./manifest.webmanifest',
+  './philadelphia.html','./dc.html','./food.html','./logistics.html','./styles.css','./app.js','./styles.css?v=12','./styles.css?v=13','./styles.css?v=14','./app.js?v=12','./manifest.webmanifest',
   './images/nyc-sunset.jpg','./images/boston-beacon-hill.jpg','./images/beverly-coast.jpg',
   './images/philly-independence-hall.jpg','./images/dc-lincoln-memorial.jpg',
   './images/katz-pastrami.jpg','./images/reading-terminal.jpg','./images/ethiopian-platter.jpg',

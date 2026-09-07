@@ -104,6 +104,28 @@ img{display:block;max-width:100%}a{color:inherit}button,textarea{font:inherit}.s
 @media(prefers-reduced-motion:reduce){.ticker div{animation:none}.reveal{opacity:1;transform:none}}
 .status-watch{background:var(--red-soft);color:var(--red)}
 
+/* Pocket field guides: compact interpretation to read before entering a sight. */
+.field-guide{padding-block:64px 18px;scroll-margin-top:90px}
+.field-guide-frame{overflow:hidden;border-radius:30px;background:var(--board);color:#fff;box-shadow:0 22px 58px rgba(7,25,35,.16)}
+.field-guide-head{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:end;padding:34px 36px;border-bottom:1px solid rgba(255,255,255,.14)}
+.field-guide-head .section-kicker{color:#ffb58e}
+.field-guide-head h2{margin:7px 0 0;font-size:clamp(31px,3.3vw,48px);line-height:.95;letter-spacing:-.055em}
+.field-guide-head p{max-width:620px;margin:0;color:rgba(255,255,255,.68);font-size:12px}
+.field-guide-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr))}
+.field-note{display:flex;min-width:0;min-height:330px;flex-direction:column;padding:27px 28px;border-right:1px solid rgba(255,255,255,.12);border-bottom:1px solid rgba(255,255,255,.12)}
+.field-note:nth-child(3n){border-right:0}
+.field-note-meta{display:flex;justify-content:space-between;gap:12px;color:#ffb58e;font-size:8px;font-weight:900;letter-spacing:.14em;text-transform:uppercase}
+.field-note h3{margin:16px 0 10px;font-size:25px;line-height:1;letter-spacing:-.035em}
+.field-note>p{margin:0;color:rgba(255,255,255,.7);font-size:11px}
+.look-for{margin-top:20px;padding-top:17px;border-top:1px solid rgba(255,255,255,.12)}
+.look-for strong{display:block;color:#fff;font-size:9px;letter-spacing:.11em}
+.look-for ul{margin:10px 0 0;padding-left:17px;color:rgba(255,255,255,.82);font-size:10px}
+.look-for li+li{margin-top:7px}
+.field-source{align-self:flex-start;margin-top:auto;padding-top:19px;color:#ffb58e;font-size:9px;font-weight:900;text-decoration:none}
+.field-source:hover{text-decoration:underline}
+.field-guide-foot{display:flex;gap:14px;align-items:center;justify-content:space-between;padding:16px 28px;background:rgba(255,255,255,.05);color:rgba(255,255,255,.58);font-size:9px}
+.field-guide-foot strong{color:#fff;letter-spacing:.08em}
+
 /* Keep every photo mosaic inside its assigned frame. Intrinsic image sizes must
    never grow grid tracks over the copy that follows. */
 .journey-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
@@ -122,7 +144,23 @@ img{display:block;max-width:100%}a{color:inherit}button,textarea{font:inherit}.s
 .story-gallery.four figure:nth-child(4){grid-column:3;grid-row:2}
 
 @media(max-width:900px){.journey-grid{grid-template-columns:1fr}}
+@media(max-width:900px){
+  .field-guide-head{grid-template-columns:1fr;gap:14px}
+  .field-guide-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .field-note:nth-child(3n){border-right:1px solid rgba(255,255,255,.12)}
+  .field-note:nth-child(2n){border-right:0}
+}
 @media(max-width:600px){
+  .field-guide{padding-block:45px 8px}
+  .field-guide-frame{border-radius:23px}
+  .field-guide-head{padding:26px 23px}
+  .field-guide-head h2{font-size:34px}
+  .field-guide-grid{grid-template-columns:1fr}
+  .field-note,.field-note:nth-child(2n),.field-note:nth-child(3n){min-height:0;padding:24px 23px;border-right:0}
+  .field-note>p{font-size:12px;line-height:1.75}
+  .look-for ul{font-size:11px;line-height:1.65}
+  .field-source{font-size:10px}
+  .field-guide-foot{align-items:flex-start;flex-direction:column;padding-inline:23px}
   .journey-gallery{grid-template-columns:repeat(3,minmax(0,1fr));grid-template-rows:160px 95px;height:258px}
   .journey-gallery img:first-child{grid-column:1/4;grid-row:1}
   .journey-gallery img:nth-child(2){grid-column:1;grid-row:2}
