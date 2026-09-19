@@ -33,7 +33,7 @@ const trip = {
     { type:'DINNER · RESERVED', date:'9/20', title:'Shukette', facts:['20:00','已訂位','Aladdin 與 High Line 之後前往','預留跨區移動時間'] },
     { type:'DINNER · RESERVED', date:'9/22', title:'Soothr', facts:['20:00','已訂位','Brooklyn 水岸後回 Manhattan','19:45 前抵達'] },
     { type:'BROADWAY · TICKETED', date:'9/23', title:'Maybe Happy Ending', facts:['19:00 · Belasco Theatre','Center Mezz · Row F · Seat 107','100 分鐘 · 無中場','Mobile ticket · delayed delivery'] },
-    { type:'DINNER · PREPAID', date:'9/23', title:'Moono', facts:['21:15 · 1 位','看完 MHE 立刻離場','步行約 15–20 分','依 SevenRooms 條款取消'] },
+    { type:'DINNER · RESERVED', date:'9/23', title:'Moono', facts:['21:15 · 1 位','看完 MHE 立刻離場','步行約 15–20 分','未預付；少於 6 小時取消／未到場 USD 50／人'] },
     { type:'DINNER · RESERVED', date:'9/24', title:'Keens Steakhouse', facts:['18:00 · 7 位','Midtown','遲到保留時間依訂位確認','與朋友的 NYC 壓軸晚餐'] },
     { type:'TRAIN · TICKETED', date:'9/25', title:'Northeast Regional 176', facts:['19:12 · New York Moynihan Train Hall','23:50 · Boston South Station','確定主方案','朋友在 Boston 會合'] },
     { type:'LODGING · RESERVED', date:'9/25 → 9/26', title:'Meco Hotel', facts:['與朋友同行','兩張床','抵達 Boston 後會合','HI Boston 是重複訂房；9/22 23:59 EDT 前取消'] },
