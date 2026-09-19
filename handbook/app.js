@@ -10,12 +10,12 @@ const trip = {
   end: '2026-10-05T05:10:00+08:00',
   itinerary: [
     { date:'9/19', day:'SAT', city:'New York', page:'nyc.html#nyc-0919', title:'Taipei → New York', summary:'CI12 抵達 JFK；第一晚只做入境、跨河、睡覺三件事。', route:'TPE 17:40 → JFK 20:40 → Weehawken', status:'confirmed', images:['nyc-new-amsterdam.jpg','nyc-sunset.jpg','nyc-grand-central.jpg','nyc-washington-square.jpg'] },
-    { date:'9/20', day:'SUN', city:'New York', page:'nyc.html#nyc-0920', title:'Aladdin＋West Side 黃昏', summary:'13:00《Aladdin》是第一個硬錨點；散場後沿 High Line 把劇院接到 Hudson。', route:'New Amsterdam 12:30 → Aladdin 13:00 → High Line → Village', status:'confirmed', images:['nyc-new-amsterdam.jpg','nyc-high-line.jpg','nyc-sunset.jpg','nyc-washington-square.jpg'] },
-    { date:'9/21', day:'MON', city:'New York', page:'nyc.html#nyc-0921', title:'Lower East Side 城市紋理', summary:'沿 Essex、Seward Park 與 Orchard Street 讀移民街區，再走進 East Village。', route:'Essex Street → Seward Park → Orchard Street → East Village', status:'confirmed', images:['nyc-washington-square.jpg','nyc-jackson-heights.jpg','katz-pastrami.jpg','nyc-sunset.jpg'] },
-    { date:'9/22', day:'TUE', city:'New York', page:'nyc.html#nyc-0922', title:'Brooklyn Waterfront', summary:'從 Williamsburg 街區走到 Domino Park，再沿 East River 向 Greenpoint 推進。', route:'Bedford Ave → Marsha P. Johnson Park → Domino Park → Greenpoint', status:'planned', images:['nyc-williamsburg.jpg','nyc-sunset.jpg','nyc-high-line.jpg','nyc-pizza.jpg'] },
+    { date:'9/20', day:'SUN', city:'New York', page:'nyc.html#nyc-0920', title:'Aladdin＋West Side 黃昏', summary:'13:00《Aladdin》後沿 High Line 看 Hudson 黃昏；20:00 Shukette 已訂。', route:'Aladdin 13:00 → High Line → Shukette 20:00', status:'confirmed', images:['nyc-new-amsterdam.jpg','nyc-high-line.jpg','nyc-sunset.jpg','nyc-washington-square.jpg'] },
+    { date:'9/21', day:'MON', city:'New York', page:'nyc.html#nyc-0921', title:'Lower East Side 城市紋理', summary:'沿 Essex、Seward Park 與 Orchard Street 讀移民街區，再走進 East Village。', route:'Essex Street → Seward Park → Orchard Street → East Village', status:'planned', images:['nyc-washington-square.jpg','nyc-jackson-heights.jpg','katz-pastrami.jpg','nyc-sunset.jpg'] },
+    { date:'9/22', day:'TUE', city:'New York', page:'nyc.html#nyc-0922', title:'Brooklyn Waterfront＋Soothr', summary:'Williamsburg 水岸一路走到 Greenpoint；晚間回 Manhattan，20:00 Soothr 已訂。', route:'Bedford Ave → Domino Park → Greenpoint → Soothr 20:00', status:'confirmed', images:['nyc-williamsburg.jpg','nyc-sunset.jpg','nyc-high-line.jpg','nyc-pizza.jpg'] },
     { date:'9/23', day:'WED', city:'New York', page:'nyc.html#nyc-0923', title:'Fifth Avenue＋Maybe Happy Ending', summary:'白天走 Midtown 城市軸線；19:00《Maybe Happy Ending》是今晚主角。', route:'Rockefeller → Fifth Ave → Central Park South → Belasco 19:00', status:'confirmed', images:['nyc-new-amsterdam.jpg','nyc-grand-central.jpg','nyc-sunset.jpg','nyc-jackson-heights.jpg'] },
     { date:'9/24', day:'THU', city:'New York', page:'nyc.html#nyc-0924', title:'Midtown 建築日', summary:'NYPL、Bryant Park、Grand Central 與 Chrysler Building 串成一條室內外建築線。', route:'Times Square → NYPL → Bryant Park → Grand Central → Keens 18:00', status:'confirmed', images:['nyc-grand-central.jpg','nyc-new-amsterdam.jpg','nyc-washington-square.jpg','katz-pastrami.jpg'] },
-    { date:'9/25', day:'FRI', city:'Transit', page:'nyc.html#nyc-0925', title:'跟朋友開去 Boston', summary:'主方案改為朋友載往 Boston；原 Train 176 保留到開車確定後取消。', route:'Weehawken → road trip → Boston → Meco', status:'planned', images:['nyc-sunset.jpg','nyc-grand-central.jpg','boston-beacon-hill.jpg','boston-old-state-house.jpg'] },
+    { date:'9/25', day:'FRI', city:'Transit', page:'nyc.html#nyc-0925', title:'New York → Boston', summary:'Train 176 是確定主方案；19:12 從 Moynihan Train Hall 出發，23:50 抵達 Boston。', route:'Moynihan 19:12 → Train 176 → Boston 23:50 → Meco', status:'confirmed', images:['nyc-sunset.jpg','nyc-grand-central.jpg','boston-beacon-hill.jpg','boston-old-state-house.jpg'] },
     { date:'9/26', day:'SAT', city:'Boston', page:'new-england.html#ne-0926', title:'Boston 一日長鏡頭', summary:'從 Beacon Hill 接上精選 Freedom Trail，黃昏停在 North End 與港邊。', route:'Common → Beacon Hill → Freedom Trail → North End', status:'planned', images:['boston-beacon-hill.jpg','boston-public-garden.jpg','boston-old-state-house.jpg','boston-north-end.jpg'] },
     { date:'9/27', day:'SUN', city:'Beverly', page:'new-england.html#ne-0927', title:'Tupper Manor Wedding', summary:'今天不追景點；海岸、朋友與婚禮就是全程唯一不可複製的一天。', route:'Beverly → Tupper Manor → 住宿', status:'confirmed', images:['beverly-tupper-manor.jpg','beverly-coast.jpg','beverly-endicott-pond.jpg','beverly-west-beach.jpg'] },
     { date:'9/28', day:'MON', city:'Transit', page:'new-england.html#ne-0928', title:'Boston → Philadelphia', summary:'朋友送到 South Station；11:40 的 Train 173 直達 Philadelphia。', route:'South Station 11:40 → 30th Street 17:29', status:'confirmed', images:['boston-old-state-house.jpg','philly-30th-street.jpg','reading-terminal.jpg','philly-independence-hall.jpg'] },
@@ -30,11 +30,14 @@ const trip = {
   bookings: [
     { type:'FLIGHT · TICKETED', date:'9/19', title:'CI12 · Taipei → New York', facts:['17:40 · TPE Terminal 2','20:40 · JFK Terminal 4','Economy','託運 2 × 23 kg；手提 1 × 7 kg'] },
     { type:'BROADWAY · TICKETED', date:'9/20', title:'Aladdin', facts:['13:00 · New Amsterdam Theatre','Mezzanine · Row JJ · Seat 107','約 15:30 散場','Mobile ticket'] },
-    { type:'DINNER · RESERVED', date:'9/21', title:'Soothr', facts:['20:00','已訂位','Lower Manhattan 晚餐錨點','白天 Katz’s 控制份量'] },
+    { type:'DINNER · RESERVED', date:'9/20', title:'Shukette', facts:['20:00','已訂位','Aladdin 與 High Line 之後前往','預留跨區移動時間'] },
+    { type:'DINNER · RESERVED', date:'9/22', title:'Soothr', facts:['20:00','已訂位','Brooklyn 水岸後回 Manhattan','19:45 前抵達'] },
     { type:'BROADWAY · TICKETED', date:'9/23', title:'Maybe Happy Ending', facts:['19:00 · Belasco Theatre','Center Mezz · Row F · Seat 107','100 分鐘 · 無中場','Mobile ticket · delayed delivery'] },
     { type:'DINNER · PREPAID', date:'9/23', title:'Moono', facts:['21:15 · 1 位','看完 MHE 立刻離場','步行約 15–20 分','依 SevenRooms 條款取消'] },
     { type:'DINNER · RESERVED', date:'9/24', title:'Keens Steakhouse', facts:['18:00 · 7 位','Midtown','遲到保留時間依訂位確認','與朋友的 NYC 壓軸晚餐'] },
-    { type:'LODGING · RESERVED', date:'9/25 → 9/26', title:'Meco Hotel', facts:['與朋友同行','兩間房','朋友開車 NYC → Boston','HI Boston 暫作備援'] },
+    { type:'TRAIN · TICKETED', date:'9/25', title:'Northeast Regional 176', facts:['19:12 · New York Moynihan Train Hall','23:50 · Boston South Station','確定主方案','朋友在 Boston 會合'] },
+    { type:'LODGING · RESERVED', date:'9/25 → 9/26', title:'Meco Hotel', facts:['與朋友同行','兩張床','抵達 Boston 後會合','HI Boston 是重複訂房；9/22 23:59 EDT 前取消'] },
+    { type:'LODGING · RESERVED', date:'9/26 → 9/27', title:'Boston 市區住宿', facts:['朋友另訂','名稱與私人住址不放公開版','9/26 已有落腳處','隔天前往 Beverly 婚禮'] },
     { type:'WEDDING + LODGING', date:'9/27', title:'Tupper Manor Wedding', facts:['Beverly, Massachusetts','下午至晚間','9/27 住宿已訂','隔天朋友送 South Station'] },
     { type:'TRAIN · TICKETED', date:'9/28', title:'Northeast Regional 173', facts:['11:40 · Boston South Station','17:29 · Philadelphia 30th Street','Coach','朋友送到車站'] },
     { type:'TOUR · RESERVED', date:'9/29', title:'Independence Hall', facts:['11:20 tour','10:50 前抵達安檢','手機票／列印票皆可','準時開場，遲到不保證入場'] },
@@ -47,20 +50,17 @@ const trip = {
   ],
   transport: [
     ['01','9/19 · FLIGHT','Taipei → New York','CI12 · 17:40 → 20:40','confirmed'],
-    ['02','9/25 · CAR','New York → Boston','朋友開車 · 主方案','planned'],
-    ['03','9/25 · BACKUP','New York → Boston','Train 176 · 可取消，開車確認後處理','watch'],
-    ['04','9/27 · LOCAL','Boston → Beverly','與朋友同行 · 依當日會合','planned'],
-    ['05','9/28 · TRAIN','Boston → Philadelphia','Train 173 · 11:40 → 17:29','confirmed'],
-    ['06','9/30 · TRAIN','Philadelphia → Washington, DC','Train 141 · 09:50 → 11:47','confirmed'],
-    ['07','10/3 · METRO / CAR','U Street → IAD','20:15–20:30 出發；Silver Line 或 rideshare','planned'],
-    ['08','10/4 · FLIGHT','Washington → Taipei','BR3 · 01:15 → 10/5 05:10','confirmed']
+    ['02','9/25 · TRAIN','New York → Boston','Train 176 · 19:12 → 23:50','confirmed'],
+    ['03','9/27 · LOCAL','Boston → Beverly','與朋友同行 · 依當日會合','planned'],
+    ['04','9/28 · TRAIN','Boston → Philadelphia','Train 173 · 11:40 → 17:29','confirmed'],
+    ['05','9/30 · TRAIN','Philadelphia → Washington, DC','Train 141 · 09:50 → 11:47','confirmed'],
+    ['06','10/3 · METRO / CAR','U Street → IAD','20:15–20:30 出發；Silver Line 或 rideshare','planned'],
+    ['07','10/4 · FLIGHT','Washington → Taipei','BR3 · 01:15 → 10/5 05:10','confirmed']
   ],
   actions: {
     high: [
-      ['shukette','Shukette 開放後補訂；訂不到就保留彈性，不硬塞'],
       ['zahav-bar','9/22 查看 chef’s counter、9/27 查看吧台位；都沒有就 9/29 16:45 walk-in'],
-      ['hi-cancel','9/22 23:59 EDT 前確認朋友行程，若不變就取消 HI Boston'],
-      ['train-cancel','9/25 開車方案確認後，在 Train 176 發車前取消 Amtrak']
+      ['hi-cancel','HI Boston 是重複訂房；若行程不變，9/22 23:59 EDT 前取消']
     ],
     medium: [
       ['jfk-weehawken','把 JFK → Weehawken 深夜交通方案與朋友聯絡方式存離線'],
@@ -183,7 +183,7 @@ function toast(message){ const target=$('#toast'); if(!target) return; target.te
 function initActions(){
   const print=$('#printBtn'); if(print) print.addEventListener('click',()=>window.print());
   const copy=$('#copySummaryBtn'); if(copy) copy.addEventListener('click', async () => {
-    const summary=`East Coast 2026\n9/19 CI12 TPE 17:40 → JFK 20:40\n9/20 13:00 Aladdin\n9/21 20:00 Soothr\n9/23 19:00 Maybe Happy Ending → 21:15 Moono\n9/24 18:00 Keens\n9/25 朋友開車 NYC → Boston（確認後取消 Train 176）\n9/27 Tupper Manor wedding\n9/28 Train 173 BOS 11:40 → PHL 17:29\n9/29 Independence Hall 11:20（10:50 前安檢）\n9/30 Train 141 PHL 09:50 → WAS 11:47\n10/1 Capitol 10:20 → LOC 13:00 → Archives\n10/2 Air & Space 10:00 → NMAAHC 13:00\n10/3 20:15–20:30 前往 IAD\n10/4 BR3 IAD 01:15 → TPE`;
+    const summary=`East Coast 2026\n9/19 CI12 TPE 17:40 → JFK 20:40\n9/20 13:00 Aladdin → 20:00 Shukette\n9/22 20:00 Soothr\n9/23 19:00 Maybe Happy Ending → 21:15 Moono\n9/24 18:00 Keens\n9/25 Train 176 NYC 19:12 → BOS 23:50；朋友在 Boston 會合\n9/27 Tupper Manor wedding\n9/28 Train 173 BOS 11:40 → PHL 17:29\n9/29 Independence Hall 11:20（10:50 前安檢）\n9/30 Train 141 PHL 09:50 → WAS 11:47\n10/1 Capitol 10:20 → LOC 13:00 → Archives\n10/2 Air & Space 10:00 → NMAAHC 13:00\n10/3 20:15–20:30 前往 IAD\n10/4 BR3 IAD 01:15 → TPE`;
     try { await navigator.clipboard.writeText(summary); toast('行程摘要已複製'); } catch { toast('瀏覽器未允許剪貼簿權限'); }
   });
 }
